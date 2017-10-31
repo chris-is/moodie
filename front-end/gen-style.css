@@ -1,0 +1,70 @@
+/* GENERAL */
+
+html, body {
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+/* HEADER */
+.navbar{
+  background-color: grey;
+  border: 2px solid black;
+}
+.nav-btn{
+  height: 2rem;
+  width: 2rem;
+  font-size: 1rem;
+  background-color: #fff;
+  border-color: #000;
+  border-radius: 5px;
+}
+
+/* BODY */
+#sign-up-banner{
+  height: 7rem;
+  width: 90%;
+  background-color: #fff;
+  border-color: 1px solid #000;
+}
+
+.section-btn{
+  height: 2rem;
+  width: 2rem;
+  font-size: 1rem;
+  background-color: #fff;
+  border-color: #000;
+  border-radius: 5px;
+}
+
+.carousel.slide{
+  height: 20rem;
+  width: 90%;
+  border: 1px solid #000;
+  overflow: auto;
+  white-space: nowrap;
+  background-color: grey;
+}
+
+.d-block.img-fluid{
+  height: 50%;
+  width: 50%;
+  display: block;  
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* FOOTER */
+.footer{
+  padding: 1rem;
+  border: 1px solid #000;
+}
+.foot-btn{
+  height: 2rem;
+  width: 2rem;
+  font-size: 1rem;
+  background-color: #fff;
+  border-color: #000;
+  border-radius: 5px;
+}
