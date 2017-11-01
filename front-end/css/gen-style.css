@@ -21,6 +21,9 @@ html, body {
 }
 
 /* BODY */
+
+/*all these could go in a shared css file between the index pages
+if it fits*/
 #sign-up-banner{
   height: 7rem;
   width: 90%;
@@ -54,11 +57,18 @@ html, body {
   margin-right: auto;
 }
 
+#reg-featured{
+  float: right;
+}
+
 
 /* FOOTER */
 .footer{
+  margin: 1.5rem;
   padding: 1rem;
-  border: 1px solid #000;
+  border-top: 1px solid #000;
+  position: relative;
+  bottom: 0;
 }
 .foot-btn{
   height: 2rem;
