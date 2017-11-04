@@ -4,6 +4,8 @@ html, body {
   font-size: 20px;
   padding: 0;
   margin: 0;
+  background-image: url("../img/bckg.jpg");
+  background-repeat: repeat;
 }
 
 /* HEADER */
