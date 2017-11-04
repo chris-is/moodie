@@ -2,16 +2,25 @@
 
 html, body {
   font-size: 20px;
-  padding: 0;
   margin: 0;
   background-image: url("../img/bckg.jpg");
   background-repeat: repeat;
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  padding: 20px 0;
+  background-color: grey;
+  box-shadow: 0 4px 6px rgba(0,0,0,.2);
+  display:inline;
 }
 
 /* HEADER */
 .navbar{
+  padding: 20px 0;
   background-color: grey;
   border: 1.5px solid black;
+  display:inline;
 }
 .nav-btn{
   height: 2rem;
@@ -20,6 +29,7 @@ html, body {
   background-color: #fff;
   border-color: #000;
   border-radius: 5px;
+  display:inline;
 }
 
 /* BODY */
