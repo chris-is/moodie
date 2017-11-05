@@ -30,6 +30,43 @@ html, body {
   border-radius: 5px;
 }
 
+#home-btn{
+  background-image: url("../img/home.png");
+}
+#search-btn{
+  background-image: url("../img/search.png");
+}
+#login-btn{
+  background-image: url("../img/login.png");
+}
+#signup-btn{
+  background-image: url("../img/signup.png");
+}
+#settings-btn{
+  background-image: url("../img/settings.png");
+}
+#user-btn{
+  background-image: url("../img/user.png");
+}
+#featured-btn{
+  background-image: url("../img/featured.png");
+}
+#near-btn{
+  background-image: url("../img/near.png");
+}
+#rec-btn{
+  background-image: url("../img/rec.png");
+}
+#about-btn{
+  background-image: url("../img/about.png");
+}
+#faq-btn{
+  background-image: url("../img/faq.png");
+}
+#contact-btn{
+  background-image: url("../img/contact.png");
+}
+
 /* BODY */
 
 /*all these could go in a shared css file between the index pages
@@ -45,7 +82,7 @@ if it fits*/
   width: 2rem;
   font-size: 1rem;
   background-color: #fff;
-  border-color: #000;
+  border: none;
   border-radius: 5px;
 }
 
@@ -66,7 +103,7 @@ if it fits*/
   margin-right: auto;
 }
 
-#reg-featured{
+#featured-btn{
   float: right;
 }
 
@@ -84,6 +121,6 @@ if it fits*/
   width: 2rem;
   font-size: 1rem;
   background-color: #fff;
-  border-color: #000;
+  border: none;
   border-radius: 5px;
 }
