@@ -67,6 +67,16 @@ html, body {
 #contact-btn{
   background-image: url("../img/contact.png");
 }
+#fb-btn{
+  background-image: url("../img/facebook.png");
+}
+#twitter-btn{
+  background-image: url("../img/twitter.png");
+}
+#github-btn{
+  background-image: url("../img/github.png");
+}
+
 
 /* BODY */
 
