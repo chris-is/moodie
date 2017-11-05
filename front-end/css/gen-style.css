@@ -51,6 +51,7 @@ header {
 }
 #featured-btn{
   background-image: url("../img/featured.png");
+  float: right;
 }
 #near-btn{
   background-image: url("../img/near.png");
@@ -103,10 +104,6 @@ if it fits*/
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-#featured-btn{
-  float: right;
 }
 
 
