@@ -3,7 +3,7 @@
 html, body {
   font-size: 20px;
   margin: 0;
-  background-image: url("../img/bckg.jpg");
+  background-image: url("../img/bckg.png");
   background-repeat: repeat;
   font-family: 'Montserrat', sans-serif;
 }
@@ -100,10 +100,10 @@ if it fits*/
 .carousel.slide{
   height: 20rem;
   width: 90%;
-  border: 1px solid #000;
+  border: none;
   overflow: auto;
   white-space: nowrap;
-  background-color: grey;
+  background-color: #282828;
 }
 
 .d-block.img-fluid{
