@@ -3,7 +3,7 @@
 html, body {
   font-size: 20px;
   margin: 0;
-  background-image: url("../img/bckg.jpg");
+  background-image: url("../img/bckg.png");
   background-repeat: repeat;
   font-family: 'Montserrat', sans-serif;
 }
@@ -30,6 +30,54 @@ html, body {
   border-radius: 5px;
 }
 
+#home-btn{
+  background-image: url("../img/home.png");
+}
+#search-btn{
+  background-image: url("../img/search.png");
+}
+#login-btn{
+  background-image: url("../img/login.png");
+}
+#signup-btn{
+  background-image: url("../img/signup.png");
+}
+#settings-btn{
+  background-image: url("../img/settings.png");
+}
+#user-btn{
+  background-image: url("../img/user.png");
+}
+#featured-btn{
+  background-image: url("../img/featured.png");
+  float: right;
+}
+#near-btn{
+  background-image: url("../img/near.png");
+}
+#rec-btn{
+  background-image: url("../img/rec.png");
+}
+#about-btn{
+  background-image: url("../img/about.png");
+}
+#faq-btn{
+  background-image: url("../img/faq.png");
+}
+#contact-btn{
+  background-image: url("../img/contact.png");
+}
+#fb-btn{
+  background-image: url("../img/facebook.png");
+}
+#twitter-btn{
+  background-image: url("../img/twitter.png");
+}
+#github-btn{
+  background-image: url("../img/github.png");
+}
+
+
 /* BODY */
 
 /*all these could go in a shared css file between the index pages
@@ -45,17 +93,17 @@ if it fits*/
   width: 2rem;
   font-size: 1rem;
   background-color: #fff;
-  border-color: #000;
+  border: none;
   border-radius: 5px;
 }
 
 .carousel.slide{
   height: 20rem;
   width: 90%;
-  border: 1px solid #000;
+  border: none;
   overflow: auto;
   white-space: nowrap;
-  background-color: grey;
+  background-color: #282828;
 }
 
 .d-block.img-fluid{
@@ -64,10 +112,6 @@ if it fits*/
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-#reg-featured{
-  float: right;
 }
 
 
@@ -84,6 +128,6 @@ if it fits*/
   width: 2rem;
   font-size: 1rem;
   background-color: #fff;
-  border-color: #000;
+  border: none;
   border-radius: 5px;
 }
