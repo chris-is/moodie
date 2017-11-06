@@ -42,11 +42,39 @@ html, body {
 #signup-btn{
   background-image: url("../img/signup.png");
 }
-#settings-btn{
-  background-image: url("../img/settings.png");
-}
 #user-btn{
   background-image: url("../img/user.png");
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffd37a;
+  width: 7rem;
+  z-index: 1;
+  border-radius: 5px;
+
+}
+.dropdown-content a, .dropdown-content ul{
+  color: white;
+  font-size: 1rem;
+  list-style: none;
+  margin: 5px;
+  padding: 0;
+}
+.dropdown-content a:hover{
+  text-decoration: none;
+  color: black;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#logout-btn{
+  background-image: url("../img/logout.png");
 }
 #featured-btn{
   background-image: url("../img/featured.png");
