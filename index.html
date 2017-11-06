@@ -43,7 +43,7 @@
 
 
       <div class="row">
-        <p id="sign-up-banner">Moodie: get recommendations and rate media based on what you feel like watching. Sign up here to get the full features!</p>
+        <button id="sign-up-banner" onclick="document.getElementById('signup-modal').style.display='block'" style="width:auto">Moodie: get recommendations and rate media based on what you feel like watching. Sign up here to get the full features!</button>
       </div>
 
       <!--Login modal-->
@@ -61,17 +61,6 @@
           </div>
         </div>
       </div>
-
-      <script>
-      // Get the modal
-      var modal = document.getElementById('login-modal');
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
-      </script>
 
       <!--Signup modal-->
       <div class="modal" id="signup-modal">
@@ -92,11 +81,14 @@
 
       <script>
       // Get the modal
-      var modal = document.getElementById('signup-modal');
+      var modal1 = document.getElementById('login-modal');
+      var modal2 = document.getElementById('signup-modal');
+
       // When the user clicks anywhere outside of the modal, close it
       window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
+        if ((event.target == modal1)|(event.target == modal2)) {
+          modal1.style.display = "none";
+          modal2.style.display = "none";
         }
       }
       </script>
