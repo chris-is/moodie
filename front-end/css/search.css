@@ -5,12 +5,17 @@ h1 {
 
 
 form {
-    width: 350px;
     padding: 1em;
 }
 
 input[type="text"]
 {
     width: 55px;
+}
+
+.panel {
+	margin-bottom: 15px;
+	background-color: rgb(242, 238, 234);
+	width: 60%;
 }
 
