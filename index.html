@@ -23,30 +23,27 @@
     <!--HEADER-->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="navbar-brand navbar-left">
-<<<<<<< HEAD
         <button id="home-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Home"></button>
         <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
         <button id="signup-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Sign Up"></button>
         <button id="login-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Login"></button>
-=======
         <button id="home-btn" class="nav-btn"></button>
         <button id="search-btn" class="nav-btn"></button>
         <button id="signup-btn" class="nav-btn" onclick="document.getElementById('signup-modal').style.display='block'" style="width:auto"></button>
         <button id="login-btn" class="nav-btn" onclick="document.getElementById('login-modal').style.display='block'" style="width:auto"></button>
->>>>>>> master
       </div>
     </nav>
 
     <!--BODY-->
-    <div class="container-fluid">  
-      
-      <script> 
+    <div class="container-fluid">
+
+      <script>
         $(function(){
-          $("#includedSearch").load("search.html"); 
+          $("#includedSearch").load("search.html");
         });
       </script>
       <div id="includedSearch"></div>
-      
+
 
 
       <div class="row">
@@ -358,12 +355,12 @@
       <!--Login modal-->
       <div class="modal" id="login-modal">
         <div class="modal-content animate" action="#">
-          <span onclick="document.getElementById('login-modal').style.display='none'" class="close" title="Close Modal">&times;</span>     
+          <span onclick="document.getElementById('login-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
           <div class="container">
             <label><b>Username</b></label>
             <input type="text" name="username" required>
             <label><b>Password</b></label>
-            <input type="password" name="password" required> 
+            <input type="password" name="password" required>
             <button type="submit">Login</button>
             <span class="forgot"><a href="#">I forgot my password</a></span>
             </div>
@@ -374,14 +371,14 @@
       <!--Signup modal-->
       <div class="modal" id="signup-modal">
         <div class="modal-content animate" action="#">
-          <span onclick="document.getElementById('signup-modal').style.display='none'" class="close" title="Close Modal">&times;</span>     
+          <span onclick="document.getElementById('signup-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
           <div class="container">
             <label><b>Email</b></label>
             <input type="text" name="email" required>
             <label><b>Username</b></label>
             <input type="text" name="username" required>
             <label><b>Password</b></label>
-            <input type="password" name="password" required> 
+            <input type="password" name="password" required>
             <button type="submit">Sign Up</button>
             </div>
 >>>>>>> master
