@@ -1,0 +1,33 @@
+#home-btn{
+  background-image: url("../img/home.png");
+  margin-left: 5rem;
+  margin-top: 1.1rem;
+  margin-bottom: 0.8rem;
+  margin-right: 6rem;
+}
+#search-btn{
+  background-image: url("../img/search.png");
+  margin-right: 1.5rem;
+  margin-left: 35rem;
+  margin-top: 1.1rem;
+}
+#signup-btn{
+  background-image: url("../img/signup.png");
+  margin-right: 0.8rem;
+  margin-left: 0.8rem;
+  margin-top: 1.2rem;
+}
+#login-btn{
+  background-image: url("../img/login.png");
+  margin-right: 0.2rem;
+  margin-left: 1.4rem;
+  margin-top: 1.1rem;
+}
+
+.row{
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+font-size: 14px;
+font-style: normal;
+font-variant: normal;
+color: white;
+}
