@@ -6,22 +6,21 @@ html, body {
   background-image: url("../img/bckg.png");
   background-repeat: repeat;
   font-family: 'Montserrat', sans-serif;
+  display: inline;
 }
+
+
 
 .navbar {
   width: 100%;
-  height: 5.8rem;
-  padding: 20px 0;
-  background-color: : grey;
   box-shadow: 0 4px 6px rgba(0,0,0,.2);
-
+  padding:0;
 }
 
 /* HEADER */
+
 .nav-btn{
   display: inline-block;
-  margin-left: 2.3rem;
-  margin-top: 0.7rem;
   height: 2rem;
   width: 2rem;
   border: none;
@@ -30,20 +29,52 @@ html, body {
   border-radius: 5px;
 }
 
+.navbar-brand{
+  background-color: #fffff0;
+  width:100%;
+  margin:0;
+}
+
 #home-btn{
   background-image: url("../img/home.png");
+  margin-left: 5rem;
+  margin-top: 1.1rem;
+  margin-bottom: 0.8rem;
+  margin-right: 6rem;
 }
 #search-btn{
   background-image: url("../img/search.png");
-}
-#login-btn{
-  background-image: url("../img/login.png");
+  margin-right: 1.5rem;
+  margin-left: 35rem;
+  margin-top: 1.1rem;
 }
 #signup-btn{
   background-image: url("../img/signup.png");
+  margin-right: 0.8rem;
+  margin-left: 0.8rem;
+  margin-top: 1.2rem;
 }
+
+#login-btn{
+  background-image: url("../img/login.png");
+  margin-right: 0.2rem;
+  margin-left: 1.4rem;
+  margin-top: 1.1rem;
+}
+
+#settings-btn{
+  background-image: url("../img/settings.png");
+  margin-right: 0.8rem;
+  margin-left: 0.8rem;
+  margin-top: 1.2rem;
+}
+=======
+>>>>>>> master
 #user-btn{
   background-image: url("../img/user.png");
+  margin-right: 0.2rem;
+  margin-left: 1.4rem;
+  margin-top: 1.1rem;
 }
 .dropdown {
   position: relative;
@@ -79,30 +110,62 @@ html, body {
 #featured-btn{
   background-image: url("../img/featured.png");
   float: right;
+  margin-left: 11.7rem;
+  margin-top: 2.3rem;
 }
 #near-btn{
   background-image: url("../img/near.png");
+  margin-left: 11.7rem;
+  margin-top: 2.3rem;
 }
 #rec-btn{
   background-image: url("../img/rec.png");
+  margin-left: 11.7rem;
+  margin-top: 2.3rem;
 }
+#featured-btn-reg{
+  background-image: url("../img/featured.png");
+  margin-left: 4rem;
+  margin-top: 1.1rem;
+}
+#near-btn-reg{
+  background-image: url("../img/near.png");
+  margin-left: 4.55rem;
+ margin-top: 1.1rem;
+}
+
+/* FOOTER BUTTONS */
 #about-btn{
   background-image: url("../img/about.png");
+  margin-left: 2.5rem;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
 }
 #faq-btn{
   background-image: url("../img/faq.png");
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
 }
 #contact-btn{
   background-image: url("../img/contact.png");
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
 }
 #fb-btn{
   background-image: url("../img/facebook.png");
+  margin-left: 40rem;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
 }
 #twitter-btn{
   background-image: url("../img/twitter.png");
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
 }
 #github-btn{
   background-image: url("../img/github.png");
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 
@@ -153,6 +216,14 @@ if it fits*/
   border-top: 1px solid #000;
   position: relative;
   bottom: 0;
+  background-color: #fffff0;
+  margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 15px;
 }
 .foot-btn{
   height: 2rem;
