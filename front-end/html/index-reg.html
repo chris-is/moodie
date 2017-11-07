@@ -7,9 +7,9 @@
     <meta charset="utf-8"/>
 
     <!--EXTERNAL-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link href="../css/gen-style.css" type="text/css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="../css/gen-style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
     <!--FONTS-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" type="text/css" rel="stylesheet">
@@ -23,10 +23,20 @@
       <div class="navbar-brand navbar-left">
         <button id="home-btn" class="nav-btn"></button>
         <button id="search-btn" class="nav-btn"></button>
-        <button id="settings-btn" class="nav-btn"></button>
-        <button id="user-btn" class="nav-btn"></button>
+        <div class="dropdown">
+          <button id="user-btn" class="nav-btn"></button>
+            <div class="dropdown-content">
+              <ul>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Notifications</a></li>
+              </ul>
+            </div>
+          </div>
+        <button id="logout-btn" class="nav-btn"></button>
       </div>
     </nav>
+
     <!--BODY-->
     <div class="container-fluid">
 

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link href="front-end/css/gen-style.css" type="text/css" rel="stylesheet">
     <link href="front-end/css/search.css" type="text/css" rel="stylesheet">
+    <link href="front-end/css/login-signup.css" type="text/css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!--FONTS-->
@@ -22,46 +23,37 @@
     <!--HEADER-->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="navbar-brand navbar-left">
+<<<<<<< HEAD
         <button id="home-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Home"></button>
         <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
         <button id="signup-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Sign Up"></button>
         <button id="login-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Login"></button>
+=======
+        <button id="home-btn" class="nav-btn"></button>
+        <button id="search-btn" class="nav-btn"></button>
+        <button id="signup-btn" class="nav-btn" onclick="document.getElementById('signup-modal').style.display='block'" style="width:auto"></button>
+        <button id="login-btn" class="nav-btn" onclick="document.getElementById('login-modal').style.display='block'" style="width:auto"></button>
+>>>>>>> master
       </div>
     </nav>
 
     <!--BODY-->
-    <div class="container-fluid">
+    <div class="container-fluid">  
+      
+      <script> 
+        $(function(){
+          $("#includedSearch").load("search.html"); 
+        });
+      </script>
+      <div id="includedSearch"></div>
+      
+
+
       <div class="row">
-        <p id="sign-up-banner">Moodie: get recommendations and rate media based on what you feel like watching. Sign up here to get the full features!</p>
+        <button id="sign-up-banner" onclick="document.getElementById('signup-modal').style.display='block'" style="width:auto">Moodie: get recommendations and rate media based on what you feel like watching.<br/> Sign up here to get the full features!</button>
       </div>
 
-
-   <!--Adding Search functionality-->
-   <script>
-      $(document).ready(function(){
-        $("#search-btn").click(function(){
-          $(".panel").slideToggle("slow");
-        });
-      });
-    </script>
-
-    <script>
-      $(document).ready(function(){
-        $("#mood").click(function(){
-          $(".moodList").fadeIn();
-        });
-      });
-    </script>
-
-  <!--If User clicks on search button, hide mood list-->
-    <script>
-      $(document).ready(function(){
-        $("#search-btn").click(function(){
-          $(".moodList").fadeOut();
-        });
-      });
-    </script>
-
+<<<<<<< HEAD
     <style>
     .panel {
         padding: 50px;
@@ -362,16 +354,55 @@
             <input type="checkbox" name="Hungry"> Hungry
             <input type="checkbox" name="Shocked"> Shocked
             <input type="checkbox" name="Confident"> Confident
+=======
+      <!--Login modal-->
+      <div class="modal" id="login-modal">
+        <div class="modal-content animate" action="#">
+          <span onclick="document.getElementById('login-modal').style.display='none'" class="close" title="Close Modal">&times;</span>     
+          <div class="container">
+            <label><b>Username</b></label>
+            <input type="text" name="username" required>
+            <label><b>Password</b></label>
+            <input type="password" name="password" required> 
+            <button type="submit">Login</button>
+            <span class="forgot"><a href="#">I forgot my password</a></span>
+            </div>
           </div>
-        </p>
-      </section>
-        <p> <input type="submit" value="Submit"> </p>
-    </form>
-  </div>
+        </div>
+      </div>
 
-   <!-- <div class="moodList">
-      <p> Hi </p>
-    </div>-->
+      <!--Signup modal-->
+      <div class="modal" id="signup-modal">
+        <div class="modal-content animate" action="#">
+          <span onclick="document.getElementById('signup-modal').style.display='none'" class="close" title="Close Modal">&times;</span>     
+          <div class="container">
+            <label><b>Email</b></label>
+            <input type="text" name="email" required>
+            <label><b>Username</b></label>
+            <input type="text" name="username" required>
+            <label><b>Password</b></label>
+            <input type="password" name="password" required> 
+            <button type="submit">Sign Up</button>
+            </div>
+>>>>>>> master
+          </div>
+        </div>
+      </div>
+
+      <script>
+      // Get the modal
+      var modal1 = document.getElementById('login-modal');
+      var modal2 = document.getElementById('signup-modal');
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if ((event.target == modal1)|(event.target == modal2)) {
+          modal1.style.display = "none";
+          modal2.style.display = "none";
+        }
+      }
+      </script>
+
 
       <!--FEATURED-->
       <div class="row">
