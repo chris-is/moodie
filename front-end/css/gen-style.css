@@ -68,8 +68,6 @@ html, body {
   margin-left: 0.8rem;
   margin-top: 1.2rem;
 }
-=======
->>>>>>> master
 #user-btn{
   background-image: url("../img/user.png");
   margin-right: 0.2rem;
@@ -137,35 +135,35 @@ html, body {
 /* FOOTER BUTTONS */
 #about-btn{
   background-image: url("../img/about.png");
-  margin-left: 2.5rem;
+  /*margin-left: 2.5rem;
   margin-right: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 0.5rem;*/
 }
 #faq-btn{
   background-image: url("../img/faq.png");
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
+  /*margin-right: 0.5rem;
+  margin-top: 0.5rem;*/
 }
 #contact-btn{
   background-image: url("../img/contact.png");
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
+  /*margin-right: 0.5rem;
+  margin-top: 0.5rem;*/
 }
 #fb-btn{
   background-image: url("../img/facebook.png");
-  margin-left: 40rem;
+  /*margin-left: 40rem;
   margin-right: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 0.5rem;*/
 }
 #twitter-btn{
   background-image: url("../img/twitter.png");
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
+  /*margin-right: 0.5rem;
+  margin-top: 0.5rem;*/
 }
 #github-btn{
   background-image: url("../img/github.png");
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
+  /*margin-right: 0.5rem;
+  margin-top: 0.5rem;*/
 }
 
 
@@ -213,8 +211,8 @@ if it fits*/
 .footer{
   margin: 1.5rem;
   padding: 1rem;
-  border-top: 1px solid #000;
   position: relative;
+  border-top: 1px solid #000;
   bottom: 0;
   background-color: #fffff0;
   margin: 0;
@@ -224,6 +222,10 @@ if it fits*/
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 15px;
+}
+.footer .row{
+  margin:0;
+  padding:0;
 }
 .foot-btn{
   height: 2rem;
