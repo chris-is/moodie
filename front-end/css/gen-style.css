@@ -3,7 +3,7 @@
 html, body {
   font-size: 20px;
   margin: 0;
-  background-image: url("../img/bckg.png");
+  background-image: url("../img/bckg2.png");
   background-repeat: repeat;
   font-family: 'Montserrat', sans-serif;
   display: inline;
@@ -234,4 +234,28 @@ if it fits*/
   background-color: #fff;
   border: none;
   border-radius: 5px;
+}
+
+/* SEARCH */
+h1 {
+    margin-top: 0;
+}
+form {
+    padding: 1em;
+}
+
+input[type="text"]{
+    width: 55px;
+}
+
+.panel {
+  margin-bottom: 15px;
+  background-color: rgb(242, 238, 234);
+  width: 60%;
+  padding: 50px;
+  display: none;
+}
+.moodList {
+  display: none;
+  padding-left: 500px;
 }
