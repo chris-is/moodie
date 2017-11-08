@@ -7,36 +7,31 @@
     <meta charset="utf-8"/>
 
     <!--EXTERNAL-->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link href="front-end/css/gen-style.css" type="text/css" rel="stylesheet">
-
+    <link href="front-end/css/search.css" type="text/css" rel="stylesheet">
+    <link href="front-end/css/login-signup.css" type="text/css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!--FONTS-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet" type="text/css">
+  </head>
 
-
+  <body>
     <!--HEADER-->
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-
-          <button id="home-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Home"></button>
-          <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
-          <button id="signup-btn" class="nav-btn" onclick="document.getElementById('signup-modal').style.display='block'" style="width:auto"></button>
-          <button id="login-btn" class="nav-btn" onclick="document.getElementById('login-modal').style.display='block'" style="width:auto"></button>
-        </div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="navbar-brand navbar-left">
+        <button id="home-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Home"></button>
+        <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
+        <button id="signup-btn" class="nav-btn" onclick="document.getElementById('signup-modal').style.display='block'" style="width:auto"></button>
+        <button id="login-btn" class="nav-btn" onclick="document.getElementById('login-modal').style.display='block'" style="width:auto"></button>
       </div>
-    </div>
-
-    </head>
+    </nav>
 
 
     <!--BODY-->
-    <body>
     <div class="container-fluid">
 
       <script>

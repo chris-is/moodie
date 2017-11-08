@@ -1,22 +1,9 @@
 /* GENERAL */
-
-html, body {
-  font-size: 20px;
-  margin: 0;
-  background-image: url("../img/bckg.png");
-  background-repeat: repeat;
-  font-family: 'Montserrat', sans-serif;
-  display: inline;
-}
-
-
-
 .navbar {
   width: 100%;
   box-shadow: 0 4px 6px rgba(0,0,0,.2);
   padding:0;
 }
-
 /* HEADER */
 
 .nav-btn{
@@ -25,42 +12,48 @@ html, body {
   width: 2rem;
   border: none;
   font-size: 1rem;
-  background-color: #fff;
   border-radius: 5px;
 }
 
-.navbar-brand{
+.navbar{
   background-color: #fffff0;
   width:100%;
+
   margin:0;
+  padding: 0;
 }
 
 #home-btn{
+
   background-image: url("../img/home.png");
-  margin-left: 5rem;
+  margin-left: 5%;
   margin-top: 1.1rem;
   margin-bottom: 0.8rem;
-  margin-right: 6rem;
+  border: black;
 }
 #search-btn{
+  display: inline-block;
   background-image: url("../img/search.png");
-  margin-right: 1.5rem;
-  margin-left: 35rem;
+  margin-right: 5%;
+  margin-left: 40%;
   margin-top: 1.1rem;
 }
 #signup-btn{
   background-image: url("../img/signup.png");
-  margin-right: 0.8rem;
-  margin-left: 0.8rem;
+  margin-right: 5%;
+  margin-left: 5%;
   margin-top: 1.2rem;
+  display: inline-block;
 }
 
 #login-btn{
   background-image: url("../img/login.png");
-  margin-right: 0.2rem;
-  margin-left: 1.4rem;
+  margin-right: 10%;
+  margin-left: 5%;
   margin-top: 1.1rem;
+  display: inline-block;
 }
+
 
 #settings-btn{
   background-image: url("../img/settings.png");
@@ -68,14 +61,60 @@ html, body {
   margin-left: 0.8rem;
   margin-top: 1.2rem;
 }
-=======
->>>>>>> master
+
 #user-btn{
   background-image: url("../img/user.png");
   margin-right: 0.2rem;
   margin-left: 1.4rem;
   margin-top: 1.1rem;
 }
+
+#logout-btn{
+  background-image: url("../img/logout.png");
+}
+
+/* BODY */
+
+/*all these could go in a shared css file between the index pages
+if it fits*/
+#sign-up-banner{
+
+  background-color: #fffff0;
+  color: #282828;
+  border-radius: 5px;
+  margin-left: 230px;
+  margin-top: 40px;
+  margin-right: 260px;
+
+}
+
+.section-btn{
+  height: 2rem;
+  width: 2rem;
+  font-size: 1rem;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.carousel.slide{
+  height: 20rem;
+  width: 90%;
+  border: none;
+  overflow: auto;
+  white-space: nowrap;
+  background-color: #282828;
+  border-radius: 5px;
+}
+
+.d-block.img-fluid{
+  height: 50%;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -104,14 +143,11 @@ html, body {
   display: block;
 }
 
-#logout-btn{
-  background-image: url("../img/logout.png");
-}
 #featured-btn{
   background-image: url("../img/featured.png");
   float: right;
-  margin-left: 11.7rem;
-  margin-top: 2.3rem;
+  margin-left: 245px;
+  margin-top: 49px;
 }
 #near-btn{
   background-image: url("../img/near.png");
@@ -132,6 +168,16 @@ html, body {
   background-image: url("../img/near.png");
   margin-left: 4.55rem;
  margin-top: 1.1rem;
+}
+
+#slideshow-featured{
+  margin-left: 24px;
+  margin-top: 15px;
+}
+
+#slideshow-near{
+  margin-left: 24px;
+  margin-top: 15px;
 }
 
 /* FOOTER BUTTONS */
@@ -166,46 +212,6 @@ html, body {
   background-image: url("../img/github.png");
   margin-right: 0.5rem;
   margin-top: 0.5rem;
-}
-
-
-/* BODY */
-
-/*all these could go in a shared css file between the index pages
-if it fits*/
-#sign-up-banner{
-  height: 7rem;
-  width: 90%;
-  background-color: #f0e87e;
-  color: black;
-  border-radius: 5px;
-}
-
-.section-btn{
-  height: 2rem;
-  width: 2rem;
-  font-size: 1rem;
-  background-color: #fff;
-  border: none;
-  border-radius: 5px;
-}
-
-.carousel.slide{
-  height: 20rem;
-  width: 90%;
-  border: none;
-  overflow: auto;
-  white-space: nowrap;
-  background-color: #282828;
-  border-radius: 5px;
-}
-
-.d-block.img-fluid{
-  height: 50%;
-  width: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 
