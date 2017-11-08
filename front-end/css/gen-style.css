@@ -235,15 +235,8 @@ if it fits*/
 }
 
 /* SEARCH */
-h1 {
-    margin-top: 0;
-}
 form {
     padding: 1em;
-}
-
-input[type="text"]{
-    width: 55px;
 }
 
 .panel {
