@@ -168,7 +168,6 @@ html, body {
 
 /* BODY */
 
-
 #sign-up-banner{
   height: 7rem;
   width: 45%;
@@ -200,9 +199,6 @@ html, body {
 .d-block.img-fluid{
   height: auto;
   width: 30%;
-  /*display: block;
-  margin-left: auto;
-  margin-right: auto;*/
 }
 
 .carousel-inner .carousel-item-right.active,
