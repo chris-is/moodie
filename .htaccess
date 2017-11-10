@@ -1,6 +1,7 @@
 RewriteEngine on
 
 
-RewriteRule ^index$ index.html [NC]
-RewriteRule ^([A-Z\-a-z]+)$ /front-end/html/$1.html [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
 
