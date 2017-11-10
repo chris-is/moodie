@@ -9,7 +9,7 @@
     <!--EXTERNAL-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link href="../css/gen-style.css" type="text/css" rel="stylesheet">
-    <link href="front-end/css/movie.css" type="text/css" rel="stylesheet">
+    <link href="../css/movie.css" type="text/css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!--FONTS-->
@@ -20,46 +20,47 @@
 
   <body>
     <!--HEADER-->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="navbar-brand navbar-left">
-        <button id="home-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Home"></button>
-        <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
-        <button id="signup-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Sign Up"></button>
-        <button id="login-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Login"></button>
-      </div>
-    </nav>
+    <!--HEADER-->
+    <div id="appendHeader"></div>
+      <script>
+        $(function(){
+          $("#appendHeader").load("header.html");
+        });
+      </script>
 
     <!--BODY-->
+    <div id="bodypart"></div>
+      <script>
+        $(function(){
+          $("#bodypart").load("details.html");
+        });
+      </script>
+
     <div class="container-fluid">
-      <div class="row">
-        <h1>MOVIE NAME</h1>
+      <div id="name" class="row">
+        <h1>Miracle From Cell 7</h1>
       </div>
 
-      <div class="row">
-        <div class="col-sm-5">
+      <div id="images" class="row">
+        <div id="poster" class="col-sm-5">
           <img src="http://i.imgur.com/YEGJRK7.jpg" width=70% height=auto>
         </div>
-        <div class="col-sm-7">
+        <div id="grid" class="col-sm-7">
           <img src="../img/mood-grid.jpg" width=70% height=auto>
         </div>
       </div>
-
       <div class="row">
-        <p>More info</p>
+        <button style="text-align: center;" id="details" onclick="document.getElementById('details-modal').style.display='block'" style="width:auto">More info</button>
       </div>
     </div>
 
     <!--FOOTER-->
-    <div class="footer">
-      <button id="about-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="About Us"></button>
-      <button id="faq-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="FAQ"></button>
-      <button id="contact-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Contact Us"></button>
-
-      <button id="fb-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Facebook"></button>
-      <button id="twitter-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Twitter"></button>
-      <button id="github-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Github"></button>
-      <center><p> Site design & logo &#169 2017 Moodie Inc. All rights reserved. </p>
-    </div>
+    <div id="appendFooter"></div>
+      <script>
+        $(function(){
+          $("#appendFooter").load("footer.html");
+        });
+      </script>
 
   </body>
 </html>
