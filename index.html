@@ -1,5 +1,3 @@
-<!-- -->
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,7 +7,7 @@
     <!--EXTERNAL-->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link href="front-end/css/gen-style.css" type="text/css" rel="stylesheet">
-
+    <link href="front-end/css/login-signup.css" type="text/css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!--FONTS-->
@@ -19,93 +17,36 @@
 
 
     <!--HEADER-->
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-
-          <button id="home-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Home"></button>
-          <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
-          <button id="signup-btn" class="nav-btn" onclick="document.getElementById('signup-modal').style.display='block'" style="width:auto"></button>
-          <button id="login-btn" class="nav-btn" onclick="document.getElementById('login-modal').style.display='block'" style="width:auto"></button>
-        </div>
-      </div>
-    </div>
-
-    </head>
-
+    <div id="appendHeader"></div>
+      <script>
+        $(function(){
+          $("#appendHeader").load("front-end/html/header.html");
+        });
+      </script>
 
     <!--BODY-->
     <body>
     <div class="container-fluid">
 
+      <div id="appendSearch"></div>
       <script>
         $(function(){
-          $("#includedSearch").load("search.html");
+          $("#appendSearch").load("front-end/html/search.html");
         });
       </script>
-      <div id="includedSearch"></div>
 
-
+      <!--SIGN UP BANNER-->
       <div class="row">
-        <button id="sign-up-banner" onclick="document.getElementById('signup-modal').style.display='block'" style="width:auto">Moodie: get recommendations and rate media based on what you feel like watching.<br/> Sign up here to get the full features!</button>
+        <button style="text-align: center;" id="sign-up-banner" onclick="document.getElementById('signup-modal').style.display='block'" style="width:auto">Moodie: get recommendations and rate media based on what you feel like watching.<br/> Sign up here to get the full features!</button>
+
       </div>
-
-      <!--Login modal-->
-      <div class="modal" id="login-modal">
-        <div class="modal-content animate" action="#">
-          <span onclick="document.getElementById('login-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
-          <div class="container">
-            <label><b>Username</b></label>
-            <input type="text" name="username" required>
-            <label><b>Password</b></label>
-            <input type="password" name="password" required>
-            <button type="submit">Login</button>
-            <span class="forgot"><a href="#">I forgot my password</a></span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!--Signup modal-->
-      <div class="modal" id="signup-modal">
-        <div class="modal-content animate" action="#">
-          <span onclick="document.getElementById('signup-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
-          <div class="container">
-            <label><b>Email</b></label>
-            <input type="text" name="email" required>
-            <label><b>Username</b></label>
-            <input type="text" name="username" required>
-            <label><b>Password</b></label>
-            <input type="password" name="password" required>
-            <button type="submit">Sign Up</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <script>
-      // Get the modal
-      var modal1 = document.getElementById('login-modal');
-      var modal2 = document.getElementById('signup-modal');
-
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-        if ((event.target == modal1)|(event.target == modal2)) {
-          modal1.style.display = "none";
-          modal2.style.display = "none";
-        }
-      }
-      </script>
-
 
       <!--FEATURED-->
       <div class="row">
         <button class="section-btn" id="featured-btn" data-toggle="tooltip" data-placement="top" title="Featured"></button>
-
       </div>
 
-      <!--SLIDESHOW-->
+        <!--SLIDESHOW-->
       <div class="row">
         <div id="slideshow-featured" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner" role="listbox">
@@ -137,10 +78,9 @@
       <!--NEAR ME-->
       <div class="row">
         <button class="section-btn" id="near-btn" data-toggle="tooltip" data-placement="top" title="Near Me"></button>
-
       </div>
 
-      <!--SLIDESHOW-->
+        <!--SLIDESHOW-->
       <div class="row">
         <div id="slideshow-near" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner" role="listbox">
@@ -168,20 +108,16 @@
           </a>
         </div>
       </div>
-
     </div>
 
     <!--FOOTER-->
-    <div class="footer">
-      <button id="about-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="About Us"></button>
-      <button id="faq-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="FAQ"></button>
-      <button id="contact-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Contact Us"></button>
+    <div id="appendFooter"></div>
+      <script>
+        $(function(){
+          $("#appendFooter").load("front-end/html/footer.html");
+        });
+      </script>
 
-      <button id="fb-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Facebook"></button>
-      <button id="twitter-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Twitter"></button>
-      <button id="github-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Github"></button>
-      <center><p> Site design & logo &#169 2017 Moodie Inc. All rights reserved. </p>
-    </div>
 
   </body>
 </html>

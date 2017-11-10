@@ -1,4 +1,13 @@
 /* GENERAL */
+html, body {
+  font-size: 20px;
+  margin: 0;
+  background-image: url("../img/bckg2.png");
+  background-repeat: repeat;
+  font-family: 'Montserrat', sans-serif;
+  display: inline;
+}
+
 .navbar {
   width: 100%;
   box-shadow: 0 4px 6px rgba(0,0,0,.2);
@@ -15,44 +24,35 @@
   border-radius: 5px;
 }
 
-.navbar{
+.navbar-brand{
   background-color: #fffff0;
   width:100%;
-
   margin:0;
-  padding: 0;
 }
 
-#home-btn{
+  #home-btn{
+    background-image: url("../img/home.png");
+    margin-right: 2%;
+    margin-left: 6.3%;
+    margin-top: 1.5%;
+    margin-bottom: 1%;
+  }
+  #search-btn{
+    background-image: url("../img/search.png");
+    margin-right: 2%;
+    margin-left: 64%;
+  }
+  #signup-btn{
+    background-image: url("../img/signup.png");
+    margin-right: 2%;
+    margin-left: 2%;
+  }
 
-  background-image: url("../img/home.png");
-  margin-left: 5%;
-  margin-top: 1.1rem;
-  margin-bottom: 0.8rem;
-  border: black;
-}
-#search-btn{
-  display: inline-block;
-  background-image: url("../img/search.png");
-  margin-right: 5%;
-  margin-left: 40%;
-  margin-top: 1.1rem;
-}
-#signup-btn{
-  background-image: url("../img/signup.png");
-  margin-right: 5%;
-  margin-left: 5%;
-  margin-top: 1.2rem;
-  display: inline-block;
-}
-
-#login-btn{
-  background-image: url("../img/login.png");
-  margin-right: 10%;
-  margin-left: 5%;
-  margin-top: 1.1rem;
-  display: inline-block;
-}
+  #login-btn{
+    background-image: url("../img/login.png");
+    margin-right: 10%;
+    margin-left: 2%;
+  }
 
 
 #settings-btn{
@@ -145,14 +145,18 @@ if it fits*/
 
 #featured-btn{
   background-image: url("../img/featured.png");
-  float: right;
-  margin-left: 245px;
-  margin-top: 49px;
+  float: left;
+  float: left;
+  margin-left: 18.5%;
+  margin-top:2.9%;
+  margin-bottom: 2%;
 }
 #near-btn{
   background-image: url("../img/near.png");
-  margin-left: 11.7rem;
-  margin-top: 2.3rem;
+  float: left;
+  margin-left: 18.5%;
+  margin-top:1.0%;
+  margin-bottom: 1.2%;
 }
 #rec-btn{
   background-image: url("../img/rec.png");
@@ -183,44 +187,98 @@ if it fits*/
 /* FOOTER BUTTONS */
 #about-btn{
   background-image: url("../img/about.png");
-  margin-left: 2.5rem;
+  /*margin-left: 2.5rem;
   margin-right: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 0.5rem;*/
 }
 #faq-btn{
   background-image: url("../img/faq.png");
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
+  /*margin-right: 0.5rem;
+  margin-top: 0.5rem;*/
 }
 #contact-btn{
   background-image: url("../img/contact.png");
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
+  /*margin-right: 0.5rem;
+  margin-top: 0.5rem;*/
 }
 #fb-btn{
   background-image: url("../img/facebook.png");
-  margin-left: 40rem;
+  /*margin-left: 40rem;
   margin-right: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 0.5rem;*/
 }
 #twitter-btn{
   background-image: url("../img/twitter.png");
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
+  /*margin-right: 0.5rem;
+  margin-top: 0.5rem;*/
 }
 #github-btn{
   background-image: url("../img/github.png");
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
+  /*margin-right: 0.5rem;
+  margin-top: 0.5rem;*/
 }
 
+/* BODY */
+
+/*all these could go in a shared css file between the index pages
+if it fits*/
+#sign-up-banner{
+  height: 7rem;
+  width: 45%;
+  margin-left: 28%;
+  margin-right: 27%;
+  background-color: #f0e87e;
+  color: black;
+  border-radius: 5px;
+}
+
+#slideshow-featured{
+  margin-right: 11.5%;
+  margin-left: 12.5%;
+  margin-top: 1.2%;
+  margin-bottom: 1.9%;
+}
+
+#slideshow-near{
+  margin-right: 11.5%;
+  margin-left: 12.5%;
+  margin-top: 2.0%;
+  margin-bottom: 10%;
+}
+
+.section-btn{
+  height: 2rem;
+  width: 2rem;
+  font-size: 1rem;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.carousel.slide{
+  height: 20rem;
+  width: 90%;
+  border: none;
+  overflow: auto;
+  white-space: nowrap;
+  background-color: #282828;
+  border-radius: 5px;
+}
+
+.d-block.img-fluid{
+  height: 50%;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* FOOTER */
 .footer{
   margin: 1.5rem;
   padding: 1rem;
-  border-top: 1px solid #000;
   position: relative;
+  border-top: 1px solid #000;
   bottom: 0;
   background-color: #fffff0;
   margin: 0;
@@ -231,6 +289,10 @@ if it fits*/
 	font-weight: 500;
 	line-height: 15px;
 }
+.footer .row{
+  margin:0;
+  padding:0;
+}
 .foot-btn{
   height: 2rem;
   width: 2rem;
@@ -238,4 +300,21 @@ if it fits*/
   background-color: #fff;
   border: none;
   border-radius: 5px;
+}
+
+/* SEARCH */
+form {
+    padding: 1em;
+}
+
+.panel {
+  margin-bottom: 15px;
+  background-color: rgb(242, 238, 234);
+  width: 60%;
+  padding: 50px;
+  display: none;
+}
+.moodList {
+  display: none;
+  padding-left: 500px;
 }
