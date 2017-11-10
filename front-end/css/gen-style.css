@@ -32,30 +32,37 @@ html, body {
   width:100%;
   margin:0;
 }
-
-
+.form-inline{
+  margin:0;
+  padding:0;
+}
 #home-btn{
   background-image: url("../img/home.png");
-  margin-right: 2%;
-  margin-left: 6.3%;
-  margin-top: 1.5%;
-  margin-bottom: 1%;
+  margin-left: 3rem;
+}
+
+#searchbar{
+  width: 15rem;
+  height: 2rem;
+  border-radius: 5px;
+  margin-left: 25rem;
+  font-size:15px;
+}
+::-webkit-input-placeholder {
+  font-size: 15px;
 }
 #search-btn{
   background-image: url("../img/search.png");
-  margin-right: 2%;
-  margin-left: 64%;
+  margin-left: 2rem;
 }
 #signup-btn{
   background-image: url("../img/signup.png");
-  margin-right: 2%;
-  margin-left: 2%;
+  margin-left: 2rem;
 }
 
 #login-btn{
   background-image: url("../img/login.png");
-  margin-right: 10%;
-  margin-left: 2%;
+  margin-left: 2rem;
 }
 
 #settings-btn{
@@ -168,7 +175,6 @@ html, body {
 
 /* BODY */
 
-
 #sign-up-banner{
   height: 7rem;
   width: 45%;
@@ -200,9 +206,6 @@ html, body {
 .d-block.img-fluid{
   height: auto;
   width: 30%;
-  /*display: block;
-  margin-left: auto;
-  margin-right: auto;*/
 }
 
 .carousel-inner .carousel-item-right.active,
