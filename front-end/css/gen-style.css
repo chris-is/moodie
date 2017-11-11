@@ -41,20 +41,29 @@ html, body {
   margin-top: 1.5%;
   margin-bottom: 1%;
 }
+
 #searchbar{
+  margin-left: 30%;
+  margin-right: 2%;
   width: 15rem;
   height: 2rem;
   border-radius: 5px;
-  margin-left: 25rem;
   font-size:15px;
 }
 ::-webkit-input-placeholder {
   font-size: 15px;
 }
+#home-btn{
+  background-image: url("../img/home.png");
+  margin-right: 2%;
+  margin-left: 6.3%;
+  margin-top: 1.5%;
+  margin-bottom: 1%;
+}
 #search-btn{
   background-image: url("../img/search.png");
   margin-right: 2%;
-  margin-left: 64%;
+  margin-left: 2%;
 }
 #signup-btn{
   background-image: url("../img/signup.png");
@@ -159,15 +168,14 @@ if it fits*/
 #featured-btn{
   background-image: url("../img/featured.png");
   float: left;
-  float: left;
-  margin-left: 18.5%;
+  margin-left: 7.7%;
   margin-top:2.9%;
   margin-bottom: 2%;
 }
 #near-btn{
   background-image: url("../img/near.png");
   float: left;
-  margin-left: 18.5%;
+  margin-left: 7.7%;
   margin-top:1.0%;
   margin-bottom: 1.2%;
 }
@@ -187,51 +195,64 @@ if it fits*/
  margin-top: 1.1rem;
 }
 
-#slideshow-featured{
-  margin-left: 24px;
-  margin-top: 15px;
+/* FOOTER COLUMNS*/
+#first{
+  padding: 0;
+  margin: 0;
 }
 
-#slideshow-near{
-  margin-left: 24px;
-  margin-top: 15px;
+#second{
+  padding: 0;
+  margin-top: 0;
 }
+
+#third{
+  padding: 0;
+  margin: 0;
+}
+
 
 /* FOOTER BUTTONS */
 #about-btn{
   background-image: url("../img/about.png");
-  /*margin-left: 2.5rem;
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;*/
+  margin-left: 20%;
+  margin-right: 7%;
+  margin-top: 5%;
 }
 #faq-btn{
   background-image: url("../img/faq.png");
-  /*margin-right: 0.5rem;
-  margin-top: 0.5rem;*/
+  margin-left: 7%;
+  margin-right: 7%;
 }
 #contact-btn{
   background-image: url("../img/contact.png");
-  /*margin-right: 0.5rem;
-  margin-top: 0.5rem;*/
+  margin-left: 7%;
+  margin-right: 7%;
 }
 #fb-btn{
   background-image: url("../img/facebook.png");
-  /*margin-left: 40rem;
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;*/
+  margin-right: 7%;
+  margin-left: 7%;
 }
 #twitter-btn{
   background-image: url("../img/twitter.png");
-  /*margin-right: 0.5rem;
-  margin-top: 0.5rem;*/
+  margin-right: 7%;
+  margin-left: 7%;
 }
 #github-btn{
   background-image: url("../img/github.png");
-  /*margin-right: 0.5rem;
-  margin-top: 0.5rem;*/
+  margin-right: 15%;
+  margin-left: 7%;
 }
 
 /* BODY */
+.container-fluid{
+  width: 100%;
+padding-right: 0;
+padding-left: 0;
+margin-right: auto;
+margin-left: auto;
+}
 
 #sign-up-banner{
   height: 7rem;
@@ -271,31 +292,38 @@ if it fits*/
   transform: translateX(33.33%);
 }
 
-.carousel-inner .carousel-item-left.active, 
+.carousel-inner .carousel-item-left.active,
 .carousel-inner .carousel-item-prev {
   transform: translateX(-33.33%)
 }
 
 .carousel-inner .carousel-item-right,
-.carousel-inner .carousel-item-left{ 
+.carousel-inner .carousel-item-left{
   transform: translateX(0);
 }
 
+#featured-carousel, #near-carousel{
+  margin-left: 6.3%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+
 /* FOOTER */
 .footer{
-  margin: 1.5rem;
-  padding: 1rem;
+  margin: 0;
+  margin-top: 4rem;
+  padding: 0;
   position: relative;
   border-top: 1px solid #000;
   bottom: 0;
   background-color: #fffff0;
-  margin: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	line-height: 15px;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15px;
 }
 .footer .row{
   margin:0;
