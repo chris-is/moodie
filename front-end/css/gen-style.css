@@ -38,10 +38,15 @@ html, body {
 }
 #home-btn{
   background-image: url("../img/home.png");
-  margin-left: 3rem;
+  margin-left: 6.3%;
+  margin-right: 2%;
+  margin-top: 1.5%;
+  margin-bottom: 1%;
 }
 
 #searchbar{
+  margin-left: 20%;
+  margin-right: 2%;
   width: 15rem;
   height: 2rem;
   border-radius: 5px;
@@ -53,16 +58,19 @@ html, body {
 }
 #search-btn{
   background-image: url("../img/search.png");
-  margin-left: 2rem;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 #signup-btn{
   background-image: url("../img/signup.png");
-  margin-left: 2rem;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 #login-btn{
   background-image: url("../img/login.png");
-  margin-left: 2rem;
+  margin-left: 2%;
+  margin-right: 10%;
 }
 
 #settings-btn{
@@ -111,14 +119,14 @@ html, body {
 #featured-btn{
   background-image: url("../img/featured.png");
   float: left;
-  margin-left: 18.5%;
+  margin-left: 7.7%;
   margin-top:2.9%;
   margin-bottom: 2%;
 }
 #near-btn{
   background-image: url("../img/near.png");
   float: left;
-  margin-left: 18.5%;
+  margin-left: 7.7%;
   margin-top:1.0%;
   margin-bottom: 1.2%;
 }
@@ -138,38 +146,53 @@ html, body {
  margin-top: 1.1rem;
 }
 
+/* FOOTER COLUMNS */
+#first{
+  padding: 0;
+  margin: 0;
+}
+
+#second{
+  padding: 0;
+  margin: 0;
+}
+
+#third{
+  padding: 0;
+  margin: 0;
+}
+
 /* FOOTER BUTTONS */
 #about-btn{
   background-image: url("../img/about.png");
-  /*margin-left: 2.5rem;
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;*/
+  margin-left: 20%;
+  margin-right: 7%;
+  margin-top: 5%;
 }
 #faq-btn{
   background-image: url("../img/faq.png");
-  /*margin-right: 0.5rem;
-  margin-top: 0.5rem;*/
+  margin-left: 7%;
+  margin-right: 7%;
 }
 #contact-btn{
   background-image: url("../img/contact.png");
-  /*margin-right: 0.5rem;
-  margin-top: 0.5rem;*/
+  margin-left: 7%;
+  margin-right: 7%;
 }
 #fb-btn{
   background-image: url("../img/facebook.png");
-  /*margin-left: 40rem;
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;*/
+  margin-left: 7%;
+  margin-right: 7%;
 }
 #twitter-btn{
   background-image: url("../img/twitter.png");
-  /*margin-right: 0.5rem;
-  margin-top: 0.5rem;*/
+  margin-left: 7%;
+  margin-right: 7%;
 }
 #github-btn{
   background-image: url("../img/github.png");
-  /*margin-right: 0.5rem;
-  margin-top: 0.5rem;*/
+  margin-left: 7%;
+  margin-right: 15%;
 }
 
 
@@ -223,10 +246,16 @@ html, body {
   transform: translateX(0);
 }
 
+#featured-carousel, #near-carousel{
+  margin-left: 6.3%;
+  maegin-top: 2rem;
+  margin-bottom: 2rem;
+}
 
 /* FOOTER */
 .footer{
   margin: 1.5rem;
+  margin-top: 4rem;
   padding: 1rem;
   position: relative;
   border-top: 1px solid #000;
