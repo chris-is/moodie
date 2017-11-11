@@ -1,4 +1,5 @@
 /* GENERAL */
+
 html, body {
   font-size: 20px;
   margin: 0;
@@ -13,6 +14,7 @@ html, body {
   box-shadow: 0 4px 6px rgba(0,0,0,.2);
   padding:0;
 }
+
 /* HEADER */
 
 .nav-btn{
@@ -21,6 +23,7 @@ html, body {
   width: 2rem;
   border: none;
   font-size: 1rem;
+  background-color: #fff;
   border-radius: 5px;
 }
 
@@ -33,48 +36,33 @@ html, body {
   margin:0;
   padding:0;
 }
-
 #home-btn{
   background-image: url("../img/home.png");
-  margin-right: 2%;
-  margin-left: 6.3%;
-  margin-top: 1.5%;
-  margin-bottom: 1%;
+  margin-left: 3rem;
 }
 
 #searchbar{
-  margin-left: 30%;
-  margin-right: 2%;
   width: 15rem;
   height: 2rem;
   border-radius: 5px;
+  margin-left: 25rem;
   font-size:15px;
 }
 ::-webkit-input-placeholder {
   font-size: 15px;
 }
-#home-btn{
-  background-image: url("../img/home.png");
-  margin-right: 2%;
-  margin-left: 6.3%;
-  margin-top: 1.5%;
-  margin-bottom: 1%;
-}
 #search-btn{
   background-image: url("../img/search.png");
-  margin-right: 2%;
-  margin-left: 2%;
+  margin-left: 2rem;
 }
 #signup-btn{
   background-image: url("../img/signup.png");
-  margin-right: 2%;
-  margin-left: 2%;
+  margin-left: 2rem;
 }
 
 #login-btn{
   background-image: url("../img/login.png");
-  margin-right: 10%;
-  margin-left: 2%;
+  margin-left: 2rem;
 }
 
 #settings-btn{
@@ -83,60 +71,12 @@ html, body {
   margin-left: 0.8rem;
   margin-top: 1.2rem;
 }
-
 #user-btn{
   background-image: url("../img/user.png");
   margin-right: 0.2rem;
   margin-left: 1.4rem;
   margin-top: 1.1rem;
 }
-
-#logout-btn{
-  background-image: url("../img/logout.png");
-}
-
-/* BODY */
-
-/*all these could go in a shared css file between the index pages
-if it fits*/
-#sign-up-banner{
-
-  background-color: #fffff0;
-  color: #282828;
-  border-radius: 5px;
-  margin-left: 230px;
-  margin-top: 40px;
-  margin-right: 260px;
-
-}
-
-.section-btn{
-  height: 2rem;
-  width: 2rem;
-  font-size: 1rem;
-  background-color: #fff;
-  border: none;
-  border-radius: 5px;
-}
-
-.carousel.slide{
-  height: 20rem;
-  width: 90%;
-  border: none;
-  overflow: auto;
-  white-space: nowrap;
-  background-color: #282828;
-  border-radius: 5px;
-}
-
-.d-block.img-fluid{
-  height: 50%;
-  width: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .dropdown {
   position: relative;
   display: inline-block;
@@ -165,17 +105,20 @@ if it fits*/
   display: block;
 }
 
+#logout-btn{
+  background-image: url("../img/logout.png");
+}
 #featured-btn{
   background-image: url("../img/featured.png");
   float: left;
-  margin-left: 7.7%;
+  margin-left: 18.5%;
   margin-top:2.9%;
   margin-bottom: 2%;
 }
 #near-btn{
   background-image: url("../img/near.png");
   float: left;
-  margin-left: 7.7%;
+  margin-left: 18.5%;
   margin-top:1.0%;
   margin-bottom: 1.2%;
 }
@@ -195,64 +138,42 @@ if it fits*/
  margin-top: 1.1rem;
 }
 
-/* FOOTER COLUMNS*/
-#first{
-  padding: 0;
-  margin: 0;
-}
-
-#second{
-  padding: 0;
-  margin-top: 0;
-}
-
-#third{
-  padding: 0;
-  margin: 0;
-}
-
-
 /* FOOTER BUTTONS */
 #about-btn{
   background-image: url("../img/about.png");
-  margin-left: 20%;
-  margin-right: 7%;
-  margin-top: 5%;
+  /*margin-left: 2.5rem;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;*/
 }
 #faq-btn{
   background-image: url("../img/faq.png");
-  margin-left: 7%;
-  margin-right: 7%;
+  /*margin-right: 0.5rem;
+  margin-top: 0.5rem;*/
 }
 #contact-btn{
   background-image: url("../img/contact.png");
-  margin-left: 7%;
-  margin-right: 7%;
+  /*margin-right: 0.5rem;
+  margin-top: 0.5rem;*/
 }
 #fb-btn{
   background-image: url("../img/facebook.png");
-  margin-right: 7%;
-  margin-left: 7%;
+  /*margin-left: 40rem;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;*/
 }
 #twitter-btn{
   background-image: url("../img/twitter.png");
-  margin-right: 7%;
-  margin-left: 7%;
+  /*margin-right: 0.5rem;
+  margin-top: 0.5rem;*/
 }
 #github-btn{
   background-image: url("../img/github.png");
-  margin-right: 15%;
-  margin-left: 7%;
+  /*margin-right: 0.5rem;
+  margin-top: 0.5rem;*/
 }
 
+
 /* BODY */
-.container-fluid{
-  width: 100%;
-padding-right: 0;
-padding-left: 0;
-margin-right: auto;
-margin-left: auto;
-}
 
 #sign-up-banner{
   height: 7rem;
@@ -292,32 +213,26 @@ margin-left: auto;
   transform: translateX(33.33%);
 }
 
-.carousel-inner .carousel-item-left.active,
+.carousel-inner .carousel-item-left.active, 
 .carousel-inner .carousel-item-prev {
   transform: translateX(-33.33%)
 }
 
 .carousel-inner .carousel-item-right,
-.carousel-inner .carousel-item-left{
+.carousel-inner .carousel-item-left{ 
   transform: translateX(0);
-}
-
-#featured-carousel, #near-carousel{
-  margin-left: 6.3%;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 
 
 /* FOOTER */
 .footer{
-  margin: 0;
-  margin-top: 4rem;
-  padding: 0;
+  margin: 1.5rem;
+  padding: 1rem;
   position: relative;
   border-top: 1px solid #000;
   bottom: 0;
   background-color: #fffff0;
+  margin: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
