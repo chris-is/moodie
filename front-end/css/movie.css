@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #home-btn{
   background-image: url("../img/home.png");
   margin-left: 5rem;
@@ -30,4 +31,44 @@ font-size: 14px;
 font-style: normal;
 font-variant: normal;
 color: white;
+=======
+#name{
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  color: #fffff0;
+}
+
+#images{
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#details{
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  color: #fffff0;
+  background-color: #f0e87e;
+}
+
+#moviedetails{
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  color: #000000;
+>>>>>>> master
 }

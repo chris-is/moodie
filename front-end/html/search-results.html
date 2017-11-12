@@ -1,5 +1,3 @@
-<!-- -->
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,7 +7,7 @@
     <!--EXTERNAL-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link href="../css/gen-style.css" type="text/css" rel="stylesheet">
-    <link href="../css/movie.css" type="text/css" rel="stylesheet">
+    <link href="../css/search-results.css" type="text/css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!--FONTS-->
@@ -20,7 +18,6 @@
 
   <body>
     <!--HEADER-->
-    <!--HEADER-->
     <div id="appendHeader"></div>
       <script>
         $(function(){
@@ -29,29 +26,23 @@
       </script>
 
     <!--BODY-->
-    <div id="bodypart"></div>
-      <script>
-        $(function(){
-          $("#bodypart").load("details.html");
-        });
-      </script>
-
     <div class="container-fluid">
-      <div id="name" class="row">
-        <h1>Miracle From Cell 7</h1>
+      <div class="row">
+        <div id="result-msg">
+          Your search for ___ returned the following results.
+        </div>
       </div>
 
-      <div id="images" class="row">
-        <div id="poster" class="col-sm-5">
-          <img src="http://i.imgur.com/YEGJRK7.jpg" width=70% height=auto>
-        </div>
-        <div id="grid" class="col-sm-7">
-          <img src="../img/mood-grid.jpg" width=70% height=auto>
-        </div>
-      </div>
       <div class="row">
-        <button style="text-align: center;" id="details" onclick="document.getElementById('details-modal').style.display='block'" style="width:auto">More info</button>
+        <div id="image" class="col-sm-5">
+          <img width=50% height=50% src="../img/nagoya2.jpg" alt="First slide">
+        </div>
+        <div id="description" class="col-sm-7">
+          Description
+        </div>
       </div>
+
+
     </div>
 
     <!--FOOTER-->
