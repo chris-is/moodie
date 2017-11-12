@@ -217,6 +217,20 @@ html, body {
   border-radius: 5px;
 }
 
+.multiple-items{
+  height: 25rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-bottom: 2rem;
+  background-color: #282828;
+  border-radius: 5px;
+}
+.slideshow{
+  height: auto;
+  width: 80%;
+  margin: 1.5rem;
+}
+
 .carousel{
   height: 20rem;
   width: 90%;
