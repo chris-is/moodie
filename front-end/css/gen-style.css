@@ -71,7 +71,7 @@ html, body {
 #login-btn{
   background-image: url("../img/login.png");
   margin-left: 2%;
-  margin-right: 10%;
+  margin-right: 0;
 }
 
 #settings-btn{
@@ -249,20 +249,17 @@ html, body {
 
 #featured-carousel, #near-carousel{
   margin-left: 6.3%;
-  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 /* FOOTER */
 .footer{
-  margin: 1.5rem;
   margin-top: 4rem;
   padding: 1rem;
   position: relative;
   border-top: 1px solid #000;
   bottom: 0;
   background-color: #fffff0;
-  margin: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
