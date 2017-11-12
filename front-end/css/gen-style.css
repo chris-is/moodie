@@ -144,7 +144,7 @@ html, body {
 #near-btn-reg{
   background-image: url("../img/near.png");
   margin-left: 4.55rem;
- margin-top: 1.1rem;
+  margin-top: 1.1rem;
 }
 
 /* FOOTER COLUMNS */
@@ -201,10 +201,9 @@ html, body {
 
 #sign-up-banner{
   height: 7rem;
-  width: 45%;
-  margin-left: 28%;
-  margin-right: 27%;
-  background-color: #f0e87e;
+  margin-left: 4.5rem;
+  margin-right: 4.5rem;
+  background-color: #ffd98c;
   color: black;
   border-radius: 5px;
 }
