@@ -5,11 +5,24 @@
   <head>
     <!--META-->
     <meta charset="utf-8"/>
+    <title>Moodie | Home</title>
 
     <!--EXTERNAL-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="../css/gen-style.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <!--SLICK-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
+
+    <!--INTERNAL-->
+    <link href="../css/gen-style.css" type="text/css" rel="stylesheet">
+    <link href="../css/login-signup.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="../js/carousel.js"></script>
 
     <!--FONTS-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" type="text/css" rel="stylesheet">
@@ -19,26 +32,22 @@
 
   <body>
     <!--HEADER-->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="navbar-brand navbar-left">
-        <button id="home-btn" class="nav-btn"></button>
-        <button id="search-btn" class="nav-btn"></button>
-        <div class="dropdown">
-          <button id="user-btn" class="nav-btn"></button>
-            <div class="dropdown-content">
-              <ul>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Notifications</a></li>
-              </ul>
-            </div>
-          </div>
-        <button id="logout-btn" class="nav-btn"></button>
-      </div>
-    </nav>
+    <div id="appendHeader"></div>
+      <script>
+        $(function(){
+          $("#appendHeader").load("header.html");
+        });
+      </script>
 
     <!--BODY-->
     <div class="container-fluid">
+
+      <div id="appendSearch"></div>
+      <script>
+        $(function(){
+          $("#appendSearch").load("search.html");
+        });
+      </script>
 
       <!--RECOMMENDED-->
       <div class="row">
@@ -151,16 +160,12 @@
     </div>
 
     <!--FOOTER-->
-    <div class="footer">
-      <button id="about-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="About Us"></button>
-      <button id="faq-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="FAQ"></button>
-      <button id="contact-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Contact Us"></button>
-
-      <button id="fb-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Facebook"></button>
-      <button id="twitter-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Twitter"></button>
-      <button id="github-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Github"></button>
-      <center><p> Site design & logo &#169 2017 Moodie Inc. All rights reserved. </p>
-    </div>
+    <div id="appendFooter"></div>
+      <script>
+        $(function(){
+          $("#appendFooter").load("footer.html");
+        });
+      </script>
 
   </body>
 </html>

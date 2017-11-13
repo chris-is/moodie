@@ -76,15 +76,13 @@ html, body {
 
 #settings-btn{
   background-image: url("../img/settings.png");
-  margin-right: 0.8rem;
-  margin-left: 0.8rem;
-  margin-top: 1.2rem;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 #user-btn{
   background-image: url("../img/user.png");
-  margin-right: 0.2rem;
-  margin-left: 1.4rem;
-  margin-top: 1.1rem;
+  margin-left: 2%;
+  margin-right: 0;
 }
 .dropdown {
   position: relative;
