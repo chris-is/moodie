@@ -138,11 +138,13 @@ html, body {
 }
 #featured-btn-reg{
   background-image: url("../img/featured.png");
-  margin-left: 4rem;
-  margin-top: 1.1rem;
+  margin-left: 6.0rem;
+  margin-top: 1.8rem;
 }
 #near-btn-reg{
   background-image: url("../img/near.png");
+  margin-left: 3rem;
+  margin-top: 1.9rem;
   margin-left: 4.55rem;
   margin-top: 1.1rem;
 }
@@ -161,6 +163,26 @@ html, body {
 #third{
   padding: 0;
   margin: 0;
+}
+
+/* FOOTER COLUMNS */
+#first{
+  padding: 0;
+  margin: 0;
+}
+
+#second{
+  padding: 0;
+  margin: 0;
+}
+
+#third{
+  padding: 0;
+  margin: 0;
+}
+
+.container-fluid{
+  padding: 0;
 }
 
 /* FOOTER BUTTONS */
@@ -258,18 +280,19 @@ html, body {
   transform: translateX(33.33%);
 }
 
-.carousel-inner .carousel-item-left.active, 
+.carousel-inner .carousel-item-left.active,
 .carousel-inner .carousel-item-prev {
   transform: translateX(-33.33%)
 }
 
 .carousel-inner .carousel-item-right,
-.carousel-inner .carousel-item-left{ 
+.carousel-inner .carousel-item-left{
   transform: translateX(0);
 }
 
 #featured-carousel, #near-carousel{
   margin-left: 6.3%;
+  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
