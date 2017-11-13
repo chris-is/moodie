@@ -6,18 +6,6 @@
   margin: 0;
 }
 
-#home-btn{
-  margin-left: 6.6rem;
-  margin-right: 2.3rem;
-  margin-top: 1.5%;
-  margin-bottom: 1%;
-}
-
-#search-btn{
-  margin-left: 32.9rem;
-  margin-right: 2rem;
-}
-
 #user-btn{
   background-image: url("../img/user.png");
   margin-left: 0;

@@ -1,12 +1,17 @@
 /* GENERAL */
 
-html, body {
+html, body, .container, .container-fluid {
   font-size: 20px;
   margin: 0;
+  padding: 0;
+  width: 100%;
   background-image: url("../img/bckg2.png");
   background-repeat: repeat;
   font-family: 'Montserrat', sans-serif;
   display: inline;
+}
+.row {
+ margin-right: 0px;
 }
 
 .navbar {
