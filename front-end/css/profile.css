@@ -1,3 +1,7 @@
+.container-fluid{
+  padding: 0;
+}
+
 .pic-wrapper
 {
  	margin-left: 8%;
@@ -29,9 +33,9 @@
 	position: relative;
 	border: 2px solid white;
 	height: 800px;
-  	width: 800px;
+  width: 800px;
 	margin-left: 415px;
-  	margin-right: 320px;
+  margin-right: 320px;
 	padding-right: 50px;
 	top: 230px;
 }
@@ -54,9 +58,9 @@
 	position: relative;
 	border: 2px solid white;
 	height: 800px;
-  	width: 800px;
+  width: 800px;
 	margin-left: 415px;
-  	margin-right: 320px;
+  margin-right: 320px;
 	padding-right: 50px;
 	top: 230px;
 }
@@ -66,9 +70,9 @@
 	position: relative;
 	border: 2px solid white;
 	height: 800px;
-  	width: 800px;
+  width: 800px;
 	margin-left: 415px;
-  	margin-right: 320px;
+  margin-right: 320px;
 	padding-right: 50px;
 	top: 230px;
 }
