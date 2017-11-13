@@ -9,6 +9,7 @@
     <!--EXTERNAL-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="../css/gen-style.css" type="text/css" rel="stylesheet">
+    <link href="../css/index-reg.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
     <!--FONTS-->
@@ -19,8 +20,8 @@
 
   <body>
     <!--HEADER-->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="navbar-brand navbar-left">
+    <nav id="header" class="navbar navbar-default navbar-fixed-top">
+      <div id="brand" class="navbar-brand navbar-left">
         <button id="home-btn" class="nav-btn"></button>
         <button id="search-btn" class="nav-btn"></button>
         <div class="dropdown">
@@ -47,7 +48,7 @@
 
       <!--SLIDESHOW-->
       <div class="row">
-        <div id="slideshow-rec" class="carousel slide" data-ride="carousel">
+        <div id="rec-slideshow" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
               <img class="d-block img-fluid" src="../img/nagoya1.jpg" alt="First slide">
@@ -91,7 +92,7 @@
       <div class="row">
         <div class="col-sm-6">
           <!--FEATURED SLIDESHOW-->
-          <div id="slideshow-featured-reg" class="carousel slide" data-ride="carousel">
+          <div id="featured-slideshow" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
                 <img class="d-block img-fluid" src="../img/nagoya2.jpg" alt="First slide">
@@ -120,7 +121,7 @@
 
         <div class="col-sm-6">
           <!--NEAR ME SLIDESHOW-->
-          <div id="slideshow-near-reg" class="carousel slide" data-ride="carousel">
+          <div id="near-slideshow" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
                 <img class="d-block img-fluid" src="../img/nagoya4.jpg" alt="First slide">
@@ -151,16 +152,12 @@
     </div>
 
     <!--FOOTER-->
-    <div class="footer">
-      <button id="about-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="About Us"></button>
-      <button id="faq-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="FAQ"></button>
-      <button id="contact-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Contact Us"></button>
-
-      <button id="fb-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Facebook"></button>
-      <button id="twitter-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Twitter"></button>
-      <button id="github-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Github"></button>
-      <center><p> Site design & logo &#169 2017 Moodie Inc. All rights reserved. </p>
-    </div>
+    <div id="appendFooter"></div>
+      <script>
+        $(function(){
+          $("#appendFooter").load("footer.html");
+        });
+      </script>
 
   </body>
 </html>
