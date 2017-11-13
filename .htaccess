@@ -1,4 +1,7 @@
-
-
+Options +Includes
+XBitHack on
+Options +FollowSymLinks
+RewriteEngine On
+RedirectMatch ^/$ /front-end/html/index.html
 
 
