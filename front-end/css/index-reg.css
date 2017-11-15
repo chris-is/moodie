@@ -1,0 +1,38 @@
+#header{
+  padding: 0;
+}
+
+#brand{
+  margin: 0;
+}
+
+#user-btn{
+  background-image: url("../img/user.png");
+  margin-left: 0;
+  margin-right: 2rem;
+}
+
+#rec-slideshow{
+  margin-left: 6.6rem;
+  margin-right: 6.0rem;
+  margin-top: 2.3rem;
+  margin-bottom: 4.6rem;
+}
+
+#featured-slideshow{
+  margin-left: 6.0rem;
+  margin-right: 2.3rem;
+  margin-top: 2.3rem;
+  margin-bottom: 4.6rem;
+  width: 24rem;
+  height: 13rem;
+}
+
+#near-slideshow{
+  margin-left: 2.9rem;
+  margin-right: 2.3rem;
+  margin-top: 2.3rem;
+  margin-bottom: 4.6rem;
+  width: 24rem;
+  height: 13rem;
+}

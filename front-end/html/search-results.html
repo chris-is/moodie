@@ -1,20 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!--META-->
-    <meta charset="utf-8"/>
-
-    <!--EXTERNAL-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link href="../css/gen-style.css" type="text/css" rel="stylesheet">
-    <link href="../css/search-results.css" type="text/css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!--FONTS-->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" type="text/css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet" type="text/css">
-  </head>
+  
+  <!--#include file="head.html" -->
+  <link href="../css/search-results.css" type="text/css" rel="stylesheet">
 
   <body>
     <!--HEADER-->
@@ -27,6 +15,15 @@
 
     <!--BODY-->
     <div class="container-fluid">
+
+      <!--SEARCH-->
+      <div id="appendSearch"></div>
+      <script>
+        $(function(){
+          $("#appendSearch").load("search.html");
+        });
+      </script>
+
       <div class="row">
         <div id="result-msg">
           Your search for ___ returned the following results.
