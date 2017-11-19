@@ -30,20 +30,16 @@
 }
 
 #home-btn{
-  background-image: url("../img/home.png");
   margin-left: 5rem;
-  margin-top: 1.1rem;
   margin-bottom: 0.8rem;
   margin-right: 6rem;
 }
 #search-btn{
-  background-image: url("../img/search.png");
   margin-right: 1.5rem;
   margin-left: 35rem;
   margin-top: 1.1rem;
 }
 #settings-btn{
-  background-image: url("../img/settings.png");
   margin-right: 0.8rem;
   margin-left: 0.8rem;
   margin-top: 1.2rem;
@@ -52,7 +48,6 @@
   background-image: url("../img/user.png");
   margin-right: 0.2rem;
   margin-left: 1.4rem;
-  margin-top: 1.1rem;
 =======
   margin-left: 10%;
   margin-top: 2%;
@@ -61,11 +56,8 @@
 
 .btn-group {
 	right: -320px;
-<<<<<<< HEAD
-  top: -350px;
   margin-left: 4.75rem;
-=======
-  top: -400px;
+  top: -450px;
   margin-left: 10%;
 >>>>>>> master
 }
