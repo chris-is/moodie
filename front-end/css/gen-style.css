@@ -3,10 +3,15 @@
 html, body {
   font-size: 20px;
   margin: 0;
+  padding: 0;
+  width: 100%;
   background-image: url("../img/bckg2.png");
   background-repeat: repeat;
   font-family: 'Montserrat', sans-serif;
   display: inline;
+}
+.row {
+ margin-right: 0px;
 }
 
 .navbar {
@@ -76,15 +81,13 @@ html, body {
 
 #settings-btn{
   background-image: url("../img/settings.png");
-  margin-right: 0.8rem;
-  margin-left: 0.8rem;
-  margin-top: 1.2rem;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 #user-btn{
   background-image: url("../img/user.png");
-  margin-right: 0.2rem;
-  margin-left: 1.4rem;
-  margin-top: 1.1rem;
+  margin-left: 2%;
+  margin-right: 0;
 }
 .dropdown {
   position: relative;
@@ -133,8 +136,10 @@ html, body {
 }
 #rec-btn{
   background-image: url("../img/rec.png");
-  margin-left: 6.6rem;
-  margin-top: 2.3rem;
+  float: left;
+  margin-left: 7.7%;
+  margin-top:2.9%;
+  margin-bottom: 2%;
 }
 #featured-btn-reg{
   background-image: url("../img/featured.png");
@@ -239,8 +244,16 @@ html, body {
   border-radius: 5px;
 }
 
-.multiple-items{
+.multiple-items-big{
   height: 25rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-bottom: 2rem;
+  background-color: #282828;
+  border-radius: 5px;
+}
+.multiple-items-small{
+  height: 28rem;
   margin-left: 4rem;
   margin-right: 4rem;
   margin-bottom: 2rem;
@@ -250,7 +263,7 @@ html, body {
 .slideshow{
   height: auto;
   width: 80%;
-  margin: 1.5rem;
+  margin: 2rem;
 }
 
 .carousel{
@@ -321,13 +334,22 @@ form {
     padding: 1em;
 }
 
+#appendSearch{
+  text-align: center;
+}
+
 .panel {
   margin-bottom: 15px;
-  background-color: rgb(242, 238, 234);
+  background-color: #fffff0;
   width: 60%;
   padding: 50px;
   display: none;
+  margin-left: auto ;
+  margin-right: auto ;
+  border-style: dashed;
+  border-color:#000000;
 }
+
 .moodList {
   display: none;
   padding-left: 500px;
