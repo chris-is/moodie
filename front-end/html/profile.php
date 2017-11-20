@@ -1,6 +1,9 @@
 <!--User Profile-->
 <!DOCTYPE html>
 <html>
+    <?php
+      require 'head.html';
+      ?>
     <!--#include file="head.html" -->
     <link href="../css/profile.css" type="text/css" rel="stylesheet">
     <!--FONTS-->
@@ -99,28 +102,13 @@
     </script>
 
     <div class="info">
-    	<p style="color:#fffeed; font-size: 20px; width: 70%; margin-left: 10px"><button type="submit">About:</button> 
-
-        <!--Some PHP will go in here-->
-
-      </p> <br>
-      <p style="color:#ffd1d3; font-size: 20px; width: 70%; margin-left: 10px">Favorite Movie(s): 
-
-        <!--Some PHP will go in here-->
-
-      </p> <br>
-      <p style="color:#fffeed; font-size: 20px; width: 70%; margin-left: 10px">Favorite Series: 
-
-        <!--Some PHP will go in here-->
-
-      </p> <br>
-      <p style="color:#ffd1d3; font-size: 20px; width: 70%; margin-left: 10px">Country:
-
-        <!--Some PHP will go in here-->
-      </p> <br>
-      <p style="color:#ffd1d3; font-size: 20px; width: 70%; margin-left: 10px">
-      Links:
-      </p>
+      <!--PHP-->
+      <form method="post" action="profilebackend.php">
+        About:
+        <input type="text" name="about">
+      </form>
+      <script>
+      </script>
     </div>
 
     <div class="reviews">
