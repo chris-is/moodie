@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 
-  <!--#include file="head.html" -->
+  <?php 
+    require 'head.html';
+  ?>
 
   <body>
     <!--HEADER-->
     <div id="appendHeader"></div>
       <script>
         $(function(){
-          $("#appendHeader").load("header.html");
+          $("#appendHeader").load("header.php");
         });
       </script>
 
@@ -25,7 +27,8 @@
 
       <!--SIGN UP BANNER-->
       <div class="row">
-        <button style="text-align: center;" id="sign-up-banner" onclick="document.getElementById('signup-modal').style.display='block'" style="width:auto">Moodie: get recommendations and rate media based on what you feel like watching.<br/> Sign up here to get the full features!</button>
+        <button style="text-align: center;" id="sign-up-banner" onclick="document.getElementById('signup-modal').style.display='block'" style="width:auto">Moodie: get recommendations and rate media based on what you feel like watching.<br/> Sign up here to get the full features!
+        </button>
 
       </div>
 
@@ -107,7 +110,7 @@
     <div id="appendFooter"></div>
       <script>
         $(function(){
-          $("#appendFooter").load("footer.html");
+          $("#appendFooter").load("footer.php");
         });
       </script>
   </body>

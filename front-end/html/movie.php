@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-  <!--#include file="head.html" -->
+  <?php 
+    require 'head.html';
+  ?>
   <link href="../css/movie.css" type="text/css" rel="stylesheet">
 
   <body>
@@ -36,7 +38,7 @@
 
       <div id="images" class="row">
         <div id="poster" class="col-sm-5">
-          <img src="http://i.imgur.com/YEGJRK7.jpg" width=70% height=auto>
+          <img src="https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg" width=70% height=auto>
         </div>
         <div id="grid" class="col-sm-7">
           <img src="../img/mood-grid.jpg" width=70% height=auto>

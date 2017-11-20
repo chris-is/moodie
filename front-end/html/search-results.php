@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   
-  <!--#include file="head.html" -->
+  <?php 
+    require 'head.html';
+  ?>
   <link href="../css/search-results.css" type="text/css" rel="stylesheet">
 
   <body>
