@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD:front-end/html/index-reg.php
   
   <?php 
     require 'head.html';
   ?>
+=======
+  <!--#include file="head.html" -->
+>>>>>>> master:front-end/html/index-reg.shtml
   <link href="../css/index-reg.css" type="text/css" rel="stylesheet">
 
   <body>

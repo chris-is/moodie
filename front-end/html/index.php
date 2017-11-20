@@ -32,7 +32,6 @@
 
       </div>
 
-      
       <!--FEATURED-->
       <div class="row">
         <button class="section-btn" id="featured-btn" data-toggle="tooltip" data-placement="top" title="Featured"></button>
@@ -105,7 +104,7 @@
           </a>
         </div>-->
       </div> <!--END CONTAINER-->
-      
+
     <!--FOOTER-->
     <div id="appendFooter"></div>
       <script>

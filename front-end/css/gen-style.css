@@ -334,13 +334,22 @@ form {
     padding: 1em;
 }
 
+#appendSearch{
+  text-align: center;
+}
+
 .panel {
   margin-bottom: 15px;
-  background-color: rgb(242, 238, 234);
+  background-color: #fffff0;
   width: 60%;
   padding: 50px;
   display: none;
+  margin-left: auto ;
+  margin-right: auto ;
+  border-style: dashed;
+  border-color:#000000;
 }
+
 .moodList {
   display: none;
   padding-left: 500px;

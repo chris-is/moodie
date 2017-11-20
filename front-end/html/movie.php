@@ -25,7 +25,8 @@
 
     <div class="container-fluid">
       <!--SEARCH-->
-      <div id="appendSearch"></div>
+
+    <div id="appendSearch"></div>
       <script>
         $(function(){
           $("#appendSearch").load("search.html");
@@ -33,7 +34,7 @@
       </script>
 
       <div id="name" class="row">
-        <h1>Miracle From Cell 7</h1>
+        <h1 style="background-color: #ffd37a;padding: 0.5rem;border-radius: 5px;">Miracle in Cell No.7</h1>
       </div>
 
       <div id="images" class="row">
