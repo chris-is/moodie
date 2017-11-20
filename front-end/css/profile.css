@@ -34,10 +34,10 @@
 	border: 2px solid white;
 	height: 800px;
   width: 800px;
-	margin-left: 415px;
+	margin-left: 440px;
   margin-right: 320px;
 	padding-right: 50px;
-	top: 230px;
+	top: -400px;
 }
 
 
@@ -46,11 +46,11 @@
 	position: relative;
 	border: 2px solid white;
 	height: 800px;
-  	width: 800px;
-	margin-left: 415px;
-  	margin-right: 320px;
+  width: 800px;
+	margin-left: 440px;
+  margin-right: 320px;
 	padding-right: 50px;
-	top: 230px;
+	top: -400px;
 }
 
 .friends {
@@ -59,10 +59,10 @@
 	border: 2px solid white;
 	height: 800px;
   width: 800px;
-	margin-left: 415px;
+	margin-left: 440px;
   margin-right: 320px;
 	padding-right: 50px;
-	top: 230px;
+	top: -400px;
 }
 
 .list {
@@ -71,10 +71,10 @@
 	border: 2px solid white;
 	height: 800px;
   width: 800px;
-	margin-left: 415px;
+	margin-left: 440px;
   margin-right: 320px;
 	padding-right: 50px;
-	top: 230px;
+	top: -400px;
 }
 
 
