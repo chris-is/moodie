@@ -29,7 +29,6 @@
 
       </div>
 
-
       <!--FEATURED-->
       <div class="row">
         <button class="section-btn" id="featured-btn" data-toggle="tooltip" data-placement="top" title="Featured"></button>

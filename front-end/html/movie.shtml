@@ -23,6 +23,7 @@
 
     <div class="container-fluid">
       <!--SEARCH-->
+
     <div id="appendSearch"></div>
       <script>
         $(function(){

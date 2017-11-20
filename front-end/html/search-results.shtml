@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
   <!--#include file="head.html" -->
   <link href="../css/search-results.css" type="text/css" rel="stylesheet">
 
@@ -23,7 +22,6 @@
           $("#appendSearch").load("search.html");
         });
       </script>
-
 
       <div class="row">
         <div id="result-msg">
