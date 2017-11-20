@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD:front-end/html/search-results.php
+  
+  <?php 
+    require 'head.html';
+  ?>
+=======
   <!--#include file="head.html" -->
+>>>>>>> master:front-end/html/search-results.shtml
   <link href="../css/search-results.css" type="text/css" rel="stylesheet">
 
   <body>
