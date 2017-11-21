@@ -8,6 +8,8 @@
 
   <body>
     <!--HEADER-->
+    <?php 
+    ?>
     <div id="appendHeader"></div>
       <script>
         $(function(){
@@ -16,7 +18,7 @@
       </script>
 
     <!--BODY-->
-    <div class="container-fluid">
+    <div class="container-fluid" id="contain">
 
       <div id="appendSearch"></div>
       <script>
