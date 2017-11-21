@@ -26,7 +26,7 @@
     //echo $response;
 });
 
-  header("Location: /COMP307/front-end/html/index.shtml"); 
+  header("Location: /COMP307/front-end/html/index.php"); 
   exit();
   $app->run();
 ?>

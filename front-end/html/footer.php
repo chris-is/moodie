@@ -11,7 +11,6 @@
 
         <?php
           session_start();
-          echo session_id();
         ?>
     </div>
     <div class="col-sm-4">

@@ -13,7 +13,12 @@
 
     //Insert username and password into database
     $insert = "INSERT INTO Users (username, password, email) VALUES ('$username', '$password', '$email');";
-    $db = getDB();
+    $dbhost="localhost";
+    $dbuser="root";
+    $dbpass="9pUPOCULo7"; //Password should be changed if set
+    $dbname="Store";
+    $dbConnection = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass); 
+    $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $db->query($insert); 
 
     //Call function to print database
