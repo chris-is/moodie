@@ -6,9 +6,7 @@
       <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
 
       <?php 
-      //session_start();
-      //session_destroy();
-      //echo session_id();
+
       
       if(isSID(session_id()) == false) : ?>
           <button id="signup-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Sign Up" onclick="document.getElementById('signup-modal').style.display='block'" style="width:auto"></button>
@@ -19,8 +17,8 @@
       <?php endif; ?>
 
       <?php 
-        
         function isSID($sid){
+          session_start();
           $uniqueID = substr($sid, 0, 6);
           if ($uniqueID === "m00d13"){
             return true;

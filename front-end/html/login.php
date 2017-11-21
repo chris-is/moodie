@@ -8,33 +8,39 @@
   $app->post('/', function ($request, $response) {
     $userlogin = $request->getParam('username');
     $userpass = $request->getParam('password');
-    echo "here";
-    
-    try {
+
+    try { 
       require_once('database.php');
-      $query = "SELECT `username`, `password` FROM `Users` where userID='$username'";
+
+      $query = "SELECT * from Users where username='$userlogin'";
 
       $result = $mysqli->query($query);
 
-      $query="SELECT * from `Users` where name='$_GET[userlogin]' and password='$_GET[userpass]'";
-      $result=mysql_query($sql,$conn) or die(mysql_error());
+      while ($row = $result->fetch_assoc()){
+        $userdata[] = $row;
+      }
+      
+      if ($userdata[0]['password'] == $userpass) {
+        $id = "m00d13" . uniqid();
+        session_id($id);
+        session_start();
+      }
+      else {
+        echo "nope";
+      }
 
-      echo $result;
     } 
-
-    //Print error messages if any
-    catch(PDOException $e) {
-      echo json_encode($e->getMessage());
+    catch(Exception $e) {
+      echo "Something went wrong!";
     }
+
     
   });
 
-  /*$id = "m00d13" . uniqid();
-  session_id($id);
-  echo session_id();
-  session_start();*/
-
   $app->run();
 
-
 ?>
+
+<script type="text/javascript">
+window.location.href = '/COMP307/front-end/html/index-reg.php';
+</script>

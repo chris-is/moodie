@@ -6,12 +6,6 @@
   margin: 0;
 }
 
-#user-btn{
-  background-image: url("../img/user.png");
-  margin-left: 0;
-  margin-right: 2rem;
-}
-
 #rec-slideshow{
   margin-left: 6.6rem;
   margin-right: 6.0rem;
