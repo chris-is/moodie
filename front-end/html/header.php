@@ -1,19 +1,19 @@
 <nav class="navbar navbar-default navbar-fixed-top justify-content-between">
   <div class="navbar-brand navbar-left">
     <div class="form-inline">
-      <button id="home-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Home"></button>
-      <input type="text" placeholder="Search for a specific movie & enter" id="searchbar">
-      <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
-
       <?php 
-
-      
       if(isSID(session_id()) == false) : ?>
-          <button id="signup-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Sign Up" onclick="document.getElementById('signup-modal').style.display='block'" style="width:auto"></button>
-          <button id="login-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Login" onclick="document.getElementById('login-modal').style.display='block'" style="width:auto"></button>
+        <button id="home-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Home" onclick="window.location.href = '/COMP307/front-end/html/index.php';"></button>
+        <input type="text" placeholder="Search for a specific movie & enter" id="searchbar">
+        <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
+        <button id="signup-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Sign Up" onclick="document.getElementById('signup-modal').style.display='block'" style="width:auto"></button>
+        <button id="login-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Login" onclick="document.getElementById('login-modal').style.display='block'" style="width:auto"></button>
       <?php else : ?>
-          <button id="user-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="User"></button>
-          <button id="logout-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Logout"></button>
+        <button id="home-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Home" onclick="window.location.href = '/COMP307/front-end/html/index-reg.php';"></button>
+        <input type="text" placeholder="Search for a specific movie & enter" id="searchbar">
+        <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
+        <button id="user-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="User"></button>
+        <button id="logout-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Logout"></button>
       <?php endif; ?>
 
       <?php 
