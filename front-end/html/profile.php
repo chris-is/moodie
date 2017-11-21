@@ -103,12 +103,50 @@
 
     <div class="info">
       <!--PHP-->
-      <form method="post" action="profilebackend.php">
+      <div id="test" method="post">
         About:
         <input type="text" name="about">
-      </form>
+      </div>
       <script>
+        function post_ajax_data()
+        {
+        $.ajax({
+        type:"POST",
+        url:"/",
+        data : ,
+        dataType:"json",
+        restful:true,
+        contentType: 'application/json',
+        cache:false,
+        timeout:20000,
+        async:true,
+        beforeSend :function(data) { },
+        success:function(data){
+        success.call(this, data);
+        },
+        error:function(data){
+        alert("Error In Connecting");
+        }
+        });
+        }
       </script>
+      <script>
+       $(function () 
+        {
+
+          $.ajax({                                      
+            url: 'profilebackend.php',       
+            data: "hdgfhfg", 
+            dataType: 'json',
+            success: function(data)
+            {
+              var about = data[0];
+              $('test').html("<b>id: </b>"+id+"<b> name: </b>"+about); 
+            } 
+          });
+        }); 
+      </script>
+ 
     </div>
 
     <div class="reviews">
