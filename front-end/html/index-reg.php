@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-  
+  <head>
   <?php 
     require 'head.html';
   ?>
   <link href="../css/index-reg.css" type="text/css" rel="stylesheet">
-
+  </head>
+  
   <body>
     <!--HEADER-->
     <?php 
