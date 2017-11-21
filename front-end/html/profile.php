@@ -1,24 +1,18 @@
 <!--User Profile-->
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD:front-end/html/profile.php
     <?php
       require 'head.html';
       ?>
     <!--#include file="head.html" -->
     <link href="../css/profile.css" type="text/css" rel="stylesheet">
     <!--FONTS-->
-=======
-  <!--#include file="head.html" -->
-  <link href="../css/profile.css" type="text/css" rel="stylesheet">
-
->>>>>>> master:front-end/html/profile.shtml
   <body>
     <!--HEADER-->
     <div id="appendHeader"></div>
       <script>
         $(function(){
-          $("#appendHeader").load("header.php");
+          $("#appendHeader").load("header.html");
         });
       </script>
 
@@ -33,43 +27,42 @@
         $("#appendSearch").load("search.html");
       });
     </script>
-
+      
     <div class="pic-wrapper"> <!--Just a frame-->
-    	<img src="" height="300" width="250">
+      <img src="" height="300" width="250">
     </div>
 
-	<div class="pic">
-    	<form id="frm1" action="">
-    		<input type="file" name="pic" accept="image/*" onchange="previewFile()">
-    	</form>
-	</div>
+  <div class="pic">
+      <form id="frm1" action="">
+        <input type="file" name="pic" accept="image/*" onchange="previewFile()">
+      </form>
+  </div>
 
+  <script>
+    function previewFile()
+    {
+      var preview = document.querySelector('img');
+      var file = document.querySelector('input[type=file]').files[0];
+      var reader = new FileReader();
+      reader.addEventListener("load", function () {
+      preview.src = reader.result;
+      },false);
 
-	<script>
-		function previewFile()
-		{
-			var preview = document.querySelector('img');
-			var file = document.querySelector('input[type=file]').files[0];
-			var reader = new FileReader();
-			reader.addEventListener("load", function () {
-			preview.src = reader.result;
-			},false);
+      if(file)
+      {
+        reader.readAsDataURL(file);
+      }
+    }
+  </script>
 
-			if(file)
-			{
-				reader.readAsDataURL(file);
-			}
-		}
-	</script>
+  <div class="btn-group">
+    <button type="button" id ="info" class="btn btn-primary">Info</button>
+    <button type="button" id ="reviews" class="btn btn-primary">Reviews</button>
+    <button type="button" id ="friends" class="btn btn-primary">Friends</button>
+    <button type="button" id ="list" class="btn btn-primary">List</button>
+  </div>
 
-	<div class="btn-group">
-		<button type="button" id ="info" class="btn btn-primary">Info</button>
-		<button type="button" id ="reviews" class="btn btn-primary">Reviews</button>
-		<button type="button" id ="friends" class="btn btn-primary">Friends</button>
-		<button type="button" id ="list" class="btn btn-primary">List</button>
-	</div>
-
-	<!--Define content for each button-->
+  <!--Define content for each button-->
 
 
     <script>
@@ -99,7 +92,7 @@
       });
     </script>
 
-   	<script>
+    <script>
       $(document).ready(function(){
         $("#list").click(function(){
           $(".list").toggle();
@@ -109,7 +102,6 @@
     </script>
 
     <div class="info">
-<<<<<<< HEAD:front-end/html/profile.php
       <!--PHP-->
       <form method="post" action="profilebackend.php">
         About:
@@ -118,25 +110,18 @@
       <script>
       </script>
     </div>
-=======
-        <!--Some PHP will go in here-->
-        <form action="post">
-          About:
-          <input type="text" name="about">
-        </form>
->>>>>>> master:front-end/html/profile.shtml
 
     <div class="reviews">
-    	<!--All PHP-->
+      <!--All PHP-->
     </div>
 
     <div class="friends">
-    	<div class="content">
+      <div class="content">
       <div class="content__container">
         <p class="content__container__text">
           Your
         </p>
-
+        
         <ul class="content__container__list">
           <li class="content__container__list__item">Friends</li>
           <li class="content__container__list__item">Tomodachi</li>
@@ -148,14 +133,14 @@
     </div>
 
     <div class="list">
-    	<!--Mostly PHP-->
+      <!--Mostly PHP-->
     </div>
 
     <!--FOOTER-->
     <div id="appendFooter"></div>
       <script>
         $(function(){
-          $("#appendFooter").load("footer.php");
+          $("#appendFooter").load("footer.html");
         });
       </script>
 
