@@ -20,7 +20,8 @@
 
 .btn-group {
 	right: -320px;
-  top: -400px;
+  margin-left: 4.75rem;
+  top: -450px;
   margin-left: 10%;
 }
 
@@ -39,6 +40,7 @@
 	padding-right: 50px;
 	top: -400px;
 }
+
 
 
 .reviews {

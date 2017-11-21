@@ -1,3 +1,12 @@
+
+.row{
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+font-size: 14px;
+font-style: normal;
+font-variant: normal;
+color: white;
+}
+
 #name{
   margin-left: 7%;
   margin-right: 2%;
@@ -39,7 +48,12 @@
   margin-bottom: 5%;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 20px;
+<<<<<<< HEAD
+  color: #000000;
+
+=======
   color: #ffd37a;
   height: 400px;
   width: 300px;
+>>>>>>> master
 }
