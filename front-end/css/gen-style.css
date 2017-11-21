@@ -67,28 +67,31 @@ html, body {
   margin-left: 2%;
   margin-right: 2%;
 }
+
+/* No account */
 #signup-btn{
   background-image: url("../img/signup.png");
   margin-left: 2%;
   margin-right: 2%;
 }
-
 #login-btn{
   background-image: url("../img/login.png");
   margin-left: 2%;
   margin-right: 0;
 }
 
-#settings-btn{
-  background-image: url("../img/settings.png");
-  margin-left: 2%;
-  margin-right: 2%;
-}
+/* Registered account */
 #user-btn{
   background-image: url("../img/user.png");
   margin-left: 2%;
-  margin-right: 0;
+  margin-right: 2%;
 }
+#logout-btn{
+  background-image: url("../img/logout.png");
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -117,9 +120,6 @@ html, body {
   display: block;
 }
 
-#logout-btn{
-  background-image: url("../img/logout.png");
-}
 #featured-btn{
   background-image: url("../img/featured.png");
   float: left;
@@ -334,13 +334,22 @@ form {
     padding: 1em;
 }
 
+#appendSearch{
+  text-align: center;
+}
+
 .panel {
   margin-bottom: 15px;
-  background-color: rgb(242, 238, 234);
+  background-color: #fffff0;
   width: 60%;
   padding: 50px;
   display: none;
+  margin-left: auto ;
+  margin-right: auto ;
+  border-style: dashed;
+  border-color:#000000;
 }
+
 .moodList {
   display: none;
   padding-left: 500px;

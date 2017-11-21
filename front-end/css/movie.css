@@ -8,10 +8,10 @@ color: white;
 }
 
 #name{
-  margin-left: 2%;
+  margin-left: 7%;
   margin-right: 2%;
   margin-top: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 3.5%;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
@@ -20,30 +20,40 @@ color: white;
 }
 
 #images{
-  margin-left: 2%;
+  margin-left: 7%;
   margin-right: 2%;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 #details{
-  margin-left: 2%;
+  margin-left: 10%;
   margin-right: 2%;
-  margin-top: 5%;
+  margin-top: 2%;
   margin-bottom: 5%;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 20px;
+  height:50px;
+  width: 100px;
+  padding:0;
+  border-radius: 5px;
   color: #fffff0;
-  background-color: #f0e87e;
+  background-color: #ffd37a;
 }
 
-#moviedetails{
+#moviesdetails{
   margin-left: 2%;
   margin-right: 2%;
   margin-top: 5%;
   margin-bottom: 5%;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 20px;
+<<<<<<< HEAD
   color: #000000;
 
+=======
+  color: #ffd37a;
+  height: 400px;
+  width: 300px;
+>>>>>>> master
 }

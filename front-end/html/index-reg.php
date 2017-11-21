@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD:front-end/html/index-reg.php
   
+  <?php 
+    require 'head.html';
+  ?>
+=======
   <!--#include file="head.html" -->
+>>>>>>> master:front-end/html/index-reg.shtml
   <link href="../css/index-reg.css" type="text/css" rel="stylesheet">
 
   <body>
@@ -9,7 +15,7 @@
     <div id="appendHeader"></div>
       <script>
         $(function(){
-          $("#appendHeader").load("header.html");
+          $("#appendHeader").load("header.php");
         });
       </script>
 
@@ -112,7 +118,7 @@
     <div id="appendFooter"></div>
       <script>
         $(function(){
-          $("#appendFooter").load("footer.html");
+          $("#appendFooter").load("footer.php");
         });
       </script>
 

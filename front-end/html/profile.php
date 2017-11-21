@@ -1,18 +1,24 @@
 <!--User Profile-->
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD:front-end/html/profile.php
     <?php
       require 'head.html';
       ?>
     <!--#include file="head.html" -->
     <link href="../css/profile.css" type="text/css" rel="stylesheet">
     <!--FONTS-->
+=======
+  <!--#include file="head.html" -->
+  <link href="../css/profile.css" type="text/css" rel="stylesheet">
+
+>>>>>>> master:front-end/html/profile.shtml
   <body>
     <!--HEADER-->
     <div id="appendHeader"></div>
       <script>
         $(function(){
-          $("#appendHeader").load("header.html");
+          $("#appendHeader").load("header.php");
         });
       </script>
 
@@ -27,7 +33,7 @@
         $("#appendSearch").load("search.html");
       });
     </script>
-      
+
     <div class="pic-wrapper"> <!--Just a frame-->
     	<img src="" height="300" width="250">
     </div>
@@ -37,6 +43,7 @@
     		<input type="file" name="pic" accept="image/*" onchange="previewFile()">
     	</form>
 	</div>
+
 
 	<script>
 		function previewFile()
@@ -102,6 +109,7 @@
     </script>
 
     <div class="info">
+<<<<<<< HEAD:front-end/html/profile.php
       <!--PHP-->
       <form method="post" action="profilebackend.php">
         About:
@@ -110,6 +118,13 @@
       <script>
       </script>
     </div>
+=======
+        <!--Some PHP will go in here-->
+        <form action="post">
+          About:
+          <input type="text" name="about">
+        </form>
+>>>>>>> master:front-end/html/profile.shtml
 
     <div class="reviews">
     	<!--All PHP-->
@@ -121,7 +136,7 @@
         <p class="content__container__text">
           Your
         </p>
-        
+
         <ul class="content__container__list">
           <li class="content__container__list__item">Friends</li>
           <li class="content__container__list__item">Tomodachi</li>
@@ -140,7 +155,7 @@
     <div id="appendFooter"></div>
       <script>
         $(function(){
-          $("#appendFooter").load("footer.html");
+          $("#appendFooter").load("footer.php");
         });
       </script>
 

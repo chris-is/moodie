@@ -1,17 +1,10 @@
 <?php
-  require __DIR__ . '/vendor/autoload.php';
 
-  $settings = ['settings' => ['addContentLengthHeader' => false]];
-  $app = new Slim\App($settings);
+use Slim\Http\Request;
+use Slim\Http\Response;
 
-  require __DIR__ . '/back-end/login-signup.php';
-
-  $id = "m00d1" . uniqid();
-  session_id($id);
-  echo session_id();
-  session_start();
-
-  $app->post('/', function ($request, $response) {
+//Get username and password from submitted form
+$app->post('/', function ($request, $response) {
     $username = $request->getParam('username');
     $password = $request->getParam('password');
     $email = $request->getParam('email');
@@ -25,14 +18,3 @@
     //$response = printdb($db);
     //echo $response;
 });
-
-  header("Location: /COMP307/front-end/html/index.php"); 
-  exit();
-  $app->run();
-?>
-
-
-
-  
-
-
