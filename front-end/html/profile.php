@@ -6,13 +6,13 @@
       ?>
     <!--#include file="head.html" -->
     <link href="../css/profile.css" type="text/css" rel="stylesheet">
-    <!--FONTS-->
+
   <body>
     <!--HEADER-->
     <div id="appendHeader"></div>
       <script>
         $(function(){
-          $("#appendHeader").load("header.html");
+          $("#appendHeader").load("header.php");
         });
       </script>
 
@@ -140,7 +140,7 @@
     <div id="appendFooter"></div>
       <script>
         $(function(){
-          $("#appendFooter").load("footer.html");
+          $("#appendFooter").load("footer.php");
         });
       </script>
 
