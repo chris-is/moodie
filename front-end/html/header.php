@@ -6,7 +6,7 @@
         <button id="home-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Home" onclick="window.location.href = '/COMP307/front-end/html/index.php';"></button>
         <input type="text" placeholder="Search for a specific movie & enter" id="searchbar">
         <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
-        <button id="signup-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Sign Up" onclick="document.getElementById('signup-modal').style.display='block'" style="width:auto"></button>
+        <button id="signup-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Sign Up"></button>
         <button id="login-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Login" onclick="document.getElementById('login-modal').style.display='block'" style="width:auto"></button>
       <?php else : ?>
         <button id="home-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Home" onclick="window.location.href = '/COMP307/front-end/html/index-reg.php';"></button>
@@ -18,7 +18,7 @@
 
       <?php 
         function isSID($sid){
-          session_start();
+          //session_start();
           $uniqueID = substr($sid, 0, 6);
           if ($uniqueID === "m00d13"){
             return true;
@@ -82,12 +82,32 @@
 var modal1 = document.getElementById('login-modal');
 var modal2 = document.getElementById('signup-modal');
 
+$(document).ready(function() {
+  $("#login-btn").click(function(){
+    $(modal1).css("display", "block");
+    $(".container-fluid").css("-webkit-filter", "blur(5px)");
+  });
+  $("#signup-btn").click(function(){
+    $(modal2).css("display", "block");
+    $(".container-fluid").css("-webkit-filter", "blur(5px)");
+  });
+  $(".close").click(function(){
+    $(".container-fluid").css("-webkit-filter", "blur(0px)");
+    $(".container-fluid").css("filter", "initial");
+  });
+  
+});
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if ((event.target == modal1)|(event.target == modal2)) {
     modal1.style.display = "none";
     modal2.style.display = "none";
+    $(".container-fluid").css("-webkit-filter", "blur(0px)");
+    $(".container-fluid").css("filter", "initial");
   }
 }
+
+
 
 </script>
