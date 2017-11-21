@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD:front-end/html/search-results.php
   
   <?php 
     require 'head.html';
   ?>
-=======
-  <!--#include file="head.html" -->
->>>>>>> master:front-end/html/search-results.shtml
   <link href="../css/search-results.css" type="text/css" rel="stylesheet">
 
   <body>
@@ -15,7 +11,7 @@
     <div id="appendHeader"></div>
       <script>
         $(function(){
-          $("#appendHeader").load("header.html");
+          $("#appendHeader").load("header.php");
         });
       </script>
 
@@ -52,7 +48,7 @@
     <div id="appendFooter"></div>
       <script>
         $(function(){
-          $("#appendFooter").load("footer.html");
+          $("#appendFooter").load("footer.php");
         });
       </script>
 

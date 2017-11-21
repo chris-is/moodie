@@ -8,10 +8,6 @@
     </div>
     <div class="col-sm-4">
         <center style="margin-top: 12%"><p> &#169 2017 Moodie Inc. All rights reserved. </p></center>
-
-        <?php
-          session_start();
-        ?>
     </div>
     <div class="col-sm-4">
       <button id="fb-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Facebook"></button>
