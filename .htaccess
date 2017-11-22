@@ -1,7 +1,6 @@
 Options +Includes
 Options +FollowSymLinks
 
-RewriteEngine On
 
 
 

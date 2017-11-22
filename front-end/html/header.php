@@ -21,7 +21,7 @@
         function isSID(){
           require_once('database.php');
           $id = session_id();
-          $query = "SELECT status from Users where username='asd'";
+          $query = "SELECT status from Users where sid='$id'";
           $status = $mysqli->query($query);
           //echo $id;
           //echo json_decode($status);

@@ -30,10 +30,6 @@
 
       <!--RECOMMENDED-->
       <div class="row">
-        <?php 
-        session_start();
-        echo $_SESSION['username'];
-        ?>
         <button class="section-btn" id="rec-btn"></button>
       </div>
 
