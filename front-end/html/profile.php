@@ -116,12 +116,13 @@
       <script>
         $(document).ready(function()
         {
-          //var base_url="http://localhost/COMP307/front-end/html/profile.php"; NOT NEEDED HERE.
+          var base_url="http://localhost/COMP307/front-end/html/profile.php/";
           var url,encodedata;
           $("#update").focus();
 
-          $('body').on("click",'.stpostbutton',function()
+          $(".info").on("click",".stpostbutton",function()
           {
+
           var update=$('#update').val();
           encode=JSON.stringify({
                   "about": update;
