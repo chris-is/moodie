@@ -1,12 +1,12 @@
 <?php
 use \Psr\Http\Message\ServerRequestInterface as Request;
 
-require '../../vendor/autoload.php';
+require '../vendor/autoload.php';
 
 $app = new \Slim\App;
 
 //Creating new records with the fields from html form
-$app->post('/', function ($request) {
+$app->post('/about', function ($request) {
 try {	
 	require_once('database.php');
 

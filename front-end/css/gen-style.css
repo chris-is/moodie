@@ -36,6 +36,7 @@ html, body {
   background-color: #fffff0;
   width:100%;
   margin:0;
+  border-radius: 5px;
 }
 .form-inline{
   margin:0;
@@ -89,7 +90,7 @@ html, body {
 #logout-btn{
   background-image: url("../img/logout.png");
   margin-left: 2%;
-  margin-right: 2%;
+  margin-right: 0;
 }
 
 .dropdown {
@@ -137,37 +138,18 @@ html, body {
 #rec-btn{
   background-image: url("../img/rec.png");
   float: left;
-  margin-left: 7.7%;
-  margin-top:2.9%;
-  margin-bottom: 2%;
+  margin-left: 5rem;
+  margin-top: 2rem;
 }
 #featured-btn-reg{
   background-image: url("../img/featured.png");
-  margin-left: 6.0rem;
-  margin-top: 1.8rem;
+  margin-left: 4rem;
+  margin-top: 2rem;
 }
 #near-btn-reg{
   background-image: url("../img/near.png");
-  margin-left: 3rem;
-  margin-top: 1.9rem;
-  margin-left: 4.55rem;
-  margin-top: 1.1rem;
-}
-
-/* FOOTER COLUMNS */
-#first{
-  padding: 0;
-  margin: 0;
-}
-
-#second{
-  padding: 0;
-  margin: 0;
-}
-
-#third{
-  padding: 0;
-  margin: 0;
+  margin-left: 4rem;
+  margin-top: 2rem;
 }
 
 /* FOOTER COLUMNS */
@@ -253,7 +235,7 @@ html, body {
   border-radius: 5px;
 }
 .multiple-items-small{
-  height: 28rem;
+  height: 31rem;
   margin-left: 4rem;
   margin-right: 4rem;
   margin-bottom: 2rem;
@@ -264,41 +246,6 @@ html, body {
   height: auto;
   width: 80%;
   margin: 2rem;
-}
-
-.carousel{
-  height: 20rem;
-  width: 90%;
-  border: none;
-  overflow: hidden;
-  background-color: #282828;
-  border-radius: 5px;
-}
-
-.d-block.img-fluid{
-  height: auto;
-  width: 30%;
-}
-
-.carousel-inner .carousel-item-right.active,
-.carousel-inner .carousel-item-next {
-  transform: translateX(33.33%);
-}
-
-.carousel-inner .carousel-item-left.active,
-.carousel-inner .carousel-item-prev {
-  transform: translateX(-33.33%)
-}
-
-.carousel-inner .carousel-item-right,
-.carousel-inner .carousel-item-left{
-  transform: translateX(0);
-}
-
-#featured-carousel, #near-carousel{
-  margin-left: 6.3%;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 
 /* FOOTER */
@@ -315,6 +262,7 @@ html, body {
   font-variant: normal;
   font-weight: 500;
   line-height: 15px;
+  border-radius: 5px;
 }
 .footer .row{
   margin:0;
