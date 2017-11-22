@@ -21,9 +21,12 @@
       }
       
       if ($userdata[0]['password'] == $userpass) {
-        $id = "m00d13" . uniqid();
+        $id = uniqid();
         session_id($id);
         session_start();
+        $_SESSION['status'] = 1;
+        $query = "UPDATE Users SET sid='$id', status=1 WHERE username='$userlogin'";
+        $result = $mysqli->query($query);
       }
       else {
         echo "nope";

@@ -2,7 +2,8 @@
   <div class="navbar-brand navbar-left">
     <div class="form-inline">
       <?php 
-      if(isSID(session_id()) == false) : ?>
+      session_start();
+      if(isSID() == false) : ?>
         <button id="home-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Home" onclick="window.location.href = '/COMP307/front-end/html/index.php';"></button>
         <input type="text" placeholder="Search for a specific movie & enter" id="searchbar">
         <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
@@ -17,10 +18,15 @@
       <?php endif; ?>
 
       <?php 
-        function isSID($sid){
-          //session_start();
-          $uniqueID = substr($sid, 0, 6);
-          if ($uniqueID === "m00d13"){
+        function isSID(){
+          require_once('database.php');
+          $id = session_id();
+          $query = "SELECT status from Users where username='asd'";
+          $status = $mysqli->query($query);
+          //echo $id;
+          //echo json_decode($status);
+          
+          if ($_SESSION['status'] == 1){
             return true;
           }
           else {

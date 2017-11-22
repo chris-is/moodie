@@ -2,7 +2,7 @@ Options +Includes
 Options +FollowSymLinks
 
 RewriteEngine On
-RewriteRule (.*) front-end/html/$1 [L]
+
 
 
 
