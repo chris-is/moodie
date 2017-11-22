@@ -3,16 +3,12 @@ Options +FollowSymLinks
 
 RewriteEngine On
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-l
-
-RewriteCond %{REQUEST_URI} ^/$
-RewriteRule ^(.*)$ /307test/Moodie/$1 [L, QSA]
-RewriteRule ^(?!Moodie/)(.*)$ Moodie/$1 [L,NC]
 
 
-RewriteRule ^ index.php [QSA,L]
+
+
+
+
 
 
 
