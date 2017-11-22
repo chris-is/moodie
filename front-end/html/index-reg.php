@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
-  
+  <head>
   <?php 
     require 'head.html';
   ?>
   <link href="../css/index-reg.css" type="text/css" rel="stylesheet">
-
+  </head>
+  
   <body>
     <!--HEADER-->
+    <?php 
+    ?>
     <div id="appendHeader"></div>
       <script>
         $(function(){
@@ -16,7 +19,7 @@
       </script>
 
     <!--BODY-->
-    <div class="container-fluid">
+    <div class="container-fluid" id="contain">
 
       <div id="appendSearch"></div>
       <script>

@@ -34,15 +34,17 @@ button:hover {
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; /* Full width */
+    height: auto; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     padding-top: 60px;
 }
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: #fefefe;
+    background-color: #fffff0;
     margin: 5% auto 15% auto;
     padding: 1rem;
     border: 1px solid #888;
@@ -68,3 +70,4 @@ button:hover {
 .forgot a{
     color: #aaf2f1;
 }
+
