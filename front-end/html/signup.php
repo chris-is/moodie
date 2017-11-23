@@ -12,6 +12,7 @@
     
     try {
       require_once('database.php');
+
       $query = "INSERT INTO Users (username, password, email) VALUES ('$username', '$password', '$email');";
 
       $result = $mysqli->query($query);
@@ -30,5 +31,5 @@
 ?>
 
 <script type="text/javascript">
-window.location.href = '/COMP307/front-end/html/newaccount.php';
+//window.location.href = '/COMP307/front-end/html/newaccount.php';
 </script>

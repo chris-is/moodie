@@ -34,52 +34,43 @@
           }
         }
       ?>
-
-      <script>
-        $(document).ready(function(){
-          $('#logout-btn').click(function(){
-            $('#logout-btn').load('logout.php', function(e){
-        console.log(e);
-            });
-          });
-        });
-      </script>
-      
     </div>
   </div>
 </nav>
 
 <!--Login modal-->
 <div class="modal" id="login-modal">
-  <form class="modal-content animate" method="post" action="login.php">
+  <div class="modal-content animate" method="post" action="login.php">
     <span onclick="document.getElementById('login-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
     <div class="container">
       <label><b>Username</b></label>
       <input type="text" name="username" required>
+      <div class="username-status"></div>
       <label><b>Password</b></label>
       <input type="password" name="password" required>
       <button type="submit" id="login-sub">Login</button>
       <!--<span class="forgot"><a href="#">I forgot my password</a></span>-->
       </div>
     </div>
-  </form>
+  </div>
 </div>
 
 <!--Signup modal-->
 <div class="modal" id="signup-modal">
-  <form class="modal-content animate" method="post" action="signup.php">
+  <div class="modal-content animate" method="post" >
     <span onclick="document.getElementById('signup-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
     <div class="container">
       <label><b>Email</b></label>
       <input type="text" name="email" maxlength="32" required>
       <label><b>Username</b></label>
       <input type="text" name="username" maxlength="16" required>
+      <div class="username-status"></div>
       <label><b>Password</b></label>
       <input type="password" name="password" maxlength="16" required>
       <button type="submit" id="signup-sub">Sign Up</button>
       </div>
     </div>
-  </form>
+  </div>
 </div>
 
 
@@ -101,6 +92,26 @@ $(document).ready(function() {
     $(".container-fluid").css("-webkit-filter", "blur(0px)");
     $(".container-fluid").css("filter", "initial");
   });
+
+  $('#signup-sub').click(function(){
+    
+    $.ajax({
+      type: "POST",
+      url: "checkusername.php",
+      data: data,
+      dataType: 'json',
+      success: function(data){
+        window.alert(data);
+        $(".username-status").html("Username already exists. Please select another one.");
+      }
+    });
+  });
+
+  $('#logout-btn').click(function(){
+    $('#logout-btn').load('logout.php', function(e){
+        console.log(e);
+      });
+    });
   
 });
 

@@ -33,20 +33,25 @@
         });
       </script>
 
-      <div id="name" class="row">
-        <h1 style="background-color: #ffd37a;padding: 0.5rem;border-radius: 5px;">Miracle in Cell No.7</h1>
+      <div class="row">
+        <div class="col-sm-4">
+          <h1 id="name">Miracle in Cell No.7</h1>
+        </div>
+        
       </div>
 
-      <div id="images" class="row">
-        <div id="poster" class="col-sm-5">
-          <img src="https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg" width=70% height=auto>
+      <div id="details" class="row">
+        <div id="poster" class="col-sm-4">
+          <img src="https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg" class="poster-img">
         </div>
-        <div id="grid" class="col-sm-7">
-          <img src="../img/mood-grid.jpg" width=70% height=auto>
+        <div id="grid" class="col-sm-8">
+          <div id="appendGrid"></div>
+            <script>
+              $(function(){
+                $("#appendGrid").load("grid.php");
+              });
+            </script>
         </div>
-      </div>
-      <div class="row">
-        <button style="text-align: center;" id="details" onclick="document.getElementById('details-modal').style.display='block'" style="width:auto">More info</button>
       </div>
     </div>
 
