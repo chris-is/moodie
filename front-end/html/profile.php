@@ -6,13 +6,13 @@
       ?>
     <!--#include file="head.html" -->
     <link href="../css/profile.css" type="text/css" rel="stylesheet">
-
+    <!--FONTS-->
   <body>
     <!--HEADER-->
     <div id="appendHeader"></div>
       <script>
         $(function(){
-          $("#appendHeader").load("header.php");
+          $("#appendHeader").load("header.html");
         });
       </script>
 
@@ -103,12 +103,48 @@
 
     <div class="info">
       <!--PHP-->
-      <form method="post" action="profilebackend.php">
+      <div>
         About:
-        <input type="text" name="about">
-      </form>
+        <textarea id="update" class="stupdatebox"></textarea>
+        <input type="submit" value="POST" class="stpostbutton">
+      </div>
+      
+      <div id="mainContent"></div>
+
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="../js/ajaxGetPost.js"></script>
       <script>
+        $(document).ready(function()
+        {
+          var base_url="http://localhost/COMP307/front-end/html/profile.php/";
+          var url,encodedata;
+          $("#update").focus();
+
+          $(".info").on("click",".stpostbutton",function()
+          {
+
+          var update=$('#update').val();
+          encode=JSON.stringify({
+                  "about": update;
+                });
+          url='http://localhost/COMP307/back-end/about';
+
+          if(update.length>0)
+          {
+          post_ajax_data(url,encode,function(data)
+          {
+          $.each(data.updates, function(i,data)
+          {
+          var html="<div class='stbody' id='stbody"+data.about;
+          $("#mainContent").prepend(html);
+          $('#update').val('').focus();
+          });
+          });
+          }
+          });
       </script>
+
+ 
     </div>
 
     <div class="reviews">
@@ -140,7 +176,7 @@
     <div id="appendFooter"></div>
       <script>
         $(function(){
-          $("#appendFooter").load("footer.php");
+          $("#appendFooter").load("footer.html");
         });
       </script>
 
