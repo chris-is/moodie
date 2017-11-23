@@ -42,6 +42,7 @@ color: white;
 
 #grid {
   padding-left: 99px;
+  margin-top: -1px;
 }
 
 #grid .row{
@@ -49,7 +50,19 @@ color: white;
   padding:0;
 }
 
-.grid-btn, .plus-ctrl, .minus-ctrl{
+#rate-msg {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #cbcbcb;
+  background-color: #1d1b1b;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 260px;
+  height: 40px;
+  margin: 2px 2px 46px 2px;
+}
+
+.grid-btn, .plus-ctrl, .minus-ctrl, .qmark{
   margin:2px;
   padding:0;
   display: inline-block;
@@ -59,6 +72,27 @@ color: white;
   font-size: 1rem;
   border-radius: 5px;
   background-image: url("../img/blank-grid.png");
+}
+.qmark{
+  background-image: url("../img/qmark.png")
+}
+.explain{
+  display: none;
+  color: white;
+  margin-left: 10px;
+}
+
+.adj{
+  margin:2px;
+  padding:0;
+  display: inline-block;
+  height: 40px;
+  width: 84px;
+  border: none;
+  font-size: 14px;
+  border-radius: 5px;
+  color: #cbcbcb;
+  background-color: #1d1b1b;
 }
 
 .plus-ctrl {
@@ -76,5 +110,10 @@ color: white;
   background-image: url("../img/blue.png"); 
 }
 
+#rate{
+  margin-top: 46px;
+  background-color: #cbcbcb;
+  color: #1d1b1b;
+}
 
 
