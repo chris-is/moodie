@@ -2,7 +2,6 @@
   use \Psr\Http\Message\ServerRequestInterface as Request;
   require '../../vendor/autoload.php';
 
-  //$settings = ['settings' => ['addContentLengthHeader' => false]];
   $app = new Slim\App();
 
   $app->post('/', function ($request, $response) {

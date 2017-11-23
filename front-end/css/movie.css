@@ -49,7 +49,7 @@ color: white;
   padding:0;
 }
 
-.g-square{
+.grid-btn, .plus-ctrl, .minus-ctrl{
   margin:2px;
   padding:0;
   display: inline-block;
@@ -61,9 +61,19 @@ color: white;
   background-image: url("../img/blank-grid.png");
 }
 
+.plus-ctrl {
+  background-image: url("../img/plus.png")
+}
+.minus-ctrl {
+  background-image: url("../img/minus.png")
+}
+
 .pink{
-  background-image: url("../img/home.png");
-  
+  background-image: url("../img/pink.png"); 
+}
+
+.blue{
+  background-image: url("../img/blue.png"); 
 }
 
 
