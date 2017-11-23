@@ -13,7 +13,15 @@
         <button id="home-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Home" onclick="window.location.href = '/COMP307/front-end/html/index-reg.php';"></button>
         <input type="text" placeholder="Search for a specific movie & enter" id="searchbar">
         <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
-        <button id="user-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="User"></button>
+        <div class="dropdown">
+          <button id="user-btn" class="nav-btn dropdown-o" data-toggle="tooltip" data-placement="top" title="User"></button>
+          <div class="dropdown-content">
+            <ul>
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Settings</a></li>
+            </ul>
+          </div>
+        </div>
         <button id="logout-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Logout"></button>
       <?php endif; ?>
 
@@ -40,7 +48,7 @@
 
 <!--Login modal-->
 <div class="modal" id="login-modal">
-  <div class="modal-content animate" method="post" action="login.php">
+  <form class="modal-content animate" method="post" action="login.php">
     <span onclick="document.getElementById('login-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
     <div class="container">
       <label><b>Username</b></label>
@@ -52,7 +60,7 @@
       <!--<span class="forgot"><a href="#">I forgot my password</a></span>-->
       </div>
     </div>
-  </div>
+  </form>
 </div>
 
 <!--Signup modal-->
