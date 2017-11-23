@@ -11,7 +11,6 @@
   <button class="grid-btn p" data-toggle="tooltip" data-placement="top"></button>
   <button class="grid-btn p" data-toggle="tooltip" data-placement="top"></button>
   <button id="p-plus" class="plus-ctrl" data-toggle="tooltip" data-placement="top"></button>
-  <button id="alert"></button>
 </div>
 <div class="row" id="g-sad">
   <button id="b-minus" class="minus-ctrl" data-toggle="tooltip" data-placement="top"></button>
@@ -83,11 +82,7 @@
       clearInterval(interval);
     });
 
-    $('#alert').click(function(){
-      alert(ipink);
-    });
     
-      
   });
 
 </script>
