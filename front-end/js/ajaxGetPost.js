@@ -1,4 +1,4 @@
-function post_ajax_data(url,encodedata, success)
+function post_ajax_data(url,encodedata,success)
 {
 $.ajax({
 type:"POST",
@@ -13,9 +13,10 @@ async:true,
 beforeSend :function(data) { },
 success:function(data){
 success.call(this, data);
-},
-error:function(data){
-alert("Error In Connecting");
-}
+}//,
+//error:function(data){
+//alert("Error In Connecting");
+//}
 });
 }
+
