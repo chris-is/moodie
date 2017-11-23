@@ -80,6 +80,10 @@ html, body {
   margin-left: 2%;
   margin-right: 0;
 }
+.username-status{
+  font-size: 0.5rem;
+  color: red;
+}
 
 /* Registered account */
 #user-btn{
