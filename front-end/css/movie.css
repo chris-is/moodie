@@ -1,4 +1,3 @@
-
 .row{
 font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 font-size: 14px;
@@ -7,53 +6,65 @@ font-variant: normal;
 color: white;
 }
 
-#name{
-  margin-left: 7%;
-  margin-right: 2%;
-  margin-top: 5%;
-  margin-bottom: 3.5%;
+#name {
+  padding: 0;
+  margin-left: 90px;
+  margin-right: 2rem;
+  margin-top: 66px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
   font-style: normal;
   font-variant: normal;
   color: #fffff0;
+  background-color: #ffd37a;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  width: 392px;
+  height: 82px;
+  text-align:center;
+  line-height: 41px;
 }
 
-#images{
-  margin-left: 7%;
-  margin-right: 2%;
-  margin-top: 2%;
-  margin-bottom: 2%;
-}
 
 #details{
-  margin-left: 10%;
-  margin-right: 2%;
-  margin-top: 2%;
-  margin-bottom: 5%;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  height:50px;
-  width: 100px;
-  padding:0;
+  padding: 0;
+  margin-left: 90px;
+  margin-right: 2rem;
+  margin-top: 38px;
+  margin-bottom: 2rem;
+}
+
+.poster-img{
+  padding: 0;
+  width: 100%;
   border-radius: 5px;
-  color: #fffff0;
-  background-color: #ffd37a;
 }
 
-#moviesdetails{
-  margin-left: 2%;
-  margin-right: 2%;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 20px;
-<<<<<<< HEAD
-  color: #000000;
-
-=======
-  color: #ffd37a;
-  height: 400px;
-  width: 300px;
->>>>>>> master
+#grid {
+  padding-left: 99px;
 }
+
+#grid .row{
+  margin:0;
+  padding:0;
+}
+
+.g-square{
+  margin:2px;
+  padding:0;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-image: url("../img/blank-grid.png");
+}
+
+.pink{
+  background-image: url("../img/home.png");
+  
+}
+
+
+
