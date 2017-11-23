@@ -116,7 +116,11 @@
       <script>
         $(document).ready(function()
         {
-          var base_url="http://localhost/COMP307/front-end/html/profile.php/";
+          /*$(".info").on("click",".stpostbutton",function()
+          {
+            $("#mainContent").prepend("<p>HELLO TESTIIIING</p>");
+          });*/
+         var base_url="http://localhost/COMP307/";
           var url,encodedata;
           $("#update").focus();
 
@@ -124,24 +128,27 @@
           {
 
           var update=$('#update').val();
-          encode=JSON.stringify({
-                  "about": update;
-                });
-          url='http://localhost/COMP307/back-end/about';
+          var precode = {"about":update};
+          var encode=JSON.stringify(precode);
+          //$("#mainContent").prepend("<p>Daaaaama</p>");
+          url=base_url+'back-end/about';
 
           if(update.length>0)
           {
           post_ajax_data(url,encode,function(data)
           {
-          $.each(data.updates, function(i,data)
+          //$("#mainContent").prepend("<p>trying</p>");
+          $.each(data.Users, function(i,data)
           {
           var html="<div class='stbody' id='stbody"+data.about;
-          $("#mainContent").prepend(html);
           $('#update').val('').focus();
           });
           });
           }
+
+          
           });
+        });
       </script>
 
  
