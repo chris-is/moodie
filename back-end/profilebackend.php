@@ -9,13 +9,12 @@ $app = new \Slim\App;
 $app->post('/about', function ($request) {
 try {	
 	require_once('database.php');
+	session_start();
+	$sid = $_SESSION['sid'];
 
 	$about = $request->getParam('about');
-	$query = "UPDATE Users SET about='$about' WHERE username='asd'";
+	$query = "UPDATE Users SET about='$about' WHERE sid='$sid'";
 	$result = $mysqli->query($query);  
-
-	$query = "SELECT * FROM Users";
-	$result = $mysqli->query($query);
 
 } catch(Exception $e) {
 	echo "Something went wrong!";
@@ -26,7 +25,10 @@ try {
 
 $app->get('/about', function ($request) {
 	require_once('database.php');
-	$query = "SELECT about FROM Users WHERE username = 'asd';";
+	session_start();
+	$sid = $_SESSION['sid'];
+
+	$query = "SELECT about FROM Users WHERE sid = '$sid'";
 
 	$result = $mysqli->query($query);
 	while ($row = $result->fetch_assoc()){
@@ -99,7 +101,7 @@ $app->post('/login', function ($request, $response) {
       $id = uniqid();
       session_id($id);
       session_start();
-      $_SESSION['username'] = $userlogin;
+      $_SESSION['sid'] = $id;
       $query = "UPDATE Users SET sid='$id', status=1 WHERE username='$userlogin'";
       $result = $mysqli->query($query);
       echo "ok";

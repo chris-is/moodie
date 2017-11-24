@@ -2,11 +2,11 @@
   
   require_once('database.php');
   session_start();
-  $uname = $_SESSION['username'];
-  $query = "UPDATE Users SET sid=0, status=0 WHERE username='$uname'";
+  $sid = $_SESSION['sid'];
+  $query = "UPDATE Users SET sid=0, status=0 WHERE sid='$sid'";
   $result = $mysqli->query($query);
 
-  $_SESSION['username'] = 0;
+  $_SESSION['sid'] = 0;
   unset($_SESSION);
 
 ?>
