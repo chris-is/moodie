@@ -9,11 +9,11 @@
     $username = $request->getParam('username');
     
     try { 
-      require_once('db.php');
+      require_once('database.php');
       $query = "SELECT * FROM Users WHERE username = '$username'";
-      $result = $mysqli->query($query);     
+      $result = $mysqli->query($query);    
 
-      if (mysql_num_rows($result) > 1){ 
+      if (count($result->fetch_assoc()) > 0){ 
         echo "0";
       } 
       else {
@@ -26,5 +26,5 @@
 
   });
   
-
+  $app->run();
 ?>
