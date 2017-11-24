@@ -31,5 +31,20 @@ try {
 }
 
 });
+
+$app->get('/about', function ($request) {
+
+	require_once('database.php');
+	$query = "SELECT * FROM Users";
+
+	$result = $mysqli->query($query);
+
+	while ($row = $result->fetch_assoc()){
+		$data[] = $row;
+	}
+	echo json_encode($data);
+
+});
+
 $app->run();
 ?>

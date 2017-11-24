@@ -110,7 +110,7 @@
       </div>
       
       <div id="mainContent"></div>
-
+      <div id="secContent"></div>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <script src="../js/ajaxGetPost.js"></script>
       <script>
@@ -133,21 +133,55 @@
           //$("#mainContent").prepend("<p>Daaaaama</p>");
           url=base_url+'back-end/about';
 
-          if(update.length>0)
-          {
-          post_ajax_data(url,encode,function(data)
+
+
+          $.ajax({
+          type:"POST",
+          url:url,
+          data:encode,
+          success:function(data){
+          },
+          error:function(data){
+          alert("Error In Connecting");
+          }
+          });
+
+
+          $.ajax({
+          type:"GET",
+          url:url,
+          success:function(data){
+            $("#mainContent").prepend(data);
+          }
+          });
+
+
+
+
+          /*post_ajax_data(url,encode,function(data)
           {
           //$("#mainContent").prepend("<p>trying</p>");
           $.each(data.Users, function(i,data)
           {
-          var html="<div class='stbody' id='stbody"+data.about;
+          var html="<div class='stbody'"+data.about+"</div>";
+          $("#mainContent").prepend(html);
           $('#update').val('').focus();
+           alert("asdas");
           });
+          });*/
           });
-          }
 
-          
+          ajax_data('GET',url, function(data)
+          {
+            alert("fdgdfg");
+          $.each(data.Users, function(i,data)
+          {
+          var html="<div class='stbody' id='stbody"+data.about+"</div>";
+          $("#secContent").prepend(html);
           });
+          });
+
+
         });
       </script>
 
