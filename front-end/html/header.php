@@ -101,8 +101,8 @@ $(document).ready(function() {
 
   
   var base_url="http://localhost/COMP307/";
-  var url, encodedata;
-  $('#sign-name').focus();
+  var url;
+
   $('#signup-sub').click(function(){
     var username = $("#signup-modal input[name=username]").val();
     var password = $("#signup-modal input[name=password]").val();
@@ -111,21 +111,25 @@ $(document).ready(function() {
     var postdata = 'username='+ username + '&password='+ password + '&email='+email;
     $.ajax({
       type: "POST",
-      url: 'http://localhost/COMP307/front-end/html/checkusername.php',
+      url: url,
       data: postdata,
       success: function(data){
-        if(data == 0){
+        if(data === "existing"){
          $(".username-status").html("Username already exists. Please select another one.");
         }
-        else {
+        else if (data === "ok") {
+         url = base_url+'back-end/signup';
          $.ajax({
            type: "POST",
-           url: 'http://localhost/COMP307/front-end/html/signup.php',
+           url: url,
            data: postdata,
            success: function(data){
              window.location.href = '/COMP307/front-end/html/newaccount.php';
            }
          });
+        }
+        else {
+          $(".username-status").html("Username must contain (4-16) alphanumeric characters.");
         }
       }
     });

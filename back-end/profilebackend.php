@@ -47,46 +47,54 @@ $app->get('/about', function ($request) {
 });
 
 
-$app->post('/checkusername', function ($request, $response){
+$app->post('/checkusername', function ($request, $response) {
+    $username = $request->getParam('username');
+    
+    try { 
+      require_once('database.php');
+      $query = "SELECT * FROM Users WHERE username = '$username'";
+      $result = $mysqli->query($query);    
 
-	try {	
-		require_once('database.php');
-		$username = $request->getParam('username');
-		$query = "SELECT * FROM Users WHERE username = '$username'";
-		$result = $mysqli->query($query);
-		if (mysql_num_rows($result) > 0){ 
-		  echo "0";
-		} 
-		else {
-		  echo "1";
-		}
-		
-	} catch(Exception $e) {
-		echo "Something went wrong!";
-	}
+      if (count($result->fetch_assoc()) > 0){ 
+        echo "existing";
+      } 
+      else {
+      	if (!preg_match('/^[a-zA-Z0-9]{4,16}$/i', $username)){
+      		echo "param";
+      	}
+        else {
+        	echo "ok";
+        }
+      }
+      
+    } catch(Exception $e) {
+      echo "Something went wrong!";
+    }
 
-});
+  });
 
 $app->post('/signup', function ($request, $response) {
-  $username = $request->getParam('username');
-  $password = $request->getParam('password');
-  $email = $request->getParam('email');
-  
-  try {
-    require_once('database.php');
+    $username = $request->getParam('username');
+    $password = $request->getParam('password');
+    $email = $request->getParam('email');
+    
+    try {
+      require_once('database.php');
 
-    $query = "INSERT INTO Users (username, password, email) VALUES ('$username', '$password', '$email');";
+      $query = "INSERT INTO Users (username, password, email) VALUES ('$username', '$password', '$email');";
 
-    $result = $mysqli->query($query);
+      $result = $mysqli->query($query);
 
-  } 
+      echo $username;
 
-  //Print error messages if any
-  catch(PDOException $e) {
-    echo json_encode($e->getMessage());
-  }
-  
-});
+    } 
+
+    //Print error messages if any
+    catch(PDOException $e) {
+      echo json_encode($e->getMessage());
+    }
+    
+  });
 
 $app->run();
 ?>
