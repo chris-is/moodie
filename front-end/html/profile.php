@@ -139,6 +139,7 @@
           url:url,
           data:encode,
           success:function(data){
+            alert(data);
             alert(encode);
           },
           error:function(data){

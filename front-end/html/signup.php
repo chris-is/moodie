@@ -30,6 +30,3 @@
 
 ?>
 
-<script type="text/javascript">
-//window.location.href = '/COMP307/front-end/html/newaccount.php';
-</script>

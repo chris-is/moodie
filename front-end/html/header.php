@@ -65,11 +65,11 @@
 <div class="modal" id="signup-modal">
   <div class="modal-content animate" method="post" >
     <span onclick="document.getElementById('signup-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
-    <div class="container">
+    <div class="container" id="signup-form">
       <label><b>Email</b></label>
       <input type="text" name="email" maxlength="32" required>
       <label><b>Username</b></label>
-      <input type="text" name="username" maxlength="16" required>
+      <input type="text" name="username" maxlength="16" id="sign-name" required>
       <div class="username-status"></div>
       <label><b>Password</b></label>
       <input type="password" name="password" maxlength="16" required>
@@ -102,23 +102,35 @@ $(document).ready(function() {
   
   var base_url="http://localhost/COMP307/";
   var url, encodedata;
-
+  $('#sign-name').focus();
   $('#signup-sub').click(function(){
     var username = $("#signup-modal input[name=username]").val();
-    var precode = {"username":username};
-    var encode = JSON.stringify(precode);
+    var password = $("#signup-modal input[name=password]").val();
+    var email = $("#signup-modal input[name=email]").val();
     url = base_url+'back-end/checkusername';
-
-     $.ajax({
-       type: "POST",
-       url: url,
-       data: encode,
-       success: function(data){
-         window.alert(data);
-         //$(".username-status").html("Username already exists. Please select another one.");
-       }
-     });
-     
+    var postdata = 'username='+ username;
+    $.ajax({
+      type: "POST",
+      url: 'http://localhost/COMP307/front-end/html/checkusername.php',
+      data: postdata,
+      success: function(data){
+        alert(data);
+        if(data === 0){
+         $(".username-status").html("Username already exists. Please select another one.");
+        }
+        else {
+         postdata = 'username='+ username + '&password='+ password + '&email='+email;
+         $.ajax({
+           type: "POST",
+           url: 'http://localhost/COMP307/front-end/html/signup.php',
+           data: postdata,
+           success: function(data){
+             window.location.href = '/COMP307/front-end/html/newaccount.php';
+           }
+         });
+        }
+      }
+    });
       
   });
 

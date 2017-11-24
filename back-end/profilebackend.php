@@ -47,71 +47,46 @@ $app->get('/about', function ($request) {
 });
 
 
-/*$app->post('/checkusername', function($request){
-
-	/*try {	
-		$query = "INSERT INTO `Users` (`username`) VALUES (?)";
-
-		$stmt = $mysqli->prepare($query);
-		$stmt->bind_param("s", $username);
-
-		$username = $request->getParsedBody()['username'];
-
-		$stmt->execute();
-		
-		//echo json_encode($data);
-	} catch(Exception $e) {
-		echo "Something went wrong!";
-	}*/
+$app->post('/checkusername', function ($request, $response){
 
 	try {	
 		require_once('database.php');
-
-		
-		//$username = $_POST['username'];
 		$username = $request->getParam('username');
-
-		//$query = "SELECT COUNT(*) FROM Users WHERE username='$username'";
-
-		//$result = $mysqli->query($query);
-
-
 		$query = "SELECT * FROM Users WHERE username = '$username'";
 		$result = $mysqli->query($query);
-		$query = "SELECT COUNT(*) FROM $result";
-		$num = $mysqli->query($query);
-		echo $num;
-		/*
 		if (mysql_num_rows($result) > 0){ 
-		  echo "<span class='status'>Username already exists. Please select another one.</span>";
+		  echo "0";
 		} 
 		else {
-		  echo "ok";
-		}*/
+		  echo "1";
+		}
 		
 	} catch(Exception $e) {
 		echo "Something went wrong!";
 	}
 
-	/*$username = $request->getParam('username');
+});
 
-	$query = "INSERT INTO Users (username) VALUES ('$username');";
+$app->post('/signup', function ($request, $response) {
+  $username = $request->getParam('username');
+  $password = $request->getParam('password');
+  $email = $request->getParam('email');
+  
+  try {
+    require_once('database.php');
 
-	//$query = "SELECT COUNT(*) FROM Users WHERE username='$username'";
+    $query = "INSERT INTO Users (username, password, email) VALUES ('$username', '$password', '$email');";
 
-	$result = $mysqli->query($query);
+    $result = $mysqli->query($query);
 
-	echo "123";
-	
-	
-	if($result>0){
-	  echo "<span class='status'>Username Not Available.</span>";
-	}
-	else{
-	  echo "<span class='status'>Username Available.</span>";
-	}*/
+  } 
 
-
+  //Print error messages if any
+  catch(PDOException $e) {
+    echo json_encode($e->getMessage());
+  }
+  
+});
 
 $app->run();
 ?>
