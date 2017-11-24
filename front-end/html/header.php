@@ -101,22 +101,21 @@ $(document).ready(function() {
 
   
   var base_url="http://localhost/COMP307/";
-  var url,encodedata;
-  $("#username").focus();
+  var url, encodedata;
 
   $('#signup-sub').click(function(){
-    var username = $('#username').val();
+    var username = $("#signup-modal input[name=username]").val();
     var precode = {"username":username};
     var encode = JSON.stringify(precode);
     url = base_url+'back-end/checkusername';
 
      $.ajax({
-       type:"POST",
-       url:url,
-       data:encode,
+       type: "POST",
+       url: url,
+       data: encode,
        success: function(data){
-         window.alert("dfdf");
-         $(".username-status").html("Username already exists. Please select another one.");
+         window.alert(data);
+         //$(".username-status").html("Username already exists. Please select another one.");
        }
      });
      

@@ -5,11 +5,11 @@ require '../vendor/autoload.php';
 
 $app = new \Slim\App;
 
-require 'database.php';
 
 //Creating new records with the fields from html form
 $app->post('/about', function ($request) {
 try {	
+	require_once('database.php');
 	$query = "INSERT INTO `Users` (`about`) VALUES (?)";
 
 	$stmt = $mysqli->prepare($query);
@@ -34,13 +34,46 @@ try {
 
 $app->post('/checkusername', function($request){
 
-	try {	
-		echo "jajajajajaja";
-		$query = "INSERT INTO Users (username, password, email) VALUES ('$username', '$password', '$email');";
+	/*try {	
+		$query = "INSERT INTO `Users` (`username`) VALUES (?)";
 
-		 $result = $mysqli->query($query);
+		$stmt = $mysqli->prepare($query);
+		$stmt->bind_param("s", $username);
+
+		$username = $request->getParsedBody()['username'];
+
+		$stmt->execute();
 		
 		//echo json_encode($data);
+	} catch(Exception $e) {
+		echo "Something went wrong!";
+	}*/
+
+	try {	
+		require_once('database.php');
+
+		
+		//$username = $_POST['username'];
+		$username = $request->getParam('username');
+
+		//$query = "SELECT COUNT(*) FROM Users WHERE username='$username'";
+
+		//$result = $mysqli->query($query);
+
+
+		$query = "SELECT * FROM Users WHERE username = '$username'";
+		$result = $mysqli->query($query);
+		$query = "SELECT COUNT(*) FROM $result";
+		$num = $mysqli->query($query);
+		echo $num;
+		/*
+		if (mysql_num_rows($result) > 0){ 
+		  echo "<span class='status'>Username already exists. Please select another one.</span>";
+		} 
+		else {
+		  echo "ok";
+		}*/
+		
 	} catch(Exception $e) {
 		echo "Something went wrong!";
 	}
