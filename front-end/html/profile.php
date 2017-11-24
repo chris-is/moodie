@@ -103,51 +103,6 @@
 
     <div class="info">
       <!--PHP-->
-<<<<<<< HEAD
-      <div id="test" method="post">
-        About:
-        <input type="text" name="about">
-      </div>
-      <script>
-        function post_ajax_data()
-        {
-        $.ajax({
-        type:"POST",
-        url:"/",
-        data : ,
-        dataType:"json",
-        restful:true,
-        contentType: 'application/json',
-        cache:false,
-        timeout:20000,
-        async:true,
-        beforeSend :function(data) { },
-        success:function(data){
-        success.call(this, data);
-        },
-        error:function(data){
-        alert("Error In Connecting");
-        }
-        });
-        }
-      </script>
-      <script>
-       $(function () 
-        {
-
-          $.ajax({                                      
-            url: 'profilebackend.php',       
-            data: "hdgfhfg", 
-            dataType: 'json',
-            success: function(data)
-            {
-              var about = data[0];
-              $('test').html("<b>id: </b>"+id+"<b> name: </b>"+about); 
-            } 
-          });
-        }); 
-      </script>
-=======
       <div>
         About:
         <textarea id="update" class="stupdatebox"></textarea>
@@ -184,7 +139,7 @@
           url:url,
           data:encode,
           success:function(data){
-            alert(encode);
+            //alert(encode);
           },
           error:function(data){
           alert("Error In Connecting");
@@ -230,8 +185,6 @@
 
         });
       </script>
-
->>>>>>> master
  
     </div>
 

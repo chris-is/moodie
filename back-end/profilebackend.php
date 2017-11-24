@@ -5,7 +5,6 @@ require '../vendor/autoload.php';
 
 $app = new \Slim\App;
 
-//require 'database.php';
 
 //Creating new records with the fields from html form
 $app->post('/about', function ($request) {
@@ -15,18 +14,10 @@ try {
 
 	$stmt = $mysqli->prepare($query);
 	$stmt->bind_param("s", $about);
-
-	$about = $request->getParsedBody()['about'];
-
 	$stmt->execute();
-	$query = "SELECT * FROM Users";
+	$about = $request->getParsedBody()['about'];
+	$stmt->execute();
 
-	$result = $mysqli->query($query);
-
-	while ($row = $result->fetch_assoc()){
-		$data[] = $row;
-	}
-	echo json_encode($data);
 } catch(Exception $e) {
 	echo "Something went wrong!";
 }
@@ -38,10 +29,11 @@ $app->get('/about', function ($request) {
 
 	require_once('database.php');
 	$query = "SELECT * FROM Users";
-
+	$data = "null";
 	$result = $mysqli->query($query);
 	while ($row = $result->fetch_assoc()){
 		$data[] = $row;
+		echo "FFFFFFFFF";
 	}
 	echo json_encode($data);
 
