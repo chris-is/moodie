@@ -6,6 +6,27 @@
   ?>
   <link href="../css/movie.css" type="text/css" rel="stylesheet">
 
+  <?php
+    $jsonurl = "http://api.themoviedb.org/3/discover/movie?%20%20%20%20%20%20%20%20%20%20sort_by=popularity.desc?&api_key=1753a8a0eee9f02ab07f902370f8f1ea";
+    $jsonStr = file_get_contents($jsonurl);
+    $jsonObj = json_decode($jsonStr);
+    $result = $jsonObj->results;
+    $ids = array();
+    if(is_array($result)){
+      foreach($result as $movie) {//$movie is an object and id is a property of it
+        $ids[] = ($movie->id);
+      }
+    }
+
+    foreach($result as $movie) {//$movie is an object and id is a property of it
+      if ($ids[19] == ($movie->id)){
+        $name = ($movie->title);
+        $image_res = ($movie->poster_path);
+      }
+    }
+    ?>
+
+
   <body>
     <!--HEADER-->
     <div id="appendHeader"></div>
@@ -35,14 +56,14 @@
 
       <div class="row">
         <div class="col-sm-4">
-          <h1 id="name">Miracle in Cell No.7</h1>
+          <h1 id="name"><?php echo $name?></h1>
         </div>
         
       </div>
 
       <div id="details" class="row">
         <div id="poster" class="col-sm-4">
-          <img src="https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg" class="poster-img">
+          <img src="https://image.tmdb.org/t/p/w500<?php echo $image_res?>" class="poster-img">
         </div>
         <div id="grid" class="col-sm-8">
           <div id="appendGrid"></div>
