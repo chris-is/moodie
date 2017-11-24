@@ -108,18 +108,16 @@ $(document).ready(function() {
     var password = $("#signup-modal input[name=password]").val();
     var email = $("#signup-modal input[name=email]").val();
     url = base_url+'back-end/checkusername';
-    var postdata = 'username='+ username;
+    var postdata = 'username='+ username + '&password='+ password + '&email='+email;
     $.ajax({
       type: "POST",
       url: 'http://localhost/COMP307/front-end/html/checkusername.php',
       data: postdata,
       success: function(data){
-        alert(data);
-        if(data === 0){
+        if(data == 0){
          $(".username-status").html("Username already exists. Please select another one.");
         }
         else {
-         postdata = 'username='+ username + '&password='+ password + '&email='+email;
          $.ajax({
            type: "POST",
            url: 'http://localhost/COMP307/front-end/html/signup.php',

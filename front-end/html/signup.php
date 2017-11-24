@@ -17,6 +17,8 @@
 
       $result = $mysqli->query($query);
 
+      echo $username;
+
     } 
 
     //Print error messages if any
