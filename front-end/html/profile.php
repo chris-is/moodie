@@ -134,12 +134,12 @@
           url=base_url+'back-end/about';
 
 
-
           $.ajax({
           type:"POST",
           url:url,
           data:encode,
           success:function(data){
+            alert(encode);
           },
           error:function(data){
           alert("Error In Connecting");
@@ -151,6 +151,7 @@
           type:"GET",
           url:url,
           success:function(data){
+           // alert("K");
             $("#mainContent").prepend(data);
           }
           });
@@ -171,7 +172,7 @@
           });*/
           });
 
-          ajax_data('GET',url, function(data)
+          /*ajax_data('GET',url, function(data)
           {
             alert("fdgdfg");
           $.each(data.Users, function(i,data)
@@ -179,7 +180,7 @@
           var html="<div class='stbody' id='stbody"+data.about+"</div>";
           $("#secContent").prepend(html);
           });
-          });
+          });*/
 
 
         });
