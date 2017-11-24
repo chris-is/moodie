@@ -5,12 +5,11 @@ require '../vendor/autoload.php';
 
 $app = new \Slim\App;
 
-//require 'database.php';
-
 //Creating new records with the fields from html form
 $app->post('/about', function ($request) {
-try {
-	require_once('database.php');	
+try {	
+	require_once('database.php');
+
 	$query = "INSERT INTO `Users` (`about`) VALUES (?)";
 
 	$stmt = $mysqli->prepare($query);
@@ -48,38 +47,46 @@ $app->get('/about', function ($request) {
 });
 
 
-/*$app->post('/checkusername', function($request){
+$app->post('/checkusername', function ($request, $response){
 
 	try {	
-		echo "jajajajajaja";
-		$query = "INSERT INTO Users (username, password, email) VALUES ('$username', '$password', '$email');";
-
-		 $result = $mysqli->query($query);
+		require_once('database.php');
+		$username = $request->getParam('username');
+		$query = "SELECT * FROM Users WHERE username = '$username'";
+		$result = $mysqli->query($query);
+		if (mysql_num_rows($result) > 0){ 
+		  echo "0";
+		} 
+		else {
+		  echo "1";
+		}
 		
-		//echo json_encode($data);
 	} catch(Exception $e) {
 		echo "Something went wrong!";
 	}
 
-	/*$username = $request->getParam('username');
+});
 
-	$query = "INSERT INTO Users (username) VALUES ('$username');";
+$app->post('/signup', function ($request, $response) {
+  $username = $request->getParam('username');
+  $password = $request->getParam('password');
+  $email = $request->getParam('email');
+  
+  try {
+    require_once('database.php');
 
-	//$query = "SELECT COUNT(*) FROM Users WHERE username='$username'";
+    $query = "INSERT INTO Users (username, password, email) VALUES ('$username', '$password', '$email');";
 
-	$result = $mysqli->query($query);
+    $result = $mysqli->query($query);
 
-	echo "123";
-	
-	
-	if($result>0){
-	  echo "<span class='status'>Username Not Available.</span>";
-	}
-	else{
-	  echo "<span class='status'>Username Available.</span>";
-	}*/
+  } 
 
-
+  //Print error messages if any
+  catch(PDOException $e) {
+    echo json_encode($e->getMessage());
+  }
+  
+});
 
 $app->run();
 ?>

@@ -7,32 +7,32 @@
 <div class="row" id="g-happy">
   <button class="adj">Happy</button>
   <button id="p-minus" class="minus-ctrl" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn p" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn p" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn p" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn p" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn p" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn p" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn p" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn p" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn p" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn p" data-toggle="tooltip" data-placement="top"></button>
+  <button class="grid-btn p"></button>
+  <button class="grid-btn p"></button>
+  <button class="grid-btn p"></button>
+  <button class="grid-btn p"></button>
+  <button class="grid-btn p"></button>
+  <button class="grid-btn p"></button>
+  <button class="grid-btn p"></button>
+  <button class="grid-btn p"></button>
+  <button class="grid-btn p"></button>
+  <button class="grid-btn p"></button>
   <button id="p-plus" class="plus-ctrl" data-toggle="tooltip" data-placement="top"></button>
 </div>
 
 <div class="row" id="g-sad">
   <button class="adj">Sad</button>
   <button id="b-minus" class="minus-ctrl" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn b" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn b" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn b" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn b" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn b" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn b" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn b" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn b" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn b" data-toggle="tooltip" data-placement="top"></button>
-  <button class="grid-btn b" data-toggle="tooltip" data-placement="top"></button>
+  <button class="grid-btn b"></button>
+  <button class="grid-btn b"></button>
+  <button class="grid-btn b"></button>
+  <button class="grid-btn b"></button>
+  <button class="grid-btn b"></button>
+  <button class="grid-btn b"></button>
+  <button class="grid-btn b"></button>
+  <button class="grid-btn b"></button>
+  <button class="grid-btn b"></button>
+  <button class="grid-btn b"></button>
   <button id="b-plus" class="plus-ctrl" data-toggle="tooltip" data-placement="top"></button>
 </div>
 
