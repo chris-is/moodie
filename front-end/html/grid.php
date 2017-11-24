@@ -55,23 +55,23 @@
     var interval = null;
     $('#p-plus').on('mousedown', function() {
       interval = setInterval(function() {
-          $("#p-plus").val($("#p-plus").val() + 300);
+          $("#p-plus").val($("#p-plus").val() + 200);
           if(ipink < 10){
             $('.p').eq(ipink).addClass('pink');
             ipink++;
           }
-        }, 300);
+        }, 200);
     }).on('mouseup mouseleave', function() {
       clearInterval(interval);
     });
     $('#p-minus').on('mousedown', function() {
       interval = setInterval(function() {
-          $("#p-minus").val($("#p-minus").val() + 300);
+          $("#p-minus").val($("#p-minus").val() + 200);
           if(ipink > 0){
             ipink--;
             $('.p').eq(ipink).removeClass('pink');
           }
-        }, 300);
+        }, 200);
     }).on('mouseup mouseleave', function() {
       clearInterval(interval);
     });
@@ -80,23 +80,23 @@
     var iblue = 0;
     $('#b-plus').on('mousedown', function() {
       interval = setInterval(function() {
-          $("#b-plus").val($("#b-plus").val() + 300);
+          $("#b-plus").val($("#b-plus").val() + 200);
           if(iblue < 10){
             $('.b').eq(iblue).addClass('blue');
             iblue++;
           }
-        }, 300);
+        }, 200);
     }).on('mouseup mouseleave', function() {
       clearInterval(interval);
     });
     $('#b-minus').on('mousedown', function() {
       interval = setInterval(function() {
-          $("#b-minus").val($("#b-minus").val() + 300);
-          if(iblue >= 0){
+          $("#b-minus").val($("#b-minus").val() + 200);
+          if(iblue > 0){
             iblue--;
             $('.b').eq(iblue).removeClass('blue');
           }
-        }, 300);
+        }, 200);
     }).on('mouseup mouseleave', function() {
       clearInterval(interval);
     });

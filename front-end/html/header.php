@@ -31,10 +31,8 @@
           $id = session_id();
           $query = "SELECT status from Users where sid='$id'";
           $status = $mysqli->query($query);
-          //echo $id;
-          //echo json_decode($status);
-          
-          if ($_SESSION['status'] == 1){
+          $num = $status->num_rows;
+          if ($num == 1){
             return true;
           }
           else {
@@ -101,18 +99,28 @@ $(document).ready(function() {
     $(".container-fluid").css("filter", "initial");
   });
 
+  
+  var base_url="http://localhost/COMP307/";
+  var url,encodedata;
+  $("#username").focus();
+
   $('#signup-sub').click(function(){
-    
-    $.ajax({
-      type: "POST",
-      url: "checkusername.php",
-      data: data,
-      dataType: 'json',
-      success: function(data){
-        window.alert(data);
-        $(".username-status").html("Username already exists. Please select another one.");
-      }
-    });
+    var username = $('#username').val();
+    var precode = {"username":username};
+    var encode = JSON.stringify(precode);
+    url = base_url+'back-end/checkusername';
+
+     $.ajax({
+       type:"POST",
+       url:url,
+       data:encode,
+       success: function(data){
+         window.alert("dfdf");
+         $(".username-status").html("Username already exists. Please select another one.");
+       }
+     });
+     
+      
   });
 
   $('#logout-btn').click(function(){
