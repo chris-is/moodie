@@ -5,11 +5,11 @@ require '../vendor/autoload.php';
 
 $app = new \Slim\App;
 
-
 //Creating new records with the fields from html form
 $app->post('/about', function ($request) {
 try {	
 	require_once('database.php');
+
 	$query = "INSERT INTO `Users` (`about`) VALUES (?)";
 
 	$stmt = $mysqli->prepare($query);
@@ -25,14 +25,29 @@ try {
 	while ($row = $result->fetch_assoc()){
 		$data[] = $row;
 	}
-	//echo json_encode($data);
+	echo json_encode($data);
 } catch(Exception $e) {
 	echo "Something went wrong!";
 }
 
 });
 
-$app->post('/checkusername', function($request){
+
+$app->get('/about', function ($request) {
+
+	require_once('database.php');
+	$query = "SELECT * FROM Users";
+
+	$result = $mysqli->query($query);
+	while ($row = $result->fetch_assoc()){
+		$data[] = $row;
+	}
+	echo json_encode($data);
+
+});
+
+
+/*$app->post('/checkusername', function($request){
 
 	/*try {	
 		$query = "INSERT INTO `Users` (`username`) VALUES (?)";
@@ -96,7 +111,6 @@ $app->post('/checkusername', function($request){
 	  echo "<span class='status'>Username Available.</span>";
 	}*/
 
-});
 
 
 $app->run();
