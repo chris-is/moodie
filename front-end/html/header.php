@@ -46,19 +46,19 @@
 
 <!--Login modal-->
 <div class="modal" id="login-modal">
-  <form class="modal-content animate" method="post" action="login.php">
+  <div class="modal-content animate" method="post" action="login.php">
     <span onclick="document.getElementById('login-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
     <div class="container">
       <label><b>Username</b></label>
       <input type="text" name="username" required>
-      <div class="username-status"></div>
       <label><b>Password</b></label>
       <input type="password" name="password" required>
+      <div class="username-status"></div>
       <button type="submit" id="login-sub">Login</button>
       <!--<span class="forgot"><a href="#">I forgot my password</a></span>-->
       </div>
     </div>
-  </form>
+  </div>
 </div>
 
 <!--Signup modal-->
@@ -69,7 +69,7 @@
       <label><b>Email</b></label>
       <input type="text" name="email" maxlength="32" required>
       <label><b>Username</b></label>
-      <input type="text" name="username" maxlength="16" id="sign-name" required>
+      <input type="text" name="username" maxlength="16" required>
       <div class="username-status"></div>
       <label><b>Password</b></label>
       <input type="password" name="password" maxlength="16" required>
@@ -132,8 +132,28 @@ $(document).ready(function() {
           $(".username-status").html("Username must contain (4-16) alphanumeric characters.");
         }
       }
-    });
-      
+    }); 
+  });
+
+  $('#login-sub').click(function(){
+    var username = $("#login-modal input[name=username]").val();
+    var password = $("#login-modal input[name=password]").val();
+    url = base_url+'back-end/login';
+    var postdata = 'username='+ username + '&password='+ password;
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: postdata,
+      success: function(data){
+        if(data === "ok") {
+          window.location.href = '/COMP307/front-end/html/index-reg.php';
+        }
+        else {
+          $(".username-status").html("Your username or password is incorrect. Please try again.");
+        }
+        
+      }
+    }); 
   });
 
   $('#logout-btn').click(function(){

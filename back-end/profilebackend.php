@@ -48,53 +48,86 @@ $app->get('/about', function ($request) {
 
 
 $app->post('/checkusername', function ($request, $response) {
-    $username = $request->getParam('username');
-    
-    try { 
-      require_once('database.php');
-      $query = "SELECT * FROM Users WHERE username = '$username'";
-      $result = $mysqli->query($query);    
+  $username = $request->getParam('username');
+  
+  try { 
+    require_once('database.php');
+    $query = "SELECT * FROM Users WHERE username = '$username'";
+    $result = $mysqli->query($query);    
 
-      if (count($result->fetch_assoc()) > 0){ 
-        echo "existing";
-      } 
+    if (count($result->fetch_assoc()) > 0){ 
+      echo "existing";
+    } 
+    else {
+    	if (!preg_match('/^[a-zA-Z0-9]{4,16}$/i', $username)){
+    		echo "param";
+    	}
       else {
-      	if (!preg_match('/^[a-zA-Z0-9]{4,16}$/i', $username)){
-      		echo "param";
-      	}
-        else {
-        	echo "ok";
-        }
+      	echo "ok";
       }
-      
-    } catch(Exception $e) {
-      echo "Something went wrong!";
     }
-
-  });
+    
+  } catch(Exception $e) {
+    echo "Something went wrong!";
+  }
+});
 
 $app->post('/signup', function ($request, $response) {
-    $username = $request->getParam('username');
-    $password = $request->getParam('password');
-    $email = $request->getParam('email');
-    
-    try {
-      require_once('database.php');
+	$username = $request->getParam('username');
+	$password = $request->getParam('password');
+	$email = $request->getParam('email');
 
-      $query = "INSERT INTO Users (username, password, email) VALUES ('$username', '$password', '$email');";
+	try {
+	  require_once('database.php');
 
-      $result = $mysqli->query($query);
+	  $query = "INSERT INTO Users (username, password, email) VALUES ('$username', '$password', '$email');";
 
-      echo $username;
+	  $result = $mysqli->query($query);
 
-    } 
+	  echo $username;
 
-    //Print error messages if any
-    catch(PDOException $e) {
-      echo json_encode($e->getMessage());
+	} 
+
+	//Print error messages if any
+	catch(PDOException $e) {
+	  echo json_encode($e->getMessage());
+	}
+});
+
+$app->post('/login', function ($request, $response) {
+  $userlogin = $request->getParam('username');
+  $userpass = $request->getParam('password');
+
+  try { 
+    require_once('database.php');
+
+    $query = "SELECT * from Users where username='$userlogin'";
+
+    $result = $mysqli->query($query);
+
+    while ($row = $result->fetch_assoc()){
+      $userdata[] = $row;
     }
-    
-  });
+    if ($userdata[0]['password'] == $userpass) {
+      $id = uniqid();
+      session_id($id);
+      session_start();
+      $_SESSION['username'] = $userlogin;
+      $query = "UPDATE Users SET sid='$id', status=1 WHERE username='$userlogin'";
+      $result = $mysqli->query($query);
+      echo "ok";
+    }
+    else {
+      echo "nope";
+    }
+
+  } 
+  catch(Exception $e) {
+    echo "Something went wrong!";
+  }
+
+  
+});
 
 $app->run();
 ?>
