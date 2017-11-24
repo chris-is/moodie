@@ -114,76 +114,31 @@
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <script src="../js/ajaxGetPost.js"></script>
       <script>
-        $(document).ready(function()
-        {
-          /*$(".info").on("click",".stpostbutton",function()
-          {
-            $("#mainContent").prepend("<p>HELLO TESTIIIING</p>");
-          });*/
-         var base_url="http://localhost/COMP307/";
-          var url,encodedata;
-          $("#update").focus();
-
-          $(".info").on("click",".stpostbutton",function()
-          {
-
-          var update=$('#update').val();
-          var precode = {"about":update};
-          var encode=JSON.stringify(precode);
-          //$("#mainContent").prepend("<p>Daaaaama</p>");
-          url=base_url+'back-end/about';
-
-
-          $.ajax({
-          type:"POST",
-          url:url,
-          data:encode,
-          success:function(data){
-            alert(data);
-            alert(encode);
-          },
-          error:function(data){
-          alert("Error In Connecting");
-          }
+        $(document).ready(function(){
+          var base_url="http://localhost/COMP307/";
+          var url;
+          $(".info").on("click",".stpostbutton",function(){
+            var update=$('#update').val();
+            var postdata = "about="+update;
+            url=base_url+'back-end/about';
+            $.ajax({
+              type: "POST",
+              url: url,
+              data:postdata,
+              success:function(data){
+                $.ajax({
+                type:"GET",
+                url:url,
+                success:function(data){
+                  $("#mainContent").prepend(data);
+                }
+              });
+            },
+            error:function(data){
+              alert("Error In Connecting");
+            }
           });
-
-
-          $.ajax({
-          type:"GET",
-          url:url,
-          success:function(data){
-           // alert("K");
-            $("#mainContent").prepend(data);
-          }
           });
-
-
-
-
-          /*post_ajax_data(url,encode,function(data)
-          {
-          //$("#mainContent").prepend("<p>trying</p>");
-          $.each(data.Users, function(i,data)
-          {
-          var html="<div class='stbody'"+data.about+"</div>";
-          $("#mainContent").prepend(html);
-          $('#update').val('').focus();
-           alert("asdas");
-          });
-          });*/
-          });
-
-          /*ajax_data('GET',url, function(data)
-          {
-            alert("fdgdfg");
-          $.each(data.Users, function(i,data)
-          {
-          var html="<div class='stbody' id='stbody"+data.about+"</div>";
-          $("#secContent").prepend(html);
-          });
-          });*/
-
-
         });
       </script>
 

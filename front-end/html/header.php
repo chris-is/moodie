@@ -151,7 +151,6 @@ $(document).ready(function() {
         else {
           $(".username-status").html("Your username or password is incorrect. Please try again.");
         }
-        
       }
     }); 
   });
@@ -173,7 +172,5 @@ window.onclick = function(event) {
     $(".container-fluid").css("filter", "initial");
   }
 }
-
-
 
 </script>
