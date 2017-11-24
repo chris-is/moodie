@@ -13,7 +13,15 @@
         <button id="home-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Home" onclick="window.location.href = '/COMP307/front-end/html/index-reg.php';"></button>
         <input type="text" placeholder="Search for a specific movie & enter" id="searchbar">
         <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
-        <button id="user-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="User"></button>
+        <div class="dropdown">
+          <button id="user-btn" class="nav-btn dropdown-o" data-toggle="tooltip" data-placement="top" title="User"></button>
+          <div class="dropdown-content">
+            <ul>
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Settings</a></li>
+            </ul>
+          </div>
+        </div>
         <button id="logout-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Logout"></button>
       <?php endif; ?>
 
@@ -21,12 +29,10 @@
         function isSID(){
           require_once('database.php');
           $id = session_id();
-          $query = "SELECT status from Users where username='asd'";
+          $query = "SELECT status from Users where sid='$id'";
           $status = $mysqli->query($query);
-          //echo $id;
-          //echo json_decode($status);
-          
-          if ($_SESSION['status'] == 1){
+          $num = $status->num_rows;
+          if ($num == 1){
             return true;
           }
           else {
@@ -34,17 +40,6 @@
           }
         }
       ?>
-
-      <script>
-        $(document).ready(function(){
-          $('#logout-btn').click(function(){
-            $('#logout-btn').load('logout.php', function(e){
-        console.log(e);
-            });
-          });
-        });
-      </script>
-      
     </div>
   </div>
 </nav>
@@ -56,6 +51,7 @@
     <div class="container">
       <label><b>Username</b></label>
       <input type="text" name="username" required>
+      <div class="username-status"></div>
       <label><b>Password</b></label>
       <input type="password" name="password" required>
       <button type="submit" id="login-sub">Login</button>
@@ -67,19 +63,20 @@
 
 <!--Signup modal-->
 <div class="modal" id="signup-modal">
-  <form class="modal-content animate" method="post" action="signup.php">
+  <div class="modal-content animate" method="post" >
     <span onclick="document.getElementById('signup-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
     <div class="container">
       <label><b>Email</b></label>
       <input type="text" name="email" maxlength="32" required>
       <label><b>Username</b></label>
       <input type="text" name="username" maxlength="16" required>
+      <div class="username-status"></div>
       <label><b>Password</b></label>
       <input type="password" name="password" maxlength="16" required>
       <button type="submit" id="signup-sub">Sign Up</button>
       </div>
     </div>
-  </form>
+  </div>
 </div>
 
 
@@ -101,6 +98,36 @@ $(document).ready(function() {
     $(".container-fluid").css("-webkit-filter", "blur(0px)");
     $(".container-fluid").css("filter", "initial");
   });
+
+  
+  var base_url="http://localhost/COMP307/";
+  var url,encodedata;
+  $("#username").focus();
+
+  $('#signup-sub').click(function(){
+    var username = $('#username').val();
+    var precode = {"username":username};
+    var encode = JSON.stringify(precode);
+    url = base_url+'back-end/checkusername';
+
+     $.ajax({
+       type:"POST",
+       url:url,
+       data:encode,
+       success: function(data){
+         window.alert("dfdf");
+         $(".username-status").html("Username already exists. Please select another one.");
+       }
+     });
+     
+      
+  });
+
+  $('#logout-btn').click(function(){
+    $('#logout-btn').load('logout.php', function(e){
+        console.log(e);
+      });
+    });
   
 });
 

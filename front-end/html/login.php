@@ -2,7 +2,6 @@
   use \Psr\Http\Message\ServerRequestInterface as Request;
   require '../../vendor/autoload.php';
 
-  //$settings = ['settings' => ['addContentLengthHeader' => false]];
   $app = new Slim\App();
 
   $app->post('/', function ($request, $response) {
@@ -24,7 +23,7 @@
         $id = uniqid();
         session_id($id);
         session_start();
-        $_SESSION['status'] = 1;
+        $_SESSION['username'] = $userlogin;
         $query = "UPDATE Users SET sid='$id', status=1 WHERE username='$userlogin'";
         $result = $mysqli->query($query);
       }

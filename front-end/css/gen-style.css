@@ -80,6 +80,10 @@ html, body {
   margin-left: 2%;
   margin-right: 0;
 }
+.username-status{
+  font-size: 0.5rem;
+  color: red;
+}
 
 /* Registered account */
 #user-btn{
@@ -94,14 +98,18 @@ html, body {
 }
 
 .dropdown {
-  position: relative;
-  display: inline-block;
+  margin: 0;
+  padding: 0;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 .dropdown-content {
   display: none;
   position: absolute;
+  margin-left: -3rem;
+  margin-top: -1rem;
   background-color: #ffd37a;
-  width: 7rem;
+  width: 9rem;
   z-index: 1;
   border-radius: 5px;
 
@@ -112,6 +120,7 @@ html, body {
   list-style: none;
   margin: 5px;
   padding: 0;
+  text-align: center;
 }
 .dropdown-content a:hover{
   text-decoration: none;
