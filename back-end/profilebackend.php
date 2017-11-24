@@ -10,22 +10,13 @@ $app->post('/about', function ($request) {
 try {	
 	require_once('database.php');
 
-	$query = "INSERT INTO `Users` (`about`) VALUES (?)";
+	$about = $request->getParam('about');
+	$query = "UPDATE Users SET about='$about' WHERE username='asd'";
+	$result = $mysqli->query($query);  
 
-	$stmt = $mysqli->prepare($query);
-	$stmt->bind_param("s", $about);
-
-	$about = $request->getParsedBody()['about'];
-
-	$stmt->execute();
 	$query = "SELECT * FROM Users";
-
 	$result = $mysqli->query($query);
 
-	while ($row = $result->fetch_assoc()){
-		$data[] = $row;
-	}
-	echo json_encode($data);
 } catch(Exception $e) {
 	echo "Something went wrong!";
 }
@@ -34,9 +25,8 @@ try {
 
 
 $app->get('/about', function ($request) {
-
 	require_once('database.php');
-	$query = "SELECT * FROM Users";
+	$query = "SELECT about FROM Users WHERE username = 'asd';";
 
 	$result = $mysqli->query($query);
 	while ($row = $result->fetch_assoc()){
@@ -83,9 +73,6 @@ $app->post('/signup', function ($request, $response) {
 	  $query = "INSERT INTO Users (username, password, email) VALUES ('$username', '$password', '$email');";
 
 	  $result = $mysqli->query($query);
-
-	  echo $username;
-
 	} 
 
 	//Print error messages if any
