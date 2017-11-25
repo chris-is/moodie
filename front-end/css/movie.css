@@ -18,7 +18,7 @@ color: white;
   background-color: #ffd37a;
   padding: 0.5rem;
   border-radius: 5px;
-  font-size: 1.5rem;
+  font-size: 140%;
   width: 392px;
   height: 82px;
   text-align:center;
@@ -105,15 +105,38 @@ color: white;
 .pink{
   background-image: url("../img/pink.png"); 
 }
-
+.red{
+  background-image: url("../img/red.png"); 
+}
+.orange{
+  background-image: url("../img/orange.png"); 
+}
+.yellow{
+  background-image: url("../img/yellow.png"); 
+}
+.white{
+  background-image: url("../img/white.png"); 
+}
+.purple{
+  background-image: url("../img/purple.png"); 
+}
+.lilac{
+  background-image: url("../img/lilac.png"); 
+}
 .blue{
   background-image: url("../img/blue.png"); 
+}
+.green{
+  background-image: url("../img/green.png"); 
+}
+.brown{
+  background-image: url("../img/brown.png"); 
 }
 
 #rate{
   margin-top: 46px;
-  background-color: #cbcbcb;
-  color: #1d1b1b;
+  background-color: #ffd37a;
+  color: white;
 }
 
 
