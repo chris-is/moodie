@@ -28,7 +28,7 @@
 
       <div class="row">
         <div id="result-msg">
-          Your search for ___ returned the following results.
+          Your search for ___ returned the following results:
         </div>
       </div>
 
