@@ -3,8 +3,8 @@
 <html>
     <?php
       require 'head.html';
-      ?>
-    <!--#include file="head.html" -->
+      ?> 
+
     <link href="../css/profile.css" type="text/css" rel="stylesheet">
     <!--FONTS-->
   <body>
@@ -34,7 +34,7 @@
 
   <div class="pic">
       <form id="frm1" action="">
-        <input type="file" name="pic" accept="image/*" onchange="previewFile()">
+        <input id="dp" type="file" name="pic" accept="image/*" onchange="previewFile()">
       </form>
   </div>
 
@@ -64,6 +64,12 @@
 
   <!--Define content for each button-->
 
+  <!-- Start with hidden divs -->
+    <script>
+      $(document).ready(function(){
+        $(".info, .reviews, .friends, .list").hide();
+      });
+    </script>
 
     <script>
       $(document).ready(function(){
@@ -104,8 +110,8 @@
     <div class="info">
       <!--PHP-->
       <div>
-        About:
-        <textarea id="update" class="stupdatebox"></textarea>
+        About: <br>
+        <textarea id="update" maxlength="250" class="stupdatebox"></textarea>
         <input type="submit" value="POST" class="stpostbutton">
       </div>
       
@@ -113,6 +119,22 @@
       <div id="secContent"></div>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <script src="../js/ajaxGetPost.js"></script>
+      
+      <script>
+        $(document).ready(function() {
+          var base_url="http://localhost/COMP307/";
+          var url = base_url+'back-end/about';
+          $.ajax({
+            type:"GET",
+            url:url,
+            success:function(data){
+              $("#mainContent").html("");
+              $("#mainContent").prepend(data);
+            }
+          });
+        });
+      </script>
+
       <script>
         $(document).ready(function(){
           var base_url="http://localhost/COMP307/";
@@ -130,6 +152,7 @@
                 type:"GET",
                 url:url,
                 success:function(data){
+                  $("#mainContent").html("");
                   $("#mainContent").prepend(data);
                 }
               });
