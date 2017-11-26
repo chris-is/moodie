@@ -93,12 +93,18 @@ div#mainContent {
 	top: -400px;
 }
 
+div#reviewList {
+  width: 800px;
+  word-wrap: break-word;
+  color:#9ec3ff;
+  margin-left: 10px;
+  margin-top: 10px;
+}
 
 .reviews {
 	display: none;
 	position: relative;
-	border: 2px solid white;
-	height: 800px;
+	height: 100%;
   width: 800px;
 	margin-left: 440px;
   margin-right: 320px;
