@@ -9,5 +9,6 @@
   while ($row = $result->fetch_assoc()){
     $data[] = $row;
   }
-  echo json_encode($data);
+   $json = json_encode($data);
+   echo substr($json, 11, -3);
 ?>
