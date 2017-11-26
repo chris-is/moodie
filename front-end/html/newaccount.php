@@ -28,6 +28,14 @@
         });
       </script>
 
+      <!--SEARCH-->
+      <div id="appendSearch"></div>
+      <script>
+        $(function(){
+          $("#appendSearch").load("search.html");
+        });
+      </script>
+
     <div id="msg"><button id="message" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Login" onclick="document.getElementById('login-modal').style.display='block'" style="width:auto">
     Your account was created successfully! Please click here to log in.
     </button></div>

@@ -5,7 +5,7 @@
       session_start();
       if(isSID() == false) : ?>
         <button id="home-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Home" onclick="window.location.href = '/COMP307/front-end/html/index.php';"></button>
-        <input type="text" placeholder="Search for a specific movie & enter" id="searchbar">
+        <input type="text" placeholder="Search for a specific movie & enter" id="searchbar" name="searchquery">
         <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
         <button id="signup-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Sign Up"></button>
         <button id="login-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Login" onclick="document.getElementById('login-modal').style.display='block'" style="width:auto"></button>
@@ -14,10 +14,10 @@
         <input type="text" placeholder="Search for a specific movie & enter" id="searchbar">
         <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
         <div class="dropdown">
-          <button id="user-btn" class="nav-btn dropdown-o" data-toggle="tooltip" data-placement="top" title="User"></button>
+          <button id="user-btn" class="nav-btn dropdown-o" data-toggle="tooltip" data-placement="top" title="User" onclick="window.location.href = '/COMP307/front-end/html/profile.php';"></button>
           <div class="dropdown-content">
             <ul>
-              <li><a href="#">Profile</a></li>
+              <li><a href="/COMP307/front-end/html/profile.php">Profile</a></li>
               <li><a href="#">Settings</a></li>
             </ul>
           </div>
@@ -81,7 +81,7 @@
 
 
 <script>
-// Get the modal
+// AUTHENTIFICATION
 var modal1 = document.getElementById('login-modal');
 var modal2 = document.getElementById('signup-modal');
 
@@ -91,6 +91,10 @@ $(document).ready(function() {
     $(".container-fluid").css("-webkit-filter", "blur(5px)");
   });
   $("#signup-btn").click(function(){
+    $(modal2).css("display", "block");
+    $(".container-fluid").css("-webkit-filter", "blur(5px)");
+  });
+  $("#sign-up-banner").click(function(){
     $(modal2).css("display", "block");
     $(".container-fluid").css("-webkit-filter", "blur(5px)");
   });
@@ -160,6 +164,24 @@ $(document).ready(function() {
         console.log(e);
       });
     });
+
+// SEARCH
+  $('#searchbar').keypress(function(e){
+    if(e.which == 13) {
+      var postdata = $("#searchbar input[name=searchquery]").val();
+      $.ajax({
+        type: "POST",
+        url: "/COMP307/front-end/html/search-alg.php",
+        data: postdata,
+        success: function(data){
+          alert(data);
+        },
+        error: function(){
+          alert('Error occured!');
+        }
+      });
+    }  
+  });
   
 });
 
