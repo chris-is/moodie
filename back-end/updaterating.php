@@ -16,9 +16,10 @@
     $hungry = $request->getParam('hungry');
     $bored = $request->getParam('bored');
 
-    $query = "SELECT * from Userratings where movieid='$movieid' AND username='$username'";
-    $query = "UPDATE Userratings SET happy='$happy', angry='$angry', smart='$smart', excited='$excited', relaxed='$relaxed', shocked='$shocked', scared='$scared', sad='$sad', hungry='$hungry', bored='$bored' WHERE username='$username' AND movieid='$movieid'";
+    $query = "DELETE FROM Userratings WHERE username='$username' AND movieid='$movieid'";
+    $result = $mysqli->query($query);
 
+    $query = "INSERT INTO Userratings(username, movieid, happy, angry, smart, excited, relaxed, shocked, scared, sad, hungry, bored) VALUES ('$username', '$movieid', '$happy', '$angry', '$smart', '$excited', '$relaxed', '$shocked', '$scared', '$sad', '$hungry', '$bored');";
     $result = $mysqli->query($query);
 
 

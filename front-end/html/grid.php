@@ -388,7 +388,7 @@ $(document).ready(function() {
 //USER GRID//
   //PINK - HAPPY
   var idx = 1;
-  var ipink = eval("data[0]." + adjarray[idx]);
+  var ipink = 0;
   idx++;
   var interval = null;
   $('#uhappy-plus').on('mousedown', function() {
@@ -415,7 +415,7 @@ $(document).ready(function() {
   });
 
   //RED - ANGRY
-  var ird = eval("data[0]." + adjarray[idx]);
+  var ird = 0;
   idx++;
   var interval = null;
   $('#uangry-plus').on('mousedown', function() {
@@ -442,7 +442,7 @@ $(document).ready(function() {
   });
 
   //ORANGE - SMART
-  var iora = eval("data[0]." + adjarray[idx]);
+  var iora = 0;
   idx++;
   var interval = null;
   $('#usmart-plus').on('mousedown', function() {
@@ -469,7 +469,7 @@ $(document).ready(function() {
   });
 
   //YELLOW - EXCITED
-  var iyel = eval("data[0]." + adjarray[idx]);
+  var iyel = 0;
   idx++;
   var interval = null;
   $('#uexcited-plus').on('mousedown', function() {
@@ -496,7 +496,7 @@ $(document).ready(function() {
   });
 
   //WHITE - RELAXED
-  var iwhi = eval("data[0]." + adjarray[idx]);
+  var iwhi = 0;
   idx++;
   var interval = null;
   $('#urelaxed-plus').on('mousedown', function() {
@@ -523,7 +523,7 @@ $(document).ready(function() {
   });
 
   //PURPLE - SHOCKED
-  var ipur = eval("data[0]." + adjarray[idx]);
+  var ipur = 0;
   idx++;
   var interval = null;
   $('#ushocked-plus').on('mousedown', function() {
@@ -550,7 +550,7 @@ $(document).ready(function() {
   });
 
   //LILAC - SCARED
-  var ilil = eval("data[0]." + adjarray[idx]);
+  var ilil = 0;
   idx++;
   $('#uscared-plus').on('mousedown', function() {
     interval = setInterval(function() {
@@ -576,7 +576,7 @@ $(document).ready(function() {
   });
 
   //BLUE - SAD
-  var iblu = eval("data[0]." + adjarray[idx]);
+  var iblu = 0;
   idx++;
   $('#usad-plus').on('mousedown', function() {
     interval = setInterval(function() {
@@ -602,7 +602,7 @@ $(document).ready(function() {
   });
 
   //GREEN - HUNGRY
-  var igrn = eval("data[0]." + adjarray[idx]);
+  var igrn = 0;
   idx++;
   $('#uhungry-plus').on('mousedown', function() {
     interval = setInterval(function() {
@@ -628,7 +628,7 @@ $(document).ready(function() {
   });
 
   //BROWN - BORED
-  var ibrn = eval("data[0]." + adjarray[idx]);
+  var ibrn = 0;
   idx++;
   $('#ubored-plus').on('mousedown', function() {
     interval = setInterval(function() {
