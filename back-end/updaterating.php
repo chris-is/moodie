@@ -5,6 +5,10 @@
     //$sid = $_SESSION['sid'];
     $username = $_SESSION['username'];
     $movieid = $request->getParam('movieid');
+
+    //$query = "CREATE UNIQUE INDEX ux ON Userratings (username, movieid)";
+    $result = $mysqli->query($query);
+
     $query = "INSERT INTO Userratings (username, movieid) VALUES($username, $movieid) ON DUPLICATE KEY UPDATE    
 username='$username', movieid='$movieid'";
     $result = $mysqli->query($query);
