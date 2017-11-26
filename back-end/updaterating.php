@@ -22,7 +22,6 @@
     $query = "INSERT INTO Userratings(username, movieid, happy, angry, smart, excited, relaxed, shocked, scared, sad, hungry, bored) VALUES ('$username', '$movieid', '$happy', '$angry', '$smart', '$excited', '$relaxed', '$shocked', '$scared', '$sad', '$hungry', '$bored');";
     $result = $mysqli->query($query);
 
-
     echo "ok";
 
   } 
