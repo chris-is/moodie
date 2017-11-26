@@ -7,10 +7,9 @@
   $result = $mysqli->query($query);
 
   $_SESSION['sid'] = 0;
+  $_SESSION['username'] = 0;
   unset($_SESSION);
 
-?>
+  echo "ok";
 
-<script type="text/javascript">
-window.location.href = '/COMP307/front-end/html/index.php';
-</script>
+?>

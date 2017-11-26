@@ -160,10 +160,18 @@ $(document).ready(function() {
   });
 
   $('#logout-btn').click(function(){
-    $('#logout-btn').load('logout.php', function(e){
-        console.log(e);
-      });
-    });
+    url = base_url+'back-end/logout';
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: {},
+      success: function(data){
+        if(data === "ok"){
+          window.location.href = '/COMP307/front-end/html/index.php';
+        }
+      }
+    }); 
+  });
 
 // SEARCH
   $('#searchbar').keypress(function(e){

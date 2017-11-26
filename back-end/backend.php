@@ -26,8 +26,16 @@ $app->post('/login', function ($request, $response) {
   require 'login.php'; 
 });
 
+$app->post('/logout', function ($request, $response) {
+  require 'logout.php'; 
+});
+
 $app->post('/avgrating', function ($request, $response) {
   require 'avgrating.php'; 
+});
+
+$app->post('/userrating', function ($request, $response) {
+  require 'userrating.php'; 
 });
 
 $app->run();
