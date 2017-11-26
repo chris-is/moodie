@@ -38,5 +38,9 @@ $app->post('/userrating', function ($request, $response) {
   require 'userrating.php'; 
 });
 
+$app->post('/updaterating', function ($request, $response) {
+  require 'updaterating.php'; 
+});
+
 $app->run();
 ?>
