@@ -1,5 +1,5 @@
 #result-msg{
-  margin-left: 2%;
+  margin-left: 60px;
   margin-right: 2%;
   margin-top: 5%;
   margin-bottom: 5%;
@@ -8,6 +8,13 @@
   font-style: normal;
   font-variant: normal;
   color: #fffff0;
+  background-color: #ffd37a;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 20px;
+  width: 800px;
+  height: 41px;
+  line-height: 20px;
 }
 
 #image{
