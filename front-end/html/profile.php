@@ -128,6 +128,7 @@
             type:"GET",
             url:url,
             success:function(data){
+              data = data.replace(/\n/g, "<br />");
               $("#mainContent").html("");
               $("#mainContent").prepend(data);
             }
@@ -153,6 +154,7 @@
                 url:url,
                 success:function(data){
                   $("#mainContent").html("");
+                  data = data.replace(/\n/g, "<br />");
                   $("#mainContent").prepend(data);
                 }
               });
@@ -165,11 +167,25 @@
         });
       </script>
 
- 
+
     </div>
 
     <div class="reviews">
-      <!--All PHP-->
+      <div id="reviewList"></div>
+      <script>
+        $(document).ready(function() {
+          var base_url="http://localhost/COMP307/";
+          var url = base_url+'back-end/reviews';
+          $.ajax({
+            type:"GET",
+            url:url,
+            success:function(data){
+              $("#reviewList").html("");
+              $("#reviewList").prepend(data);
+            }
+          });
+        });
+      </script>
     </div>
 
     <div class="friends">

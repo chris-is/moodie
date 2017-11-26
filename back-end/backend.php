@@ -41,6 +41,10 @@ $app->post('/userrating', function ($request, $response) {
 $app->post('/updaterating', function ($request, $response) {
   require 'updaterating.php'; 
 });
+//For retrieving user ratings
+$app->get('/reviews', function($request, $response) {
+  require 'reviews.php';
+});
 
 $app->run();
 ?>
