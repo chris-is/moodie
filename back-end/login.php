@@ -17,6 +17,7 @@
       session_id($id);
       session_start();
       $_SESSION['sid'] = $id;
+      $_SESSION['username'] = $userlogin;
       $query = "UPDATE Users SET sid='$id', status=1 WHERE username='$userlogin'";
       $result = $mysqli->query($query);
       echo "ok";
