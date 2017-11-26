@@ -1,9 +1,6 @@
 .row{
-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-font-size: 14px;
-font-style: normal;
-font-variant: normal;
-color: white;
+  margin: 0;
+  parring: 0;
 }
 
 .user-rating{
