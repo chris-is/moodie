@@ -69,12 +69,6 @@ username='$username', movieid='$movieid'";
       $result = $mysqli->query($query);
     }
 
-    /*$query = "DELETE FROM Userratings WHERE username='$username' AND movieid='$movieid'";
-    $result = $mysqli->query($query);
-
-    $query = "INSERT INTO Userratings(username, movieid, happy, angry, smart, excited, relaxed, shocked, scared, sad, hungry, bored) VALUES ('$username', '$movieid', '$happy', '$angry', '$smart', '$excited', '$relaxed', '$shocked', '$scared', '$sad', '$hungry', '$bored');";
-    $result = $mysqli->query($query);*/
-
     echo "ok";
 
   } 

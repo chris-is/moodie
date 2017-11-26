@@ -328,7 +328,9 @@ $(document).ready(function() {
   var colormap = {happy:"pink", angry:"red", smart:"orange", excited:"yellow", relaxed:"white", shocked:"purple", scared:"lilac", sad:"blue", hungry:"green", bored:"brown"};
   var base_url="http://localhost/COMP307/";
   var movieid = $('#movieid').text();
-  var postdata = 'movieid='+movieid;
+  var moviename = $('#name').text();
+  var postdata = 'movieid='+movieid+"&moviename="+moviename;
+  //var postdata = 'movieid='+movieid;
 
   //AVG RATING DISPLAY
   var url = base_url+'back-end/avgrating';
@@ -338,6 +340,7 @@ $(document).ready(function() {
     data: postdata,
     dataType: 'json',
     success: function(data){
+      //alert(data);
       var adjarray = $('.gen-rating > div').map(function(){
         return this.id;
       }).get();
@@ -662,7 +665,6 @@ $(document).ready(function() {
       url: url,
       data: postdata,
       success: function(data){
-        alert(data);
         $('.user-rating').hide();
         $('.gen-rating').show();
       }
