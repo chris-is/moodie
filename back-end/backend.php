@@ -26,5 +26,9 @@ $app->post('/login', function ($request, $response) {
   require 'login.php'; 
 });
 
+$app->post('/avgrating', function ($request, $response) {
+  require 'avgrating.php'; 
+});
+
 $app->run();
 ?>

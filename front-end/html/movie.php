@@ -57,6 +57,7 @@
       <div class="row">
         <div class="col-sm-4">
           <h1 id="name"><?php echo $name?></h1>
+          <div id="movieid" style="display: none;">1234</div>
         </div>
         
       </div>
