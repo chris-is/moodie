@@ -12,26 +12,25 @@
     while ($row = $result->fetch_assoc()){
       $ratings[] = $row;
     }
-    
-    echo $ratings[0];
+    //$ratings2 = json_encode($ratings);
     foreach($ratings as $v) {
 
-      $json = json_encode($v);
-      //echo $json;
-      $movieid = substr($json, 12, -2);
+      foreach($v as $x)
+      {
+        $query2 = "SELECT moviename FROM Movies WHERE movieid='$x'";
 
-      $query2 = "SELECT moviename FROM Movies WHERE movieid='1234'";
+        $result2 = $mysqli->query($query2);
+        while ($row = $result2->fetch_assoc()){
+        $names[] = $row;
+        $json2 = json_encode($names);
+        $newline="<br>";
+        $message = substr($json2, 15, -3);
+        $finalMessage = $message . $newline;
+        echo $finalMessage;
+        }
 
-      $result2 = $mysqli->query($query2);
-      while ($row = $result2->fetch_assoc()){
-      $names[] = $row;
       }
-
-      $json2 = json_encode($names);
-      $newline="<br>";
-      $message = substr($json2, 10, -3);
-      $finalMessage = $message . $newline;
-      //echo $finalMessage;
+      //$movieid = substr($json, 12, -2);
     }
 
   } 
