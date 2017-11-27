@@ -33,6 +33,22 @@
         <button class="section-btn" id="rec-btn"></button>
       </div>
 
+      <script>
+        $(document).ready(function() {
+          var base_url="http://localhost/COMP307/";
+          var url = base_url+'back-end/recommendations';
+          $.ajax({
+            type:"GET",
+            url:url,
+            success:function(data){
+              $("#recList").html("");
+              $("#recList").prepend(data);
+            }
+          });
+        });
+      </script>
+
+      <div id="recList"></div>
 
       <div class="multiple-items-big">
         <div><img class="slideshow" src="https://i.imgur.com/lmGx6gv.jpg"></div>
