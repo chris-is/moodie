@@ -117,7 +117,6 @@
           url:url,
           success:function(data){
             var recarray = data.split(';');
-            alert(recarray[i]);
             for(var i=0; i<5; i++){
               alert(recarray[i]);
             }
