@@ -85,11 +85,11 @@
         <div class="col-sm-6">
           <!--NEAR ME SLIDESHOW-->
           <div class="multiple-items-small">
-            <div><img class="slideshow" src="https://i.imgur.com/lmGx6gv.jpg"></div>
-            <div><img class="slideshow" src="https://i.imgur.com/27h2eZJ.jpg"></div>
-            <div><img class="slideshow" src="https://i.imgur.com/P8O2FvB.jpg"></div>
-            <div><img class="slideshow" src="https://i.imgur.com/lmGx6gv.jpg"></div>
-            <div><img class="slideshow" src="https://i.imgur.com/27h2eZJ.jpg"></div>
+          <div><img class="slideshow" src="https://mediafiles.cineplex.com/Central/Film/Posters/23036_768_1024.jpg"></div>
+          <div><img class="slideshow" src="https://mediafiles.cineplex.com/Central/Film/Posters/21755_768_1024.jpg"></div>
+          <div><img class="slideshow" src="https://mediafiles.cineplex.com/Central/Film/Posters/27066_768_1024.jpg"></div>
+          <div><img class="slideshow" src="https://mediafiles.cineplex.com/Central/Film/Posters/26425_768_1024.jpg"></div>
+          <div><img class="slideshow" src="https://mediafiles.cineplex.com/Central/Film/Posters/27470_768_1024.jpg"></div></div>
           </div>
         </div>
 
