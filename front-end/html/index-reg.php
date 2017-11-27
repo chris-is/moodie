@@ -111,8 +111,8 @@
             var posters = [];
             var url = "https://api.themoviedb.org/3/movie/";
 
-            recarray = [16535, 401123, 385129, 397936, 456768];
-            
+            //recarray = [16535, 401123, 385129, 397936, 456768];
+            //alert(recarray);
             
             var url0 = url + recarray[0] + "?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US";
             var url1 = url + recarray[1] + "?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US";
