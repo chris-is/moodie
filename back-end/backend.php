@@ -46,5 +46,10 @@ $app->get('/reviews', function($request, $response) {
   require 'reviews.php';
 });
 
+//For recommendations
+$app->get('/recommendations', function($request, $response) {
+  require 'recommendations.php';
+});
+
 $app->run();
 ?>
