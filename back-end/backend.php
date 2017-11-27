@@ -52,5 +52,14 @@ $app->get('/recommendations', function($request, $response) {
   require 'recommendations.php';
 });
 
+//For search algorithm
+$app->post('/search-alg', function($request, $response) {
+  require 'search-alg.php';
+});
+$app->get('/search-alg', function($request, $response) {
+  require 'search-alg.php';
+});
+
+
 $app->run();
 ?>

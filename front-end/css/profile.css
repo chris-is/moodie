@@ -297,6 +297,6 @@ button.link {
 /*Place footer at the bottom of the page where it should be*/
 .footer {
 	position: relative;
-	top: 900px;
+	top: 300px;
 	width: 100%;
 }

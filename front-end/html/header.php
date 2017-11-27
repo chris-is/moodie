@@ -176,16 +176,19 @@ $(document).ready(function() {
 // SEARCH
   $('#searchbar').keypress(function(e){
     if(e.which == 13) {
-      var postdata = $("#searchbar input[name=searchquery]").val();
+      var query = $('#searchbar').val();
+      var postdata = "query=" + query;
+      url = base_url+'back-end/search-alg';
       $.ajax({
         type: "POST",
-        url: "/COMP307/front-end/html/search-alg.php",
+        url: url,
         data: postdata,
         success: function(data){
           alert(data);
+          //window.location.href = '/COMP307/front-end/html/search-results.php';
         },
         error: function(){
-          alert('Error occured!');
+          alert('Error occured when sending search');
         }
       });
     }  

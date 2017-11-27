@@ -330,7 +330,6 @@ $(document).ready(function() {
   var movieid = $('#movieid').text();
   var moviename = $('#name').text();
   var postdata = 'movieid='+movieid+"&moviename="+moviename;
-  //var postdata = 'movieid='+movieid;
 
   //AVG RATING DISPLAY
   var url = base_url+'back-end/avgrating';
@@ -340,7 +339,6 @@ $(document).ready(function() {
     data: postdata,
     dataType: 'json',
     success: function(data){
-      //alert(data);
       var adjarray = $('.gen-rating > div').map(function(){
         return this.id;
       }).get();
