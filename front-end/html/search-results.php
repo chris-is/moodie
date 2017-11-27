@@ -32,6 +32,20 @@
         </div>
       </div>
 
+      <script type="text/javascript">
+        $(document).ready(function(){
+          var base_url="http://localhost/COMP307/";
+          var url = base_url+'back-end/search-alg';
+          $.ajax({
+            type:"GET",
+            url:url,
+            success:function(data){
+              alert(data);
+            }
+          });
+        });
+      </script>
+
       <div class="row">
         <div id="image" class="col-sm-5">
           <img width=50% height=50% src="../img/nagoya2.jpg" alt="First slide">
