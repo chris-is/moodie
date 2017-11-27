@@ -12,6 +12,7 @@
     while ($row = $result->fetch_assoc()){
       $ratings[] = $row;
     }
+    
     //$ratings2 = json_encode($ratings);
     foreach($ratings as $v) {
 
