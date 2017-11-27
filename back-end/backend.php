@@ -53,11 +53,18 @@ $app->get('/recommendations', function($request, $response) {
 });
 
 //For search algorithm
-$app->post('/search-alg', function($request, $response) {
-  require 'search-alg.php';
+$app->post('/search-advanced', function($request, $response) {
+  require 'search-advanced.php';
 });
-$app->get('/search-alg', function($request, $response) {
-  require 'search-alg.php';
+$app->get('/search-advanced', function($request, $response) {
+  require 'search-advanced.php';
+});
+
+$app->post('/search-simple', function($request, $response) {
+  require 'search-simple.php';
+});
+$app->get('/search-simple', function($request, $response) {
+  require 'search-simple.php';
 });
 
 

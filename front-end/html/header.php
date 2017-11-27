@@ -171,29 +171,7 @@ $(document).ready(function() {
         }
       }
     }); 
-  });
-
-// SEARCH
-  $('#searchbar').keypress(function(e){
-    if(e.which == 13) {
-      var query = $('#searchbar').val();
-      var postdata = "query=" + query;
-      url = base_url+'back-end/search-alg';
-      $.ajax({
-        type: "POST",
-        url: url,
-        data: postdata,
-        success: function(data){
-          alert(data);
-          //window.location.href = '/COMP307/front-end/html/search-results.php';
-        },
-        error: function(){
-          alert('Error occured when sending search');
-        }
-      });
-    }  
-  });
-  
+  });  
 });
 
 // When the user clicks anywhere outside of the modal, close it
@@ -207,3 +185,4 @@ window.onclick = function(event) {
 }
 
 </script>
+<?php require 'search-alg.php' ?>
