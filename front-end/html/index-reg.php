@@ -51,26 +51,14 @@
       <div id="recList"></div>
 
       <div class="multiple-items-big">
-        <div><img class="slideshow" src="https://i.imgur.com/lmGx6gv.jpg"></div>
+        <div><img class="slideshow" src="https://i.imgur.com/27h2eZJ.jpg"></div>
         <div><img class="slideshow" src="https://i.imgur.com/27h2eZJ.jpg"></div>
         <div><img class="slideshow" src="https://i.imgur.com/P8O2FvB.jpg"></div>
         <div><img class="slideshow" src="https://i.imgur.com/lmGx6gv.jpg"></div>
         <div><img class="slideshow" src="https://i.imgur.com/27h2eZJ.jpg"></div>
       </div>
 
-        <script type="text/javascript">
-          $(document).ready(function(){
-            $('.multiple-items-big').slick({
-              infinite: true,
-              slidesToShow: 3,
-              slidesToScroll: 1
-            });
-          });
-        </script>
-
-
       <div class="row">
-
         <!--FEATURED + NEAR ME-->
         <div class="col-sm-6">
           <button class="section-btn" id="featured-btn-reg"></button>
@@ -94,16 +82,6 @@
           </div>
         </div>
 
-          <script type="text/javascript">
-            $(document).ready(function(){
-              $('.multiple-items-small').slick({
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1
-              });
-            });
-          </script>
-
         <div class="col-sm-6">
           <!--NEAR ME SLIDESHOW-->
           <div class="multiple-items-small">
@@ -115,19 +93,39 @@
           </div>
         </div>
 
-          <script type="text/javascript">
-            $(document).ready(function(){
-              $('.multiple-items-small').slick({
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1
-              });
-            });
-          </script>
-
         </div>
       </div>
     </div><!--END CONTAINER FLUID-->
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.multiple-items-big').slick({
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 1
+        });
+        $('.multiple-items-small').slick({
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1
+        });
+
+        var base_url="http://localhost/COMP307/";
+        var url = base_url+'back-end/recommendations';
+        $.ajax({
+          type:"GET",
+          url:url,
+          success:function(data){
+            var recarray = data.split(';');
+            alert(recarray[i]);
+            for(var i=0; i<5; i++){
+              alert(recarray[i]);
+            }
+            
+          }
+        });
+      });
+    </script>
 
     <!--FOOTER-->
     <div id="appendFooter"></div>

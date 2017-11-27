@@ -57,11 +57,7 @@
         <div class="col-sm-5">
           <div class="row">
             <h1 id="name"><?php echo $name?></h1>
-<<<<<<< HEAD
-            <div id="movieid" style="display: none;">12311</div>
-=======
             <div id="movieid" style="display: none;">15422</div>
->>>>>>> master
           </div>
           
           <div id="details" class="row">

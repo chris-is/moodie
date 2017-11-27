@@ -27,7 +27,14 @@
         $("#appendSearch").load("search.html");
       });
     </script>
-      
+    
+    <div class="row" id="profilename">
+      <?php
+        session_start();
+        echo $_SESSION['username'];
+        echo "'s profile";
+      ?>
+    </div>
     <div class="pic-wrapper"> <!--Just a frame-->
       <img src="" height="300" width="250">
     </div>

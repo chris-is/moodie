@@ -86,7 +86,7 @@
       $i++;
     }
 
-    //MYLTIPLY EACH 
+    //MULTIPLY EACH 
 
     $counterHappy = count($happy2);
     $i=1;
@@ -182,7 +182,7 @@
     arsort($recArray);
     foreach($recArray as $x => $x_value) {
       echo $x;
-      echo "<br>";
+      echo ";";
     }
 
   } 
