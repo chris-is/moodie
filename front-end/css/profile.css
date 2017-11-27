@@ -2,6 +2,24 @@
   padding: 0;
 }
 
+#profilename{
+  margin-left: 105px;
+  margin-right: 2rem;
+  margin-top: 66px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  color: #fffff0;
+  background-color: #ffd37a;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 140%;
+  width: 250px;
+  height: 82px;
+  text-align:center;
+  line-height: 41px;
+}
+
 .pic-wrapper
 {
  	margin-left: 8%;
