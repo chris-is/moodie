@@ -6,9 +6,16 @@ font-variant: normal;
 color: white;
 }
 
+.gen-rating{
+  margin-top: 108px;
+}
+.user-rating{
+  display: none;
+  margin-top: 108px;
+}
+
 #name {
-  padding: 0;
-  margin-left: 90px;
+  margin-left: 105px;
   margin-right: 2rem;
   margin-top: 66px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -18,8 +25,8 @@ color: white;
   background-color: #ffd37a;
   padding: 0.5rem;
   border-radius: 5px;
-  font-size: 1.5rem;
-  width: 392px;
+  font-size: 140%;
+  width: 400px;
   height: 82px;
   text-align:center;
   line-height: 41px;
@@ -41,7 +48,7 @@ color: white;
 }
 
 #grid {
-  padding-left: 99px;
+  padding-left: 91px;
   margin-top: -1px;
 }
 
@@ -57,7 +64,7 @@ color: white;
   padding: 0.5rem;
   border-radius: 5px;
   font-size: 1rem;
-  width: 260px;
+  width: 350px;
   height: 40px;
   margin: 2px 2px 46px 2px;
 }
@@ -80,6 +87,7 @@ color: white;
   display: none;
   color: white;
   margin-left: 10px;
+  margin-top: 45px;
 }
 
 .adj{
@@ -105,15 +113,38 @@ color: white;
 .pink{
   background-image: url("../img/pink.png"); 
 }
-
+.red{
+  background-image: url("../img/red.png"); 
+}
+.orange{
+  background-image: url("../img/orange.png"); 
+}
+.yellow{
+  background-image: url("../img/yellow.png"); 
+}
+.white{
+  background-image: url("../img/white.png"); 
+}
+.purple{
+  background-image: url("../img/purple.png"); 
+}
+.lilac{
+  background-image: url("../img/lilac.png"); 
+}
 .blue{
   background-image: url("../img/blue.png"); 
 }
+.green{
+  background-image: url("../img/green.png"); 
+}
+.brown{
+  background-image: url("../img/brown.png"); 
+}
 
-#rate{
+.rate{
   margin-top: 46px;
-  background-color: #cbcbcb;
-  color: #1d1b1b;
+  background-color: #ffd37a;
+  color: white;
 }
 
 

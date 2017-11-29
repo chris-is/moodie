@@ -3,8 +3,8 @@
 <html>
     <?php
       require 'head.html';
-      ?>
-    <!--#include file="head.html" -->
+      ?> 
+
     <link href="../css/profile.css" type="text/css" rel="stylesheet">
     <!--FONTS-->
   <body>
@@ -12,7 +12,7 @@
     <div id="appendHeader"></div>
       <script>
         $(function(){
-          $("#appendHeader").load("header.html");
+          $("#appendHeader").load("header.php");
         });
       </script>
 
@@ -27,14 +27,21 @@
         $("#appendSearch").load("search.html");
       });
     </script>
-      
+    
+    <div class="row" id="profilename">
+      <?php
+        session_start();
+        echo $_SESSION['username'];
+        echo "'s profile";
+      ?>
+    </div>
     <div class="pic-wrapper"> <!--Just a frame-->
       <img src="" height="300" width="250">
     </div>
 
   <div class="pic">
       <form id="frm1" action="">
-        <input type="file" name="pic" accept="image/*" onchange="previewFile()">
+        <input id="dp" type="file" name="pic" accept="image/*" onchange="previewFile()">
       </form>
   </div>
 
@@ -64,6 +71,12 @@
 
   <!--Define content for each button-->
 
+  <!-- Start with hidden divs -->
+    <script>
+      $(document).ready(function(){
+        $(".info, .reviews, .friends, .list").hide();
+      });
+    </script>
 
     <script>
       $(document).ready(function(){
@@ -104,8 +117,8 @@
     <div class="info">
       <!--PHP-->
       <div>
-        About:
-        <textarea id="update" class="stupdatebox"></textarea>
+        About: <br>
+        <textarea id="update" maxlength="250" class="stupdatebox"></textarea>
         <input type="submit" value="POST" class="stpostbutton">
       </div>
       
@@ -113,7 +126,9 @@
       <div id="secContent"></div>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <script src="../js/ajaxGetPost.js"></script>
+      
       <script>
+<<<<<<< HEAD
         $(document).ready(function()
         {
           /*$(".info").on("click",".stpostbutton",function()
@@ -147,49 +162,77 @@
           });
 
 
+=======
+        $(document).ready(function() {
+          var base_url="http://localhost/COMP307/";
+          var url = base_url+'back-end/about';
+>>>>>>> master
           $.ajax({
-          type:"GET",
-          url:url,
-          success:function(data){
-           // alert("K");
-            $("#mainContent").prepend(data);
-          }
+            type:"GET",
+            url:url,
+            success:function(data){
+              data = data.replace(/\n/g, "<br />");
+              $("#mainContent").html("");
+              $("#mainContent").prepend(data);
+            }
           });
-
-
-
-
-          /*post_ajax_data(url,encode,function(data)
-          {
-          //$("#mainContent").prepend("<p>trying</p>");
-          $.each(data.Users, function(i,data)
-          {
-          var html="<div class='stbody'"+data.about+"</div>";
-          $("#mainContent").prepend(html);
-          $('#update').val('').focus();
-           alert("asdas");
-          });
-          });*/
-          });
-
-          /*ajax_data('GET',url, function(data)
-          {
-            alert("fdgdfg");
-          $.each(data.Users, function(i,data)
-          {
-          var html="<div class='stbody' id='stbody"+data.about+"</div>";
-          $("#secContent").prepend(html);
-          });
-          });*/
-
-
         });
       </script>
+
+      <script>
+        $(document).ready(function(){
+          var base_url="http://localhost/COMP307/";
+          var url;
+          $(".info").on("click",".stpostbutton",function(){
+            var update=$('#update').val();
+            var postdata = "about="+update;
+            url=base_url+'back-end/about';
+            $.ajax({
+              type: "POST",
+              url: url,
+              data:postdata,
+              success:function(data){
+                $.ajax({
+                type:"GET",
+                url:url,
+                success:function(data){
+                  $("#mainContent").html("");
+                  data = data.replace(/\n/g, "<br />");
+                  $("#mainContent").prepend(data);
+                }
+              });
+            },
+            error:function(data){
+              alert("Error In Connecting");
+            }
+          });
+          });
+        });
+      </script>
+<<<<<<< HEAD
  
+=======
+
+
+>>>>>>> master
     </div>
 
     <div class="reviews">
-      <!--All PHP-->
+      <div id="reviewList"></div>
+      <script>
+        $(document).ready(function() {
+          var base_url="http://localhost/COMP307/";
+          var url = base_url+'back-end/reviews';
+          $.ajax({
+            type:"GET",
+            url:url,
+            success:function(data){
+              $("#reviewList").html("");
+              $("#reviewList").prepend(data);
+            }
+          });
+        });
+      </script>
     </div>
 
     <div class="friends">
@@ -217,7 +260,7 @@
     <div id="appendFooter"></div>
       <script>
         $(function(){
-          $("#appendFooter").load("footer.html");
+          $("#appendFooter").load("footer.php");
         });
       </script>
 

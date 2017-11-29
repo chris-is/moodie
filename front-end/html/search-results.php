@@ -28,9 +28,23 @@
 
       <div class="row">
         <div id="result-msg">
-          Your search for ___ returned the following results.
+          Your search for ___ returned the following results:
         </div>
       </div>
+
+      <script type="text/javascript">
+        $(document).ready(function(){
+          var base_url="http://localhost/COMP307/";
+          var url = base_url+'back-end/search-alg';
+          $.ajax({
+            type:"GET",
+            url:url,
+            success:function(data){
+              alert(data);
+            }
+          });
+        });
+      </script>
 
       <div class="row">
         <div id="image" class="col-sm-5">
