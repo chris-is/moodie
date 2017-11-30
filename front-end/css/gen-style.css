@@ -297,18 +297,37 @@ form {
 
 .panel {
   margin-bottom: 15px;
-  background-color: #fffff0;
+  margin-top: 15px;
+  background-color: #c7f3aa;
   width: 60%;
   padding: 50px;
   display: none;
-  margin-left: auto ;
-  margin-right: auto ;
-  border-style: dashed;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
   border-color:#000000;
+  border-radius: 10px;
 }
 
 .moodList {
   display: none;
   padding-left: 500px;
+}
+#country, #year {
+  width: 70%;
+  background-color: black;
+  color: white;
+  margin-bottom: 30px;
+}
+
+input[type='checkbox'] {
+  margin-right: 5px;
+}
+#search-submit{
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
 }
 
