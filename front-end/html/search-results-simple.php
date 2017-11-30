@@ -1,8 +1,10 @@
 <?php
-  use \Psr\Http\Message\ServerRequestInterface as Request;
-  require '../../vendor/autoload.php';
-  $app = new \Slim\App;
-  $app->post('/', function($request, $response) {
+
+  $userquery = "";
+  if( isset($_POST["query"]) ){
+     $userquery = $_POST["query"];
+  }
+
 ?>
 
 
@@ -35,38 +37,13 @@
 
       <div class="row">
         <div id="result-msg">
-          Your search for ___ returned the following results:
+          Your search for <?php echo $userquery; ?> returned the following results:
         </div>
       </div>
 
-      <?php
-        
-          $userquery = $request->getParam('query');
-          echo $userquery;
 
 
-        });
-
-        $app->run();
-
-      ?>
-
-      <script type="text/javascript">
-        $(document).ready(function(){
-          /*var base_url="http://localhost/COMP307/";
-          var url = base_url+'back-end/search-simple';
-          $.ajax({
-            type:"GET",
-            url:url,
-            success:function(data){
-              alert(data);
-            }
-          });*/
-
-
-
-        });
-      </script>
+      
 
       <div class="row">
         <div id="image" class="col-sm-5">

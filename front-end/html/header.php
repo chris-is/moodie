@@ -174,6 +174,44 @@ $(document).ready(function() {
   });  
 });
 
+$('#searchbar').keypress(function(e){
+  if(e.which == 13) {
+    var query = $('#searchbar').val();
+    var postdata = "query=" + query;
+    //alert(postdata);
+    url = '/COMP307/front-end/html/search-results-simple.php';
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: postdata,
+      success: function(data){
+        //alert(data);
+        window.location.href = '/COMP307/front-end/html/search-results-simple.php';
+      },
+      error: function(){
+        alert('Error occured when sending simple search');
+      }
+    });
+  }  
+});
+
+$('#search-submit').click(function(){
+  url = '/COMP307/front-end/html/search-results-advanced.php';
+  $.ajax({
+    type: "POST",
+    url: url,
+    data: postdata,
+    success: function(data){
+      alert(data);
+      //window.location.href = '/COMP307/front-end/html/search-results-advanced.php';
+    },
+    error: function(){
+      alert('Error occured when sending advanced search');
+    }
+  });
+    
+});
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if ((event.target == modal1)|(event.target == modal2)) {
