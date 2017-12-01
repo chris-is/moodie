@@ -1,28 +1,3 @@
-<script>
-  $(document).ready(function(){
-    $("#search-btn").click(function(){
-      $(".panel").slideToggle("slow");
-    });
-  });
-</script>
-
-<script>
-  $(document).ready(function(){
-    $("#mood").click(function(){
-      $(".moodList").fadeIn();
-    });
-  });
-</script>
-
-<!--If User clicks on search button, hide mood list-->
-<script>
-  $(document).ready(function(){
-    $("#search-btn").click(function(){
-      $(".moodList").fadeOut();
-    });
-  });
-</script>
-
 <div class="panel">
 <div>
   <section>
@@ -321,6 +296,63 @@
     </div>
   </section>
 
-  <center><input type="submit" value="Search" id="search-submit" onclick="window.location.href = '/COMP307/front-end/html/search-results-advanced.php'"></center>
+  <center><input type="submit" value="Search" id="search-submit""></center>
 </div>
 </div>
+
+<script>
+$(document).ready(function(){
+  $("#search-btn").click(function(){
+    $(".panel").slideToggle("slow");
+  });
+  $("#mood").click(function(){
+    $(".moodList").fadeIn();
+  });
+  $("#search-btn").click(function(){
+    $(".moodList").fadeOut();
+  });
+
+  var base_url="http://localhost/COMP307/";
+  var url;
+
+  $('#searchbar').keypress(function(e){
+    if(e.which == 13) {
+      var query = $('#searchbar').val();
+      var postdata = "query=" + query;
+      //alert(postdata);
+      url = '/COMP307/front-end/html/search-results-simple.php';
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: postdata,
+        success: function(data){
+          alert(data);
+          //window.location.href = '/COMP307/front-end/html/search-results-simple.php';
+        },
+        error: function(){
+          alert('Error occured when sending simple search');
+        }
+      });
+    }  
+  });
+
+  $('#search-submit').click(function(){
+    //url = '/COMP307/front-end/html/search-results-advanced.php';
+    postdata = $('.panel :input').serialize();
+    url = base_url+'back-end/search-advanced';
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: postdata,
+      success: function(data){
+        //alert(data);
+        window.location.href = '/COMP307/front-end/html/search-results-advanced.php';
+      },
+      error: function(){
+        alert('Error occured when sending advanced search');
+      }
+    });
+      
+  });
+});
+</script>
