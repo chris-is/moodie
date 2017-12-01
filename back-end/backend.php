@@ -56,14 +56,8 @@ $app->get('/recommendations', function($request, $response) {
 $app->post('/search-advanced', function($request, $response) {
   require 'search-advanced.php';
 });
-$app->get('/search-advanced', function($request, $response) {
-  require 'search-advanced.php';
-});
 
 $app->post('/search-simple', function($request, $response) {
-  require 'search-simple.php';
-});
-$app->get('/search-simple', function($request, $response) {
   require 'search-simple.php';
 });
 

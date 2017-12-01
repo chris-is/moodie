@@ -1,9 +1,8 @@
 <?php
-echo "ok";
 try { 
   require_once('database.php');
   session_start();
-  $_SESSION['search-results'] = "does it work?";
+  $_SESSION['search-results'] = "advanced search";
 
   //To store the country and year, if user chooses any
 

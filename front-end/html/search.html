@@ -319,15 +319,13 @@ $(document).ready(function(){
     if(e.which == 13) {
       var query = $('#searchbar').val();
       var postdata = "query=" + query;
-      //alert(postdata);
-      url = '/COMP307/front-end/html/search-results-simple.php';
+      url = base_url+'back-end/search-simple';
       $.ajax({
         type: "POST",
         url: url,
         data: postdata,
         success: function(data){
-          alert(data);
-          //window.location.href = '/COMP307/front-end/html/search-results-simple.php';
+          window.location.href = '/COMP307/front-end/html/search-results-simple.php';
         },
         error: function(){
           alert('Error occured when sending simple search');
@@ -337,7 +335,6 @@ $(document).ready(function(){
   });
 
   $('#search-submit').click(function(){
-    //url = '/COMP307/front-end/html/search-results-advanced.php';
     postdata = $('.panel :input').serialize();
     url = base_url+'back-end/search-advanced';
     $.ajax({
@@ -345,7 +342,6 @@ $(document).ready(function(){
       url: url,
       data: postdata,
       success: function(data){
-        //alert(data);
         window.location.href = '/COMP307/front-end/html/search-results-advanced.php';
       },
       error: function(){

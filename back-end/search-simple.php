@@ -1,9 +1,8 @@
 <?php
-echo "hey";
-$userquery = $request->getParam('query');
-
 try { 
-  echo $userquery
+  require_once('database.php');
+  session_start();
+  $_SESSION['search-results'] = "simple search";
 
   /*$jsonStr = file_get_contents($userquery);
   $jsonObj = json_decode($jsonStr);
