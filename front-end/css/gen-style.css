@@ -36,7 +36,6 @@ html, body {
   background-color: #fffff0;
   width:100%;
   margin:0;
-  border-radius: 5px;
 }
 .form-inline{
   margin:0;
@@ -271,7 +270,6 @@ html, body {
   font-variant: normal;
   font-weight: 500;
   line-height: 15px;
-  border-radius: 5px;
 }
 .footer .row{
   margin:0;
@@ -297,18 +295,37 @@ form {
 
 .panel {
   margin-bottom: 15px;
-  background-color: #fffff0;
+  margin-top: 15px;
+  background-color: #d3ffb7;
   width: 60%;
   padding: 50px;
   display: none;
-  margin-left: auto ;
-  margin-right: auto ;
-  border-style: dashed;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
   border-color:#000000;
+  border-radius: 10px;
 }
 
 .moodList {
   display: none;
   padding-left: 500px;
+}
+#country, #year {
+  width: 70%;
+  background-color: black;
+  color: white;
+  margin-bottom: 30px;
+}
+
+input[type='checkbox'] {
+  margin-right: 5px;
+}
+#search-submit{
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
 }
 

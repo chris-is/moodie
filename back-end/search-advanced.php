@@ -1,8 +1,13 @@
 <?php
+echo "ok";
 try { 
   require_once('database.php');
+  session_start();
+  $_SESSION['search-results'] = "does it work?";
+
   //To store the country and year, if user chooses any
 
+/*
   if( isset($_POST["country"]) ){
      $country = $_POST["country"];
   }
@@ -15,74 +20,49 @@ try {
   //$moods is an array to store the moods that the user checked
   $moods = array();
   if( isset($_POST["Happy"]) ){
-    $moods['Happy'] = "on";
-  }
-  else{
-    $moods['Happy'] = NULL;
+    array_push($moods, "happy");
   }
 
   if( isset($_POST["Sad"]) ){
-    $moods['Sad'] = "on";
-  }
-  else{
-    $moods['Sad'] = NULL;
+    array_push($moods, "sad");
   }
 
   if( isset($_POST["Excited"]) ){
-    $moods['Excited'] = "on";
+    array_push($moods, "excited");
   }
-  else{
-    $moods['Excited'] = NULL;
+
+  if( isset($_POST["Calm"]) ){
+    array_push($moods, "calm");
   }
 
   if( isset($_POST["Scared"]) ){
-    $moods['Scared'] = "on";
-  }
-  else{
-    $moods['Scared'] = NULL;
+    array_push($moods, "scared");
   }
 
   if( isset($_POST["Hungry"]) ){
-    $moods['Hungry'] = "on";
-  }
-  else{
-    $moods['Hungry'] = NULL;
+    array_push($moods, "hungry");
   }
 
   if( isset($_POST["Shocked"]) ){
-    $moods['Shocked'] = "on";
-  }
-  else{
-    $moods['Shocked'] = NULL;
+    array_push($moods, "shocked");
   }
 
   if( isset($_POST["Relaxed"]) ){
-    $moods['Relaxed'] = "on";
-  }
-  else{
-    $moods['Relaxed'] = NULL;
+    array_push($moods, "relaxed");
   }
 
   if( isset($_POST["Bored"]) ){
-    $moods['Bored'] = "on";
-  }
-  else{
-    $moods['Bored'] = NULL;
+    array_push($moods, "bored");
   }
 
   if( isset($_POST["Smart"]) ){
-    $moods['Smart'] = "on";
-  }
-  else{
-    $moods['Smart'] = NULL;
+    array_push($moods, "smart");
   }
 
   if( isset($_POST["Angry"]) ){
-    $moods['Angry'] = "on";
+    array_push($moods, "angry");
   }
-  else{
-    $moods['Angry'] = NULL;
-  }
+  $size = sizof($moods);
 
   $userquery = "";
   $urlquery = "";
@@ -103,52 +83,66 @@ try {
   $jsonurl = "https://api.themoviedb.org/3/search/movie?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US&query=";
   $jsonurl .= ($urlquery .= "&include_adult=false");
 
-/*
+
   if( isset($country) ){
      $jsonurl .= ("&region=" .= $country);
   }
   if( isset($year) ){
      $jsonurl .= ("&year=" .= $year);
-  }*/
+  }
 
+  
+  
   //Search in Movie API's database and return ids of results as an array
   $jsonStr = file_get_contents($jsonurl);
   $jsonObj = json_decode($jsonStr);
   $result = $jsonObj->results;
 
   $ids = array();
-  $existed_ids = array();
+  $dbrow = array();
   $priority = array();
   $names = array();
   $other_ids = array();
   $images = array();
 
+  if(is_array($result)){
+    foreach($result as $movie) {//$movie is an object and id is a property of it
+      $ids[] = ($movie->id);
+      //Row with that specific id
+      $tempid = ($movie->id);
+      //$tempid = 1234;
 
-  foreach($result as $movie) {//$movie is an object and id is a property of it
-    $ids[] = ($movie->id);
+      $query = "SELECT * FROM Movies WHERE movieid='$tempid'";
+      $qresult = $mysqli->query($query);
 
-    //Row with that specific id
-    
-    
-    $query = "SELECT * FROM Movies WHERE movieid='($movie->id)'";
-    $qresult = $mysqli->query($query);
-    if(mysql_num_rows($qresult) == 1){
-      $existed_ids[] = ($movie->id);
-      $row = $qresult->fetch_assoc();
-      $priority['($movie->id)'] = -($row["happy"]+$row["angry"]+$row["smart"]+$row["excited"]+$row["relaxed"]+$row["shocked"]+$row["scared"]+$row["sad"]+$row["hungry"]+$row["bored"]) / 10.0;
-      $names['($movie->id)'] = ($movie->title);
-      $images['($movie->id)'] = ($movie->poster_path);
-    }
+      if(mysqli_num_rows($qresult) == 1){
+        while ($row = $qresult->fetch_assoc()){
+          $dbrow[] = $row;
+        }        
 
-    
-    else{
-      $other_ids['($movie->id)'] = ($movie->title);
-      $images['($movie->id)'] = ($movie->poster_path);
+        for($i=0; $i<$size; $i++){
+          $priority['$tempid'] = $priority['$tempid'] + $dbrow[0]['$moods["$i"]'];
+        }
+        $priority['$tempid'] = $priority['$tempid']/10.0;
+
+        
+        $priority[$tempid] = ($dbrow[0]['happy'] + $dbrow[0]['sad'] + $dbrow[0]['excited'] + $dbrow[0]['scared'] + $dbrow[0]['hungry'] + $dbrow[0]['shocked'] + $dbrow[0]['relaxed'] + $dbrow[0]['bored']+$dbrow[0]['smart'] + $dbrow[0]['angry']) / 10.0;
+
+        $names[$tempid] = ($movie->title);
+        $images[$tempid] = ($movie->poster_path);
+      }
+
+      
+      else{
+        $other_ids['($movie->id)'] = ($movie->title);
+        $images['($movie->id)'] = ($movie->poster_path);
+      }
     }
   }
+  
   //Display all names and posters of all movies that were in our database in sorted order
-  //asort($priority);
-  //echo $priority;
+  rsort($priority);
+  $_SESSION['search-results'] = $priority;*/
 
 
   } 
