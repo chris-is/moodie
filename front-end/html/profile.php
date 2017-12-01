@@ -37,13 +37,14 @@
     </div>
     <div class="pic-wrapper"> <!--Just a frame-->
       <img src="" height="300" width="250">
+      <input id="dp" type="file" name="pic" accept="image/*" onchange="previewFile()">
     </div>
 
-  <div class="pic">
+  <!--<div class="pic">
       <form id="frm1" action="">
         <input id="dp" type="file" name="pic" accept="image/*" onchange="previewFile()">
       </form>
-  </div>
+  </div>-->
 
   <script>
     function previewFile()
@@ -128,14 +129,14 @@
       <script src="../js/ajaxGetPost.js"></script>
       
       <script>
-<<<<<<< HEAD
+/*<<<<<<< HEAD
         $(document).ready(function()
         {
           /*$(".info").on("click",".stpostbutton",function()
           {
             $("#mainContent").prepend("<p>HELLO TESTIIIING</p>");
           });*/
-         var base_url="http://localhost/COMP307/";
+         /*var base_url="http://localhost/COMP307/";
           var url,encodedata;
           $("#update").focus();
 
@@ -162,11 +163,10 @@
           });
 
 
-=======
+=======*/
         $(document).ready(function() {
           var base_url="http://localhost/COMP307/";
           var url = base_url+'back-end/about';
->>>>>>> master
           $.ajax({
             type:"GET",
             url:url,
@@ -209,12 +209,7 @@
           });
         });
       </script>
-<<<<<<< HEAD
- 
-=======
 
-
->>>>>>> master
     </div>
 
     <div class="reviews">
