@@ -663,7 +663,6 @@ $(document).ready(function() {
       url: url,
       data: postdata,
       success: function(data){
-        alert(data);
         $('.user-rating').hide();
         $('.gen-rating').show();
       }

@@ -20,6 +20,9 @@
   line-height: 41px;
 }
 
+#frm1{
+  margin-top: 100px;
+}
 .pic-wrapper
 {
  	margin-left: 8%;
@@ -63,7 +66,7 @@ input#dp {
   margin: 4px 2px;
   cursor: pointer;
   position: absolute;
-  top: 475px;
+  top: 650px;
   margin-left: -75px;
 }
 
