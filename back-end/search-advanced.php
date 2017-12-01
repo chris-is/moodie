@@ -1,8 +1,13 @@
 <?php
+echo "ok";
 try { 
   require_once('database.php');
+  session_start();
+  $_SESSION['search-results'] = "does it work?";
+
   //To store the country and year, if user chooses any
 
+/*
   if( isset($_POST["country"]) ){
      $country = $_POST["country"];
   }
@@ -59,17 +64,13 @@ try {
   }
   $size = sizof($moods);
 
-
-  echo "here";
   $userquery = "";
   $urlquery = "";
 
   //To store the searching query with , if the user enters any
-  /*if( isset($_POST['query']) ) {
+  if( isset($_POST['query']) ) {
       $userquery = $_POST['query'];
-  }*/
-
-  $userquery = $request->getParam('query');
+  }
 
   //To process the searching query to search in Movie API's database
   $words = explode(" ", $userquery);
@@ -82,18 +83,16 @@ try {
   $jsonurl = "https://api.themoviedb.org/3/search/movie?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US&query=";
   $jsonurl .= ($urlquery .= "&include_adult=false");
 
-/*
+
   if( isset($country) ){
      $jsonurl .= ("&region=" .= $country);
   }
   if( isset($year) ){
      $jsonurl .= ("&year=" .= $year);
-  }*/
+  }
 
-  echo $userquery;
-  echo $jsonurl;
-
-  /*
+  
+  
   //Search in Movie API's database and return ids of results as an array
   $jsonStr = file_get_contents($jsonurl);
   $jsonObj = json_decode($jsonStr);
@@ -129,8 +128,6 @@ try {
         
         $priority[$tempid] = ($dbrow[0]['happy'] + $dbrow[0]['sad'] + $dbrow[0]['excited'] + $dbrow[0]['scared'] + $dbrow[0]['hungry'] + $dbrow[0]['shocked'] + $dbrow[0]['relaxed'] + $dbrow[0]['bored']+$dbrow[0]['smart'] + $dbrow[0]['angry']) / 10.0;
 
-        echo $priority[$tempid];
-
         $names[$tempid] = ($movie->title);
         $images[$tempid] = ($movie->poster_path);
       }
@@ -141,11 +138,11 @@ try {
         $images['($movie->id)'] = ($movie->poster_path);
       }
     }
-  }*/
+  }
   
   //Display all names and posters of all movies that were in our database in sorted order
-  //rsort($priority);
-  //echo $priority;
+  rsort($priority);
+  $_SESSION['search-results'] = $priority;*/
 
 
   } 

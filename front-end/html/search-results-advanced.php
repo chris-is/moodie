@@ -33,6 +33,9 @@
       </div>
 
       <?php
+       session_start();
+       echo $_SESSION['search-results'];
+       
        $ids = array(1=>284053, 141052, 274855, 440021, 298250, 211672, 347882, 297762, 390062, 281338);
        $image = array();
        $name = array();

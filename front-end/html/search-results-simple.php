@@ -33,6 +33,7 @@
           if( isset($_POST["query"]) ){
              $userquery = $_POST["query"];
           }
+          echo "abc";
           echo $userquery; 
           ?> returned the following results:
         </div>

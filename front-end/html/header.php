@@ -55,6 +55,12 @@
       <input type="password" name="password" required>
       <div class="username-status"></div>
       <button type="submit" id="login-sub">Login</button>
+      <button
+        class="g-recaptcha"
+        data-sitekey="6LfDNTsUAAAAAKVfovwA_PT5AkZtsJfGhR_0H1Ki"
+        data-callback="YourOnSubmitFn">
+        Submit
+      </button>
       <!--<span class="forgot"><a href="#">I forgot my password</a></span>-->
       </div>
     </div>
@@ -172,44 +178,6 @@ $(document).ready(function() {
       }
     }); 
   });  
-});
-
-$('#searchbar').keypress(function(e){
-  if(e.which == 13) {
-    var query = $('#searchbar').val();
-    var postdata = "query=" + query;
-    //alert(postdata);
-    url = '/COMP307/front-end/html/search-results-simple.php';
-    $.ajax({
-      type: "POST",
-      url: url,
-      data: postdata,
-      success: function(data){
-        //alert(data);
-        window.location.href = '/COMP307/front-end/html/search-results-simple.php';
-      },
-      error: function(){
-        alert('Error occured when sending simple search');
-      }
-    });
-  }  
-});
-
-$('#search-submit').click(function(){
-  url = '/COMP307/front-end/html/search-results-advanced.php';
-  $.ajax({
-    type: "POST",
-    url: url,
-    data: postdata,
-    success: function(data){
-      alert(data);
-      //window.location.href = '/COMP307/front-end/html/search-results-advanced.php';
-    },
-    error: function(){
-      alert('Error occured when sending advanced search');
-    }
-  });
-    
 });
 
 // When the user clicks anywhere outside of the modal, close it
