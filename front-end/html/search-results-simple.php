@@ -1,13 +1,3 @@
-<?php
-
-  $userquery = "";
-  if( isset($_POST["query"]) ){
-     $userquery = $_POST["query"];
-  }
-
-?>
-
-
 <html>
   
   <?php 
@@ -37,7 +27,14 @@
 
       <div class="row">
         <div id="result-msg">
-          Your search for <?php echo $userquery; ?> returned the following results:
+          Your search for 
+          <?php 
+          $userquery = "";
+          if( isset($_POST["query"]) ){
+             $userquery = $_POST["query"];
+          }
+          echo $userquery; 
+          ?> returned the following results:
         </div>
       </div>
 
