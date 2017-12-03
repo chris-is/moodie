@@ -1,17 +1,19 @@
-.row{
-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-font-size: 14px;
-font-style: normal;
-font-variant: normal;
-color: white;
-}
-
 .gen-rating{
   margin-top: 108px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  color: white;
 }
 .user-rating{
   display: none;
   margin-top: 108px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  color: white;
 }
 
 #name {
