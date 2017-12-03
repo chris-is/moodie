@@ -11,7 +11,7 @@ $(document).ready(function(){
   $.ajax(settings).done(function (response) {
     for(var i=0; i<10; i++){
       var url = "https://image.tmdb.org/t/p/w500" + response.results[i].poster_path;
-      $('#near'+i).attr('src', url);
+      $('#poster'+i).attr('src', url);
     }
     
   });

@@ -151,8 +151,6 @@
 
       }); //END DOCUMENT.READY
     </script>
-    <script type="text/javascript" src="nearme.js"></script>
-    <script type="text/javascript" src="featured.js"></script>
 
     <!--FOOTER-->
     <div id="appendFooter"></div>

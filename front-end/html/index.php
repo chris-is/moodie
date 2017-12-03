@@ -77,8 +77,6 @@
           });
         });
       </script>
-      <script type="text/javascript" src="nearme.js"></script>
-      <script type="text/javascript" src="featured.js"></script>
 
       </div> <!--END CONTAINER-->
 
