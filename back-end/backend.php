@@ -53,6 +53,10 @@ $app->get('/reviews', function($request, $response) {
 $app->get('/recommendations', function($request, $response) {
   require 'recommendations.php';
 });
+//Featured
+$app->get('/featured', function($request, $response) {
+  require 'featured.php';
+});
 
 //Search algorithm
 $app->post('/search-advanced', function($request, $response) {

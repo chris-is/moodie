@@ -65,11 +65,16 @@
         <div class="col-sm-6">
           <!--FEATURED SLIDESHOW-->
           <div class="multiple-items-small">
-            <div><img class="slideshow" src="https://i.imgur.com/lmGx6gv.jpg"></div>
-            <div><img class="slideshow" src="https://i.imgur.com/27h2eZJ.jpg"></div>
-            <div><img class="slideshow" src="https://i.imgur.com/P8O2FvB.jpg"></div>
-            <div><img class="slideshow" src="https://i.imgur.com/lmGx6gv.jpg"></div>
-            <div><img class="slideshow" src="https://i.imgur.com/27h2eZJ.jpg"></div>
+            <img class="slideshow" id="feat0" src="">
+            <img class="slideshow" id="feat1" src="">
+            <img class="slideshow" id="feat2" src="">
+            <img class="slideshow" id="feat3" src="">
+            <img class="slideshow" id="feat4" src="">
+            <img class="slideshow" id="feat5" src="">
+            <img class="slideshow" id="feat6" src="">
+            <img class="slideshow" id="feat7" src="">
+            <img class="slideshow" id="feat8" src="">
+            <img class="slideshow" id="feat9" src="">
           </div>
         </div>
 
@@ -147,6 +152,7 @@
       }); //END DOCUMENT.READY
     </script>
     <script type="text/javascript" src="nearme.js"></script>
+    <script type="text/javascript" src="featured.js"></script>
 
     <!--FOOTER-->
     <div id="appendFooter"></div>
