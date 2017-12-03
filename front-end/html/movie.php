@@ -27,13 +27,6 @@
       </script>
 
     <!--BODY-->
-    <div id="bodypart"></div>
-      <script>
-        $(function(){
-          $("#bodypart").load("details.html");
-        });
-      </script>
-
     <div class="container-fluid">
       <!--SEARCH-->
       <div id="appendSearch"></div>
