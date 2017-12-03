@@ -1,16 +1,18 @@
 <?php
 
-try { 
-  require_once('database.php');
+  require 'database.php';
+  $db = getDB();
   session_start();
   $sid = $_SESSION['sid'];
-
   $about = $request->getParam('about');
-  $query = "UPDATE Users SET about='$about' WHERE sid='$sid'";
-  $result = $mysqli->query($query);  
 
-} catch(Exception $e) {
-  echo "Something went wrong!";
-}
+  try { 
+    $query = "UPDATE Users SET about=? WHERE sid=?";
+    $stmt = $db->prepare($query);
+    $stmt->execute([$about, $sid]);
+
+  } catch(Exception $e) {
+    echo "Something went wrong!";
+  }
 
 ?>

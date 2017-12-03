@@ -1,18 +1,15 @@
 <?php
+  require 'database.php';
+  $db = getDB();
+  session_start();
+  $username = $_SESSION['username'];
+  $movieid = $request->getParam('movieid');
+
   try { 
-    require_once('database.php');
-    session_start();
-    //$sid = $_SESSION['sid'];
-    $username = $_SESSION['username'];
-    $movieid = $request->getParam('movieid');
-
-    $query = "SELECT * from Userratings where movieid='$movieid' AND username='$username'";
-
-    $result = $mysqli->query($query);
-
-    while ($row = $result->fetch_assoc()){
-      $ratings[] = $row;
-    }
+    $query = "SELECT * from Userratings where movieid=? AND username=?";
+    $stmt = $db->prepare($query);
+    $stmt->execute([$movieid, $username]);
+    $ratings = $stmt->fetch(PDO::FETCH_ASSOC);
     
     header("Content-Type: application/json; charset=utf-8");
     echo json_encode($ratings);
