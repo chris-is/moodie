@@ -1,14 +1,20 @@
 <?php
-  require_once('database.php');
+  require 'database.php';
+  $db = getDB();
   session_start();
   $sid = $_SESSION['sid'];
 
-  $query = "SELECT about FROM Users WHERE sid = '$sid'";
+  try { 
+    $query = "SELECT about FROM Users WHERE sid = ?";
+    $stmt = $db->prepare($query);
+    $stmt->execute([$sid]);
+    $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
-  $result = $mysqli->query($query);
-  while ($row = $result->fetch_assoc()){
-    $data[] = $row;
+    $json = json_encode($data);
+    echo substr($json, 10, -2);
+  } 
+
+  catch(Exception $e) {
+    echo "Something went wrong!";
   }
-   $json = json_encode($data);
-   echo substr($json, 11, -3);
 ?>

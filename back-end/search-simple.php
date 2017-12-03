@@ -1,10 +1,10 @@
 <?php
-echo "hey";
-$userquery = $request->getParam('query');
+require 'database.php';
+$db = getDB();
+session_start();
+$_SESSION['search-results'] = "simple search";
 
 try { 
-  echo $userquery
-
   /*$jsonStr = file_get_contents($userquery);
   $jsonObj = json_decode($jsonStr);
   $result = $jsonObj->results;

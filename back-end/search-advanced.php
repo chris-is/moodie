@@ -1,10 +1,10 @@
 <?php
-echo "ok";
-try { 
-  require_once('database.php');
-  session_start();
-  $_SESSION['search-results'] = "does it work?";
+require 'database.php';
+$db = getDB();
+session_start();
+$_SESSION['search-results'] = "advanced search";
 
+try {   
   //To store the country and year, if user chooses any
 
 /*

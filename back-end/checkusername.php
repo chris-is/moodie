@@ -1,12 +1,15 @@
 <?php
+  require 'database.php';
+  $db = getDB();
   $username = $request->getParam('username');
   
   try { 
-    require_once('database.php');
-    $query = "SELECT * FROM Users WHERE username = '$username'";
-    $result = $mysqli->query($query);    
+    $query = "SELECT * FROM Users WHERE username = ?";
+    $stmt = $db->prepare($query);
+    $stmt->execute([$username]);
+    $result = $stmt->fetchAll();
 
-    if (count($result->fetch_assoc()) > 0){ 
+    if (count($result) > 0){ 
       echo "existing";
     } 
     else {

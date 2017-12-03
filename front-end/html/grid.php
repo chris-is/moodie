@@ -344,7 +344,7 @@ $(document).ready(function() {
       }).get();
       for (var grididx=1; grididx < 11; grididx++){
         var adj = adjarray[grididx];
-        var query = eval("data[0]." + adj);
+        var query = eval("data." + adj);
         for (var i=0; i<query; i++){
           $('.'+adj).eq(i).addClass(colormap[adj]);
         }
@@ -364,9 +364,9 @@ $(document).ready(function() {
       var adjarray = $('.user-rating > div').map(function(){
         return this.id;
       }).get();
-      for (var grididx=2; grididx < 12; grididx++){
+      for (var grididx=1; grididx < 11; grididx++){
         var adj = adjarray[grididx];
-        var query = eval("data[0]." + adj);
+        var query = eval("data." + adj);
         for (var i=0; i<query; i++){
           $('.u'+adj).eq(i).addClass(colormap[adj]);
         }

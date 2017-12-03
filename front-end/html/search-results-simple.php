@@ -27,17 +27,14 @@
 
       <div class="row">
         <div id="result-msg">
-          Your search for 
-          <?php 
-          $userquery = "";
-          if( isset($_POST["query"]) ){
-             $userquery = $_POST["query"];
-          }
-          echo "abc";
-          echo $userquery; 
-          ?> returned the following results:
+          Your search returned the following results: 
         </div>
       </div>
+
+      <?php 
+       session_start();
+       echo $_SESSION['search-results'];
+      ?> 
 
 
 

@@ -318,16 +318,16 @@ $(document).ready(function(){
   $('#searchbar').keypress(function(e){
     if(e.which == 13) {
       var query = $('#searchbar').val();
-      var postdata = "query=" + query;
-      //alert(postdata);
-      url = '/COMP307/front-end/html/search-results-simple.php';
+      query = query.replace(/ /g,"%20");
+      var link = "https://api.themoviedb.org/3/search/movie?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US&query=" + query + "&page=1&include_adult=false";
+      var postdata = "query="+link;
+      url = base_url+'back-end/search-simple';
       $.ajax({
         type: "POST",
         url: url,
         data: postdata,
         success: function(data){
-          alert(data);
-          //window.location.href = '/COMP307/front-end/html/search-results-simple.php';
+          window.location.href = '/COMP307/front-end/html/search-results-simple.php';
         },
         error: function(){
           alert('Error occured when sending simple search');
@@ -337,7 +337,6 @@ $(document).ready(function(){
   });
 
   $('#search-submit').click(function(){
-    //url = '/COMP307/front-end/html/search-results-advanced.php';
     postdata = $('.panel :input').serialize();
     url = base_url+'back-end/search-advanced';
     $.ajax({
@@ -345,7 +344,6 @@ $(document).ready(function(){
       url: url,
       data: postdata,
       success: function(data){
-        //alert(data);
         window.location.href = '/COMP307/front-end/html/search-results-advanced.php';
       },
       error: function(){

@@ -1,20 +1,25 @@
 <?php
+  require 'database.php';
+  $db = getDB();
+  session_start();
+  $sid = $_SESSION['sid'];
+
   try { 
-    require_once('database.php');
-    session_start();
-    //$sid = $_SESSION['sid'];
-    $username = $_SESSION['username'];
-    //$movieid = $request->getParam('movieid');
-    $query = "SELECT movieid FROM Userratings WHERE username = '$username'";
+    $query = "SELECT * from Users where sid=?";
+    $stmt = $db->prepare($query);
+    $stmt->execute([$sid]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $username = $user['username'];
 
-    $result = $mysqli->query($query);
+    $query = "SELECT movieid FROM Userratings WHERE username = ?";
+    $stmt = $db->prepare($query);
+    $stmt->execute([$username]);
+    $ratings = $stmt->fetchAll();
 
-    while ($row = $result->fetch_assoc()){
-      $ratings[] = $row;
-    }
+    print_r($ratings);
     
     //$ratings2 = json_encode($ratings);
-    foreach($ratings as $v) {
+    /*foreach($ratings as $v) {
 
       foreach($v as $x)
       {
@@ -32,7 +37,7 @@
 
       }
       //$movieid = substr($json, 12, -2);
-    }
+    }*/
 
   } 
   catch(Exception $e) {
