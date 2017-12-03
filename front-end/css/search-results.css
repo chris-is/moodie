@@ -20,16 +20,21 @@
   margin-left: 50px;
   margin-top: 5%;
   width: 300px;
-}
-
-#name h3{
   font-size: 25px;
   width: 350px;
+  background-color: #ffd37a;
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 
 #images{
   margin-left: 40px;
   margin-top: 2%;
+}
+
+.poster{
+  width: 70%;
+  height: auto;
 }
 
 .info{
@@ -38,6 +43,9 @@
   padding:0;
   margin-left: 60px;
   margin-top: 10px;
+  background-color: #ffd37a;
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 #description{
   margin-left: 2%;

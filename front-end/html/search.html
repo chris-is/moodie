@@ -319,25 +319,15 @@ $(document).ready(function(){
     if(e.which == 13) {
       var query = $('#searchbar').val();
       query = query.replace(/ /g,"%20");
-      var url = "/COMP307/front-end/html/search-results-simple.php?" + query;
+      url = "/COMP307/front-end/html/search-results-simple.php?" + query;
       window.location.href = url;
     }  
   });
 
   $('#search-submit').click(function(){
-    postdata = $('.panel :input').serialize();
-    url = base_url+'back-end/search-advanced';
-    $.ajax({
-      type: "POST",
-      url: url,
-      data: postdata,
-      success: function(data){
-        window.location.href = '/COMP307/front-end/html/search-results-advanced.php';
-      },
-      error: function(){
-        alert('Error occured when sending advanced search');
-      }
-    });
+    var query = $('.panel :input').serialize();
+    url = "/COMP307/front-end/html/search-results-advanced.php?" + query;
+    window.location.href = url;
       
   });
 });

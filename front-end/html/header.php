@@ -27,12 +27,14 @@
 
       <?php 
         function isSID(){
-          require_once('database.php');
-          $id = session_id();
-          $query = "SELECT status from Users where sid='$id'";
-          $status = $mysqli->query($query);
-          $num = $status->num_rows;
-          if ($num == 1){
+          require_once('../../back-end/database.php');
+          $db = getDB();
+          $sid = session_id();
+          $query = "SELECT status from Users where sid=?";
+          $stmt = $db->prepare($query);
+          $stmt->execute([$sid]);
+          $status = $stmt->fetch(PDO::FETCH_ASSOC);
+          if ($status['status'] == 1){
             return true;
           }
           else {

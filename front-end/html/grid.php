@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!-- GENERAL AVERAGE RATING -->
 <div class="gen-rating">
   <div class="row">
@@ -144,13 +146,22 @@
     <button class="grid-btn bored"></button>
   </div>
 
+<?php 
+  require_once('../../back-end/database.php');
+  $db = getDB();
+  $sid = session_id();
+  $query = "SELECT status from Users where sid=?";
+  $stmt = $db->prepare($query);
+  $stmt->execute([$sid]);
+  $status = $stmt->fetch(PDO::FETCH_ASSOC);
+  if ($status['status'] == 1) : ?>
+    
   <div class="row">
     <button class="adj rate" id="rateit">Rate it!</button>
     <div class="explain">No fields are mandatory<br/> Rate what you want!</div>
   </div>
   
 </div>
-
 <!-- USER RATING -->
 <div class="user-rating">
   <div class="row">
@@ -321,7 +332,7 @@
     <button class="adj rate" id="rate-submit">Rate!</button>
   </div>
 </div>
-
+<?php endif; ?>
 
 <script>
 $(document).ready(function() {
