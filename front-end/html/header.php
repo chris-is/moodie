@@ -55,13 +55,7 @@
       <input type="password" name="password" required>
       <div class="username-status"></div>
       <button type="submit" id="login-sub">Login</button>
-      <!--<button
-        class="g-recaptcha"
-        data-sitekey="6LfDNTsUAAAAAKVfovwA_PT5AkZtsJfGhR_0H1Ki"
-        data-callback="YourOnSubmitFn">
-        Submit
-      </button>
-      <span class="forgot"><a href="#">I forgot my password</a></span>-->
+      <!--<span class="forgot"><a href="#">I forgot my password</a></span>-->
       </div>
     </div>
   </div>

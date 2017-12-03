@@ -6,9 +6,10 @@
   $email = $request->getParam('email');
 
   try {
+    $hashpass = password_hash($password, PASSWORD_DEFAULT);
     $query = "INSERT INTO Users (username, password, email) VALUES (?, ?, ?);";
     $stmt = $db->prepare($query);
-    $stmt->execute([$username, $password, $email]);
+    $stmt->execute([$username, $hashpass, $email]);
   } 
 
   //Print error messages if any

@@ -36,11 +36,11 @@
       <div id="recList"></div>
 
       <div class="multiple-items-big">
-        <img class="slideshow" id="pic0" src="">
-        <img class="slideshow" id="pic1" src="">
-        <img class="slideshow" id="pic2" src="">
-        <img class="slideshow" id="pic3" src="">
-        <img class="slideshow" id="pic4" src="">
+        <img class="slideshow" id="rec0" src="">
+        <img class="slideshow" id="rec1" src="">
+        <img class="slideshow" id="rec2" src="">
+        <img class="slideshow" id="rec3" src="">
+        <img class="slideshow" id="rec4" src="">
         <!--
         <div><img class="slideshow" src=""></div>
         <div><img class="slideshow" src=""></div>
@@ -76,11 +76,16 @@
         <div class="col-sm-6">
           <!--NEAR ME SLIDESHOW-->
           <div class="multiple-items-small">
-          <div><img class="slideshow" src="https://mediafiles.cineplex.com/Central/Film/Posters/23036_768_1024.jpg"></div>
-          <div><img class="slideshow" src="https://mediafiles.cineplex.com/Central/Film/Posters/21755_768_1024.jpg"></div>
-          <div><img class="slideshow" src="https://mediafiles.cineplex.com/Central/Film/Posters/27066_768_1024.jpg"></div>
-          <div><img class="slideshow" src="https://mediafiles.cineplex.com/Central/Film/Posters/26425_768_1024.jpg"></div>
-          <div><img class="slideshow" src="https://mediafiles.cineplex.com/Central/Film/Posters/27470_768_1024.jpg"></div></div>
+            <img class="slideshow" id="near0" src="">
+            <img class="slideshow" id="near1" src="">
+            <img class="slideshow" id="near2" src="">
+            <img class="slideshow" id="near3" src="">
+            <img class="slideshow" id="near4" src="">
+            <img class="slideshow" id="near5" src="">
+            <img class="slideshow" id="near6" src="">
+            <img class="slideshow" id="near7" src="">
+            <img class="slideshow" id="near8" src="">
+            <img class="slideshow" id="near9" src="">
           </div>
         </div>
 
@@ -102,7 +107,9 @@
         });
 
         var base_url="http://localhost/COMP307/";
-        var url = base_url+'back-end/recommendations';
+
+        //RECOMMENDED MOVIES
+        /*var url = base_url+'back-end/recommendations';
         $.ajax({
           type:"GET",
           url:url,
@@ -132,63 +139,14 @@
               posters.push("https://image.tmdb.org/t/p/w500" + response['poster_path']);
               $('#pic0').attr('src', posters[0]);
             });
-
-            var settings = {
-              "async": true,
-              "crossDomain": true,
-              "url": url1,
-              "method": "GET",
-              "headers": {},
-              "data": "{}"
-            }
-            $.ajax(settings).done(function (response) {
-              posters.push("https://image.tmdb.org/t/p/w500" + response['poster_path']);
-              $('#pic1').attr('src', posters[1]);
-            });
-
-            var settings = {
-              "async": true,
-              "crossDomain": true,
-              "url": url2,
-              "method": "GET",
-              "headers": {},
-              "data": "{}"
-            }
-            $.ajax(settings).done(function (response) {
-              posters.push("https://image.tmdb.org/t/p/w500" + response['poster_path']);
-              $('#pic2').attr('src', posters[2]);
-            });
-
-            var settings = {
-              "async": true,
-              "crossDomain": true,
-              "url": url3,
-              "method": "GET",
-              "headers": {},
-              "data": "{}"
-            }
-            $.ajax(settings).done(function (response) {
-              posters.push("https://image.tmdb.org/t/p/w500" + response['poster_path']);
-              $('#pic3').attr('src', posters[3]);
-            });
-
-            var settings = {
-              "async": true,
-              "crossDomain": true,
-              "url": url4,
-              "method": "GET",
-              "headers": {},
-              "data": "{}"
-            }
-            $.ajax(settings).done(function (response) {
-              posters.push("https://image.tmdb.org/t/p/w500" + response['poster_path']);
-              $('#pic4').attr('src', posters[4]);
-            });
                   
           }
-        });
-      });
+        }); //END RECOMMENDATIONS*/
+
+
+      }); //END DOCUMENT.READY
     </script>
+    <script type="text/javascript" src="nearme.js"></script>
 
     <!--FOOTER-->
     <div id="appendFooter"></div>

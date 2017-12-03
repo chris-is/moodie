@@ -9,18 +9,18 @@
     $stmt = $db->prepare($query);
     $stmt->execute([$userlogin]);
     $userdata = $stmt->fetch(PDO::FETCH_ASSOC);
+    $hashpass = $userdata['password'];
     
-
-    if ($userdata['password'] == $userpass) {
+    if (password_verify($userpass, $hashpass)) {
       $status = 1;
-      $id = uniqid();
-      session_id($id);
+      $sid = uniqid();
+      session_id($sid);
       session_start();
-      $_SESSION['sid'] = $id;
+      $_SESSION['sid'] = $sid;
 
       $query = "UPDATE Users SET sid=?, status=? WHERE username=?";
       $stmt = $db->prepare($query);
-      $stmt->execute([$id, $status, $userlogin]);
+      $stmt->execute([$sid, $status, $userlogin]);
 
       echo "ok";
     }
