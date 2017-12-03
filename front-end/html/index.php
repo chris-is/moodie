@@ -54,6 +54,7 @@
             });
           });
         </script>
+        <script type="text/javascript" src="nearme.js"></script>
 
       <!--NEAR ME-->
       <div class="row">
@@ -61,12 +62,17 @@
       </div>
 
       <div class="multiple-items-big">
-          <div><img class="slideshow" src="https://mediafiles.cineplex.com/Central/Film/Posters/23036_768_1024.jpg"></div>
-          <div><img class="slideshow" src="https://mediafiles.cineplex.com/Central/Film/Posters/21755_768_1024.jpg"></div>
-          <div><img class="slideshow" src="https://mediafiles.cineplex.com/Central/Film/Posters/27066_768_1024.jpg"></div>
-          <div><img class="slideshow" src="https://mediafiles.cineplex.com/Central/Film/Posters/26425_768_1024.jpg"></div>
-          <div><img class="slideshow" src="https://mediafiles.cineplex.com/Central/Film/Posters/27470_768_1024.jpg"></div>
-        </div>
+        <img class="slideshow" id="near0" src="">
+        <img class="slideshow" id="near1" src="">
+        <img class="slideshow" id="near2" src="">
+        <img class="slideshow" id="near3" src="">
+        <img class="slideshow" id="near4" src="">
+        <img class="slideshow" id="near5" src="">
+        <img class="slideshow" id="near6" src="">
+        <img class="slideshow" id="near7" src="">
+        <img class="slideshow" id="near8" src="">
+        <img class="slideshow" id="near9" src="">
+      </div>
 
         <script type="text/javascript">
           $(document).ready(function(){
