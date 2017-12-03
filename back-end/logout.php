@@ -10,7 +10,6 @@
   $stmt->execute([$sid]);
 
   $_SESSION['sid'] = 0;
-  $_SESSION['username'] = 0;
   unset($_SESSION);
 
   echo "ok";

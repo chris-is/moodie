@@ -17,7 +17,6 @@
       session_id($id);
       session_start();
       $_SESSION['sid'] = $id;
-      $_SESSION['username'] = $userlogin;
 
       $query = "UPDATE Users SET sid=?, status=? WHERE username=?";
       $stmt = $db->prepare($query);

@@ -2,10 +2,16 @@
   require 'database.php';
   $db = getDB();
   session_start();
-  $username = $_SESSION['username'];
+  $sid = $_SESSION['sid'];
   $movieid = $request->getParam('movieid');
 
   try { 
+    $query = "SELECT * from Users where sid=?";
+    $stmt = $db->prepare($query);
+    $stmt->execute([$sid]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $username = $user['username'];
+
     $query = "SELECT * from Userratings where movieid=? AND username=?";
     $stmt = $db->prepare($query);
     $stmt->execute([$movieid, $username]);
