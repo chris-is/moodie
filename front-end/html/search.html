@@ -315,6 +315,15 @@ $(document).ready(function(){
   var base_url="http://localhost/COMP307/";
   var url;
 
+  $('#searchbar').keypress(function(e){
+    if(e.which == 13) {
+      var query = $('#searchbar').val();
+      query = query.replace(/ /g,"%20");
+      var url = "/COMP307/front-end/html/search-results-simple.php?" + query;
+      window.location.href = url;
+    }  
+  });
+
   $('#search-submit').click(function(){
     postdata = $('.panel :input').serialize();
     url = base_url+'back-end/search-advanced';
@@ -333,4 +342,3 @@ $(document).ready(function(){
   });
 });
 </script>
-<script type="text/javascript" src="../js/search-simple.js"></script>
