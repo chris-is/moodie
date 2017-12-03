@@ -44,13 +44,14 @@
     </div>
     <div class="pic-wrapper"> <!--Just a frame-->
       <img src="" height="300" width="250">
+      <input id="dp" type="file" name="pic" accept="image/*" onchange="previewFile()">
     </div>
 
-  <div class="pic">
+  <!--<div class="pic">
       <form id="frm1" action="">
         <input id="dp" type="file" name="pic" accept="image/*" onchange="previewFile()">
       </form>
-  </div>
+  </div>-->
 
   <script>
     function previewFile()
@@ -135,6 +136,41 @@
       <script src="../js/ajaxGetPost.js"></script>
       
       <script>
+/*<<<<<<< HEAD
+        $(document).ready(function()
+        {
+          /*$(".info").on("click",".stpostbutton",function()
+          {
+            $("#mainContent").prepend("<p>HELLO TESTIIIING</p>");
+          });*/
+         /*var base_url="http://localhost/COMP307/";
+          var url,encodedata;
+          $("#update").focus();
+
+          $(".info").on("click",".stpostbutton",function()
+          {
+
+          var update=$('#update').val();
+          var precode = {"about":update};
+          var encode=JSON.stringify(precode);
+          //$("#mainContent").prepend("<p>Daaaaama</p>");
+          url=base_url+'back-end/about';
+
+
+          $.ajax({
+          type:"POST",
+          url:url,
+          data:encode,
+          success:function(data){
+            //alert(encode);
+          },
+          error:function(data){
+          alert("Error In Connecting");
+          }
+          });
+
+
+=======*/
         $(document).ready(function() {
           var base_url="http://localhost/COMP307/";
           var url = base_url+'back-end/about';
@@ -180,7 +216,6 @@
           });
         });
       </script>
-
 
     </div>
 
