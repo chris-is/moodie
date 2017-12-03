@@ -36,18 +36,18 @@
        echo $_SESSION['search-results'];
       ?> 
 
-
+      <div id="name" class="row">
+        <h3 style="background-color: #ffd37a;padding: 0.5rem;border-radius: 5px;"> abc </h3>
+      </div>
+      <div id="images" class="row">
+        <div id="poster" class="col-sm-5">
+          <img id="poster0" src="" width=70% height=auto>
+        </div>
+      </div>
+        <button type="submit" class="info" name="id" id="id" value="<?php echo $ids[2];?>" style="background-color: #ffd37a;padding: 0.5rem;border-radius: 5px;">More Info</button>
 
       
 
-      <div class="row">
-        <div id="image" class="col-sm-5">
-          <img width=50% height=50% src="../img/nagoya2.jpg" alt="First slide">
-        </div>
-        <div id="description" class="col-sm-7">
-          Description
-        </div>
-      </div>
 
 
     </div>

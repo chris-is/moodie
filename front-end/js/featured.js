@@ -22,7 +22,6 @@ $(document).ready(function(){
 
         $.ajax(settings).done(function (response) {
           var poster = "https://image.tmdb.org/t/p/w500" + response['poster_path'];
-          console.log(poster + " " + i);
           $('#feat'+i).attr('src', poster);
         });
       }
