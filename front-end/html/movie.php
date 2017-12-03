@@ -7,23 +7,13 @@
   <link href="../css/movie.css" type="text/css" rel="stylesheet">
 
   <?php
-    session_start();
-    if( isset($_POST["id"]) ){
-       $id = $_POST["id"];
-       $_SESSION['movieid'] = $id;
-    }
-
-    
-
-    $jsonurl = "https://api.themoviedb.org/3/movie/" . $_SESSION['movieid'];
+    $movieid = $_SERVER['QUERY_STRING'];
+    $jsonurl = "https://api.themoviedb.org/3/movie/" . $movieid;
     $jsonurl .= "?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US";
     $jsonStr = file_get_contents($jsonurl);
     $jsonObj = json_decode($jsonStr);
     $image = ($jsonObj->poster_path);
     $name = ($jsonObj->title);
-
-    
-    
   ?>
 
 
@@ -57,7 +47,7 @@
         <div class="col-sm-5">
           <div class="row">
             <h1 id="name"><?php echo $name?></h1>
-            <div id="movieid" style="display: none;"><?php echo $_SESSION['movieid'] ?></div>
+            <div id="movieid" style="display: none;"><?php echo $movieid ?></div>
           </div>
           
           <div id="details" class="row">
