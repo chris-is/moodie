@@ -35,18 +35,44 @@
         echo "'s profile";
       ?>
     </div>
-    <div class="pic-wrapper"> <!--Just a frame-->
-      <img src="" height="300" width="250">
-      <input id="dp" type="file" name="pic" accept="image/*" onchange="previewFile()">
-    </div>
 
+    <div id="test"></div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <form class="uploadimage" method="POST" enctype="multipart/form-data"> <!--Just a frame-->
+      <!--<div id="image_preview"><img id="previewing" src="noimage.png" /></div>-->
+
+      <input type = "file" name = "file" id="file"/>
+      <input type = "submit" name = "submit" value = "upload"/>
+    </form>
+      <script>
+        $(document).ready(function() {
+          var fd = new FormData();
+          fd.append('file', input.files[0]);
+  
+          $("#uploadimage").on('submit',function() {
+            $.ajax({
+              url: "http://localhost/COMP307/back-end/dp";
+              type: "POST",
+              data: fd,
+              processData: false,
+              contentType: false,
+              success: function(data)
+              {
+                alert("damn");
+              }
+            });
+          });
+
+      </script>
+
+      <div id "test2"></div>
   <!--<div class="pic">
       <form id="frm1" action="">
         <input id="dp" type="file" name="pic" accept="image/*" onchange="previewFile()">
       </form>
   </div>-->
-
-  <script>
+  <!--<script>
     function previewFile()
     {
       var preview = document.querySelector('img');
@@ -60,8 +86,21 @@
       {
         reader.readAsDataURL(file);
       }
+
+        $(document).ready(function(){
+          var base_url="http://localhost/COMP307/";
+          var url = base_url+'backend/dp';
+          url=base_url+'back-end/about';
+            $.ajax({
+              type: "POST",
+              url: url,
+              data:file,
+              success:function(data){
+            }
+          });
+         });
     }
-  </script>
+  </script>-->
 
   <div class="btn-group">
     <button type="button" id ="info" class="btn btn-primary">Info</button>

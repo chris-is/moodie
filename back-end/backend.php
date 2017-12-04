@@ -13,6 +13,9 @@ $app->post('/about', function ($request) {
 $app->get('/about', function ($request) {
 	require 'about-get.php';
 });
+$app->post('/dp', function($request) {
+  require 'about-dp.php';
+});
 
 $app->post('/checkusername', function ($request, $response) {
   require 'checkusername.php';
