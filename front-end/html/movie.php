@@ -7,13 +7,26 @@
   <link href="../css/movie.css" type="text/css" rel="stylesheet">
 
   <?php
-    $movieid = $_SERVER['QUERY_STRING'];
-    $jsonurl = "https://api.themoviedb.org/3/movie/" . $movieid;
-    $jsonurl .= "?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US";
-    $jsonStr = file_get_contents($jsonurl);
-    $jsonObj = json_decode($jsonStr);
-    $image = ($jsonObj->poster_path);
-    $name = ($jsonObj->title);
+    $name;
+    $image;
+    if($_REQUEST['movie'] > 0){
+      $id = $_REQUEST['movie'];
+      $jsonurl = "https://api.themoviedb.org/3/movie/" . $id;
+      $jsonurl .= "?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US";
+      $jsonStr = file_get_contents($jsonurl);
+      $jsonObj = json_decode($jsonStr);
+      $image = ($jsonObj->poster_path);
+      $name = ($jsonObj->title);
+    }
+    else if($_REQUEST['tv'] > 0){
+      $id = $_REQUEST['tv'];
+      $jsonurl = "https://api.themoviedb.org/3/tv/" . $id;
+      $jsonurl .= "?api_key=1753a8a0eee9f02ab07f902370f8f1ea";
+      $jsonStr = file_get_contents($jsonurl);
+      $jsonObj = json_decode($jsonStr);
+      $image = ($jsonObj->poster_path);
+      $name = ($jsonObj->name);
+    }
   ?>
 
 
@@ -40,7 +53,7 @@
         <div class="col-sm-5">
           <div class="row">
             <h1 id="name"><?php echo $name?></h1>
-            <div id="movieid" style="display: none;"><?php echo $movieid ?></div>
+            <div id="movieid" style="display: none;"><?php echo $id ?></div>
           </div>
           
           <div id="details" class="row">
