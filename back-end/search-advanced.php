@@ -5,6 +5,8 @@ session_start();
 $_SESSION['search-results'] = "advanced search";
 
 try {   
+  //ADD COMMENTS
+
   //To store the country and year, if user chooses any
 
 /*
@@ -147,7 +149,7 @@ try {
 
   } 
   catch(Exception $e) {
-    echo "Something went wrong!";
+    echo "Error while returning advanced search.";
   }
 
 

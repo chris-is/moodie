@@ -12,7 +12,7 @@
     <div class="col-sm-4">
       <button id="fb-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Facebook"></button>
       <button id="twitter-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Twitter"></button>
-      <button id="github-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Github"></button>
+      <button id="github-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Github" onclick="window.location.href='https://github.com/vunhuanh/COMP307';"></button>
     </div>
   </div>
 </div>

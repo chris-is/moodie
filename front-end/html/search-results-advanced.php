@@ -69,6 +69,7 @@
 
             var postdata = 'country='+country + '&year='+year + '&movie='+movie + '&tv='+tv + '&happy='+happy + '&angry='+angry + '&angry='+angry + '&smart='+smart + '&excited='+excited + '&relaxed='+relaxed + '&shocked='+shocked + '&scared='+scared + '&sad='+sad + '&hungry='+hungry + '&bored='+bored;
             var url = "http://localhost/COMP307/back-end/search-advanced";
+            console.log(postdata);
 
             $.ajax({
               type: "POST",
@@ -106,10 +107,6 @@
       </div>
         <button type="submit" class="info" name="id" id="id" value="<?php echo $ids[1];?>" style="background-color: #ffd37a;padding: 0.5rem;border-radius: 5px;">More Info</button>
       </form>
-
-      
-
-
 
     </div>
 

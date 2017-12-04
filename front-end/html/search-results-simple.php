@@ -33,11 +33,10 @@
 
       <script>
       $(document).ready(function(){
-        function appendMovie(poster, movieid, name){
+        function appendMovie(poster, id, name){
           var l1 = "<div id=\"name\" class=\"row\">"+name+"</div>";
-          var l2 = "<div id=\"images\" class=\"row\"><div class=\"col-sm-5\"><img class=\"poster\" src=\"" + poster +"\"></div></div>";
-          var l3 = "<button type=\"submit\" class=\"info\" value=\"" + movieid + "\">More Info</button>";
-          $('.container-fluid').append(l1, l2, l3);
+          var l2 = "<div id=\"images\" class=\"row\"><div class=\"col-sm-5\"><a href=\"/COMP307/front-end/html/movie.php?"+id+"\"><img class=\"poster\" src=\"" + poster +"\"></a></div></div>";
+          $('.container-fluid').append(l1, l2);
         }
 
         var query = window.location.search.substring(1);
@@ -55,23 +54,18 @@
         $.ajax(settings).done(function (response) {
           for(var i=0; i<10; i++){
             var poster = "https://image.tmdb.org/t/p/w500" + response.results[i].poster_path;
-            var movieid = response.results[i].id;
+            var id;
             var name;
             if(response.results[i].media_type == "movie"){
               name = response.results[i].title;
+              id = "movie=" + response.results[i].id + "&tv=0";
             }
             else if(response.results[i].media_type == "tv") {
               name = response.results[i].name;
+              id = "tv=" + response.results[i].id + "&movie=0";
             }
-            appendMovie(poster, movieid, name);
+            appendMovie(poster, id, name);
           }
-        });
-
-        $('.container-fluid').on('click', '.info', function(){
-          var query = $(this).val();
-          url = "/COMP307/front-end/html/movie.php?" + query;
-          window.location.href = url;
-            
         });
 
       });

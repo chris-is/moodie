@@ -37,17 +37,8 @@
         <button class="section-btn" id="featured-btn" data-toggle="tooltip" data-placement="top" title="Featured"></button>
       </div>
 
-      <div class="multiple-items-big">
-        <img class="slideshow" id="feat0" src="">
-        <img class="slideshow" id="feat1" src="">
-        <img class="slideshow" id="feat2" src="">
-        <img class="slideshow" id="feat3" src="">
-        <img class="slideshow" id="feat4" src="">
-        <img class="slideshow" id="feat5" src="">
-        <img class="slideshow" id="feat6" src="">
-        <img class="slideshow" id="feat7" src="">
-        <img class="slideshow" id="feat8" src="">
-        <img class="slideshow" id="feat9" src="">
+      <div class="multiple-items-big" id="featured-slideshow">
+        
       </div>
 
       <!--NEAR ME-->
@@ -55,7 +46,7 @@
         <button class="section-btn" id="near-btn" data-toggle="tooltip" data-placement="top" title="Near Me"></button>
       </div>
 
-      <div class="multiple-items-big">
+      <div class="multiple-items-big" id="near-slideshow">
         <img class="slideshow" id="near0" src="">
         <img class="slideshow" id="near1" src="">
         <img class="slideshow" id="near2" src="">
