@@ -5,6 +5,7 @@
   $movieid = $request->getParam('movieid');
 
   try { 
+    //Get username from the current SID
     $sid = $_SESSION['sid'];
     $query = "SELECT * from Users where sid=?";
     $stmt = $db->prepare($query);
@@ -12,6 +13,7 @@
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     $username = $user['username'];
 
+    //Check if user has rated this particular movie
     $query = "SELECT * FROM Userratings WHERE username=? AND movieid=?";
     $stmt = $db->prepare($query);
     $stmt->execute([$username, $movieid]);
@@ -99,7 +101,7 @@
 
   } 
   catch(Exception $e) {
-    echo "Something went wrong!";
+    echo "Error while updating user ratings.";
   }
 
 

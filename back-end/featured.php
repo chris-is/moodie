@@ -3,6 +3,7 @@
   $db = getDB();
 
   try { 
+    //Return the most rated movies in the database
     $query = "SELECT movieid, COUNT(*) FROM Userratings GROUP BY movieid ORDER BY COUNT(*) DESC";
     $stmt = $db->prepare($query);
     $stmt->execute();
@@ -13,6 +14,6 @@
 
   } 
   catch(Exception $e) {
-    echo "Something went wrong!";
+    echo "Error while getting featured movies.";
   }
 ?>

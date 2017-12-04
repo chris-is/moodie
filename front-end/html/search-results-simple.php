@@ -35,9 +35,8 @@
       $(document).ready(function(){
         function appendMovie(poster, id, name){
           var l1 = "<div id=\"name\" class=\"row\">"+name+"</div>";
-          var l2 = "<div id=\"images\" class=\"row\"><div class=\"col-sm-5\"><img class=\"poster\" src=\"" + poster +"\"></div></div>";
-          var l3 = "<button type=\"submit\" class=\"info\" value=\"" + id + "\">More Info</button>";
-          $('.container-fluid').append(l1, l2, l3);
+          var l2 = "<div id=\"images\" class=\"row\"><div class=\"col-sm-5\"><a href=\"/COMP307/front-end/html/movie.php?"+id+"\"><img class=\"poster\" src=\"" + poster +"\"></a></div></div>";
+          $('.container-fluid').append(l1, l2);
         }
 
         var query = window.location.search.substring(1);
@@ -67,13 +66,6 @@
             }
             appendMovie(poster, id, name);
           }
-        });
-
-        $('.container-fluid').on('click', '.info', function(){
-          var query = $(this).val();
-          url = "/COMP307/front-end/html/movie.php?" + query;
-          window.location.href = url;
-            
         });
 
       });

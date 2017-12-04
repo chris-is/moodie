@@ -1,4 +1,8 @@
 $(document).ready(function(){
+  function appendMovie(poster, id, name){
+    var l1 = "<a href=\"/COMP307/front-end/html/movie.php?"+id+"\"><img class=\"slideshow\" src=\""+ poster + "\"></a>"
+    $('.container-fluid').append(l1);
+  }
 
   var base_url="http://localhost/COMP307/";
   var url = base_url+'back-end/featured';
@@ -31,3 +35,17 @@ $(document).ready(function(){
   });
 
 });
+
+
+var poster = "https://image.tmdb.org/t/p/w500" + response.results[i].poster_path;
+var id;
+var name;
+if(response.results[i].media_type == "movie"){
+  name = response.results[i].title;
+  id = "movie=" + response.results[i].id + "&tv=0";
+}
+else if(response.results[i].media_type == "tv") {
+  name = response.results[i].name;
+  id = "tv=" + response.results[i].id + "&movie=0";
+}
+appendMovie(poster, id, name);

@@ -1,3 +1,6 @@
+/* MOVIE PAGE */
+
+/* General/average rating grid */
 .gen-rating{
   margin-top: 108px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -6,6 +9,8 @@
   font-variant: normal;
   color: white;
 }
+
+/* User's rating grid */
 .user-rating{
   display: none;
   margin-top: 108px;
@@ -16,6 +21,7 @@
   color: white;
 }
 
+/* Movie name */
 #name {
   margin-left: 105px;
   margin-right: 2rem;
@@ -33,7 +39,6 @@
   text-align:center;
   line-height: 41px;
 }
-
 
 #details{
   padding: 0;
@@ -59,6 +64,7 @@
   padding:0;
 }
 
+/* Popup message when rating */
 #rate-msg {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #cbcbcb;
@@ -71,6 +77,7 @@
   margin: 2px 2px 46px 2px;
 }
 
+/* Buttons displayed on grid */
 .grid-btn, .plus-ctrl, .minus-ctrl, .qmark{
   margin:2px;
   padding:0;
@@ -82,9 +89,7 @@
   border-radius: 5px;
   background-image: url("../img/blank-grid.png");
 }
-.qmark{
-  background-image: url("../img/qmark.png")
-}
+
 .explain{
   display: none;
   color: white;

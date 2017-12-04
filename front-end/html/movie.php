@@ -7,6 +7,7 @@
   <link href="../css/movie.css" type="text/css" rel="stylesheet">
 
   <?php
+    //Get movie name and poster through API
     $name;
     $image;
     if($_REQUEST['movie'] > 0){
@@ -49,6 +50,7 @@
           });
         </script>
 
+      <!--NAME AND POSTER-->
       <div class="row">
         <div class="col-sm-5">
           <div class="row">
@@ -63,6 +65,7 @@
           </div>
         </div>
 
+        <!--RATING GRID-->
         <div id="grid" class="col-sm-7">
           <div id="appendGrid"></div>
           <script>

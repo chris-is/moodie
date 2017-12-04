@@ -108,10 +108,6 @@
         <button type="submit" class="info" name="id" id="id" value="<?php echo $ids[1];?>" style="background-color: #ffd37a;padding: 0.5rem;border-radius: 5px;">More Info</button>
       </form>
 
-      
-
-
-
     </div>
 
     <!--FOOTER-->
