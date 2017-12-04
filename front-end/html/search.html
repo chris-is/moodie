@@ -2,6 +2,8 @@
 <div>
   <section>
     <h3 style="margin-bottom: 10px;"><center>Advanced Search</center></h3>
+    
+    <!--Select country-->
     <div class="row">
         <div class="col-sm-8">
             <label for="country">
@@ -259,37 +261,47 @@
                   <option value="ZW">Zimbabwe</option>
               </select>
         </div>
+        <!--Select year-->
         <div class="col-sm-4">
-            <label for="year">
-              <span>Year:</span>
-            </label>
-              <input type="text" id="year" name="year" maxlength="4" style="width: 70px; height: 30px; padding: 5px; border-radius: 5px;">
+          <label for="year">
+            <span>Year:</span>
+          </label>
+            <input type="text" id="year" name="year" maxlength="4" style="width: 70px; height: 30px; padding: 5px; border-radius: 5px;">
         </div>
     </div>
-    
+
+    <!--Select medium-->
+    <div class="row" style="margin-bottom: 30px; font-size: 17px">
+      <div class="col-sm-3"><label>Medium:</label></div>
+      <div class="col-sm-2"><label><input type="checkbox" name="movie">Movie</label></div>
+      <div class="col-sm-3"><label><input type="checkbox" name="tv">TV series</label></div>
+      <div class="col-sm-4"></div>
+    </div>
+
+    <!--Select mood-->
     <span>Make me feel:</span>
     
     <div class="row" style="margin-bottom: 30px; font-size: 17px">
       <div class="col-sm-1"></div>
       <div class="col-sm-2">
-        <div class="row"><label><input type="checkbox" name="Happy">Happy</label></div>
-        <div class="row"><label><input type="checkbox" name="Angry">Angry</label></div>
+        <div class="row"><label><input type="checkbox" name="happy">Happy</label></div>
+        <div class="row"><label><input type="checkbox" name="angry">Angry</label></div>
       </div>
       <div class="col-sm-2">
-        <div class="row"><label><input type="checkbox" name="Smart">Smart</label></div>
-        <div class="row"><label><input type="checkbox" name="Excited">Excited</label></div>
+        <div class="row"><label><input type="checkbox" name="smart">Smart</label></div>
+        <div class="row"><label><input type="checkbox" name="excited">Excited</label></div>
       </div>
       <div class="col-sm-2">
-        <div class="row"><label><input type="checkbox" name="Relaxed">Relaxed</label></div>
-        <div class="row"><label><input type="checkbox" name="Shocked">Shocked</label></div>
+        <div class="row"><label><input type="checkbox" name="relaxed">Relaxed</label></div>
+        <div class="row"><label><input type="checkbox" name="shocked">Shocked</label></div>
       </div>
       <div class="col-sm-2">
-        <div class="row"><label><input type="checkbox" name="Scared">Scared</label></div>
-        <div class="row"><label><input type="checkbox" name="Sad">Sad</label></div>
+        <div class="row"><label><input type="checkbox" name="scared">Scared</label></div>
+        <div class="row"><label><input type="checkbox" name="sad">Sad</label></div>
       </div>
       <div class="col-sm-2">
-        <div class="row"><label><input type="checkbox" name="Hungry">Hungry</label></div>
-        <div class="row"><label><input type="checkbox" name="Bored">Bored</label></div>
+        <div class="row"><label><input type="checkbox" name="hungry">Hungry</label></div>
+        <div class="row"><label><input type="checkbox" name="bored">Bored</label></div>
       </div>
       <div class="col-sm-1"></div>
       </div>
@@ -302,6 +314,7 @@
 
 <script>
 $(document).ready(function(){
+  //Show advanced search if user clicks on the button
   $("#search-btn").click(function(){
     $(".panel").slideToggle("slow");
   });
@@ -314,44 +327,21 @@ $(document).ready(function(){
 
   var base_url="http://localhost/COMP307/";
   var url;
-
+  //Send user to simple search results page if they enter a movie
   $('#searchbar').keypress(function(e){
     if(e.which == 13) {
       var query = $('#searchbar').val();
-      var postdata = "query=" + query;
-      //alert(postdata);
-      url = '/COMP307/front-end/html/search-results-simple.php';
-      $.ajax({
-        type: "POST",
-        url: url,
-        data: postdata,
-        success: function(data){
-          alert(data);
-          //window.location.href = '/COMP307/front-end/html/search-results-simple.php';
-        },
-        error: function(){
-          alert('Error occured when sending simple search');
-        }
-      });
+      query = query.replace(/ /g,"%20");
+      url = "/COMP307/front-end/html/search-results-simple.php?" + query;
+      window.location.href = url;
     }  
   });
 
+  //Send user to advanced search results page if they make an advanced search
   $('#search-submit').click(function(){
-    //url = '/COMP307/front-end/html/search-results-advanced.php';
-    postdata = $('.panel :input').serialize();
-    url = base_url+'back-end/search-advanced';
-    $.ajax({
-      type: "POST",
-      url: url,
-      data: postdata,
-      success: function(data){
-        //alert(data);
-        window.location.href = '/COMP307/front-end/html/search-results-advanced.php';
-      },
-      error: function(){
-        alert('Error occured when sending advanced search');
-      }
-    });
+    var query = $('.panel :input').serialize();
+    url = "/COMP307/front-end/html/search-results-advanced.php?" + query;
+    window.location.href = url;
       
   });
 });

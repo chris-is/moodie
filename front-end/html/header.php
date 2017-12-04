@@ -3,13 +3,18 @@
     <div class="form-inline">
       <?php 
       session_start();
+
+      //If user is not logged in, display signup/login buttons
       if(isSID() == false) : ?>
         <button id="home-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Home" onclick="window.location.href = '/COMP307/front-end/html/index.php';"></button>
         <input type="text" placeholder="Search for a specific movie & enter" id="searchbar" name="searchquery">
         <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
         <button id="signup-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Sign Up"></button>
         <button id="login-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Login" onclick="document.getElementById('login-modal').style.display='block'" style="width:auto"></button>
-      <?php else : ?>
+      
+      <?php 
+      //If user is logged in, display profile/logout buttons
+      else : ?>
         <button id="home-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Home" onclick="window.location.href = '/COMP307/front-end/html/index-reg.php';"></button>
         <input type="text" placeholder="Search for a specific movie & enter" id="searchbar">
         <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
@@ -26,13 +31,16 @@
       <?php endif; ?>
 
       <?php 
+        //Check if user is logged in by looking at their status
         function isSID(){
-          require_once('database.php');
-          $id = session_id();
-          $query = "SELECT status from Users where sid='$id'";
-          $status = $mysqli->query($query);
-          $num = $status->num_rows;
-          if ($num == 1){
+          require_once('../../back-end/database.php');
+          $db = getDB();
+          $sid = session_id();
+          $query = "SELECT status from Users where sid=?";
+          $stmt = $db->prepare($query);
+          $stmt->execute([$sid]);
+          $status = $stmt->fetch(PDO::FETCH_ASSOC);
+          if ($status['status'] == 1){
             return true;
           }
           else {
@@ -44,7 +52,7 @@
   </div>
 </nav>
 
-<!--Login modal-->
+<!--Login popup modal-->
 <div class="modal" id="login-modal">
   <div class="modal-content animate" method="post" action="login.php">
     <span onclick="document.getElementById('login-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -55,19 +63,13 @@
       <input type="password" name="password" required>
       <div class="username-status"></div>
       <button type="submit" id="login-sub">Login</button>
-      <button
-        class="g-recaptcha"
-        data-sitekey="6LfDNTsUAAAAAKVfovwA_PT5AkZtsJfGhR_0H1Ki"
-        data-callback="YourOnSubmitFn">
-        Submit
-      </button>
       <!--<span class="forgot"><a href="#">I forgot my password</a></span>-->
       </div>
     </div>
   </div>
 </div>
 
-<!--Signup modal-->
+<!--Signup popup modal-->
 <div class="modal" id="signup-modal">
   <div class="modal-content animate" method="post" >
     <span onclick="document.getElementById('signup-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -139,6 +141,7 @@ $(document).ready(function() {
          });
         }
         else {
+          alert(data);
           $(".username-status").html("Username must contain (4-16) alphanumeric characters.");
         }
       }
@@ -178,6 +181,8 @@ $(document).ready(function() {
       }
     }); 
   });  
+
+
 });
 
 // When the user clicks anywhere outside of the modal, close it
@@ -191,4 +196,3 @@ window.onclick = function(event) {
 }
 
 </script>
-<?php require 'search-alg.php' ?>

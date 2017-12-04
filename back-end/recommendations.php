@@ -1,9 +1,17 @@
 <?php
+  require 'database.php';
+  $db = getDB();
+  session_start();
+  $sid = $_SESSION['sid'];
+
   try { 
-    require_once('database.php');
-    session_start();
-    //$sid = $_SESSION['sid'];
-    $username = $_SESSION['username'];
+    //ADD COMMENTS!
+    $query = "SELECT * from Users where sid=?";
+    $stmt = $db->prepare($query);
+    $stmt->execute([$sid]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $username = $user['username'];
+
     //$movieid = $request->getParam('movieid');
     $query = "SELECT happy, angry, smart, excited, relaxed, shocked, scared, sad, hungry FROM Userratings WHERE username = '$username'";
 
@@ -187,7 +195,7 @@
 
   } 
   catch(Exception $e) {
-    echo "Something went wrong!";
+    echo "Error while getting recommendations.";
   }
 
 

@@ -30,8 +30,15 @@
     
     <div class="row" id="profilename">
       <?php
+        require '../../back-end/database.php';
+        $db = getDB();
         session_start();
-        echo $_SESSION['username'];
+        $sid = $_SESSION['sid'];
+        $query = "SELECT * from Users where sid=?";
+        $stmt = $db->prepare($query);
+        $stmt->execute([$sid]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        echo $user['username'];
         echo "'s profile";
       ?>
     </div>

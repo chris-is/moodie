@@ -1,14 +1,21 @@
 <?php
-  require_once('database.php');
+  require 'database.php';
+  $db = getDB();
   session_start();
   $sid = $_SESSION['sid'];
 
-  $query = "SELECT about FROM Users WHERE sid = '$sid'";
+  try { 
+    //Get the "about" information from the currently logged in user
+    $query = "SELECT about FROM Users WHERE sid = ?";
+    $stmt = $db->prepare($query);
+    $stmt->execute([$sid]);
+    $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
-  $result = $mysqli->query($query);
-  while ($row = $result->fetch_assoc()){
-    $data[] = $row;
+    $json = json_encode($data);
+    echo substr($json, 10, -2);
+  } 
+
+  catch(Exception $e) {
+    echo "Error while getting about information.";
   }
-   $json = json_encode($data);
-   echo substr($json, 11, -3);
 ?>

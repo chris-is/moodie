@@ -1,25 +1,30 @@
 <?php
+  require 'database.php';
+  $db = getDB();
   $userlogin = $request->getParam('username');
   $userpass = $request->getParam('password');
 
   try { 
-    require_once('database.php');
-
-    $query = "SELECT * from Users where username='$userlogin'";
-
-    $result = $mysqli->query($query);
-
-    while ($row = $result->fetch_assoc()){
-      $userdata[] = $row;
-    }
-    if ($userdata[0]['password'] == $userpass) {
-      $id = uniqid();
-      session_id($id);
+    //Get the user information matching the provided username
+    $query = "SELECT * from Users where username=?";
+    $stmt = $db->prepare($query);
+    $stmt->execute([$userlogin]);
+    $userdata = $stmt->fetch(PDO::FETCH_ASSOC);
+    $hashpass = $userdata['password'];
+    
+    //Check if the provided username and password belong to the same user
+    if (password_verify($userpass, $hashpass)) {
+      $status = 1;
+      $sid = uniqid();
+      session_id($sid);
       session_start();
-      $_SESSION['sid'] = $id;
-      $_SESSION['username'] = $userlogin;
-      $query = "UPDATE Users SET sid='$id', status=1 WHERE username='$userlogin'";
-      $result = $mysqli->query($query);
+      $_SESSION['sid'] = $sid;
+
+      //If the username and password match, update that row's SID and status values to confirm the user's login status
+      $query = "UPDATE Users SET sid=?, status=? WHERE username=?";
+      $stmt = $db->prepare($query);
+      $stmt->execute([$sid, $status, $userlogin]);
+
       echo "ok";
     }
     else {
@@ -28,6 +33,6 @@
 
   } 
   catch(Exception $e) {
-    echo "Something went wrong!";
+    echo "Error while logging in.";
   }
 ?>

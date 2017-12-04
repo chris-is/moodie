@@ -1,3 +1,4 @@
+<!--Page the user is redirected to when they successfully make an account-->
 <!DOCTYPE html>
 <html>
 

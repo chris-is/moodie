@@ -1,5 +1,4 @@
 /* GENERAL */
-
 html, body {
   font-size: 20px;
   margin: 0;
@@ -13,15 +12,14 @@ html, body {
 .row {
  margin-right: 0px;
 }
-
 .navbar {
   width: 100%;
   box-shadow: 0 4px 6px rgba(0,0,0,.2);
   padding:0;
 }
 
-/* HEADER */
 
+/* HEADER */
 .nav-btn{
   display: inline-block;
   height: 2rem;
@@ -31,7 +29,6 @@ html, body {
   background-color: #fff;
   border-radius: 5px;
 }
-
 .navbar-brand{
   background-color: #fffff0;
   width:100%;
@@ -42,6 +39,7 @@ html, body {
   padding:0;
 }
 
+/* Header buttons */
 #home-btn{
   background-image: url("../img/home.png");
   margin-left: 6.3%;
@@ -68,7 +66,7 @@ html, body {
   margin-right: 2%;
 }
 
-/* No account */
+  /* No account */
 #signup-btn{
   background-image: url("../img/signup.png");
   margin-left: 2%;
@@ -84,7 +82,7 @@ html, body {
   color: red;
 }
 
-/* Registered account */
+  /* Registered account */
 #user-btn{
   background-image: url("../img/user.png");
   margin-left: 2%;
@@ -96,6 +94,7 @@ html, body {
   margin-right: 0;
 }
 
+/* Dropdown menu for profile */
 .dropdown {
   margin: 0;
   padding: 0;
@@ -129,58 +128,52 @@ html, body {
   display: block;
 }
 
-#featured-btn{
-  background-image: url("../img/featured.png");
-  float: left;
-  margin-left: 7.7%;
-  margin-top:2.9%;
-  margin-bottom: 2%;
-}
-#near-btn{
-  background-image: url("../img/near.png");
-  float: left;
-  margin-left: 7.7%;
-  margin-top:1.0%;
-  margin-bottom: 1.2%;
-}
-#rec-btn{
-  background-image: url("../img/rec.png");
-  float: left;
-  margin-left: 5rem;
-  margin-top: 2rem;
-}
-#featured-btn-reg{
-  background-image: url("../img/featured.png");
-  margin-left: 4rem;
-  margin-top: 2rem;
-}
-#near-btn-reg{
-  background-image: url("../img/near.png");
-  margin-left: 4rem;
-  margin-top: 2rem;
-}
 
-/* FOOTER COLUMNS */
+/* FOOTER */
 #first{
   padding: 0;
   margin: 0;
 }
-
 #second{
   padding: 0;
   margin: 0;
 }
-
 #third{
   padding: 0;
   margin: 0;
 }
-
 .container-fluid{
   padding: 0;
 }
 
-/* FOOTER BUTTONS */
+.footer{
+  margin-top: 4rem;
+  padding: 1rem;
+  position: relative;
+  border-top: 1px solid #000;
+  bottom: 0;
+  background-color: #fffff0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15px;
+}
+.footer .row{
+  margin:0;
+  padding:0;
+}
+.foot-btn{
+  height: 2rem;
+  width: 2rem;
+  font-size: 1rem;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+  /* Footer buttons */
 #about-btn{
   background-image: url("../img/about.png");
   margin-left: 20%;
@@ -215,7 +208,39 @@ html, body {
 
 
 /* BODY */
+  /* Buttons on the index page */
+#featured-btn{
+  background-image: url("../img/featured.png");
+  float: left;
+  margin-left: 7.7%;
+  margin-top:2.9%;
+  margin-bottom: 2%;
+}
+#near-btn{
+  background-image: url("../img/near.png");
+  float: left;
+  margin-left: 7.7%;
+  margin-top:1.0%;
+  margin-bottom: 1.2%;
+}
+#rec-btn{
+  background-image: url("../img/rec.png");
+  float: left;
+  margin-left: 5rem;
+  margin-top: 2rem;
+}
+#featured-btn-reg{
+  background-image: url("../img/featured.png");
+  margin-left: 4rem;
+  margin-top: 2rem;
+}
+#near-btn-reg{
+  background-image: url("../img/near.png");
+  margin-left: 4rem;
+  margin-top: 2rem;
+}
 
+/* Body content */
 #sign-up-banner{
   height: 7rem;
   margin-left: 4.5rem;
@@ -224,7 +249,6 @@ html, body {
   color: black;
   border-radius: 5px;
 }
-
 .section-btn{
   height: 2rem;
   width: 2rem;
@@ -234,6 +258,7 @@ html, body {
   border-radius: 5px;
 }
 
+/* Carousel */
 .multiple-items-big{
   height: 25rem;
   margin-left: 4rem;
@@ -256,47 +281,20 @@ html, body {
   margin: 2rem;
 }
 
-/* FOOTER */
-.footer{
-  margin-top: 4rem;
-  padding: 1rem;
-  position: relative;
-  border-top: 1px solid #000;
-  bottom: 0;
-  background-color: #fffff0;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 500;
-  line-height: 15px;
-}
-.footer .row{
-  margin:0;
-  padding:0;
-}
-.foot-btn{
-  height: 2rem;
-  width: 2rem;
-  font-size: 1rem;
-  background-color: #fff;
-  border: none;
-  border-radius: 5px;
-}
 
 /* SEARCH */
 form {
-    padding: 1em;
+  padding: 1em;
 }
-
 #appendSearch{
   text-align: center;
 }
 
+/* Advanced search */
 .panel {
   margin-bottom: 15px;
   margin-top: 15px;
-  background-color: #d3ffb7;
+  background-color: #fffff0;
   width: 60%;
   padding: 50px;
   display: none;
