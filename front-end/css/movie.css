@@ -29,8 +29,8 @@
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-style: normal;
   font-variant: normal;
-  color: #fffff0;
-  background-color: #ffd37a;
+  color: black;
+  background-color: #cbcbcb;
   padding: 0.5rem;
   border-radius: 5px;
   font-size: 140%;
@@ -150,7 +150,7 @@
 
 .rate{
   margin-top: 46px;
-  background-color: #ffd37a;
+  background-color: #cbcbcb;
   color: white;
 }
 
