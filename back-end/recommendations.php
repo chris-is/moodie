@@ -228,9 +228,18 @@
 
     
     arsort($recArray);
+
+    /*for($i = 0; $i < 10; $i++)
+    {
+      $resultArray[] = $recArray as $x => $x_value;
+    }
+    */
+    $i = 0;
     foreach($recArray as $x => $x_value) {
-      echo $x;
-      echo ";";
+      if($i < 10){
+      $resultArray[] = $x;
+      $i++;
+      }
     }
 
   }
