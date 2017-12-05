@@ -58,68 +58,88 @@ try {
   $other_ids = array();
   $image_paths = array();
   $rows = array();
+  $detail[] = array();
 
   /* check if this movie has already existed in the website's database,
     if yes, get the corrsponding rating info;
     if no, put the id of this movie in an array for these movies. */
       
   if(is_array($result)){
-    foreach($result as $movie) {
-      $movieid = ($movie->id);
-      $query = "SELECT * FROM Movies WHERE movieid=?";
-      $stmt = $db->prepare($query);
-      $stmt->execute([$movieid]);
-      $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-      if(count($row) > 0){
-        $names[$movieid] = ($movie->title);
-        $image_paths[$movieid] = ($movie->poster_path);
-
-        for($i=0; $i<$size; $i++){
-
-          $temp = $moods[$i];
-
-          $priority[$movieid] = $priority[$movieid] + $row[$temp];
-          echo "hm";
-          echo $row[$temp];
+      if($size == 0){
+        foreach($result as $movie) {
+          $movieid = ($movie->id);
+          $other_ids[$movieid] = ($movie->title);
+          $image_paths[$movieid] = ($movie->poster_path);
         }
-        $priority[$movieid] = $priority[$movieid]/10.0;
+        
+        $i = 0;
+        $o_size = sizeof($other_ids);
+        foreach($other_ids as $key=>$value){
+          if($i < $o_size){
+            $detail[$i][0] = $key;
+            $detail[$i][1] = $value;
+            $detail[$i][2] = $image_paths[$key];
+            $i++;
+          }
+        }
       }
-      else {
-        $other_ids[$movieid] = ($movie->title);
-        $image_paths[$movieid] = ($movie->poster_path);
+      else{
+        foreach($result as $movie) {
+          $movieid = ($movie->id);
+          $query = "SELECT * FROM Movies WHERE movieid=?";
+          $stmt = $db->prepare($query);
+          $stmt->execute([$movieid]);
+          $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+          if($stmt->rowCount() > 0){
+            $names[$movieid] = ($movie->title);
+            $image_paths[$movieid] = ($movie->poster_path);
+
+            for($i=0; $i<$size; $i++){
+              $temp = $moods[$i];
+              //echo $temp;
+              //echo " ";
+              $priority[$movieid] = $priority[$movieid] + $row[$temp];
+              //echo $row[$temp];
+            }
+            $priority[$movieid] = $priority[$movieid]/10.0;
+          }
+          else {
+            $other_ids[$movieid] = ($movie->title);
+            $image_paths[$movieid] = ($movie->poster_path);
+          }
+        }
+
+        arsort($priority);
+        $detail[] = array();
+        $i = 0;
+        $p_size = sizeof($priority);
+        $o_size = sizeof($other_ids);
+        foreach($priority as $key=>$value){
+          if($i < $p_size){
+            $detail[$i][0] = $key;
+            $detail[$i][1] = $names[$key];
+            $detail[$i][2] = $image_paths[$key];
+            $i++;
+          }
+        }
+        foreach($other_ids as $key=>$value){
+          if($i < $p_size + $o_size){
+            $detail[$i][0] = $key;
+            $detail[$i][1] = $value;
+            $detail[$i][2] = $image_paths[$key];
+            $i++;
+          }
+        }
+        
       }
     }
 
-    arsort($priority);
-    $detail[] = array();
-    $detail[0][0] = "aa";
 
-    //header("Content-Type: application/json; charset=utf-8");
-    //echo json_encode($detail);
-    print_r($detail);
+  header("Content-Type: application/json; charset=utf-8");
+  echo json_encode($detail);
 
-    /*$i = 0;
-    $p_size = sizeof($priority);
-    $o_size = sizeof($other_ids);
-    foreach($priority as $key=>$value){
-      if($i < $p_size){
-        $detail[$i][0] = $key;
-        $detail[$i][1] = $names[$key];
-        $detail[$i][2] = $image_paths[$key];
-        $i++;
-      }
-    }
-    foreach($other_ids as $key=>$value){
-      if($i < $p_size + $o_size){
-        $detail[$i][0] = $key;
-        $detail[$i][1] = $value;
-        $detail[$i][2] = $image_paths[$key];
-        $i++;
-      }
-    }*/
-
-  }
+   
 
   
   

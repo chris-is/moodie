@@ -28,7 +28,7 @@
 
       <div class="row">
         <div id="result-msg">
-          Your search query returned the following results:
+          Your search returned the following results:
         </div>
       </div>
 
@@ -69,7 +69,7 @@
             type: "POST",
             url: url,
             data: postdata,
-            //dataType: 'json',
+            dataType: 'json',
             success: function(data){
               console.log(data);
               //Dynamically append new movie name+poster

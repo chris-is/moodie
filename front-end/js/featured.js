@@ -12,7 +12,6 @@ $(document).ready(function(){
     url: url,
     dataType: 'json',
     success:function(data){
-      console.log(data);
       for(var i=0; i<10; i++){
         movieid = data[i][0];
         var poster = "https://image.tmdb.org/t/p/w500" + data[i][1];
