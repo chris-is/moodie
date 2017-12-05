@@ -78,10 +78,6 @@ $app->post('/search-advanced', function($request, $response) {
   require 'search-advanced.php';
 });
 
-$app->post('/search-simple', function($request, $response) {
-  require 'search-simple.php';
-});
-
 
 $app->run();
 ?>

@@ -40,6 +40,14 @@ html, body {
 }
 
 /* Header buttons */
+.section-btn{
+  height: 2rem;
+  width: 2rem;
+  font-size: 1rem;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+}
 #home-btn{
   background-image: url("../img/home.png");
   margin-left: 6.3%;
@@ -247,14 +255,6 @@ html, body {
   margin-right: 4.5rem;
   background-color: #ffd98c;
   color: black;
-  border-radius: 5px;
-}
-.section-btn{
-  height: 2rem;
-  width: 2rem;
-  font-size: 1rem;
-  background-color: #fff;
-  border: none;
   border-radius: 5px;
 }
 
