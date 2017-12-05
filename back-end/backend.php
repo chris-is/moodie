@@ -5,12 +5,10 @@ require '../vendor/autoload.php';
 
 $app = new \Slim\App;
 
-<<<<<<< HEAD
 //Creating new records with the fields from html form
 $app->post('/about', function ($request) {
 	require 'about-post.php';
 });
-
 $app->get('/about', function ($request) {
 	require 'about-get.php';
 });
@@ -18,43 +16,27 @@ $app->post('/dp', function($request) {
   require 'about-dp.php';
 });
 
-=======
 //User authentification
->>>>>>> master
 $app->post('/checkusername', function ($request, $response) {
   require 'checkusername.php';
 });
-
 $app->post('/signup', function ($request, $response) {
 	require 'signup.php';
 });
-
 $app->post('/login', function ($request, $response) {
   require 'login.php'; 
 });
-
 $app->post('/logout', function ($request, $response) {
   require 'logout.php'; 
-});
-
-//Creating new records with the fields from html form
-$app->post('/about', function ($request) {
-  require 'about-post.php';
-});
-
-$app->get('/about', function ($request) {
-  require 'about-get.php';
 });
 
 //Movie rating
 $app->post('/avgrating', function ($request, $response) {
   require 'avgrating.php'; 
 });
-
 $app->post('/userrating', function ($request, $response) {
   require 'userrating.php'; 
 });
-
 $app->post('/updaterating', function ($request, $response) {
   require 'updaterating.php'; 
 });
