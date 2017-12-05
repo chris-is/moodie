@@ -1,150 +1,23 @@
 <?php
+echo "what";
 require 'database.php';
 $db = getDB();
 session_start();
-$_SESSION['search-results'] = "advanced search";
 
-try {   
-  //ADD COMMENTS
+try { 
+/*  
+  $detail[][] = array();
+  $detail[0][0] = "68156";
+  $detail[0][1] = "Three meals a day";
+  $detail[0][2] = "/8fV5T9sYZ3rMYphmikIgDrXL1oi.jpg";
 
-  //To store the country and year, if user chooses any
+  $detail[1][0] = "70123";
+  $detail[1][1] = "New journey to the west";
+  $detail[1][2] = "/aR0CKi5O3QN1JlUgDNHYVvIDg8v.jpg";
+    
 
-/*
-  if( isset($_POST["country"]) ){
-     $country = $_POST["country"];
-  }
-
-  if( isset($_POST["year"]) ){
-    $year = $_POST["year"];
-  }
-
-  
-  //$moods is an array to store the moods that the user checked
-  $moods = array();
-  if( isset($_POST["Happy"]) ){
-    array_push($moods, "happy");
-  }
-
-  if( isset($_POST["Sad"]) ){
-    array_push($moods, "sad");
-  }
-
-  if( isset($_POST["Excited"]) ){
-    array_push($moods, "excited");
-  }
-
-  if( isset($_POST["Calm"]) ){
-    array_push($moods, "calm");
-  }
-
-  if( isset($_POST["Scared"]) ){
-    array_push($moods, "scared");
-  }
-
-  if( isset($_POST["Hungry"]) ){
-    array_push($moods, "hungry");
-  }
-
-  if( isset($_POST["Shocked"]) ){
-    array_push($moods, "shocked");
-  }
-
-  if( isset($_POST["Relaxed"]) ){
-    array_push($moods, "relaxed");
-  }
-
-  if( isset($_POST["Bored"]) ){
-    array_push($moods, "bored");
-  }
-
-  if( isset($_POST["Smart"]) ){
-    array_push($moods, "smart");
-  }
-
-  if( isset($_POST["Angry"]) ){
-    array_push($moods, "angry");
-  }
-  $size = sizof($moods);
-
-  $userquery = "";
-  $urlquery = "";
-
-  //To store the searching query with , if the user enters any
-  if( isset($_POST['query']) ) {
-      $userquery = $_POST['query'];
-  }
-
-  //To process the searching query to search in Movie API's database
-  $words = explode(" ", $userquery);
-  foreach($words as $w){
-    $urlquery .= ($w .= "%20");
-  }
-  $urlquery = "" . substr($urlquery, 0, -1);
-  $urlquery = "" . substr($urlquery, 0, -1);
-  $urlquery = "" . substr($urlquery, 0, -1);
-  $jsonurl = "https://api.themoviedb.org/3/search/movie?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US&query=";
-  $jsonurl .= ($urlquery .= "&include_adult=false");
-
-
-  if( isset($country) ){
-     $jsonurl .= ("&region=" .= $country);
-  }
-  if( isset($year) ){
-     $jsonurl .= ("&year=" .= $year);
-  }
-
-  
-  
-  //Search in Movie API's database and return ids of results as an array
-  $jsonStr = file_get_contents($jsonurl);
-  $jsonObj = json_decode($jsonStr);
-  $result = $jsonObj->results;
-
-  $ids = array();
-  $dbrow = array();
-  $priority = array();
-  $names = array();
-  $other_ids = array();
-  $images = array();
-
-  if(is_array($result)){
-    foreach($result as $movie) {//$movie is an object and id is a property of it
-      $ids[] = ($movie->id);
-      //Row with that specific id
-      $tempid = ($movie->id);
-      //$tempid = 1234;
-
-      $query = "SELECT * FROM Movies WHERE movieid='$tempid'";
-      $qresult = $mysqli->query($query);
-
-      if(mysqli_num_rows($qresult) == 1){
-        while ($row = $qresult->fetch_assoc()){
-          $dbrow[] = $row;
-        }        
-
-        for($i=0; $i<$size; $i++){
-          $priority['$tempid'] = $priority['$tempid'] + $dbrow[0]['$moods["$i"]'];
-        }
-        $priority['$tempid'] = $priority['$tempid']/10.0;
-
-        
-        $priority[$tempid] = ($dbrow[0]['happy'] + $dbrow[0]['sad'] + $dbrow[0]['excited'] + $dbrow[0]['scared'] + $dbrow[0]['hungry'] + $dbrow[0]['shocked'] + $dbrow[0]['relaxed'] + $dbrow[0]['bored']+$dbrow[0]['smart'] + $dbrow[0]['angry']) / 10.0;
-
-        $names[$tempid] = ($movie->title);
-        $images[$tempid] = ($movie->poster_path);
-      }
-
-      
-      else{
-        $other_ids['($movie->id)'] = ($movie->title);
-        $images['($movie->id)'] = ($movie->poster_path);
-      }
-    }
-  }
-  
-  //Display all names and posters of all movies that were in our database in sorted order
-  rsort($priority);
-  $_SESSION['search-results'] = $priority;*/
+  header("Content-Type: application/json; charset=utf-8");
+  echo json_encode($detail);
 
 
   } 
@@ -152,5 +25,118 @@ try {
     echo "Error while returning advanced search.";
   }
 
+require 'database.php';
+$db = getDB();
+session_start();
+$_SESSION['search-results'] = "advanced search";
+
+try {
+  $country = $_POST["country"];
+  $year = $_POST["year"];
+
+  $moods = array();
+  if(($_POST['happy'])=="on"){
+    array_push($moods, "happy");
+  }
+  if(($_POST['angry'])=="on"){
+    array_push($moods, "angry");
+  }
+  if(($_POST['smart'])=="on"){
+    array_push($moods, "smart");
+  }
+  if(($_POST['excited'])=="on"){
+    array_push($moods, "excited");
+  }
+  if(($_POST['relaxed'])=="on"){
+    array_push($moods, "relaxed");
+  }
+  if(($_POST['shocked'])=="on"){
+    array_push($moods, "shocked");
+  }
+  if(($_POST['scared'])=="on"){
+    array_push($moods, "scared");
+  }
+  if(($_POST['sad'])=="on"){
+    array_push($moods, "sad");
+  }
+  if(($_POST['hungry'])=="on"){
+    array_push($moods, "hungry");
+  }
+  if(($_POST['bored'])=="on"){
+    array_push($moods, "bored");
+  }
+  $size = sizof($moods);
+
+
+  $apiurl = "https://api.themoviedb.org/3/discover/movie?api_key=1753a8a0eee9f02ab07f902370f8f1ea&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&language=en-US";
+  if($year != "undefined"){
+    $apiurl .= "year=";
+    $apiurl .= $year;
+  }
+  if($country != "undefined"){
+    $apiurl .= "region=";
+    $apiurl .= $country;
+  }
+  $jsonStr = file_get_contents($apiurl);
+  $jsonObj = json_decode($jsonStr);
+  $result = $jsonObj->results;
+
+
+  $priority = array();
+  $names = array();
+  $other_ids = array();
+  $image_paths = array();
+  $rows = array();
+
+  /* check if this movie has already existed in the website's database,
+    if yes, get the corrsponding rating info;
+    if no, put the id of this movie in an array for these movies. */
+
+      /*
+  if(is_array($result)){
+    foreach($result as $movie) {
+      $movieid = ($movie->id);
+      $query = "SELECT * FROM Movies WHERE movieid=?";
+      $stmt = $db->prepare($query);
+      $stmt->execute([$movieid]);
+      $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+      if(count($row) > 0){
+        $names['$movieid'] = ($movie->title);
+        $image_paths['$movieid'] = ($movie->poster_path);
+
+
+        for($i=0; $i<$size; $i++){
+          $temp = $moods["$i"];
+          $priority['$movieid'] = $priority['$movieid'] + $row[$temp];
+        }
+        $priority['$movieid'] = $priority['$movieid']/10.0;
+      }
+      else {
+        $other_ids['$movieid'] = ($movie->title);
+        $image_paths['$movieid'] = ($movie->poster_path);
+      }
+    }
+    rsort($priority);
+    $details[][] = array();
+    foreach($priority as $key=>$value){
+      $detail[][0] = $key;
+      $detail[][1] = $names['$key'];
+      $detail[][2] = $image_paths['$key'];
+    }
+    foreach($other_ids as $key=>$value){
+      $detail[][0] = $key;
+      $detail[][1] = $value;
+      $detail[][2] = $image_paths['$key'];
+    }
+  }*/
+  //header("Content-Type: application/json; charset=utf-8");
+  //echo json_encode($details);
+  echo "what";
+}
+
+catch(Exception $e) {
+  echo "Something went wrong!";
+}
 
 ?>

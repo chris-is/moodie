@@ -25,8 +25,11 @@ $(document).ready(function(){
         }
 
         $.ajax(settings).done(function (response) {
+          movieid = "movie="+data[i][0]+"&tv=0";
           var poster = "https://image.tmdb.org/t/p/w500" + response['poster_path'];
-          $('#feat'+i).attr('src', poster);
+          var link = "/COMP307/front-end/html/movie.php?"+movieid;
+          $('#afeat'+i).prop('href', link);
+          $('#ifeat'+i).attr('src', poster);
         });
       }
 
@@ -35,17 +38,3 @@ $(document).ready(function(){
   });
 
 });
-
-
-var poster = "https://image.tmdb.org/t/p/w500" + response.results[i].poster_path;
-var id;
-var name;
-if(response.results[i].media_type == "movie"){
-  name = response.results[i].title;
-  id = "movie=" + response.results[i].id + "&tv=0";
-}
-else if(response.results[i].media_type == "tv") {
-  name = response.results[i].name;
-  id = "tv=" + response.results[i].id + "&movie=0";
-}
-appendMovie(poster, id, name);

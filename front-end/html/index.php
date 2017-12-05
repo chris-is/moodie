@@ -38,7 +38,16 @@
       </div>
 
       <div class="multiple-items-big" id="featured-slideshow">
-        
+        <a href="" id="afeat0"><img class="slideshow" id="ifeat0" src=""></a>
+        <a href="" id="afeat1"><img class="slideshow" id="ifeat1" src=""></a>
+        <a href="" id="afeat2"><img class="slideshow" id="ifeat2" src=""></a>
+        <a href="" id="afeat3"><img class="slideshow" id="ifeat3" src=""></a>
+        <a href="" id="afeat4"><img class="slideshow" id="ifeat4" src=""></a>
+        <a href="" id="afeat5"><img class="slideshow" id="ifeat5" src=""></a>
+        <a href="" id="afeat6"><img class="slideshow" id="ifeat6" src=""></a>
+        <a href="" id="afeat7"><img class="slideshow" id="ifeat7" src=""></a>
+        <a href="" id="afeat8"><img class="slideshow" id="ifeat8" src=""></a>
+        <a href="" id="afeat9"><img class="slideshow" id="ifeat9" src=""></a>
       </div>
 
       <!--NEAR ME-->
@@ -47,16 +56,16 @@
       </div>
 
       <div class="multiple-items-big" id="near-slideshow">
-        <img class="slideshow" id="near0" src="">
-        <img class="slideshow" id="near1" src="">
-        <img class="slideshow" id="near2" src="">
-        <img class="slideshow" id="near3" src="">
-        <img class="slideshow" id="near4" src="">
-        <img class="slideshow" id="near5" src="">
-        <img class="slideshow" id="near6" src="">
-        <img class="slideshow" id="near7" src="">
-        <img class="slideshow" id="near8" src="">
-        <img class="slideshow" id="near9" src="">
+        <a href="" id="anear0"><img class="slideshow" id="inear0" src=""></a>
+        <a href="" id="anear1"><img class="slideshow" id="inear1" src=""></a>
+        <a href="" id="anear2"><img class="slideshow" id="inear2" src=""></a>
+        <a href="" id="anear3"><img class="slideshow" id="inear3" src=""></a>
+        <a href="" id="anear4"><img class="slideshow" id="inear4" src=""></a>
+        <a href="" id="anear5"><img class="slideshow" id="inear5" src=""></a>
+        <a href="" id="anear6"><img class="slideshow" id="inear6" src=""></a>
+        <a href="" id="anear7"><img class="slideshow" id="inear7" src=""></a>
+        <a href="" id="anear8"><img class="slideshow" id="inear8" src=""></a>
+        <a href="" id="anear9"><img class="slideshow" id="inear9" src=""></a>
       </div>
 
       <script type="text/javascript">

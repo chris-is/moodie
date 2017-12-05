@@ -33,15 +33,18 @@
 
       <script>
       $(document).ready(function(){
+        //Dynamically append new movie name+poster
         function appendMovie(poster, id, name){
           var l1 = "<div id=\"name\" class=\"row\">"+name+"</div>";
           var l2 = "<div id=\"images\" class=\"row\"><div class=\"col-sm-5\"><a href=\"/COMP307/front-end/html/movie.php?"+id+"\"><img class=\"poster\" src=\"" + poster +"\"></a></div></div>";
           $('.container-fluid').append(l1, l2);
         }
 
+        //Find GET query in url
         var query = window.location.search.substring(1);
         var url = "https://api.themoviedb.org/3/search/multi?api_key=1753a8a0eee9f02ab07f902370f8f1ea&query=" + query + "&page=1&include_adult=false";
 
+        //Send API request to TMDB database to get poster
         var settings = {
           "async": true,
           "crossDomain": true,
@@ -50,7 +53,6 @@
           "headers": {},
           "data": "{}"
         }
-
         $.ajax(settings).done(function (response) {
           for(var i=0; i<10; i++){
             var poster = "https://image.tmdb.org/t/p/w500" + response.results[i].poster_path;
@@ -62,7 +64,7 @@
             }
             else if(response.results[i].media_type == "tv") {
               name = response.results[i].name;
-              id = "tv=" + response.results[i].id + "&movie=0";
+              id = "movie=0" + "&tv=" + response.results[i].id;
             }
             appendMovie(poster, id, name);
           }
