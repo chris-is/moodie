@@ -17,6 +17,13 @@
     $stmt->execute([$username]);
     $ratings = $stmt->fetchAll();
 
+    /*$query = "SELECT moviename FROM Movies WHERE movieid IN (' . implode(',', $ratings) . ')'";
+    $stmt = $db->prepare($query);
+    $stmt->execute(); 
+    $allReviews = $stmt->fetchAll();
+
+    print_r($allReviews);*/
+
     print_r($ratings);
     
     //$ratings2 = json_encode($ratings);

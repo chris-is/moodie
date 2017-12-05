@@ -43,37 +43,69 @@
       ?>
     </div>
 
-    <div id="test"></div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <form class="uploadimage" method="POST" enctype="multipart/form-data"> <!--Just a frame-->
-      <!--<div id="image_preview"><img id="previewing" src="noimage.png" /></div>-->
 
-      <input type = "file" name = "file" id="file"/>
-      <input type = "submit" name = "submit" value = "upload"/>
-    </form>
+    <div id="wrapper">
+      <form id="uploadForm" method="POST" action="" enctype="multipart/form-data">
+        <input type="file" id="upload_file" name="upload_file"/>
+        <input type='submit'  name = 'submit_image' value="Upload Image"/>
+      </form>
+    </div>
       <script>
-        $(document).ready(function() {
-          var fd = new FormData();
-          fd.append('file', input.files[0]);
-  
-          $("#uploadimage").on('submit',function() {
+        /*$(document).ready(function() {
+          //var form = $('form')[0];
+          var form = $('#uploadimage')[0];
+          //var formData = new FormData(form);
+          //var formData = $('.uploadimage :input').serialize();
+          $(form).submit(function(e) {
+
+          formData = new FormData(form);
+             formData.append("CustomField", "This is some extra data, testing");
+          //formData.append("", imgFile.files[0]);
+
+          e.preventDefault();
+          console.log("ASDASD");
+          console.log(formData);
+          
+
             $.ajax({
-              url: "http://localhost/COMP307/back-end/dp";
+              url: "http://localhost/COMP307/back-end/dp",
               type: "POST",
-              data: fd,
-              processData: false,
+              data:$('input').serialize(),
               contentType: false,
+              processData: false,
               success: function(data)
               {
-                alert("damn");
+                alert(data);
+              },
+              error: function(data)
+              {
+                alert("shame");
               }
             });
           });
+        });*/
 
+        $(document).ready(function (e){
+        $("#uploadForm").on('submit',(function(e){
+        e.preventDefault();
+        $.ajax({
+        url: "http://localhost/COMP307/back-end/dp",
+        type: "POST",
+        data:  new FormData(this),
+        contentType: false,
+        cache: false,
+        processData:false,
+        success: function(data){
+          alert(data);
+        },
+        error: function(){}           
+        });
+        }));
+        });
       </script>
 
-      <div id "test2"></div>
   <!--<div class="pic">
       <form id="frm1" action="">
         <input id="dp" type="file" name="pic" accept="image/*" onchange="previewFile()">

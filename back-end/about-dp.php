@@ -1,29 +1,31 @@
 <?php
 
 try { 
-  require_once('database.php');
+  require 'database.php';
+  $db = getDB();
   session_start();
   $sid = $_SESSION['sid'];
 
-if(isset($_POST["submit"])){
-    $check = getimagesize($_FILES["file"]["tmp_name"]);
-    if($check !== false){
-        $image = $_FILES['file']['tmp_name'];
-        $imgContent = addslashes(file_get_contents($image));
-        
-        //$dataTime = date("Y-m-d H:i:s");
-        
-        //Insert image content into database
-        $insert = $db->query("INSERT into Users (dp) VALUES ('$imgContent'");
-        if($insert){
-            echo "File uploaded successfully.";
-        }else{
-            echo "File upload failed, please try again.";
-        } 
-    }else{
-        echo "Please select an image file to upload.";
-    }
-}
 
-	echo "ASDASDSAD";
+
+    $imagename=$_FILES["upload_file"]["name"]; 
+
+    //Get the content of the image and then add slashes to it 
+    $imagetmp=addslashes (file_get_contents($_FILES['upload_file']['tmp_name']));
+
+    //Insert the image name and image content in image_table
+    echo $imagetmp;
+    $query = "UPDATE Users SET dp=$imgtmp WHERE sid = ?";
+    //$query = "UPDATE Users SET about=? WHERE sid=?";
+    $stmt = $db->prepare($query);
+    $stmt->execute([$sid]);
+
+
+    //echo "hey";
+
+}
+  catch(Exception $e) {
+    echo "Error while updating about information.";
+  }
+
 ?>
