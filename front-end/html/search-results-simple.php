@@ -33,6 +33,11 @@
 
       <script>
       $(document).ready(function(){
+        $(document).on('mouseenter','#poster', function (event) {
+            
+        }).on('mouseleave','.poster',  function(){
+            
+        });
         //Dynamically append new movie name+poster
         function appendMovie(poster, id, name){
           var l1 = "<div id=\"name\" class=\"row\">"+name+"</div>";

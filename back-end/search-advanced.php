@@ -42,7 +42,7 @@ try {
 
   $apiurl = "https://api.themoviedb.org/3/discover/movie?api_key=1753a8a0eee9f02ab07f902370f8f1ea&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
   if($year != "undefined"){
-    $apiurl .= "&year=";
+    $apiurl .= "&primary_release_year=";
     $apiurl .= $year;
   }
   if($country != "undefined"){
@@ -94,13 +94,11 @@ try {
           if($stmt->rowCount() > 0){
             $names[$movieid] = ($movie->title);
             $image_paths[$movieid] = ($movie->poster_path);
+            $priority[$movieid] = 0;
 
             for($i=0; $i<$size; $i++){
               $temp = $moods[$i];
-              //echo $temp;
-              //echo " ";
               $priority[$movieid] = $priority[$movieid] + $row[$temp];
-              //echo $row[$temp];
             }
             $priority[$movieid] = $priority[$movieid]/10.0;
           }
