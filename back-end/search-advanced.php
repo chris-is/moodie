@@ -130,9 +130,9 @@ try {
       $detail[][2] = $image_paths['$key'];
     }
   }*/
-  //header("Content-Type: application/json; charset=utf-8");
+  header("Content-Type: application/json; charset=utf-8");
   //echo json_encode($details);
-  echo "what";
+  echo json_encode("what");
 }
 
 catch(Exception $e) {
