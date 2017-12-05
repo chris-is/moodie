@@ -256,7 +256,7 @@
         $detail[$i][1] = $jsonObj->poster_path;
         $detail[$i][0] = "movie=" . $x . "&tv=0";
       }
-
+        
       $i++;
       }
     }
