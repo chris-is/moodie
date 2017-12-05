@@ -6,6 +6,7 @@
   $email = $request->getParam('email');
 
   try {
+    //Add new user info into the database if they passed the username check
     $hashpass = password_hash($password, PASSWORD_DEFAULT);
     $query = "INSERT INTO Users (username, password, email) VALUES (?, ?, ?);";
     $stmt = $db->prepare($query);
@@ -14,6 +15,6 @@
 
   //Print error messages if any
   catch(PDOException $e) {
-    echo json_encode($e->getMessage());
+    echo "Error while signing up.";
   }
 ?>

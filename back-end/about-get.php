@@ -5,6 +5,7 @@
   $sid = $_SESSION['sid'];
 
   try { 
+    //Get the "about" information from the currently logged in user
     $query = "SELECT about FROM Users WHERE sid = ?";
     $stmt = $db->prepare($query);
     $stmt->execute([$sid]);
@@ -15,6 +16,6 @@
   } 
 
   catch(Exception $e) {
-    echo "Something went wrong!";
+    echo "Error while getting about information.";
   }
 ?>

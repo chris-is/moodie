@@ -5,6 +5,7 @@
   $sid = $_SESSION['sid'];
 
   try { 
+    //ADD COMMENTS!
     $query = "SELECT * from Users where sid=?";
     $stmt = $db->prepare($query);
     $stmt->execute([$sid]);
@@ -12,26 +13,44 @@
     $username = $user['username'];
 
     //$movieid = $request->getParam('movieid');
-    $query = "SELECT happy, angry, smart, excited, relaxed, shocked, scared, sad, hungry FROM Userratings WHERE username = '$username'";
+    $query = "SELECT happy, angry, smart, excited, relaxed, shocked, scared, sad, hungry FROM Userratings WHERE username = ?";
 
-    $ratings = array();
+    $stmt = $db->prepare($query);
+    $stmt->execute([$username]);
+
+    //The resulting array contains all rows (ratings for each movie the user has rated)
+    $ratings = $stmt->fetchAll();
+
+    //Test
+    //print_r($ratings);
+
 
     $count = array();
 
-    $result = $mysqli->query($query);
+    //reset($ratings);
+    //$result = $mysqli->query($query);
 
-    while ($row = $result->fetch_assoc()){
+    /*while ($row = $result->fetch_assoc()){
       $ratings[] = array($row);
-    }
-
+    }*/
+    $twoarray = array();
+    $i=0;
     foreach($ratings as $x)
     {
-      foreach($x as $y)
-      {
-          $ratings2[] = $y;
-      }
+          //$ratings2[] = $y;
+        $twoarray[$i]['happy'] = $x['happy'];
+        $twoarray[$i]['angry'] = $x['angry'];
+        $twoarray[$i]['smart'] = $x['smart'];
+        $twoarray[$i]['excited'] = $x['excited'];
+        $twoarray[$i]['relaxed'] = $x['relaxed'];
+        $twoarray[$i]['shocked'] = $x['shocked'];
+        $twoarray[$i]['scared'] = $x['scared'];
+        $twoarray[$i]['sad'] = $x['sad'];
+        $twoarray[$i]['hungry'] = $x['hungry'];
+        $i++;
+      
     }
-
+    
     $happy = 0;
     $angry = 0;
     $smart = 0;
@@ -42,11 +61,18 @@
     $sad = 0;
     $hungry = 0;
 
-    $temp = json_encode($ratings2);
-    $array = json_decode($temp);
+    //print_r($twoarray);
+    //$temp = json_encode($ratings2);
+    //print_r($2Darray);
+    //$array = json_decode($temp);
 
+    $temp = json_encode($twoarray);
+    $array = json_decode($temp);
+    //print_r($twoarray);
+    
     foreach($array as $value)
     {
+
        $happy = $happy + $value->happy;
        $angry = $angry + $value->angry;
        $smart = $smart + $value->smart;
@@ -58,8 +84,9 @@
        $hungry = $hungry + $value->hungry;
     }
 
-    //ADDING ALL FREQUENCIES
 
+    //ADDING ALL FREQUENCIES
+    
     $total = $happy + $angry + $smart + $excited + $relaxed + $shocked + $scared + $sad + $hungry;
 
 
@@ -74,12 +101,25 @@
     $sad = $sad/$total;
     $hungry = $hungry/$total;
 
+
+    
     $query2 = "SELECT movieid, happy, angry, smart, excited, relaxed, shocked, scared, sad, hungry, bored FROM Movies";
 
-    $result2 = $mysqli->query($query2);
+    $stmt = $db->prepare($query2);
+    $stmt->execute();
 
+    //ratings2 corresponds to all movie ratings
+    $ratings2 = $stmt->fetchAll();
+
+    //print_r($ratings2);
+
+    
     $i=1;
-    while($row = $result2->fetch_assoc()){
+
+    //$row = $ratings2->fetch(PDO::FETCH_ASSOC);
+    //print_r($row);
+    foreach($ratings2 as $row)
+    {
       $movieid[$i] = $row['movieid'];
       $happy2[$i] = $row['happy'];
       $angry2[$i] = $row['angry'];
@@ -90,9 +130,10 @@
       $scared2[$i] = $row['scared'];
       $sad2[$i] = $row['sad'];
       $hungry2[$i] = $row['hungry'];
-      $i++;
+      $i++; 
     }
 
+    
     //MULTIPLY EACH 
 
     $counterHappy = count($happy2);
@@ -192,10 +233,9 @@
       echo ";";
     }
 
-  } 
-  catch(Exception $e) {
-    echo "Something went wrong!";
   }
-
+  catch(Exception $e) {
+    echo "Error while getting recommendations.";
+  }
 
 ?>

@@ -1,4 +1,67 @@
 <?php
+echo "what";
+require 'database.php';
+$db = getDB();
+session_start();
+
+<<<<<<< HEAD
+try {
+  $country = $_POST["country"];
+  $year = $_POST["year"];
+
+  $moods = array();
+  if(($_POST['happy'])=="on"){
+    array_push($moods, "happy");
+  }
+  if(($_POST['angry'])=="on"){
+    array_push($moods, "angry");
+  }
+  if(($_POST['smart'])=="on"){
+    array_push($moods, "smart");
+  }
+  if(($_POST['excited'])=="on"){
+    array_push($moods, "excited");
+  }
+  if(($_POST['relaxed'])=="on"){
+    array_push($moods, "relaxed");
+  }
+  if(($_POST['shocked'])=="on"){
+    array_push($moods, "shocked");
+  }
+  if(($_POST['scared'])=="on"){
+    array_push($moods, "scared");
+  }
+  if(($_POST['sad'])=="on"){
+    array_push($moods, "sad");
+  }
+  if(($_POST['hungry'])=="on"){
+    array_push($moods, "hungry");
+  }
+  if(($_POST['bored'])=="on"){
+    array_push($moods, "bored");
+  }
+=======
+try { 
+/*  
+  $detail[][] = array();
+  $detail[0][0] = "68156";
+  $detail[0][1] = "Three meals a day";
+  $detail[0][2] = "/8fV5T9sYZ3rMYphmikIgDrXL1oi.jpg";
+
+  $detail[1][0] = "70123";
+  $detail[1][1] = "New journey to the west";
+  $detail[1][2] = "/aR0CKi5O3QN1JlUgDNHYVvIDg8v.jpg";
+    
+
+  header("Content-Type: application/json; charset=utf-8");
+  echo json_encode($detail);
+
+
+  } 
+  catch(Exception $e) {
+    echo "Error while returning advanced search.";
+  }
+
 require 'database.php';
 $db = getDB();
 session_start();
@@ -39,6 +102,7 @@ try {
   if(($_POST['bored'])=="on"){
     array_push($moods, "bored");
   }
+>>>>>>> 2ff6edcdc68dc02a510150632695465ee9a7be1a
   $size = sizof($moods);
 
 
@@ -55,30 +119,55 @@ try {
   $jsonObj = json_decode($jsonStr);
   $result = $jsonObj->results;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2ff6edcdc68dc02a510150632695465ee9a7be1a
   $priority = array();
   $names = array();
   $other_ids = array();
   $image_paths = array();
   $rows = array();
+<<<<<<< HEAD
 
   /* check if this movie has already existed in the website's database,
     if yes, get the corrsponding rating info;
     if no, put the id of this movie in an array for these movies. */
+=======
+
+  /* check if this movie has already existed in the website's database,
+    if yes, get the corrsponding rating info;
+    if no, put the id of this movie in an array for these movies. */
+
+      /*
+>>>>>>> 2ff6edcdc68dc02a510150632695465ee9a7be1a
   if(is_array($result)){
     foreach($result as $movie) {
       $movieid = ($movie->id);
       $query = "SELECT * FROM Movies WHERE movieid=?";
+<<<<<<< HEAD
       $qresult = mysql_query($query);
       if(mysqli_num_rows($qresult) > 0){
 
         $row = mysql_fetch_row($qresult);
+=======
+      $stmt = $db->prepare($query);
+      $stmt->execute([$movieid]);
+      $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+      if(count($row) > 0){
+>>>>>>> 2ff6edcdc68dc02a510150632695465ee9a7be1a
         $names['$movieid'] = ($movie->title);
         $image_paths['$movieid'] = ($movie->poster_path);
 
 
         for($i=0; $i<$size; $i++){
           $temp = $moods["$i"];
+<<<<<<< HEAD
           $priority['$movieid'] = $priority['$movieid'] + $row["$temp"];
+=======
+          $priority['$movieid'] = $priority['$movieid'] + $row[$temp];
+>>>>>>> 2ff6edcdc68dc02a510150632695465ee9a7be1a
         }
         $priority['$movieid'] = $priority['$movieid']/10.0;
       }
@@ -99,14 +188,24 @@ try {
       $detail[][1] = $value;
       $detail[][2] = $image_paths['$key'];
     }
+<<<<<<< HEAD
   }
   header("Content-Type: application/json; charset=utf-8");
   echo json_encode($details);
+=======
+  }*/
+  header("Content-Type: application/json; charset=utf-8");
+  //echo json_encode($details);
+  echo json_encode("what");
+>>>>>>> 2ff6edcdc68dc02a510150632695465ee9a7be1a
 }
 
 catch(Exception $e) {
   echo "Something went wrong!";
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2ff6edcdc68dc02a510150632695465ee9a7be1a
 
 ?>

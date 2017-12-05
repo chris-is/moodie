@@ -5,6 +5,7 @@
   $sid = $_SESSION['sid'];
 
   try { 
+    //ADD COMMENTS!
     $query = "SELECT * from Users where sid=?";
     $stmt = $db->prepare($query);
     $stmt->execute([$sid]);
@@ -41,7 +42,7 @@
 
   } 
   catch(Exception $e) {
-    echo "Something went wrong!";
+    echo "Error while getting user reviews.";
   }
 
 

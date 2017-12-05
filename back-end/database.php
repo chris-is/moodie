@@ -1,11 +1,11 @@
 <?php
-
+//Function to open connection to database 
 function getDB() {
-$dbhost="localhost";
-$dbuser="root";
-$dbpass="";
-$dbname="Moodie";
-$dbConnection = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass); 
-$dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-return $dbConnection;
+  $dbhost="localhost";
+  $dbuser="root";
+  $dbpass="";
+  $dbname="Moodie";
+  $dbConnection = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass); 
+  $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  return $dbConnection;
 }

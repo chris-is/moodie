@@ -10,8 +10,12 @@ $(document).ready(function(){
 
   $.ajax(settings).done(function (response) {
     for(var i=0; i<10; i++){
-      var url = "https://image.tmdb.org/t/p/w500" + response.results[i].poster_path;
-      $('#poster'+i).attr('src', url);
+      var id = response.results[i].id;
+      var movieid = "movie="+id+"&tv=0";
+      var poster = "https://image.tmdb.org/t/p/w500" + response.results[i].poster_path;
+      var link = "/COMP307/front-end/html/movie.php?"+movieid;
+      $('#anear'+i).prop('href', link);
+      $('#inear'+i).attr('src', poster);
     }
     
   });
