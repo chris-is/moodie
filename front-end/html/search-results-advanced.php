@@ -69,9 +69,9 @@
             type: "POST",
             url: url,
             data: postdata,
-            dataType: 'json',
+            //dataType: 'json',
             success: function(data){
-              alert(data);
+              console.log(data);
               //Dynamically append new movie name+poster
               function appendMovie(poster, id, name){
                 var l1 = "<div id=\"name\" class=\"row\">"+name+"</div>";

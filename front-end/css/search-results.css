@@ -8,12 +8,12 @@
   font-size: 20px;
   font-style: normal;
   font-variant: normal;
-  color: #fffff0;
-  background-color: #ffd37a;
+  color: black;
+  background-color: #cbcbcb;
   padding: 0.5rem;
   border-radius: 5px;
   font-size: 20px;
-  width: 600px;
+  width: 400px;
   height: 41px;
   line-height: 20px;
 }
@@ -24,7 +24,7 @@
   width: 300px;
   font-size: 25px;
   width: 350px;
-  background-color: #ffd37a;
+  background-color: #cbcbcb;
   padding: 0.5rem;
   border-radius: 5px;
 }
