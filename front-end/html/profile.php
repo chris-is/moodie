@@ -27,18 +27,32 @@
         $("#appendSearch").load("search.html");
       });
     </script>
+
+  <?php
+    require '../../back-end/database.php';
+    $db = getDB();
+    session_start();
+    $sid = $_SESSION['sid'];
+
+    $query = "SELECT * from Users where sid=?";
+    $stmt = $db->prepare($query);
+    $stmt->execute([$sid]);
+    $userdata = $stmt->fetch(PDO::FETCH_ASSOC);
+    $currentuser = $userdata['username'];
+    $currentstatus = $userdata['status'];
     
+    $user = $_REQUEST['user'];
+    if($user !== $currentuser & $currentstatus == 0) : ?>
+    <div class="row">
+      <button style="text-align: center;" id="sign-up-banner">You don't have persmission to view this page. Please sign up or log in in order to view this person's profile!</button>
+    </div>
+
+  <?php 
+  else : ?> 
+
     <div class="row" id="profilename">
       <?php
-        require '../../back-end/database.php';
-        $db = getDB();
-        session_start();
-        $sid = $_SESSION['sid'];
-        $query = "SELECT * from Users where sid=?";
-        $stmt = $db->prepare($query);
-        $stmt->execute([$sid]);
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-        echo $user['username'];
+        echo $user;
         echo "'s profile";
       ?>
     </div>
@@ -296,6 +310,8 @@
     <div class="list">
       <!--Mostly PHP-->
     </div>
+
+    <?php endif; ?>
 
     <!--FOOTER-->
     <div id="appendFooter"></div>
