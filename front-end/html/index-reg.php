@@ -31,9 +31,8 @@
       <!--RECOMMENDED-->
       <div class="row">
         <button class="section-btn" id="rec-btn"></button>
+        <div id="recmsg"></div>
       </div>
-
-      <div id="recList"></div>
 
       <div class="multiple-items-big">
         <a href="" id="arec0"><img class="slideshow" id="irec0" src=""></a>
@@ -110,6 +109,11 @@
           slidesToScroll: 1
         });
 
+        var elem = document.getElementById('irec0');
+        if(elem.getAttribute('src') == ""){
+          $('#recmsg').append("Start rating movies to get recommendations!");
+        }
+
         var base_url="http://localhost/COMP307/";
 
         //RECOMMENDED MOVIES
@@ -119,6 +123,7 @@
           url:url,
           dataType: 'json',
           success:function(data){
+            $('#recmsg').hide();
             //Iterate through the results to get movie posters
             for(var i=0; i<10; i++){
               movieid = data[i][0];
