@@ -233,32 +233,39 @@
     $i = 0;
     $detail[] = array();
     foreach($recArray as $x => $x_value) {
-      if($i < 10){
-      $resultArray[] = $x;
-      
-      $apiurl = "https://api.themoviedb.org/3/movie/";
-      $apiurl .= $x;
-      $apiurl .= "?api_key=1753a8a0eee9f02ab07f902370f8f1ea";
+      $query = "SELECT * from Userratings where movieid=? AND username=?";
+      $stmt = $db->prepare($query);
+      $stmt->execute([$x, $username]);
 
-      $jsonStr = @file_get_contents($apiurl);
-      //If it's not a movie but a TV show, change the API request URL
-      if($jsonStr === false){
-        $detail[$i][0] = "movie=0&tv=" . $x;
-        $apiurl = "https://api.themoviedb.org/3/tv/";
-        $apiurl .= $x;
-        $apiurl .= "?api_key=1753a8a0eee9f02ab07f902370f8f1ea";
-        $jsonStr = @file_get_contents($apiurl);
-        $jsonObj = json_decode($jsonStr);
-        $detail[$i][1] = $jsonObj->poster_path;
+      if($stmt->rowCount() == 0){
+        if($i < 10){
+          $resultArray[] = $x;
+          
+          $apiurl = "https://api.themoviedb.org/3/movie/";
+          $apiurl .= $x;
+          $apiurl .= "?api_key=1753a8a0eee9f02ab07f902370f8f1ea";
+
+          $jsonStr = @file_get_contents($apiurl);
+          //If it's not a movie but a TV show, change the API request URL
+          if($jsonStr === false){
+            $detail[$i][0] = "movie=0&tv=" . $x;
+            $apiurl = "https://api.themoviedb.org/3/tv/";
+            $apiurl .= $x;
+            $apiurl .= "?api_key=1753a8a0eee9f02ab07f902370f8f1ea";
+            $jsonStr = @file_get_contents($apiurl);
+            $jsonObj = json_decode($jsonStr);
+            $detail[$i][1] = $jsonObj->poster_path;
+          }
+          else{
+            $jsonObj = json_decode($jsonStr);
+            $detail[$i][1] = $jsonObj->poster_path;
+            $detail[$i][0] = "movie=" . $x . "&tv=0";
+          }
+
+          $i++;
+        }
       }
-      else{
-        $jsonObj = json_decode($jsonStr);
-        $detail[$i][1] = $jsonObj->poster_path;
-        $detail[$i][0] = "movie=" . $x . "&tv=0";
-      }
-        
-      $i++;
-      }
+      
     }
     header("Content-Type: application/json; charset=utf-8");
     echo json_encode($detail);
