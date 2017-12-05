@@ -5,7 +5,22 @@ require '../vendor/autoload.php';
 
 $app = new \Slim\App;
 
+<<<<<<< HEAD
+//Creating new records with the fields from html form
+$app->post('/about', function ($request) {
+	require 'about-post.php';
+});
+
+$app->get('/about', function ($request) {
+	require 'about-get.php';
+});
+$app->post('/dp', function($request) {
+  require 'about-dp.php';
+});
+
+=======
 //User authentification
+>>>>>>> master
 $app->post('/checkusername', function ($request, $response) {
   require 'checkusername.php';
 });
