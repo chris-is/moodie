@@ -114,19 +114,20 @@
         var base_url="http://localhost/COMP307/";
 
         //RECOMMENDED MOVIES
-        /*var url = base_url+'back-end/recommendations';
+        var url = base_url+'back-end/recommendations';
         $.ajax({
           type:"GET",
           url:url,
           success:function(data){
+            alert(data);
             var recarray = data.split(';');
             var posters = [];
             var url = "https://api.themoviedb.org/3/movie/";
 
-            //recarray = [16535, 401123, 385129, 397936, 456768];
+            recarray = [16535, 401123, 385129, 397936, 456768];
             //alert(recarray);
             
-            var url0 = url + recarray[0] + "?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US";
+            /*var url0 = url + recarray[0] + "?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US";
             var url1 = url + recarray[1] + "?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US";
             var url2 = url + recarray[2] + "?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US";
             var url3 = url + recarray[3] + "?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US";
@@ -143,7 +144,7 @@
             $.ajax(settings).done(function (response) {
               posters.push("https://image.tmdb.org/t/p/w500" + response['poster_path']);
               $('#pic0').attr('src', posters[0]);
-            });
+            });*/
                   
           }
         }); //END RECOMMENDATIONS*/
