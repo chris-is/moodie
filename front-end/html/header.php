@@ -52,6 +52,7 @@
   </div>
 </nav>
 
+<script src="https://www.google.com/recaptcha/api.js"></script>
 <!--Login popup modal-->
 <div class="modal" id="login-modal">
   <div class="modal-content animate" method="post" action="login.php">
@@ -62,6 +63,7 @@
       <label><b>Password</b></label>
       <input type="password" name="password" required>
       <div class="username-status"></div>
+      <div class="captcha-wrapper"><div class="g-recaptcha" data-sitekey="6LcSvDsUAAAAAMN0VQxYTCLfbZ4V1XWHBuKQhZjA"></div></div>
       <button type="submit" id="login-sub">Login</button>
       <!--<span class="forgot"><a href="#">I forgot my password</a></span>-->
       </div>
@@ -152,7 +154,7 @@ $(document).ready(function() {
     var username = $("#login-modal input[name=username]").val();
     var password = $("#login-modal input[name=password]").val();
     url = base_url+'back-end/login';
-    var postdata = 'username='+ username + '&password='+ password;
+    var postdata = 'username='+ username + '&password='+ password + '&g-recaptcha-response='+ grecaptcha.getResponse();
     $.ajax({
       type: "POST",
       url: url,
@@ -160,6 +162,9 @@ $(document).ready(function() {
       success: function(data){
         if(data === "ok") {
           window.location.href = '/COMP307/front-end/html/index-reg.php';
+        }
+        else if(data === "captcha"){
+          $(".username-status").html("CAPTCHA verification failed.");
         }
         else {
           $(".username-status").html("Your username or password is incorrect. Please try again.");

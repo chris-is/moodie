@@ -73,3 +73,11 @@ button:hover {
     color: #aaf2f1;
 }
 
+.captcha-wrapper{
+ margin-top: 20px;
+}
+.g-recaptcha div{
+   margin: 0 auto;
+}
+
+

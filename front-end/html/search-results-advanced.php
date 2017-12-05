@@ -28,7 +28,7 @@
 
       <div class="row">
         <div id="result-msg">
-          Your search query returned the following results:
+          Your search returned the following results:
         </div>
       </div>
 
@@ -71,7 +71,7 @@
             data: postdata,
             dataType: 'json',
             success: function(data){
-              alert(data);
+              console.log(data);
               //Dynamically append new movie name+poster
               function appendMovie(poster, id, name){
                 var l1 = "<div id=\"name\" class=\"row\">"+name+"</div>";

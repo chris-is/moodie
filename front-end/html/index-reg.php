@@ -31,9 +31,8 @@
       <!--RECOMMENDED-->
       <div class="row">
         <button class="section-btn" id="rec-btn"></button>
+        <div id="recmsg"></div>
       </div>
-
-      <div id="recList"></div>
 
       <div class="multiple-items-big">
         <a href="" id="arec0"><img class="slideshow" id="irec0" src=""></a>
@@ -110,6 +109,11 @@
           slidesToScroll: 1
         });
 
+        var elem = document.getElementById('irec0');
+        if(elem.getAttribute('src') == ""){
+          $('#recmsg').append("Start rating movies to get recommendations!");
+        }
+
         var base_url="http://localhost/COMP307/";
 
         //RECOMMENDED MOVIES
@@ -117,33 +121,17 @@
         $.ajax({
           type:"GET",
           url:url,
+          dataType: 'json',
           success:function(data){
-            alert(data);
-            var recarray = data.split(';');
-            var posters = [];
-            var url = "https://api.themoviedb.org/3/movie/";
-
-            recarray = [16535, 401123, 385129, 397936, 456768];
-            //alert(recarray);
-            
-            /*var url0 = url + recarray[0] + "?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US";
-            var url1 = url + recarray[1] + "?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US";
-            var url2 = url + recarray[2] + "?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US";
-            var url3 = url + recarray[3] + "?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US";
-            var url4 = url + recarray[4] + "?api_key=1753a8a0eee9f02ab07f902370f8f1ea&language=en-US";
-
-            var settings = {
-              "async": true,
-              "crossDomain": true,
-              "url": url0,
-              "method": "GET",
-              "headers": {},
-              "data": "{}"
+            $('#recmsg').hide();
+            //Iterate through the results to get movie posters
+            for(var i=0; i<10; i++){
+              movieid = data[i][0];
+              var poster = "https://image.tmdb.org/t/p/w500" + data[i][1];
+              var link = "/COMP307/front-end/html/movie.php?"+movieid;
+              $('#arec'+i).prop('href', link);
+              $('#irec'+i).attr('src', poster);
             }
-            $.ajax(settings).done(function (response) {
-              posters.push("https://image.tmdb.org/t/p/w500" + response['poster_path']);
-              $('#pic0').attr('src', posters[0]);
-            });*/
                   
           }
         }); //END RECOMMENDATIONS*/
@@ -151,6 +139,7 @@
 
       }); //END DOCUMENT.READY
     </script>
+
 
     <!--FOOTER-->
     <div id="appendFooter"></div>
