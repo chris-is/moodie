@@ -123,7 +123,9 @@
 
 
 
+
   <!--CURRENTLY NOT BEING USED, POTENTIALLY USED LATER-->
+
   <!--<div class="pic">
       <form id="frm1" action="">
         <input id="dp" type="file" name="pic" accept="image/*" onchange="previewFile()">
