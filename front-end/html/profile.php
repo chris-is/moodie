@@ -49,9 +49,10 @@
     <div id="wrapper">
       <form id="uploadForm" method="POST" action="" enctype="multipart/form-data">
         <input type="file" id="upload_file" name="upload_file"/>
-        <input type='submit'  name = 'submit_image' value="Upload Image"/>
+        <input type="submit" value="Upload" class="submit"/>
       </form>
     </div>
+
       <script>
         /*$(document).ready(function() {
           //var form = $('form')[0];
@@ -106,6 +107,9 @@
         });
       </script>
 
+
+
+  <!--CURRENTLY NOT BEING USED, POTENTIALLY USED LATER-->
   <!--<div class="pic">
       <form id="frm1" action="">
         <input id="dp" type="file" name="pic" accept="image/*" onchange="previewFile()">
@@ -316,17 +320,83 @@
         </p>
         
         <ul class="content__container__list">
-          <li class="content__container__list__item">Friends</li>
-          <li class="content__container__list__item">Tomodachi</li>
-          <li class="content__container__list__item">Amigos</li>
-          <li class="content__container__list__item"></li>
+
         </ul>
       </div>
     </div>
     </div>
 
     <div class="list">
-      <!--Mostly PHP-->
+      <div class="list2">
+        <ul id="dynamic-list"></ul>
+        <input type="text" id="candidate"/>
+        <button onclick="addItem()">Add</button>
+        <button onclick="removeItem()">Remove</button>
+        <button onclick="submitItem()">Submit</button>
+      </div>
+      
+      <div id="listContent"></div>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      
+      <script>
+          var base_url="http://localhost/COMP307/";
+          var url = base_url+'back-end/list-get';
+          $.ajax({
+            type:"GET",
+            dataType:"json",
+            url:url,
+            success:function(data){
+            $.each(data, function(index) {
+            var ul = document.getElementById("dynamic-list");
+            var candidate = data[index];
+            var li = document.createElement("li");
+            li.setAttribute('id',candidate);
+            li.appendChild(document.createTextNode(candidate));
+            ul.appendChild(li);
+            array.push(candidate);
+            alert(array);
+            });
+            }
+          });
+      </script>
+
+      <script>
+        var array = [];
+        function addItem(){
+            var ul = document.getElementById("dynamic-list");
+            var candidate = document.getElementById("candidate");
+            var li = document.createElement("li");
+            li.setAttribute('id',candidate.value);
+            li.appendChild(document.createTextNode(candidate.value));
+            ul.appendChild(li);
+            array.push(candidate.value);
+            alert(array);
+        }
+
+        function removeItem(){
+            var ul = document.getElementById("dynamic-list");
+            var candidate = document.getElementById("candidate");
+            var item = document.getElementById(candidate.value);
+            ul.removeChild(item);
+            array.splice(array.indexOf(candidate.value),1);
+            alert(array);
+        }
+        function submitItem(){
+            var base_url="http://localhost/COMP307/";
+            var url = base_url+'back-end/list';
+            //alert("at");
+            var postdata = "list="+array;
+            alert(postdata);
+            $.ajax({
+              type:"POST",
+              url:url,
+              data: postdata,
+              success:function(data){
+              }
+            });
+        }
+      </script>
+      
     </div>
 
     <!--FOOTER-->

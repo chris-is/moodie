@@ -17,35 +17,32 @@
     $stmt->execute([$username]);
     $ratings = $stmt->fetchAll();
 
-    /*$query = "SELECT moviename FROM Movies WHERE movieid IN (' . implode(',', $ratings) . ')'";
+
+    $array = array();
+    foreach($ratings as $x)
+    {
+        $array[] = $x['movieid'];
+      
+    }
+    $query = "SELECT moviename FROM Movies WHERE movieid IN(".implode(',',$array).")";
+
     $stmt = $db->prepare($query);
     $stmt->execute(); 
     $allReviews = $stmt->fetchAll();
 
-    print_r($allReviews);*/
+    $array2 = array();
+    foreach($allReviews as $x)
+    {
+      $array2[] = $x['moviename'];
+    }
 
-    print_r($ratings);
-    
-    //$ratings2 = json_encode($ratings);
-    /*foreach($ratings as $v) {
 
-      foreach($v as $x)
-      {
-        $query2 = "SELECT moviename FROM Movies WHERE movieid='$x'";
+    for($i = 0; $i < count($array2); $i++)
+    {
+        echo $array2[$i] . '<br>';
+    }
 
-        $result2 = $mysqli->query($query2);
-        while ($row = $result2->fetch_assoc()){
-        $names[] = $row;
-        $json2 = json_encode($names);
-        $newline="<br>";
-        $message = substr($json2, 15, -3);
-        $finalMessage = $message . $newline;
-        echo $finalMessage;
-        }
-
-      }
-      //$movieid = substr($json, 12, -2);
-    }*/
+    echo count($array2);
 
   } 
   catch(Exception $e) {
