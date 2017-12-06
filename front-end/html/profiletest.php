@@ -87,7 +87,6 @@
       </script>
 
       <div id="wrapper">
-        
         <div id="uploadForm" enctype="multipart/form-data">
           <input type="file" id="upload_file" name="upload_file"/>
           <input type="submit" value="Upload" id="submit_file"/>
