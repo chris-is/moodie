@@ -273,7 +273,7 @@
 
   }
   catch(Exception $e) {
-    echo "Error while getting recommendations.";
+    echo "Error while getting rec.";
   }
 
 ?>
