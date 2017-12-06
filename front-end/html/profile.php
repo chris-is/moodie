@@ -160,13 +160,13 @@
          });
     }
   </script>-->
-  <?php if($user == $currentuser & $currentstatus ==1):?>
+
   <div class="btn-group">
     <button type="button" id ="info" class="btn btn-primary">Info</button>
     <button type="button" id ="reviews" class="btn btn-primary">Reviews</button>
     <button type="button" id ="list" class="btn btn-primary">List</button>
   </div>
-<?php endif;?>
+
   <!--Define content for each button-->
 
   <!-- Start with hidden divs -->
@@ -214,12 +214,14 @@
 
     <div class="info">
       <!--PHP-->
+    <?php if($user == $currentuser & $currentstatus ==1):?>
       <div>
         About: <br>
         <textarea id="update" maxlength="250" class="stupdatebox"></textarea>
         <input type="submit" value="POST" class="stpostbutton">
       </div>
-      
+    <?php endif;?>
+
       <div id="mainContent"></div>
       <div id="secContent"></div>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -364,10 +366,12 @@
     <div class="list">
       <div class="list2">
         <ul id="dynamic-list"></ul>
+        <?php if($user == $currentuser & $currentstatus ==1):?>
         <input type="text" id="candidate"/>
         <button onclick="addItem()">Add</button>
         <button onclick="removeItem()">Remove</button>
         <button onclick="submitItem()">Submit</button>
+        <?php endif;?>
       </div>
       
       <div id="listContent"></div>

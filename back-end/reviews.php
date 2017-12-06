@@ -47,7 +47,7 @@
 
   } 
   catch(Exception $e) {
-    echo "Error while getting user reviews.";
+    echo "No movies reviewed so far :(";
   }
 
 
