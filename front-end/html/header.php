@@ -3,9 +3,18 @@
     <div class="form-inline">
       <?php 
       session_start();
+      $username;
+      require_once("../../back-end/database.php");
+      $db = getDB();
+      $sid = session_id();
+      $query = "SELECT * from Users where sid=?";
+      $stmt = $db->prepare($query);
+      $stmt->execute([$sid]);
+      $user = $stmt->fetch(PDO::FETCH_ASSOC);
+      $username = $user['username'];
 
       //If user is not logged in, display signup/login buttons
-      if(isSID() == false) : ?>
+      if($user['status'] == 0) : ?>
         <button id="home-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Home" onclick="window.location.href = '/COMP307/front-end/html/index.php';"></button>
         <input type="text" placeholder="Search for a specific movie & enter" id="searchbar" name="searchquery">
         <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
@@ -19,10 +28,10 @@
         <input type="text" placeholder="Search for a specific movie & enter" id="searchbar">
         <button id="search-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Search"></button>
         <div class="dropdown">
-          <button id="user-btn" class="nav-btn dropdown-o" data-toggle="tooltip" data-placement="top" title="User" onclick="window.location.href = '/COMP307/front-end/html/profile.php';"></button>
+          <button id="user-btn" class="nav-btn dropdown-o" data-toggle="tooltip" data-placement="top" title="User" onclick="window.location.href = '/COMP307/front-end/html/profile.php?user=<?php echo $username?>';"></button>
           <div class="dropdown-content">
             <ul>
-              <li><a href="/COMP307/front-end/html/profile.php">Profile</a></li>
+              <li><a href="/COMP307/front-end/html/profile.php?user=<?php echo $username?>">Profile</a></li>
               <li><a href="#">Settings</a></li>
             </ul>
           </div>
@@ -30,24 +39,6 @@
         <button id="logout-btn" class="nav-btn" data-toggle="tooltip" data-placement="top" title="Logout"></button>
       <?php endif; ?>
 
-      <?php 
-        //Check if user is logged in by looking at their status
-        function isSID(){
-          require_once('../../back-end/database.php');
-          $db = getDB();
-          $sid = session_id();
-          $query = "SELECT status from Users where sid=?";
-          $stmt = $db->prepare($query);
-          $stmt->execute([$sid]);
-          $status = $stmt->fetch(PDO::FETCH_ASSOC);
-          if ($status['status'] == 1){
-            return true;
-          }
-          else {
-            return false;
-          }
-        }
-      ?>
     </div>
   </div>
 </nav>
