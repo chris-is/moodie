@@ -46,6 +46,16 @@ $app->get('/reviews', function($request, $response) {
   require 'reviews.php';
 });
 
+//Update user list
+$app->post('/list', function($request, $response) {
+  require 'list.php';
+});
+
+//Get user list
+
+$app->get('/list-get', function($request, $response) {
+  require 'list-get.php';
+});
 //Recommendations
 $app->get('/recommendations', function($request, $response) {
   require 'recommendations.php';

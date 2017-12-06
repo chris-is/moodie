@@ -57,37 +57,73 @@
       ?>
     </div>
 
-    <div id="test"></div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <form class="uploadimage" method="POST" enctype="multipart/form-data"> <!--Just a frame-->
-      <!--<div id="image_preview"><img id="previewing" src="noimage.png" /></div>-->
 
-      <input type = "file" name = "file" id="file"/>
-      <input type = "submit" name = "submit" value = "upload"/>
-    </form>
+    <div id="wrapper">
+      <form id="uploadForm" method="POST" action="" enctype="multipart/form-data">
+        <input type="file" id="upload_file" name="upload_file"/>
+        <input type="submit" value="Upload" class="submit"/>
+      </form>
+    </div>
+
       <script>
-        $(document).ready(function() {
-          var fd = new FormData();
-          fd.append('file', input.files[0]);
-  
-          $("#uploadimage").on('submit',function() {
+        /*$(document).ready(function() {
+          //var form = $('form')[0];
+          var form = $('#uploadimage')[0];
+          //var formData = new FormData(form);
+          //var formData = $('.uploadimage :input').serialize();
+          $(form).submit(function(e) {
+
+          formData = new FormData(form);
+             formData.append("CustomField", "This is some extra data, testing");
+          //formData.append("", imgFile.files[0]);
+
+          e.preventDefault();
+          console.log("ASDASD");
+          console.log(formData);
+          
+
             $.ajax({
-              url: "http://localhost/COMP307/back-end/dp";
+              url: "http://localhost/COMP307/back-end/dp",
               type: "POST",
-              data: fd,
-              processData: false,
+              data:$('input').serialize(),
               contentType: false,
+              processData: false,
               success: function(data)
               {
-                alert("damn");
+                alert(data);
+              },
+              error: function(data)
+              {
+                alert("shame");
               }
             });
           });
+        });*/
 
+        $(document).ready(function (e){
+        $("#uploadForm").on('submit',(function(e){
+        e.preventDefault();
+        $.ajax({
+        url: "http://localhost/COMP307/back-end/dp",
+        type: "POST",
+        data:  new FormData(this),
+        contentType: false,
+        cache: false,
+        processData:false,
+        success: function(data){
+          alert(data);
+        },
+        error: function(){}           
+        });
+        }));
+        });
       </script>
 
-      <div id "test2"></div>
+
+
+  <!--CURRENTLY NOT BEING USED, POTENTIALLY USED LATER-->
   <!--<div class="pic">
       <form id="frm1" action="">
         <input id="dp" type="file" name="pic" accept="image/*" onchange="previewFile()">
@@ -299,17 +335,83 @@
         </p>
         
         <ul class="content__container__list">
-          <li class="content__container__list__item">Friends</li>
-          <li class="content__container__list__item">Tomodachi</li>
-          <li class="content__container__list__item">Amigos</li>
-          <li class="content__container__list__item"></li>
+
         </ul>
       </div>
     </div>
     </div>
 
     <div class="list">
-      <!--Mostly PHP-->
+      <div class="list2">
+        <ul id="dynamic-list"></ul>
+        <input type="text" id="candidate"/>
+        <button onclick="addItem()">Add</button>
+        <button onclick="removeItem()">Remove</button>
+        <button onclick="submitItem()">Submit</button>
+      </div>
+      
+      <div id="listContent"></div>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      
+      <script>
+          var base_url="http://localhost/COMP307/";
+          var url = base_url+'back-end/list-get';
+          $.ajax({
+            type:"GET",
+            dataType:"json",
+            url:url,
+            success:function(data){
+            $.each(data, function(index) {
+            var ul = document.getElementById("dynamic-list");
+            var candidate = data[index];
+            var li = document.createElement("li");
+            li.setAttribute('id',candidate);
+            li.appendChild(document.createTextNode(candidate));
+            ul.appendChild(li);
+            array.push(candidate);
+            alert(array);
+            });
+            }
+          });
+      </script>
+
+      <script>
+        var array = [];
+        function addItem(){
+            var ul = document.getElementById("dynamic-list");
+            var candidate = document.getElementById("candidate");
+            var li = document.createElement("li");
+            li.setAttribute('id',candidate.value);
+            li.appendChild(document.createTextNode(candidate.value));
+            ul.appendChild(li);
+            array.push(candidate.value);
+            alert(array);
+        }
+
+        function removeItem(){
+            var ul = document.getElementById("dynamic-list");
+            var candidate = document.getElementById("candidate");
+            var item = document.getElementById(candidate.value);
+            ul.removeChild(item);
+            array.splice(array.indexOf(candidate.value),1);
+            alert(array);
+        }
+        function submitItem(){
+            var base_url="http://localhost/COMP307/";
+            var url = base_url+'back-end/list';
+            //alert("at");
+            var postdata = "list="+array;
+            alert(postdata);
+            $.ajax({
+              type:"POST",
+              url:url,
+              data: postdata,
+              success:function(data){
+              }
+            });
+        }
+      </script>
+      
     </div>
 
     <?php endif; ?>

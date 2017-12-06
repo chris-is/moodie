@@ -18,61 +18,31 @@
     $stmt->execute([$username]);
     $ratings = $stmt->fetchAll();
 
-    $length = $stmt->rowCount();
-    $detail = array();
-    for($i=0; $i<$length; $i++) {
-      $id = $ratings[$i]['movieid'];
+    $array = array();
+    foreach($ratings as $x)
+    {
+        $array[] = $x['movieid'];
+      
+    }
+    $query = "SELECT moviename FROM Movies WHERE movieid IN(".implode(',',$array).")";
 
-      $apiurl = "https://api.themoviedb.org/3/movie/";
-      $apiurl .= $id;
-      $apiurl .= "?api_key=1753a8a0eee9f02ab07f902370f8f1ea";
+    $stmt = $db->prepare($query);
+    $stmt->execute(); 
+    $allReviews = $stmt->fetchAll();
 
-      $jsonStr = @file_get_contents($apiurl);
-      //If it's not a movie but a TV show, change the API request URL
-      if($jsonStr === false){
-        $detail[$i][0] = "movie=0&tv=" . $id;
-        $apiurl = "https://api.themoviedb.org/3/tv/";
-        $apiurl .= $id;
-        $apiurl .= "?api_key=1753a8a0eee9f02ab07f902370f8f1ea";
-        $jsonStr = @file_get_contents($apiurl);
-        $jsonObj = json_decode($jsonStr);
-        $detail[$i][1] = $jsonObj->title;
-      }
-      else{
-        $jsonObj = json_decode($jsonStr);
-        $detail[$i][1] = $jsonObj->title;
-        $detail[$i][0] = "movie=" . $id . "&tv=0";
-      }
-
+    $array2 = array();
+    foreach($allReviews as $x)
+    {
+      $array2[] = $x['moviename'];
     }
 
-    //print_r($detail);
 
-    header("Content-Type: application/json; charset=utf-8");
-    echo json_encode($detail);
+    for($i = 0; $i < count($array2); $i++)
+    {
+        echo $array2[$i] . '<br>';
+    }
 
-    //print_r($ratings);
-    
-    //$ratings2 = json_encode($ratings);
-    /*foreach($ratings as $v) {
-
-      foreach($v as $x)
-      {
-        $query2 = "SELECT moviename FROM Movies WHERE movieid='$x'";
-
-        $result2 = $mysqli->query($query2);
-        while ($row = $result2->fetch_assoc()){
-        $names[] = $row;
-        $json2 = json_encode($names);
-        $newline="<br>";
-        $message = substr($json2, 15, -3);
-        $finalMessage = $message . $newline;
-        echo $finalMessage;
-        }
-
-      }
-      //$movieid = substr($json, 12, -2);
-    }*/
+    echo count($array2);
 
   } 
   catch(Exception $e) {
