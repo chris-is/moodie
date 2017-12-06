@@ -55,11 +55,11 @@
                 $('#resultpanel').show();
                 if(data == 0){
                   $('#resultmsg').empty();
-                  $('#resultmsg').append("Sorry, none of our users match your query.");
+                  $('#resultmsg').append("Sorry, none of our registered users match your query.");
                 }
                 else{
                   $('#resultmsg').empty();
-                  var l1 = "We found the following user:<br/> <a href=\"/COMP307/front-end/html/profile.php?user="+query+"\">"+query+"</a>";
+                  var l1 = "Search results:<br/> <a href=\"/COMP307/front-end/html/profile.php?user="+query+"\">"+query+"</a>";
                   $('#resultmsg').append(l1);
                 }
               }

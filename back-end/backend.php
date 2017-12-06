@@ -17,9 +17,10 @@ $app->post('/about-get', function ($request) {
 $app->post('/dp', function($request) {
   require 'about-dp.php';
 });
-$app->post('/find', function($request, $response) {
-  require 'find.php';
+$app->post('/updp', function($request) {
+  require 'updp.php';
 });
+
 
 //User authentification
 $app->post('/checkusername', function ($request, $response) {
@@ -57,10 +58,15 @@ $app->post('/list', function($request, $response) {
 });
 
 //Get user list
-
 $app->post('/list-get', function($request, $response) {
   require 'list-get.php';
 });
+
+//Find other users
+$app->post('/find', function($request, $response) {
+  require 'find.php';
+});
+
 //Recommendations
 $app->get('/recommendations', function($request, $response) {
   require 'recommendations.php';
