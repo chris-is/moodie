@@ -6,12 +6,14 @@ require '../vendor/autoload.php';
 $app = new \Slim\App;
 
 //Creating new records with the fields from html form
-$app->post('/about', function ($request) {
+$app->post('/about-post', function ($request) {
 	require 'about-post.php';
 });
-$app->get('/about', function ($request) {
+//Aptly named about-get
+$app->post('/about-get', function ($request) {
 	require 'about-get.php';
 });
+
 $app->post('/dp', function($request) {
   require 'about-dp.php';
 });
@@ -42,7 +44,7 @@ $app->post('/updaterating', function ($request, $response) {
 });
 
 //Retrieving user ratings
-$app->get('/reviews', function($request, $response) {
+$app->post('/reviews', function($request, $response) {
   require 'reviews.php';
 });
 
@@ -53,7 +55,7 @@ $app->post('/list', function($request, $response) {
 
 //Get user list
 
-$app->get('/list-get', function($request, $response) {
+$app->post('/list-get', function($request, $response) {
   require 'list-get.php';
 });
 //Recommendations

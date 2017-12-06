@@ -3,12 +3,13 @@
   $db = getDB();
   session_start();
   $sid = $_SESSION['sid'];
+  $user = $request->getParam('user');
 
   try { 
     //ADD COMMENTS!
-    $query = "SELECT * from Users where sid=?";
+    $query = "SELECT * from Users where username=?";
     $stmt = $db->prepare($query);
-    $stmt->execute([$sid]);
+    $stmt->execute([$user]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     $username = $user['username'];
 
@@ -37,12 +38,12 @@
     }
 
 
-    for($i = 0; $i < count($array2); $i++)
-    {
+    for($i = 0; $i < count($array2); $i++) {
         echo $array2[$i] . '<br>';
     }
 
-    echo count($array2);
+    //TESTING
+    //echo count($array2);
 
   } 
   catch(Exception $e) {
