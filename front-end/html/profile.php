@@ -158,14 +158,13 @@
          });
     }
   </script>-->
-
+  <?php if($user == $currentuser & $currentstatus ==1):?>
   <div class="btn-group">
     <button type="button" id ="info" class="btn btn-primary">Info</button>
     <button type="button" id ="reviews" class="btn btn-primary">Reviews</button>
-    <button type="button" id ="friends" class="btn btn-primary">Friends</button>
     <button type="button" id ="list" class="btn btn-primary">List</button>
   </div>
-
+<?php endif;?>
   <!--Define content for each button-->
 
   <!-- Start with hidden divs -->
@@ -222,6 +221,7 @@
       <div id="mainContent"></div>
       <div id="secContent"></div>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="../js/ajaxGetPost.js"></script>
       
       <script>
 /*<<<<<<< HEAD
@@ -322,8 +322,8 @@
 
     </div>
 
-    <div id="reviewTest" style="color:white;">df</div>
     <div class="reviews">
+      <div id="reviewList"></div>
       <script>
         $(document).ready(function() {
           var base_url="http://localhost/COMP307/";
@@ -337,9 +337,8 @@
             url:url,
             data:postdata,
             success:function(data){
-              console.log(data);
-              $("#reviewTest").html("");
-              $("#reviewTest").prepend(data);
+              $("#reviewList").html("");
+              $("#reviewList").prepend(data);
             }
           });
         });
