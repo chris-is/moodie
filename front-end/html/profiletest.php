@@ -57,7 +57,9 @@
       ?>
     </div>
 
-    
+    <?php if($user == $currentuser & $currentstatus == 1): ?>
+      <div style="color:white;">does this show up?</div>
+    <?php endif; ?>
 
     <div id="reviewTest" style="color:white;">df</div>
       <script>
@@ -70,7 +72,7 @@
             dataType: 'json',
             success:function(data){
               console.log(data);
-              
+
               for(var i=0; i<10; i++){
                 var movieid = data[i][0];
                 var name = data[i][1];
@@ -80,6 +82,33 @@
               }
 
             }
+          });
+        });
+      </script>
+
+      <div id="wrapper">
+        
+        <div id="uploadForm" enctype="multipart/form-data">
+          <input type="file" id="upload_file" name="upload_file"/>
+          <input type="submit" value="Upload" id="submit_file"/>
+        </div>
+      </div>
+
+      <script>
+        $(document).ready(function (e){
+          $("#submit_file").click(function(){
+            var file = $("#upload_file").val();
+            var filepath = "/COMP307/front-end/img/dp/abc.jpg"
+            var postdata = "file="+file+"&filepath"+filepath;
+            $.ajax({
+              url: "http://localhost/COMP307/back-end/updp",
+              type: "POST",
+              data:  postdata,
+              enctype: 'multipart/form-data',
+              success: function(data){
+                alert(data);
+              },           
+            });
           });
         });
       </script>
