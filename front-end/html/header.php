@@ -32,8 +32,7 @@
           <div class="dropdown-content">
             <ul>
               <li><a href="/COMP307/front-end/html/profile.php?user=<?php echo $username?>">Profile</a></li>
-              <li><a href="#">Settings</a></li>
-              <li><a href="#">Find users</a></li>
+              <li><a href="/COMP307/front-end/html/findusers.php">Find users</a></li>
             </ul>
           </div>
         </div>
