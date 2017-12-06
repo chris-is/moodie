@@ -58,8 +58,6 @@
     </div>
 
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
     <div id="wrapper">
       <form id="uploadForm" method="POST" action="" enctype="multipart/form-data">
         <input type="file" id="upload_file" name="upload_file"/>
@@ -225,7 +223,6 @@
       <div id="mainContent"></div>
       <div id="secContent"></div>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      <script src="../js/ajaxGetPost.js"></script>
       
       <script>
 /*<<<<<<< HEAD
