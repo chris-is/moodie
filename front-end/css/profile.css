@@ -108,7 +108,7 @@ div#mainContent {
 	margin-left: 440px;
   margin-right: 320px;
 	padding-right: 50px;
-	top: -120px;
+	top: -20px;
 }
 
 div#reviewList {
@@ -128,31 +128,31 @@ div#reviewList {
 	margin-left: 440px;
   margin-right: 320px;
 	padding-right: 50px;
-	top: -120px;
+	top: -20px;
 }
 
 .friends {
-	display: none;
-	position: relative;
-	border: 2px solid white;
-	height: 800px;
+  display: none;
+  position: relative;
+  border: 2px solid white;
+  height: 800px;
   width: 800px;
-	margin-left: 440px;
+  margin-left: 440px;
   margin-right: 320px;
-	padding-right: 50px;
-	top: -120px;
+  padding-right: 50px;
+  top: -20px;
 }
 
 .list {
-	display: none;
-	position: relative;
-	border: 2px solid white;
-	height: 800px;
+  display: none;
+  position: relative;
+  border: 2px solid white;
+  height: 800px;
   width: 800px;
-	margin-left: 440px;
+  margin-left: 440px;
   margin-right: 320px;
-	padding-right: 50px;
-	top: -120px;
+  padding-right: 50px;
+  top: -20px;
 }
 
 

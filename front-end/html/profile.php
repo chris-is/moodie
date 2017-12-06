@@ -48,7 +48,7 @@
     </div>
 
   <?php 
-  else : ?> 
+  else : ?>
 
     <div class="row" id="profilename">
       <?php
@@ -263,10 +263,15 @@
 =======*/
         $(document).ready(function() {
           var base_url="http://localhost/COMP307/";
-          var url = base_url+'back-end/about';
+          var url = base_url+'back-end/about-get';
+          var temp = window.location.search.substring(1);
+          var parts = temp.split("=",2);
+          var user = parts[1];
+          var postdata = "user=" + user;
           $.ajax({
-            type:"GET",
+            type:"POST",
             url:url,
+            data:postdata,
             success:function(data){
               data = data.replace(/\n/g, "<br />");
               $("#mainContent").html("");
@@ -282,16 +287,26 @@
           var url;
           $(".info").on("click",".stpostbutton",function(){
             var update=$('#update').val();
-            var postdata = "about="+update;
-            url=base_url+'back-end/about';
+
+          var temp = window.location.search.substring(1);
+          var parts = temp.split("=",2);
+          var user = parts[1];
+          var postdata = "about="+update+"&user="+user;
+          //TESTING
+          //alert(postdata);
+            url=base_url+'back-end/about-post';
+            //These variables are for getting info.
+            url2=base_url+'back-end/about-get';
+            postdata2 = "user=" + user;
             $.ajax({
               type: "POST",
               url: url,
               data:postdata,
               success:function(data){
                 $.ajax({
-                type:"GET",
-                url:url,
+                type:"POST",
+                url:url2,
+                data: postdata2,
                 success:function(data){
                   $("#mainContent").html("");
                   data = data.replace(/\n/g, "<br />");
@@ -315,10 +330,14 @@
         $(document).ready(function() {
           var base_url="http://localhost/COMP307/";
           var url = base_url+'back-end/reviews';
+          var temp = window.location.search.substring(1);
+          var parts = temp.split("=",2);
+          var user = parts[1];
+          var postdata ="user="+user;
           $.ajax({
-            type:"GET",
+            type:"POST",
             url:url,
-            //dataType: 'json',
+            data:postdata,
             success:function(data){
               console.log(data);
               $("#reviewTest").html("");
@@ -358,10 +377,15 @@
       <script>
           var base_url="http://localhost/COMP307/";
           var url = base_url+'back-end/list-get';
+          var temp = window.location.search.substring(1);
+          var parts = temp.split("=",2);
+          var user = parts[1];
+          var postdata ="user="+user;
           $.ajax({
-            type:"GET",
+            type:"POST",
             dataType:"json",
             url:url,
+            data:postdata,
             success:function(data){
             $.each(data, function(index) {
             var ul = document.getElementById("dynamic-list");
@@ -371,7 +395,7 @@
             li.appendChild(document.createTextNode(candidate));
             ul.appendChild(li);
             array.push(candidate);
-            alert(array);
+            //alert(array);
             });
             }
           });
@@ -402,8 +426,10 @@
             var base_url="http://localhost/COMP307/";
             var url = base_url+'back-end/list';
             //alert("at");
-            var postdata = "list="+array;
-            alert(postdata);
+            var temp = window.location.search.substring(1);
+            var parts = temp.split("=",2);
+            var user = parts[1];
+            var postdata = "list="+array+"&user="+user;
             $.ajax({
               type:"POST",
               url:url,
