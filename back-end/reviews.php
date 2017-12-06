@@ -7,12 +7,8 @@
 
   try { 
     //ADD COMMENTS!
-<<<<<<< HEAD
     $query = "SELECT * from Users where username=?";
-=======
-    
-    $query = "SELECT * from Users where sid=?";
->>>>>>> 17f0a9f0ef56cb5846255920134ca98257184043
+
     $stmt = $db->prepare($query);
     $stmt->execute([$user]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
