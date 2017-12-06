@@ -222,7 +222,6 @@
       <div id="mainContent"></div>
       <div id="secContent"></div>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      <script src="../js/ajaxGetPost.js"></script>
       
       <script>
 /*<<<<<<< HEAD
@@ -308,8 +307,8 @@
 
     </div>
 
+    <div id="reviewTest" style="color:white;">df</div>
     <div class="reviews">
-      <div id="reviewList"></div>
       <script>
         $(document).ready(function() {
           var base_url="http://localhost/COMP307/";
@@ -317,9 +316,11 @@
           $.ajax({
             type:"GET",
             url:url,
+            //dataType: 'json',
             success:function(data){
-              $("#reviewList").html("");
-              $("#reviewList").prepend(data);
+              console.log(data);
+              $("#reviewTest").html("");
+              $("#reviewTest").prepend(data);
             }
           });
         });

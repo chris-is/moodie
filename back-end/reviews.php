@@ -6,6 +6,7 @@
 
   try { 
     //ADD COMMENTS!
+    
     $query = "SELECT * from Users where sid=?";
     $stmt = $db->prepare($query);
     $stmt->execute([$sid]);
@@ -16,7 +17,6 @@
     $stmt = $db->prepare($query);
     $stmt->execute([$username]);
     $ratings = $stmt->fetchAll();
-
 
     $array = array();
     foreach($ratings as $x)
