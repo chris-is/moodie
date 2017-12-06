@@ -15,6 +15,9 @@ $app->get('/about', function ($request) {
 $app->post('/dp', function($request) {
   require 'about-dp.php';
 });
+$app->post('/find', function($request, $response) {
+  require 'find.php';
+});
 
 //User authentification
 $app->post('/checkusername', function ($request, $response) {
