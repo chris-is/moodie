@@ -164,7 +164,6 @@
   <div class="btn-group">
     <button type="button" id ="info" class="btn btn-primary">Info</button>
     <button type="button" id ="reviews" class="btn btn-primary">Reviews</button>
-    <button type="button" id ="friends" class="btn btn-primary">Friends</button>
     <button type="button" id ="list" class="btn btn-primary">List</button>
   </div>
 
@@ -215,15 +214,18 @@
 
     <div class="info">
       <!--PHP-->
+    <?php if($user == $currentuser & $currentstatus ==1):?>
       <div>
         About: <br>
         <textarea id="update" maxlength="250" class="stupdatebox"></textarea>
         <input type="submit" value="POST" class="stpostbutton">
       </div>
-      
+    <?php endif;?>
+
       <div id="mainContent"></div>
       <div id="secContent"></div>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="../js/ajaxGetPost.js"></script>
       
       <script>
 /*<<<<<<< HEAD
@@ -324,8 +326,8 @@
 
     </div>
 
-    <div id="reviewTest" style="color:white;">df</div>
     <div class="reviews">
+      <div id="reviewList"></div>
       <script>
         $(document).ready(function() {
           var base_url="http://localhost/COMP307/";
@@ -339,9 +341,8 @@
             url:url,
             data:postdata,
             success:function(data){
-              console.log(data);
-              $("#reviewTest").html("");
-              $("#reviewTest").prepend(data);
+              $("#reviewList").html("");
+              $("#reviewList").prepend(data);
             }
           });
         });
@@ -365,10 +366,12 @@
     <div class="list">
       <div class="list2">
         <ul id="dynamic-list"></ul>
+        <?php if($user == $currentuser & $currentstatus ==1):?>
         <input type="text" id="candidate"/>
         <button onclick="addItem()">Add</button>
         <button onclick="removeItem()">Remove</button>
         <button onclick="submitItem()">Submit</button>
+        <?php endif;?>
       </div>
       
       <div id="listContent"></div>
