@@ -1,0 +1,33 @@
+#findpanel, #resultpanel{
+  background-color: #cbcbcb;
+  margin-top: 65px;
+  border-radius: 5px;
+  padding: 0px 30px;
+}
+
+#resultpanel{
+  display: none; 
+}
+
+#findmsg, #resultmsg{
+  background-color: #cbcbcb;
+}
+
+#findusers-sub {
+  border-radius: 5px;
+}
+
+#findpanel input[type=text] {
+  border-radius: 5px;
+  background-color: #efefef;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  text-decoration: none;
+  color: white;
+}
