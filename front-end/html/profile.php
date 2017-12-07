@@ -117,6 +117,7 @@
       <div id="mainContent"></div>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+
       <?php if($user == $currentuser & $currentstatus ==1):?>
       <br>
       <div id="editbox">
@@ -272,7 +273,6 @@
             var ul = document.getElementById("dynamic-list");
             var candidate = document.getElementById("candidate");
             var li = document.createElement("li");
-            alert(candidate.value);
             if(candidate.value!=""){
             li.setAttribute('id',candidate.value);
             li.appendChild(document.createTextNode(candidate.value));
