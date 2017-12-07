@@ -214,6 +214,13 @@ button.link {
 	border:none;
 }
 
+a {
+  color: white;
+}
+a:hover{
+  color: #cdcdcd;
+}
+
 
 
 /*Place footer at the bottom of the page where it should be*/

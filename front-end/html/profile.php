@@ -57,111 +57,6 @@
       ?>
     </div>
 
-<<<<<<< HEAD
-
-    <div id="wrapper">
-      <form id="uploadForm" method="POST" action="" enctype="multipart/form-data">
-        <input type="file" id="upload_file" name="upload_file"/>
-        <input type="submit" value="Upload" class="submit"/>
-      </form>
-    </div>
-
-      <script>
-        /*$(document).ready(function() {
-          //var form = $('form')[0];
-          var form = $('#uploadimage')[0];
-          //var formData = new FormData(form);
-          //var formData = $('.uploadimage :input').serialize();
-          $(form).submit(function(e) {
-
-          formData = new FormData(form);
-             formData.append("CustomField", "This is some extra data, testing");
-          //formData.append("", imgFile.files[0]);
-
-          e.preventDefault();
-          console.log("ASDASD");
-          console.log(formData);
-          
-
-            $.ajax({
-              url: "http://localhost/COMP307/back-end/dp",
-              type: "POST",
-              data:$('input').serialize(),
-              contentType: false,
-              processData: false,
-              success: function(data)
-              {
-                alert(data);
-              },
-              error: function(data)
-              {
-                alert("shame");
-              }
-            });
-          });
-        });*/
-
-        $(document).ready(function (e){
-        $("#uploadForm").on('submit',(function(e){
-        e.preventDefault();
-        $.ajax({
-        url: "http://localhost/COMP307/back-end/dp",
-        type: "POST",
-        data:  new FormData(this),
-        contentType: false,
-        cache: false,
-        processData:false,
-        success: function(data){
-          alert(data);
-        },
-        error: function(){}           
-        });
-        }));
-        });
-      </script>
-
-
-
-
-  <!--CURRENTLY NOT BEING USED, POTENTIALLY USED LATER-->
-
-  <!--<div class="pic">
-      <form id="frm1" action="">
-        <input id="dp" type="file" name="pic" accept="image/*" onchange="previewFile()">
-      </form>
-  </div>-->
-  <!--<script>
-    function previewFile()
-    {
-      var preview = document.querySelector('img');
-      var file = document.querySelector('input[type=file]').files[0];
-      var reader = new FileReader();
-      reader.addEventListener("load", function () {
-      preview.src = reader.result;
-      },false);
-
-      if(file)
-      {
-        reader.readAsDataURL(file);
-      }
-
-        $(document).ready(function(){
-          var base_url="http://localhost/COMP307/";
-          var url = base_url+'backend/dp';
-          url=base_url+'back-end/about';
-            $.ajax({
-              type: "POST",
-              url: url,
-              data:file,
-              success:function(data){
-            }
-          });
-         });
-    }
-  </script>-->
-
-=======
->>>>>>> master
   <div class="btn-group">
     <button type="button" id ="info" class="btn btn-primary">Info</button>
     <button type="button" id ="reviews" class="btn btn-primary">Reviews</button>
@@ -221,45 +116,7 @@
       </button>
       <div id="mainContent"></div>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<<<<<<< HEAD
-      
-      <script>
-/*<<<<<<< HEAD
-        $(document).ready(function()
-        {
-          /*$(".info").on("click",".stpostbutton",function()
-          {
-            $("#mainContent").prepend("<p>HELLO TESTIIIING</p>");
-          });*/
-         /*var base_url="http://localhost/COMP307/";
-          var url,encodedata;
-          $("#update").focus();
 
-          $(".info").on("click",".stpostbutton",function()
-          {
-
-          var update=$('#update').val();
-          var precode = {"about":update};
-          var encode=JSON.stringify(precode);
-          //$("#mainContent").prepend("<p>Dzzzzama</p>");
-          url=base_url+'back-end/about';
-
-
-          $.ajax({
-          type:"POST",
-          url:url,
-          data:encode,
-          success:function(data){
-            //alert(encode);
-          },
-          error:function(data){
-          alert("Error In Connecting");
-          }
-          });
-
-
-=======*/
-=======
 
       <?php if($user == $currentuser & $currentstatus ==1):?>
       <br>
@@ -270,7 +127,6 @@
       <?php endif;?>
       <!--GET USER INFO FROM DATABASE WHEN THEY LOG IN-->
       <script>
->>>>>>> master
         $(document).ready(function() {
           var base_url="http://localhost/COMP307/";
           var url = base_url+'back-end/about-get';
@@ -416,7 +272,6 @@
             var ul = document.getElementById("dynamic-list");
             var candidate = document.getElementById("candidate");
             var li = document.createElement("li");
-            alert(candidate.value);
             if(candidate.value!=""){
             li.setAttribute('id',candidate.value);
             li.appendChild(document.createTextNode(candidate.value));
