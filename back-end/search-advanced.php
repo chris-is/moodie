@@ -1,211 +1,155 @@
 <?php
-echo "what";
 require 'database.php';
 $db = getDB();
 session_start();
-
-<<<<<<< HEAD
-try {
-  $country = $_POST["country"];
-  $year = $_POST["year"];
-
-  $moods = array();
-  if(($_POST['happy'])=="on"){
-    array_push($moods, "happy");
-  }
-  if(($_POST['angry'])=="on"){
-    array_push($moods, "angry");
-  }
-  if(($_POST['smart'])=="on"){
-    array_push($moods, "smart");
-  }
-  if(($_POST['excited'])=="on"){
-    array_push($moods, "excited");
-  }
-  if(($_POST['relaxed'])=="on"){
-    array_push($moods, "relaxed");
-  }
-  if(($_POST['shocked'])=="on"){
-    array_push($moods, "shocked");
-  }
-  if(($_POST['scared'])=="on"){
-    array_push($moods, "scared");
-  }
-  if(($_POST['sad'])=="on"){
-    array_push($moods, "sad");
-  }
-  if(($_POST['hungry'])=="on"){
-    array_push($moods, "hungry");
-  }
-  if(($_POST['bored'])=="on"){
-    array_push($moods, "bored");
-  }
-=======
-try { 
-/*  
-  $detail[][] = array();
-  $detail[0][0] = "68156";
-  $detail[0][1] = "Three meals a day";
-  $detail[0][2] = "/8fV5T9sYZ3rMYphmikIgDrXL1oi.jpg";
-
-  $detail[1][0] = "70123";
-  $detail[1][1] = "New journey to the west";
-  $detail[1][2] = "/aR0CKi5O3QN1JlUgDNHYVvIDg8v.jpg";
-    
-
-  header("Content-Type: application/json; charset=utf-8");
-  echo json_encode($detail);
-
-
-  } 
-  catch(Exception $e) {
-    echo "Error while returning advanced search.";
-  }
-
-require 'database.php';
-$db = getDB();
-session_start();
-$_SESSION['search-results'] = "advanced search";
 
 try {
   $country = $_POST["country"];
   $year = $_POST["year"];
 
   $moods = array();
-  if(($_POST['happy'])=="on"){
+  if(($_POST["happy"])=="on"){
     array_push($moods, "happy");
   }
-  if(($_POST['angry'])=="on"){
+  if(($_POST["angry"])=="on"){
     array_push($moods, "angry");
   }
-  if(($_POST['smart'])=="on"){
+  if(($_POST["smart"])=="on"){
     array_push($moods, "smart");
   }
-  if(($_POST['excited'])=="on"){
+  if(($_POST["excited"])=="on"){
     array_push($moods, "excited");
   }
-  if(($_POST['relaxed'])=="on"){
+  if(($_POST["relaxed"])=="on"){
     array_push($moods, "relaxed");
   }
-  if(($_POST['shocked'])=="on"){
+  if(($_POST["shocked"])=="on"){
     array_push($moods, "shocked");
   }
-  if(($_POST['scared'])=="on"){
+  if(($_POST["scared"])=="on"){
     array_push($moods, "scared");
   }
-  if(($_POST['sad'])=="on"){
+  if(($_POST["sad"])=="on"){
     array_push($moods, "sad");
   }
-  if(($_POST['hungry'])=="on"){
+  if(($_POST["hungry"])=="on"){
     array_push($moods, "hungry");
   }
-  if(($_POST['bored'])=="on"){
+  if(($_POST["bored"])=="on"){
     array_push($moods, "bored");
   }
->>>>>>> 2ff6edcdc68dc02a510150632695465ee9a7be1a
-  $size = sizof($moods);
+  $size = sizeof($moods);
+
+  $forms = array();
+  if(($_POST["movie"])=="on"){
+    array_push($forms, "hungry");
+  }
+  if(($_POST["tv"])=="on"){
+    array_push($forms, "bored");
+  }
 
 
-  $apiurl = "https://api.themoviedb.org/3/discover/movie?api_key=1753a8a0eee9f02ab07f902370f8f1ea&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&language=en-US";
+
+  $m_apiurl = "https://api.themoviedb.org/3/discover/movie?api_key=1753a8a0eee9f02ab07f902370f8f1ea&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
   if($year != "undefined"){
-    $apiurl .= "year=";
-    $apiurl .= $year;
+    $m_apiurl .= "&year=";
+    $m_apiurl .= $year;
   }
   if($country != "undefined"){
-    $apiurl .= "region=";
-    $apiurl .= $country;
+    $m_apiurl .= "&region=";
+    $m_apiurl .= $country;
   }
-  $jsonStr = file_get_contents($apiurl);
+  $jsonStr = file_get_contents($m_apiurl);
   $jsonObj = json_decode($jsonStr);
   $result = $jsonObj->results;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 2ff6edcdc68dc02a510150632695465ee9a7be1a
   $priority = array();
   $names = array();
   $other_ids = array();
   $image_paths = array();
   $rows = array();
-<<<<<<< HEAD
-
-  /* check if this movie has already existed in the website's database,
-    if yes, get the corrsponding rating info;
-    if no, put the id of this movie in an array for these movies. */
-=======
 
   /* check if this movie has already existed in the website's database,
     if yes, get the corrsponding rating info;
     if no, put the id of this movie in an array for these movies. */
 
-      /*
->>>>>>> 2ff6edcdc68dc02a510150632695465ee9a7be1a
   if(is_array($result)){
-    foreach($result as $movie) {
-      $movieid = ($movie->id);
-      $query = "SELECT * FROM Movies WHERE movieid=?";
-<<<<<<< HEAD
-      $qresult = mysql_query($query);
-      if(mysqli_num_rows($qresult) > 0){
-
-        $row = mysql_fetch_row($qresult);
-=======
-      $stmt = $db->prepare($query);
-      $stmt->execute([$movieid]);
-      $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-      if(count($row) > 0){
->>>>>>> 2ff6edcdc68dc02a510150632695465ee9a7be1a
-        $names['$movieid'] = ($movie->title);
-        $image_paths['$movieid'] = ($movie->poster_path);
-
-
-        for($i=0; $i<$size; $i++){
-          $temp = $moods["$i"];
-<<<<<<< HEAD
-          $priority['$movieid'] = $priority['$movieid'] + $row["$temp"];
-=======
-          $priority['$movieid'] = $priority['$movieid'] + $row[$temp];
->>>>>>> 2ff6edcdc68dc02a510150632695465ee9a7be1a
+    if($size == 0){
+      foreach($result as $movie) {
+        $movieid = ($movie->id);
+        $other_ids[$movieid] = ($movie->title);
+        $image_paths[$movieid] = ($movie->poster_path);
+      }
+      $detail[] = array();
+      $i = 0;
+      $o_size = sizeof($other_ids);
+      foreach($other_ids as $key=>$value){
+        if($i < $o_size){
+          $detail[$i][0] = $key;
+          $detail[$i][1] = $value;
+          $detail[$i][2] = $image_paths[$key];
+          $i++;
         }
-        $priority['$movieid'] = $priority['$movieid']/10.0;
-      }
-      else {
-        $other_ids['$movieid'] = ($movie->title);
-        $image_paths['$movieid'] = ($movie->poster_path);
       }
     }
-    rsort($priority);
-    $details[][] = array();
-    foreach($priority as $key=>$value){
-      $detail[][0] = $key;
-      $detail[][1] = $names['$key'];
-      $detail[][2] = $image_paths['$key'];
+    else{
+      foreach($result as $movie) {
+        $movieid = ($movie->id);
+        $query = "SELECT * FROM Movies WHERE movieid=?";
+        $stmt = $db->prepare($query);
+        $stmt->execute([$movieid]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if(count($row) > 0){
+          $names[$movieid] = ($movie->title);
+          $image_paths[$movieid] = ($movie->poster_path);
+          $priority[$movieid] = 0;
+
+          for($i=0; $i<$size; $i++){
+            $temp = $moods[$i];
+            $priority[$movieid] = $priority[$movieid] + $row[$temp];
+          }
+          $priority[$movieid] = $priority[$movieid]/10.0;
+        }
+        else {
+          $other_ids[$movieid] = ($movie->title);
+          $image_paths[$movieid] = ($movie->poster_path);
+        }
+      }
+      arsort($priority);
+      $detail[] = array();
+      $i = 0;
+      $p_size = sizeof($priority);
+      $o_size = sizeof($other_ids);
+      foreach($priority as $key=>$value){
+        if($i < $p_size){
+          $detail[$i][0] = $key;
+          $detail[$i][1] = $names[$key];
+          $detail[$i][2] = $image_paths[$key];
+          $detail[$i][3] = $value;
+          $i++;
+        }
+      }
+      foreach($other_ids as $key=>$value){
+        if($i < $p_size + $o_size){
+          $detail[$i][0] = $key;
+          $detail[$i][1] = $value;
+          $detail[$i][2] = $image_paths[$key];
+
+          $i++;
+        }
+      }
     }
-    foreach($other_ids as $key=>$value){
-      $detail[][0] = $key;
-      $detail[][1] = $value;
-      $detail[][2] = $image_paths['$key'];
-    }
-<<<<<<< HEAD
   }
-  header("Content-Type: application/json; charset=utf-8");
-  echo json_encode($details);
-=======
-  }*/
-  header("Content-Type: application/json; charset=utf-8");
-  //echo json_encode($details);
-  echo json_encode("what");
->>>>>>> 2ff6edcdc68dc02a510150632695465ee9a7be1a
+
+  //header("Content-Type: application/json; charset=utf-8");
+  //echo json_encode($detail);
+  print_r($detail);
+
 }
 
 catch(Exception $e) {
   echo "Something went wrong!";
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 2ff6edcdc68dc02a510150632695465ee9a7be1a
 
 ?>

@@ -4,7 +4,7 @@
   session_start();
   $sid = $_SESSION['sid'];
 
-  try { 
+  try {
     //ADD COMMENTS!
     $query = "SELECT * from Users where sid=?";
     $stmt = $db->prepare($query);
@@ -48,9 +48,9 @@
         $twoarray[$i]['sad'] = $x['sad'];
         $twoarray[$i]['hungry'] = $x['hungry'];
         $i++;
-      
+
     }
-    
+
     $happy = 0;
     $angry = 0;
     $smart = 0;
@@ -69,7 +69,7 @@
     $temp = json_encode($twoarray);
     $array = json_decode($temp);
     //print_r($twoarray);
-    
+
     foreach($array as $value)
     {
 
@@ -86,7 +86,7 @@
 
 
     //ADDING ALL FREQUENCIES
-    
+
     $total = $happy + $angry + $smart + $excited + $relaxed + $shocked + $scared + $sad + $hungry;
 
 
@@ -102,7 +102,7 @@
     $hungry = $hungry/$total;
 
 
-    
+
     $query2 = "SELECT movieid, happy, angry, smart, excited, relaxed, shocked, scared, sad, hungry, bored FROM Movies";
 
     $stmt = $db->prepare($query2);
@@ -113,7 +113,7 @@
 
     //print_r($ratings2);
 
-    
+
     $i=1;
 
     //$row = $ratings2->fetch(PDO::FETCH_ASSOC);
@@ -130,11 +130,11 @@
       $scared2[$i] = $row['scared'];
       $sad2[$i] = $row['sad'];
       $hungry2[$i] = $row['hungry'];
-      $i++; 
+      $i++;
     }
 
-    
-    //MULTIPLY EACH 
+
+    //MULTIPLY EACH
 
     $counterHappy = count($happy2);
     $i=1;
@@ -174,7 +174,7 @@
     {
       $relaxed2[$i] = $relaxed2[$i] * $relaxed;
       $i++;
-    }  
+    }
 
     $counterShocked = count($shocked2);
     $i=1;
@@ -182,7 +182,7 @@
     {
       $shocked2[$i] = $shocked2[$i] * $angry;
       $i++;
-    }  
+    }
 
     $counterScared = count($scared2);
     $i=1;
@@ -222,11 +222,11 @@
     $i = 1;
     while($i <= $countMovie)
     {
-      $recArray[$movieid[$i]] = $total2[$i-1]; 
+      $recArray[$movieid[$i]] = $total2[$i-1];
       $i++;
     }
 
-    
+
     arsort($recArray);
 
     /*for($i = 0; $i < 10; $i++)
@@ -235,12 +235,24 @@
     }
     */
     $i = 0;
+    $detail[] = array();
     foreach($recArray as $x => $x_value) {
       if($i < 10){
       $resultArray[] = $x;
+      $detail[$i][0] = $x;
+      $apiurl = "https://api.themoviedb.org/3/movie/";
+      $apiurl .= $x;
+      $apiurl .= "?api_key=1753a8a0eee9f02ab07f902370f8f1ea";
+
+      $jsonStr = file_get_contents($apiurl);
+      $jsonObj = json_decode($jsonStr);
+      $detail[$i][1] = $jsonObj->poster_path;
+
       $i++;
       }
     }
+
+
 
   }
   catch(Exception $e) {
