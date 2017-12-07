@@ -156,12 +156,10 @@
           var parts = temp.split("=",2);
           var user = parts[1];
           var postdata = "about="+update+"&user="+user;
-          //TESTING
-          //alert(postdata);
-            url=base_url+'back-end/about-post';
+          url=base_url+'back-end/about-post';
             //These variables are for getting info.
-            url2=base_url+'back-end/about-get';
-            postdata2 = "user=" + user;
+          url2=base_url+'back-end/about-get';
+          postdata2 = "user=" + user;
             $.ajax({
               type: "POST",
               url: url,
@@ -262,7 +260,6 @@
             li.appendChild(document.createTextNode(candidate));
             ul.appendChild(li);
             array.push(candidate);
-            //alert(array);
             });
             }
           });
@@ -280,7 +277,6 @@
             li.appendChild(document.createTextNode(candidate.value));
             ul.appendChild(li);
             array.push(candidate.value);
-            alert(array);
           }
         }
 
@@ -290,12 +286,10 @@
             var item = document.getElementById(candidate.value);
             ul.removeChild(item);
             array.splice(array.indexOf(candidate.value),1);
-            alert(array);
         }
         function submitItem(){
             var base_url="http://localhost/COMP307/";
             var url = base_url+'back-end/list';
-            //alert("at");
             var temp = window.location.search.substring(1);
             var parts = temp.split("=",2);
             var user = parts[1];
