@@ -242,7 +242,7 @@
           var update=$('#update').val();
           var precode = {"about":update};
           var encode=JSON.stringify(precode);
-          //$("#mainContent").prepend("<p>Daaaaama</p>");
+          //$("#mainContent").prepend("<p>Dzzzzama</p>");
           url=base_url+'back-end/about';
 
 

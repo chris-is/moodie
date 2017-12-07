@@ -50,9 +50,9 @@
     <span onclick="document.getElementById('login-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
     <div class="container">
       <label><b>Username</b></label>
-      <input type="text" name="username" required>
+      <input type="text" name="username">
       <label><b>Password</b></label>
-      <input type="password" name="password" required>
+      <input type="password" name="password">
       <div class="username-status"></div>
       <div class="captcha-wrapper"><div class="g-recaptcha" data-sitekey="6LcSvDsUAAAAAMN0VQxYTCLfbZ4V1XWHBuKQhZjA"></div></div>
       <button type="submit" id="login-sub">Login</button>
@@ -68,12 +68,12 @@
     <span onclick="document.getElementById('signup-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
     <div class="container" id="signup-form">
       <label><b>Email</b></label>
-      <input type="text" name="email" maxlength="32" required>
+      <input type="text" name="email" maxlength="32">
       <label><b>Username</b></label>
-      <input type="text" name="username" maxlength="16" required>
+      <input type="text" name="username" maxlength="16">
       <div class="username-status"></div>
       <label><b>Password</b></label>
-      <input type="password" name="password" maxlength="16" required>
+      <input type="password" name="password" maxlength="16">
       <button type="submit" id="signup-sub">Sign Up</button>
       </div>
     </div>
@@ -112,56 +112,73 @@ $(document).ready(function() {
     var username = $("#signup-modal input[name=username]").val();
     var password = $("#signup-modal input[name=password]").val();
     var email = $("#signup-modal input[name=email]").val();
-    url = base_url+'back-end/checkusername';
-    var postdata = 'username='+ username + '&password='+ password + '&email='+email;
-    $.ajax({
-      type: "POST",
-      url: url,
-      data: postdata,
-      success: function(data){
-        if(data === "existing"){
-         $(".username-status").html("Username already exists. Please select another one.");
+    if(username == "" || password == "" || email == ""){
+      $(".username-status").empty();
+      $(".username-status").html("Please fill out all the fields.");
+    }
+    else {
+      url = base_url+'back-end/checkusername';
+      var postdata = 'username='+ username + '&password='+ password + '&email='+email;
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: postdata,
+        success: function(data){
+          if(data === "existing"){
+           $(".username-status").empty();
+           $(".username-status").html("Username already exists. Please select another one.");
+          }
+          else if (data === "ok") {
+           url = base_url+'back-end/signup';
+           $.ajax({
+             type: "POST",
+             url: url,
+             data: postdata,
+             success: function(data){
+               window.location.href = '/COMP307/front-end/html/newaccount.php';
+             }
+           });
+          }
+          else {
+            $(".username-status").empty();
+            $(".username-status").html("Username must contain (4-16) alphanumeric characters.");
+          }
         }
-        else if (data === "ok") {
-         url = base_url+'back-end/signup';
-         $.ajax({
-           type: "POST",
-           url: url,
-           data: postdata,
-           success: function(data){
-             window.location.href = '/COMP307/front-end/html/newaccount.php';
-           }
-         });
-        }
-        else {
-          alert(data);
-          $(".username-status").html("Username must contain (4-16) alphanumeric characters.");
-        }
-      }
-    }); 
+      });
+    } 
   });
 
   $('#login-sub').click(function(){
     var username = $("#login-modal input[name=username]").val();
     var password = $("#login-modal input[name=password]").val();
-    url = base_url+'back-end/login';
-    var postdata = 'username='+ username + '&password='+ password + '&g-recaptcha-response='+ grecaptcha.getResponse();
-    $.ajax({
-      type: "POST",
-      url: url,
-      data: postdata,
-      success: function(data){
-        if(data === "ok") {
-          window.location.href = '/COMP307/front-end/html/index-reg.php';
+
+    if(username == "" || password == ""){
+      $(".username-status").empty();
+      $(".username-status").html("Please fill out all the fields.");
+    }
+    else{
+      url = base_url+'back-end/login';
+      var postdata = 'username='+ username + '&password='+ password + '&g-recaptcha-response='+ grecaptcha.getResponse();
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: postdata,
+        success: function(data){
+          if(data === "ok") {
+            window.location.href = '/COMP307/front-end/html/index-reg.php';
+          }
+          else if(data === "captcha"){
+            $(".username-status").empty();
+            $(".username-status").html("CAPTCHA verification failed.");
+          }
+          else {
+            $(".username-status").empty();
+            $(".username-status").html("Your username or password is incorrect. Please try again.");
+          }
         }
-        else if(data === "captcha"){
-          $(".username-status").html("CAPTCHA verification failed.");
-        }
-        else {
-          $(".username-status").html("Your username or password is incorrect. Please try again.");
-        }
-      }
-    }); 
+      }); 
+    }
+    
   });
 
   $('#logout-btn').click(function(){
