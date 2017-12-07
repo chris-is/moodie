@@ -127,6 +127,7 @@
       <?php endif;?>
       <!--GET USER INFO FROM DATABASE WHEN THEY LOG IN-->
       <script>
+
         $(document).ready(function() {
           var base_url="http://localhost/COMP307/";
           var url = base_url+'back-end/about-get';
