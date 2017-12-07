@@ -39,7 +39,7 @@
 
 
     for($i = 0; $i < count($array2); $i++) {
-        echo $array2[$i] . '<br>';
+        echo "<a href=\"/COMP307/front-end/html/movie.php?movie=" . $array[$i] . "&tv=0\">" . $array2[$i] . "</a><br>";
     }
 
     //TESTING

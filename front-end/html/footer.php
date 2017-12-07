@@ -2,7 +2,7 @@
 <div class="footer">
   <div class="row">
     <div class="col-sm-4">
-      <button id="about-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="About Us"></button>
+      <button id="about-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="About Us" onclick="window.location.href='/COMP307/front-end/html/about.php';"></button>
       <button id="faq-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="FAQ"></button>
       <button id="contact-btn" class="foot-btn" data-toggle="tooltip" data-placement="top" title="Contact Us"></button>
     </div>

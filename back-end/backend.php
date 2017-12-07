@@ -17,9 +17,6 @@ $app->post('/about-get', function ($request) {
 $app->post('/dp', function($request) {
   require 'about-dp.php';
 });
-$app->post('/updp', function($request) {
-  require 'updp.php';
-});
 
 
 //User authentification
