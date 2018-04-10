@@ -1,6 +1,5 @@
-# COMP307 - Project
-Movie/TV Shows recommendation website 
-Main features:
-- Rating system according to mood
-- Filtering system
-- Spoiler-free recommendation system
+# Moodie
+Movie/TV Shows recommendation website, whose main features are:
+- Rating and recommendation system according to user's mood
+- Filtering system using the TMDb API
+- Spoiler-free movie recommendations
